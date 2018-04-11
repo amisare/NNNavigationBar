@@ -9,6 +9,7 @@
 #import "UINavigationBar+NNBackgroundView.h"
 #import <objc/runtime.h>
 #import "UIImage+NNImageWithColor.h"
+#import "UINavigationItem+NNBackgroundItemDelegate.h"
 
 #define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
@@ -26,6 +27,17 @@ static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigat
 
 @interface _NNNavigationBarBackgroundAssistantImageView : UIImageView @end
 @implementation _NNNavigationBarBackgroundAssistantImageView @end
+
+
+static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swizzledSelector) {
+    Method originalMethod = class_getInstanceMethod(class, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+    if (class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))) {
+        class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
+    } else {
+        method_exchangeImplementations(originalMethod, swizzledMethod);
+    }
+}
 
 
 /**
@@ -177,39 +189,37 @@ static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigat
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-    [self _nn_exchangeImplementationFromSelector:@selector(_pushNavigationItem:transition:)
-                                      toSelector:@selector(_nn_pushNavigationItem:transition:)];
-    
-    [self _nn_exchangeImplementationFromSelector:@selector(_completePushOperationAnimated:transitionAssistant:)
-                                      toSelector:@selector(_nn_completePushOperationAnimated:transitionAssistant:)];
-    
-    [self _nn_exchangeImplementationFromSelector:@selector(_popNavigationItemWithTransition:)
-                                      toSelector:@selector(_nn_popNavigationItemWithTransition:)];
-    
-    [self _nn_exchangeImplementationFromSelector:@selector(_completePopOperationAnimated:transitionAssistant:)
-                                      toSelector:@selector(_nn_completePopOperationAnimated:transitionAssistant:)];
-    
-    [self _nn_exchangeImplementationFromSelector:@selector(_updateInteractiveTransition:)
-                                      toSelector:@selector(_nn_updateInteractiveTransition:)];
-    
-    [self _nn_exchangeImplementationFromSelector:@selector(_cancelInteractiveTransition:completionSpeed:completionCurve:)
-                                      toSelector:@selector(_nn_cancelInteractiveTransition:completionSpeed:completionCurve:)];
-    
-    [self _nn_exchangeImplementationFromSelector:@selector(_finishInteractiveTransition:completionSpeed:completionCurve:)
-                                      toSelector:@selector(_nn_finishInteractiveTransition:completionSpeed:completionCurve:)];
+    nn_swizzleSelector(self,
+                       @selector(_pushNavigationItem:transition:),
+                       @selector(_nn_pushNavigationItem:transition:)
+                       );
+    nn_swizzleSelector(self,
+                       @selector(_completePushOperationAnimated:transitionAssistant:),
+                       @selector(_nn_completePushOperationAnimated:transitionAssistant:)
+                       );
+    nn_swizzleSelector(self,
+                       @selector(_popNavigationItemWithTransition:),
+                       @selector(_nn_popNavigationItemWithTransition:)
+                       );
+    nn_swizzleSelector(self,
+                       @selector(_completePopOperationAnimated:transitionAssistant:),
+                       @selector(_nn_completePopOperationAnimated:transitionAssistant:)
+                       );
+    nn_swizzleSelector(self,
+                       @selector(_updateInteractiveTransition:),
+                       @selector(_nn_updateInteractiveTransition:)
+                       );
+    nn_swizzleSelector(self,
+                       @selector(_cancelInteractiveTransition:completionSpeed:completionCurve:),
+                       @selector(_nn_cancelInteractiveTransition:completionSpeed:completionCurve:)
+                       );
+    nn_swizzleSelector(self,
+                       @selector(_finishInteractiveTransition:completionSpeed:completionCurve:),
+                       @selector(_nn_finishInteractiveTransition:completionSpeed:completionCurve:)
+                       );
 #pragma clang diagnostic pop
     
 }
-
-+ (void)_nn_exchangeImplementationFromSelector:(SEL)fromSelector toSelector:(SEL)toSelector {
-    Method fromMethod = class_getInstanceMethod([UINavigationBar class], fromSelector);
-    Method toMethod = class_getInstanceMethod([UINavigationBar class], toSelector);
-    
-    if (!class_addMethod([self class], fromSelector, method_getImplementation(toMethod), method_getTypeEncoding(toMethod))) {
-        method_exchangeImplementations(fromMethod, toMethod);
-    }
-}
-
 
 - (void)_nn_pushNavigationItem:(UINavigationItem *)item transition:(int)transition {
     

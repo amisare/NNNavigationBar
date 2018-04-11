@@ -1,18 +1,18 @@
 //
-//  NNNavigationBarUITests.m
-//  NNNavigationBarUITests
+//  NNNavigationBarDemoUITests.m
+//  NNNavigationBarDemoUITests
 //
 //  Created by GuHaijun on 2018/4/11.
-//  Copyright © 2018年 GuHaijun. All rights reserved.
+//  Copyright © 2018年 GuHaiJun. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface NNNavigationBarUITests : XCTestCase
+@interface NNNavigationBarDemoUITests : XCTestCase
 
 @end
 
-@implementation NNNavigationBarUITests
+@implementation NNNavigationBarDemoUITests
 
 - (void)setUp {
     [super setUp];

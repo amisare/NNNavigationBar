@@ -1,5 +1,5 @@
 //
-//  UINavigationItem+NNBackgroundItem.h
+//  UINavigationItem+NNBackgroundItemDelegate.h
 //  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/4/11.
@@ -20,10 +20,8 @@
 
 @end
 
-@interface UINavigationItem (NNBackgroundItem)
+@interface UINavigationItem (NNBackgroundItemDelegate)
 
-@property (nonatomic, strong) UIColor *nn_backgroundColor;
-@property (nonatomic, strong) UIImage *nn_backgroundImage;
 @property (nonatomic, strong) id<UINavigationItem_NNBackgroundItemDelegate> nn_backgroundItemDelegate;
 
 @end

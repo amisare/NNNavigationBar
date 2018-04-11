@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  NNNavigationBar
+//  NNNavigationBarDemo
 //
 //  Created by GuHaijun on 2018/4/11.
 //  Copyright © 2018年 GuHaijun. All rights reserved.
@@ -26,7 +26,6 @@
     [nav pushViewController:vc animated:false];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
-    
     
     return YES;
 }

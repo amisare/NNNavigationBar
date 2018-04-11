@@ -8,10 +8,10 @@
 
 #import "UINavigationItem+NNBackgroundItem.h"
 #import <objc/runtime.h>
+#import "UINavigationItem+NNBackgroundItemDelegate.h"
 
 static const void *kUINavigationItem_NNBackgroundColor = &kUINavigationItem_NNBackgroundColor;
 static const void *kUINavigationItem_NNBackgroundImage = &kUINavigationItem_NNBackgroundImage;
-static const void *kUINavigationItem_NNBackgroundItemDelegate = &kUINavigationItem_NNBackgroundItemDelegate;
 
 @implementation UINavigationItem (NNBackgroundItem)
 
@@ -37,14 +37,6 @@ static const void *kUINavigationItem_NNBackgroundItemDelegate = &kUINavigationIt
         [self.nn_backgroundItemDelegate respondsToSelector:@selector(nn_navigationItem:backgroundItemChangeForKey:)]) {
         [self.nn_backgroundItemDelegate nn_navigationItem:self backgroundItemChangeForKey:@"nn_backgroundImage"];
     }
-}
-
-- (id<UINavigationItem_NNBackgroundItemDelegate>)nn_backgroundItemDelegate {
-    return objc_getAssociatedObject(self, kUINavigationItem_NNBackgroundItemDelegate);
-}
-
-- (void)setNn_backgroundItemDelegate:(id<UINavigationItem_NNBackgroundItemDelegate>)nn_backgroundItemDelegate {
-    objc_setAssociatedObject(self, kUINavigationItem_NNBackgroundItemDelegate, nn_backgroundItemDelegate, OBJC_ASSOCIATION_RETAIN);
 }
 
 @end
