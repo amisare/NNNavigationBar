@@ -217,6 +217,10 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
                        @selector(_finishInteractiveTransition:completionSpeed:completionCurve:),
                        @selector(_nn_finishInteractiveTransition:completionSpeed:completionCurve:)
                        );
+    nn_swizzleSelector(self,
+                       @selector(_didVisibleItemsChangeWithNewItems:oldItems:),
+                       @selector(_nn_didVisibleItemsChangeWithNewItems:oldItems:)
+                       );
 #pragma clang diagnostic pop
     
 }
@@ -225,7 +229,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_pushNavigationItem:item transition:transition];
     
-    NSLog(@"%@ %s:%@ %d",[self class], __func__, item, transition);
+    NSLog(@"%@ %s", [self class], __func__);
+    NSLog(@"%@ %d",item, transition);
     
     item.nn_backgroundItemDelegate = self;
     
@@ -251,7 +256,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_completePushOperationAnimated:animated transitionAssistant:assistant];
     
-    NSLog(@"%@ %s:%d %@",[self class], __func__, animated, assistant);
+    NSLog(@"%@ %s", [self class], __func__);
+    NSLog(@"%d %@",animated, assistant);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
     
@@ -268,7 +274,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     UINavigationItem *item = [self _nn_popNavigationItemWithTransition:transition];
     
-    NSLog(@"%@ %s:%d ret:%@",[self class], __func__, transition, item);
+    NSLog(@"%@ %s", [self class], __func__);
+    NSLog(@"%d ret:%@",transition, item);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
     
@@ -294,8 +301,9 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 - (void)_nn_completePopOperationAnimated:(BOOL)animated transitionAssistant:(id)assistant {
     
     [self _nn_completePopOperationAnimated:animated transitionAssistant:assistant];
-    
-    NSLog(@"%@ %s:%d %@",[self class], __func__, animated, assistant);
+
+    NSLog(@"%@ %s", [self class], __func__);
+    NSLog(@"%d %@", animated, assistant);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
     
@@ -312,7 +320,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_updateInteractiveTransition:percentComplete];
     
-    NSLog(@"%@ %s:%f",[self class], __func__, percentComplete);
+    NSLog(@"%@ %s", [self class], __func__);
+    NSLog(@"%f", percentComplete);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
     
@@ -329,7 +338,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_cancelInteractiveTransition:transition completionSpeed:speed completionCurve:curve];
     
-    NSLog(@"%@ %s:%f %f %fl",[self class], __func__, transition, speed, curve);
+    NSLog(@"%@ %s", [self class], __func__);
+    NSLog(@"%f %f %fl", transition, speed, curve);
     
     [UIView animateWithDuration:0.25 * transition animations:^{
         self.nn_backgroundDisplayImageView.alpha = 1.0;
@@ -341,12 +351,32 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_finishInteractiveTransition:transition completionSpeed:speed completionCurve:curve];
     
-    NSLog(@"%@ %s:%f %f %fl",[self class], __func__, transition, speed, curve);
+    NSLog(@"%@ %s", [self class], __func__);
+    NSLog(@"%f %f %fl", transition, speed, curve);
     
     [UIView animateWithDuration:0.25 * (1 - transition) animations:^{
         self.nn_backgroundDisplayImageView.alpha = 0.0;
         self.nn_backgroundAssistantImageView.alpha = 1.0;
     }];
+}
+
+- (BOOL)_nn_didVisibleItemsChangeWithNewItems:(NSArray<UINavigationItem *> *)newItems oldItems:(NSArray<UINavigationItem *> *)oldItems {
+    BOOL ret = [self _nn_didVisibleItemsChangeWithNewItems:newItems oldItems:oldItems];
+    
+    NSLog(@"%@ %s", [self class], __func__);
+    NSLog(@"%@ %@", newItems, oldItems);
+    
+    UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:newItems.lastObject];
+    
+    if (!backgroundImage) {
+        return ret;
+    }
+    
+    self.nn_backgroundDisplayImageView.image = backgroundImage;
+    self.nn_backgroundDisplayImageView.alpha = 1.0;
+    self.nn_backgroundAssistantImageView.alpha = 0.0;
+    
+    return ret;
 }
 
 @end
