@@ -9,6 +9,7 @@
 #import "UINavigationBar+NNBackgroundView.h"
 #import <objc/runtime.h>
 #import "UIImage+NNImageWithColor.h"
+#import "NSLayoutConstraint+NNVisualFormat.h"
 #import "UINavigationItem+NNBackgroundItemDelegate.h"
 
 #define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
@@ -18,6 +19,9 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
 static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NNBackgroundImageView;
 static const void *kUINavigationBar_NNBackgroundDisplayImageView = &kUINavigationBar_NNBackgroundDisplayImageView;
 static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigationBar_NNBackgroundAssistantImageView;
+
+@interface _NNNavigationBarBackgroundView : UIImageView @end
+@implementation _NNNavigationBarBackgroundView @end
 
 @interface _NNNavigationBarBackgroundImageView : UIImageView @end
 @implementation _NNNavigationBarBackgroundImageView @end
@@ -39,6 +43,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     }
 }
 
+
+#pragma mark - NNBackgroundImageView
 
 /**
  NNBackgroundImageView
@@ -76,6 +82,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     UIImageView *nn_backgroundDisplayImageView = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundDisplayImageView);
     if (!nn_backgroundDisplayImageView) {
         nn_backgroundDisplayImageView = [_NNNavigationBarBackgroundDisplayImageView new];
+        nn_backgroundDisplayImageView.translatesAutoresizingMaskIntoConstraints = false;
         [nn_backgroundDisplayImageView setContentMode:UIViewContentModeScaleToFill];
         nn_backgroundDisplayImageView.image = [UIImage nn_imageWithColor:[UIColor clearColor]];
         objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundDisplayImageView, nn_backgroundDisplayImageView, OBJC_ASSOCIATION_RETAIN);
@@ -87,6 +94,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     UIImageView *nn_backgroundAssistantImageView = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundAssistantImageView);
     if (!nn_backgroundAssistantImageView) {
         nn_backgroundAssistantImageView = [_NNNavigationBarBackgroundAssistantImageView new];
+        nn_backgroundAssistantImageView.translatesAutoresizingMaskIntoConstraints = false;
         [nn_backgroundAssistantImageView setContentMode:UIViewContentModeScaleToFill];
         nn_backgroundAssistantImageView.image = [UIImage nn_imageWithColor:[UIColor clearColor]];
         objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundAssistantImageView, nn_backgroundAssistantImageView, OBJC_ASSOCIATION_RETAIN);
@@ -96,6 +104,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 
 @end
 
+
+#pragma mark - UINavigationItem_NNBackgroundItemDelegate
 
 /**
  UINavigationItem_NNBackgroundItemDelegate
@@ -120,6 +130,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 @end
 
 
+#pragma mark - NNBackgroundView
+
 /**
  NNBackgroundView
  */
@@ -134,8 +146,15 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundViewHidden, @(nn_backgroundViewHidden), OBJC_ASSOCIATION_RETAIN);
     if (!nn_backgroundViewHidden) {
         UIView *backgroundView = [self valueForKey:@"_backgroundView"];
-        if (backgroundView) {
+        if (backgroundView && ![backgroundView.subviews containsObject:self.nn_backgroundView]) {
             [backgroundView addSubview:self.nn_backgroundView];
+            
+            NSArray<NSLayoutConstraint *> *(^makeViewConstraint)(NSDictionary *view) = ^(NSDictionary *view) {
+                return [NSLayoutConstraint nn_constraintsWithVisualFormats:@[[NSString stringWithFormat:@"H:|[%@]|", view.allKeys.lastObject] ,
+                                                                             [NSString stringWithFormat:@"V:|[%@]|", view.allKeys.lastObject]]
+                                                                     views:view];
+            };
+            [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"nn_backgroundView" : self.nn_backgroundView})];
         }
     }
     else {
@@ -147,14 +166,22 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     UIView *nn_backgroundView = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundView);
     if (!nn_backgroundView) {
-        nn_backgroundView = [UIView new];
-        nn_backgroundView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, iPhoneX ? 88 : 64);
+        nn_backgroundView = [_NNNavigationBarBackgroundView new];
+        nn_backgroundView.translatesAutoresizingMaskIntoConstraints = false;
         [nn_backgroundView addSubview:self.nn_backgroundImageView];
-        self.nn_backgroundImageView.frame = nn_backgroundView.bounds;
         [nn_backgroundView addSubview:self.nn_backgroundAssistantImageView];
-        self.nn_backgroundAssistantImageView.frame = nn_backgroundView.bounds;
         [nn_backgroundView addSubview:self.nn_backgroundDisplayImageView];
-        self.nn_backgroundDisplayImageView.frame = nn_backgroundView.bounds;
+        
+        NSArray<NSLayoutConstraint *> *(^makeViewConstraint)(NSDictionary *view) = ^(NSDictionary *view) {
+            return [NSLayoutConstraint nn_constraintsWithVisualFormats:@[[NSString stringWithFormat:@"H:|[%@]|", view.allKeys.lastObject] ,
+                                                                         [NSString stringWithFormat:@"V:|[%@]|", view.allKeys.lastObject]]
+                                                                 views:view];
+        };
+        
+        [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"nn_backgroundImageView" : self.nn_backgroundImageView})];
+        [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"nn_backgroundAssistantImageView" : self.nn_backgroundAssistantImageView})];
+        [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"nn_backgroundDisplayImageView" : self.nn_backgroundDisplayImageView})];
+        
         objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundView, nn_backgroundView, OBJC_ASSOCIATION_RETAIN);
     }
     return nn_backgroundView;
@@ -164,6 +191,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     UIImageView *nn_backgroundImageView = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundImageView);
     if (!nn_backgroundImageView) {
         nn_backgroundImageView = [_NNNavigationBarBackgroundImageView new];
+        nn_backgroundImageView.translatesAutoresizingMaskIntoConstraints = false;
         [nn_backgroundImageView setContentMode:UIViewContentModeScaleToFill];
         nn_backgroundImageView.image = [UIImage nn_imageWithColor:[UIColor clearColor]];
         objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundImageView, nn_backgroundImageView, OBJC_ASSOCIATION_RETAIN);
@@ -174,9 +202,13 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 @end
 
 
+
+#pragma mark - NNBackgroundMethodSwizzling
+
 /**
  NNBackgroundMethodSwizzling
  */
+
 @interface UINavigationBar (NNBackgroundMethodSwizzling)
 
 @end

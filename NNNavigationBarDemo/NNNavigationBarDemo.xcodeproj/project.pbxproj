@@ -26,6 +26,7 @@
 		67A6F48A207F1D9F0082A845 /* ColorOnlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A6F489207F1D9F0082A845 /* ColorOnlyViewController.m */; };
 		67A6F48D207F1DB80082A845 /* ImageOnlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A6F48C207F1DB80082A845 /* ImageOnlyViewController.m */; };
 		67A6F490207F2F430082A845 /* UIColor+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A6F48F207F2F430082A845 /* UIColor+Help.m */; };
+		67F80EB820808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F80EB720808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		67A6F48C207F1DB80082A845 /* ImageOnlyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageOnlyViewController.m; sourceTree = "<group>"; };
 		67A6F48E207F2F430082A845 /* UIColor+Help.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Help.h"; sourceTree = "<group>"; };
 		67A6F48F207F2F430082A845 /* UIColor+Help.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Help.m"; sourceTree = "<group>"; };
+		67F80EB620808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+NNVisualFormat.h"; sourceTree = "<group>"; };
+		67F80EB720808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+NNVisualFormat.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +183,7 @@
 				67A6F472207EFD430082A845 /* UINavigationItem+NNBackgroundItem.m */,
 				67A6F471207EFD430082A845 /* UINavigationItem+NNBackgroundItemDelegate.h */,
 				67A6F473207EFD430082A845 /* UINavigationItem+NNBackgroundItemDelegate.m */,
-				67A6F470207EFD430082A845 /* UIImage+NNImageWithColor.h */,
-				67A6F474207EFD430082A845 /* UIImage+NNImageWithColor.m */,
+				67F80EB920809A720098B825 /* Utils */,
 			);
 			name = NNNavigationBar;
 			path = ../../NNNavigationBar;
@@ -212,6 +214,17 @@
 				67A6F47D207F0FE00082A845 /* DemoBaseViewController+TableViewDelegate.m */,
 			);
 			path = BaseController;
+			sourceTree = "<group>";
+		};
+		67F80EB920809A720098B825 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				67A6F470207EFD430082A845 /* UIImage+NNImageWithColor.h */,
+				67A6F474207EFD430082A845 /* UIImage+NNImageWithColor.m */,
+				67F80EB620808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.h */,
+				67F80EB720808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67F80EB820808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.m in Sources */,
 				67A6F441207EFD1B0082A845 /* DemoBaseViewController.m in Sources */,
 				67A6F48D207F1DB80082A845 /* ImageOnlyViewController.m in Sources */,
 				67A6F47E207F0FE00082A845 /* DemoBaseViewController+TableViewDelegate.m in Sources */,
@@ -463,7 +477,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -512,7 +526,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
