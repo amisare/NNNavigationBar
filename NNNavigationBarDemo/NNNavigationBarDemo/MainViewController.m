@@ -7,10 +7,11 @@
 //
 
 #import "MainViewController.h"
-#import "ColorOnlyViewController.h"
-#import "ImageOnlyViewController.h"
-#import "ColorTransitionViewController.h"
-#import "ImageTransitionViewController.h"
+#import "DemoViewController.h"
+//#import "ColorOnlyViewController.h"
+//#import "ImageOnlyViewController.h"
+//#import "ColorTransitionViewController.h"
+//#import "ImageTransitionViewController.h"
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -54,19 +55,21 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = false;
     
-    DemoBaseViewController *vc = [DemoBaseViewController new];
+    DemoType type = DemoTypeColorOnly;
     if ([cell.textLabel.text isEqualToString:@"color background only"]) {
-        vc = [[ColorOnlyViewController alloc] init];
+        type = DemoTypeColorOnly;
     }
     if ([cell.textLabel.text isEqualToString:@"image background only"]) {
-        vc = [[ImageOnlyViewController alloc] init];
+        type = DemoTypeImageOnly;
     }
     if ([cell.textLabel.text isEqualToString:@"color background with transition"]) {
-        vc = [[ColorTransitionViewController alloc] init];
+        type = DemoTypeColorTransition;
     }
     if ([cell.textLabel.text isEqualToString:@"image background with transition"]) {
-        vc = [[ImageTransitionViewController alloc] init];
+        type = DemoTypeImageTransition;
     }
+    
+    DemoViewController *vc = [[DemoViewController alloc] initWithType:type];
     UINavigationController *nav = [[UINavigationController alloc] initWithNavigationBarClass:[UINavigationBar class] toolbarClass:[UIToolbar class]];
     [nav pushViewController:vc animated:false];
     [self presentViewController:nav animated:true completion:nil];

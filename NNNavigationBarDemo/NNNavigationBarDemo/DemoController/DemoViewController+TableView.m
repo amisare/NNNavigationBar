@@ -1,14 +1,19 @@
 //
-//  DemoBaseViewController+TableViewDelegate.m
+//  DemoViewController+TableView.m
 //  NNNavigationBarDemo
 //
 //  Created by GuHaijun on 2018/4/12.
 //  Copyright © 2018年 GuHaijun. All rights reserved.
 //
 
-#import "DemoBaseViewController+TableViewDelegate.h"
+#import "DemoViewController+TableView.h"
 
-@implementation DemoBaseViewController (TableViewDelegate)
+@implementation DemoViewController (TableView)
+
+- (void)setupTableView {
+    [self.view addSubview:self.tableView];
+    self.tableView.frame = self.view.bounds;
+}
 
 - (NSArray<NSString *> *)cellData {
     return @[
@@ -47,7 +52,7 @@
     cell.selected = false;
     
     if ([cell.textLabel.text isEqualToString:@"push"]) {
-        DemoBaseViewController *vc = [[self class] new];
+        DemoViewController *vc = [[DemoViewController alloc] initWithType:self.type];
         vc.page = self.page + 1;
         [self.navigationController pushViewController:vc animated:true];
         return;
