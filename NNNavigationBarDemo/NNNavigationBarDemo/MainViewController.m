@@ -8,10 +8,6 @@
 
 #import "MainViewController.h"
 #import "DemoViewController.h"
-//#import "ColorOnlyViewController.h"
-//#import "ImageOnlyViewController.h"
-//#import "ColorTransitionViewController.h"
-//#import "ImageTransitionViewController.h"
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
