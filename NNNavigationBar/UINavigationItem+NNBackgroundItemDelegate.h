@@ -16,7 +16,7 @@
  @param item UINavigationItem
  @param key  keyPath nn_backgroundColor/nn_backgroundImage
  */
-- (void)nn_navigationItem:(UINavigationItem *)item backgroundItemChangeForKey:(NSString *)key;
+- (void)nn_navigationItem:(UINavigationItem *)item backgroundChangeForKey:(NSString *)key;
 
 @end
 

@@ -110,7 +110,7 @@
 
 - (void)setupImageOnly {
     self.navigationController.navigationBar.nn_backgroundViewHidden = false;
-    self.navigationController.navigationBar.nn_backgroundImageView.image = [UIImage imageNamed:@"image2"];
+    self.navigationController.navigationBar.nn_backgroundImage = [UIImage imageNamed:@"image2"];
     self.tableView.tableFooterView = [UIView new];
 }
 
@@ -118,7 +118,13 @@
 
 - (void)setupColorTransition {
     self.navigationController.navigationBar.nn_backgroundViewHidden = false;
-    self.navigationItem.nn_backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
+    self.navigationController.navigationBar.nn_backgroundColor = [UIColor purpleColor];
+    
+    BOOL boolValue = @(self.page % 3 == 2).boolValue;
+    if (boolValue) {
+        self.navigationItem.nn_backgroundColor = [UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1];
+    }
+    
     [self.colorSlider addTarget:self action:@selector(handleColorSliderColorTransition:) forControlEvents:UIControlEventValueChanged];
 }
 

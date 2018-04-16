@@ -11,7 +11,11 @@
 #import "UIImage+NNImageWithColor.h"
 #import "NSLayoutConstraint+NNVisualFormat.h"
 #import "UINavigationItem+NNBackgroundItemDelegate.h"
+#import "UINavigationBar+NNBackgroundBarDelegate.h"
 
+
+static const void *kUINavigationBar_NNBackgroundColors = &kUINavigationBar_NNBackgroundColors;
+static const void *kUINavigationBar_NNBackgroundImages = &kUINavigationBar_NNBackgroundImages;
 static const void *kUINavigationBar_NNBackgroundViewHidden = &kUINavigationBar_NNBackgroundViewHidden;
 static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackgroundView;
 static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NNBackgroundImageView;
@@ -41,6 +45,101 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     }
 }
 
+#define UINavigationItem_NNBackgroundKey(barPosition, barMetrics) [@(barPosition << (sizeof(barPosition) * 8 / 2) | barMetrics) stringValue]
+
+
+@implementation UINavigationBar (NNBackgroundItem)
+
+- (UIColor *)nn_backgroundColor {
+    return [self nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+}
+
+- (void)setNn_backgroundColor:(UIColor *)nn_backgroundColor {
+    [self setNn_backgroundColor:nn_backgroundColor forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    if (self.nn_backgroundBarDelegate &&
+        [self.nn_backgroundBarDelegate respondsToSelector:@selector(nn_navigationBar:backgroundChangeForKey:)]) {
+        [self.nn_backgroundBarDelegate nn_navigationBar:self backgroundChangeForKey:@"nn_backgroundColor"];
+    }
+}
+
+- (UIImage *)nn_backgroundImage {
+    return [self nn_backgroundImageForBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+}
+
+- (void)setNn_backgroundImage:(UIImage *)nn_backgroundImage {
+    [self setNn_backgroundImage:nn_backgroundImage forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    if (self.nn_backgroundBarDelegate &&
+        [self.nn_backgroundBarDelegate respondsToSelector:@selector(nn_navigationBar:backgroundChangeForKey:)]) {
+        [self.nn_backgroundBarDelegate nn_navigationBar:self backgroundChangeForKey:@"nn_backgroundImage"];
+    }
+}
+
+- (NSMutableDictionary *)nn_backgroundColors {
+    NSMutableDictionary *nn_backgroundColors = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundColors);
+    if (!nn_backgroundColors) {
+        nn_backgroundColors = [NSMutableDictionary new];
+        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundColors, nn_backgroundColors, OBJC_ASSOCIATION_RETAIN);
+    }
+    return nn_backgroundColors;
+}
+
+- (NSMutableDictionary *)nn_backgroundImages {
+    NSMutableDictionary *nn_backgroundImages = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundImages);
+    if (!nn_backgroundImages) {
+        nn_backgroundImages = [NSMutableDictionary new];
+        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundImages, nn_backgroundImages, OBJC_ASSOCIATION_RETAIN);
+    }
+    return nn_backgroundImages;
+}
+
+- (void)setNn_backgroundImage:(UIImage *)backgroundImage forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
+    NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
+    if (backgroundImage == nil) {
+        return;
+    }
+    [[self nn_backgroundImages] setObject:backgroundImage forKey:key];
+}
+
+- (UIImage *)nn_backgroundImageForBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
+    NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
+    return [[self nn_backgroundImages] objectForKey:key];
+}
+
+- (void)setNn_backgroundImage:(UIImage *)backgroundImage forBarMetrics:(UIBarMetrics)barMetrics {
+    UIBarPosition barPosition = UIBarPositionAny;
+    [self setNn_backgroundImage:backgroundImage forBarPosition:barPosition barMetrics:barMetrics];
+}
+
+- (UIImage *)nn_backgroundImageForBarMetrics:(UIBarMetrics)barMetrics {
+    UIBarPosition barPosition = UIBarPositionAny;
+    return [self nn_backgroundImageForBarPosition:barPosition barMetrics:barMetrics];
+}
+
+- (void)setNn_backgroundColor:(UIColor *)backgroundColor forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
+    NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
+    if (backgroundColor == nil) {
+        return;
+    }
+    [[self nn_backgroundColors] setObject:backgroundColor forKey:key];
+}
+
+- (UIColor *)nn_backgroundColorForBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
+    NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
+    return [[self nn_backgroundColors] objectForKey:key];
+}
+
+- (void)setNn_backgroundColor:(UIColor *)backgroundColor forBarMetrics:(UIBarMetrics)barMetrics {
+    UIBarPosition barPosition = UIBarPositionAny;
+    [self setNn_backgroundColor:backgroundColor forBarPosition:barPosition barMetrics:barMetrics];
+}
+
+- (UIColor *)nn_backgroundColorForBarPosition:(UIBarMetrics)barMetrics {
+    UIBarPosition barPosition = UIBarPositionAny;
+    return [self nn_backgroundColorForBarPosition:barPosition barMetrics:barMetrics];
+}
+
+@end
+
 
 #pragma mark - NNBackgroundImageView
 
@@ -49,6 +148,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
  */
 @interface UINavigationBar (NNBackgroundImageView)
 
+- (UIImageView *)nn_backgroundImageView;
 - (UIImageView *)nn_backgroundDisplayImageView;
 - (UIImageView *)nn_backgroundAssistantImageView;
 - (UIImage *)nn_backgroundImageFromNavigationItem:(UINavigationItem *)item;
@@ -74,6 +174,37 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     }
     
     return backgroundImage;
+}
+
+- (UIImage *)nn_backgroundImageFromNavigationBar:(UINavigationBar *)bar {
+    
+    UIImage *backgroundImage = nil;
+    
+    if (!backgroundImage) {
+        backgroundImage = bar.nn_backgroundImage;
+    }
+    
+    if (!backgroundImage) {
+        backgroundImage = [UIImage nn_imageWithColor:bar.nn_backgroundColor];
+    }
+    
+    if (!backgroundImage) {
+        backgroundImage = [UIImage new];
+    }
+    
+    return backgroundImage;
+}
+
+- (UIImageView *)nn_backgroundImageView {
+    UIImageView *nn_backgroundImageView = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundImageView);
+    if (!nn_backgroundImageView) {
+        nn_backgroundImageView = [_NNNavigationBarBackgroundImageView new];
+        nn_backgroundImageView.translatesAutoresizingMaskIntoConstraints = false;
+        [nn_backgroundImageView setContentMode:UIViewContentModeScaleToFill];
+        nn_backgroundImageView.image = [UIImage nn_imageWithColor:[UIColor clearColor]];
+        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundImageView, nn_backgroundImageView, OBJC_ASSOCIATION_RETAIN);
+    }
+    return nn_backgroundImageView;
 }
 
 - (UIImageView *)nn_backgroundDisplayImageView {
@@ -114,12 +245,31 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 
 @implementation UINavigationBar (UINavigationItem_NNBackgroundItemDelegate)
 
-- (void)nn_navigationItem:(UINavigationItem *)item backgroundItemChangeForKey:(NSString *)key {
+- (void)nn_navigationItem:(UINavigationItem *)item backgroundChangeForKey:(NSString *)key {
     
     if ([self.topItem isEqual:item]) {
         UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:item];
         self.nn_backgroundDisplayImageView.image = backgroundImage;
     }
+}
+
+@end
+
+#pragma mark - UINavigationBar_NNBackgroundBarDelegate
+
+/**
+ UINavigationItem_NNBackgroundItemDelegate
+ */
+@interface UINavigationBar (UINavigationBar_NNBackgroundBarDelegate) <UINavigationBar_NNBackgroundBarDelegate>
+
+@end
+
+@implementation UINavigationBar (UINavigationBar_NNBackgroundBarDelegate)
+
+- (void)nn_navigationBar:(UINavigationBar *)bar backgroundChangeForKey:(NSString *)key {
+    
+    UIImage *backgroundImage = [self nn_backgroundImageFromNavigationBar:self];
+    self.nn_backgroundImageView.image = backgroundImage;
 }
 
 @end
@@ -178,20 +328,10 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
         [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"nn_backgroundDisplayImageView" : self.nn_backgroundDisplayImageView})];
         
         objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundView, nn_backgroundView, OBJC_ASSOCIATION_RETAIN);
+        
+        self.nn_backgroundBarDelegate = self;
     }
     return nn_backgroundView;
-}
-
-- (UIImageView *)nn_backgroundImageView {
-    UIImageView *nn_backgroundImageView = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundImageView);
-    if (!nn_backgroundImageView) {
-        nn_backgroundImageView = [_NNNavigationBarBackgroundImageView new];
-        nn_backgroundImageView.translatesAutoresizingMaskIntoConstraints = false;
-        [nn_backgroundImageView setContentMode:UIViewContentModeScaleToFill];
-        nn_backgroundImageView.image = [UIImage nn_imageWithColor:[UIColor clearColor]];
-        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundImageView, nn_backgroundImageView, OBJC_ASSOCIATION_RETAIN);
-    }
-    return nn_backgroundImageView;
 }
 
 @end
