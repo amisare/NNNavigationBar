@@ -372,6 +372,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     self.nn_backgroundAssistantImageView.alpha = 0.0;
     
     if (@(transition).boolValue) {
+        
         // iOS 11.x +
         if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0) {
             [UIView animateWithDuration:0.25 animations:^{
