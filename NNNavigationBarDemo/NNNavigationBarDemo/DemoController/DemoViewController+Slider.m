@@ -60,4 +60,8 @@
     self.colorAlphaCurrentLabel.text = @(self.colorSlider.value).stringValue;
 }
 
+- (void)dealloc {
+    [self.colorSlider removeObserver:self forKeyPath:@"value"];
+}
+
 @end

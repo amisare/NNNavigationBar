@@ -61,10 +61,6 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 
 - (UIImage *)nn_backgroundImageFromNavigationItem:(UINavigationItem *)item {
     
-    if (!item.nn_backgroundImage && !item.nn_backgroundColor) {
-        return nil;
-    }
-    
     UIImage *backgroundImage = nil;
     
     if (!backgroundImage) {
@@ -73,6 +69,10 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     if (!backgroundImage) {
         backgroundImage = [UIImage nn_imageWithColor:item.nn_backgroundColor];
+    }
+    
+    if (!backgroundImage) {
+        backgroundImage = [UIImage new];
     }
     
     return backgroundImage;
@@ -267,21 +267,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     item.nn_backgroundItemDelegate = self;
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:item];
-    
-    if (!backgroundImage) {
-        return;
-    }
-    
-    self.nn_backgroundAssistantImageView.image = backgroundImage;
-    
-    self.nn_backgroundDisplayImageView.alpha = 1.0;
-    self.nn_backgroundAssistantImageView.alpha = 0.0;
-    if (@(transition).boolValue) {
-        [UIView animateWithDuration:0.25 animations:^{
-            self.nn_backgroundDisplayImageView.alpha = 0.0;
-            self.nn_backgroundAssistantImageView.alpha = 1.0;
-        }];
-    }
+    [self _nn_animateBackgroundWithImage:backgroundImage transition:transition];
 }
 
 - (void)_nn_completePushOperationAnimated:(BOOL)animated transitionAssistant:(id)assistant {
@@ -292,11 +278,6 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     NSLog(@"%d %@",animated, assistant);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
-    
-    if (!backgroundImage) {
-        return;
-    }
-    
     self.nn_backgroundDisplayImageView.image = backgroundImage;
     self.nn_backgroundDisplayImageView.alpha = 1.0;
     self.nn_backgroundAssistantImageView.alpha = 0.0;
@@ -310,22 +291,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     NSLog(@"%d ret:%@",transition, item);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
-    
-    if (!backgroundImage) {
-        return item;
-    }
-    
-    self.nn_backgroundAssistantImageView.image = backgroundImage;
-    
-    self.nn_backgroundDisplayImageView.alpha = 1.0;
-    self.nn_backgroundAssistantImageView.alpha = 0.0;
-    
-    if (@(transition).boolValue) {
-        [UIView animateWithDuration:0.25 animations:^{
-            self.nn_backgroundDisplayImageView.alpha = 0.0;
-            self.nn_backgroundAssistantImageView.alpha = 1.0;
-        }];
-    };
+    [self _nn_animateBackgroundWithImage:backgroundImage transition:transition];
     
     return item;
 }
@@ -338,11 +304,6 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     NSLog(@"%d %@", animated, assistant);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
-    
-    if (!backgroundImage) {
-        return;
-    }
-    
     self.nn_backgroundDisplayImageView.image = backgroundImage;
     self.nn_backgroundDisplayImageView.alpha = 1.0;
     self.nn_backgroundAssistantImageView.alpha = 0.0;
@@ -356,11 +317,6 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     NSLog(@"%f", percentComplete);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
-    
-    if (!backgroundImage) {
-        return;
-    }
-    
     self.nn_backgroundAssistantImageView.image = backgroundImage;
     self.nn_backgroundDisplayImageView.alpha = 1.0 - percentComplete;
     self.nn_backgroundAssistantImageView.alpha = percentComplete;
@@ -386,6 +342,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     NSLog(@"%@ %s", [self class], __func__);
     NSLog(@"%f %f %fl", transition, speed, curve);
     
+    UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
+    self.nn_backgroundDisplayImageView.image = backgroundImage;
     [UIView animateWithDuration:0.25 * (1 - transition) animations:^{
         self.nn_backgroundDisplayImageView.alpha = 0.0;
         self.nn_backgroundAssistantImageView.alpha = 1.0;
@@ -399,16 +357,45 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     NSLog(@"%@ %@", newItems, oldItems);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:newItems.lastObject];
-    
-    if (!backgroundImage) {
-        return ret;
-    }
-    
     self.nn_backgroundDisplayImageView.image = backgroundImage;
     self.nn_backgroundDisplayImageView.alpha = 1.0;
     self.nn_backgroundAssistantImageView.alpha = 0.0;
     
     return ret;
+}
+
+- (void)_nn_animateBackgroundWithImage:(UIImage *)image transition:(int)transition {
+    
+    self.nn_backgroundAssistantImageView.image = image;
+    
+    self.nn_backgroundDisplayImageView.alpha = 1.0;
+    self.nn_backgroundAssistantImageView.alpha = 0.0;
+    
+    if (@(transition).boolValue) {
+        // iOS 11.x +
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0) {
+            [UIView animateWithDuration:0.25 animations:^{
+                self.nn_backgroundDisplayImageView.alpha = 0.0;
+                self.nn_backgroundAssistantImageView.alpha = 1.0;
+            }];
+            return;
+        }
+        
+        // iOS 8.x - 10.x
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+            [UIView animateWithDuration:0.25 animations:^{
+                self.nn_backgroundDisplayImageView.alpha = 0.0;
+                self.nn_backgroundAssistantImageView.alpha = 1.0;
+            } completion:^(BOOL finished) {
+                if (finished) {
+                    self.nn_backgroundDisplayImageView.image = image;
+                }
+                self.nn_backgroundDisplayImageView.alpha = 1.0;
+                self.nn_backgroundAssistantImageView.alpha = 0.0;
+            }];
+            return;
+        }
+    };
 }
 
 @end
