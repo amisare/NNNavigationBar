@@ -12,15 +12,19 @@
 
 + (UIImage *)nn_imageWithColor:(UIColor *)color {
     
+    if (color == nil) {
+        return nil;
+    }
+    
     CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, [color CGColor]);
     CGContextFillRect(context, rect);
-    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    return theImage;
+    return image;
 }
 
 @end

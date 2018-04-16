@@ -7,12 +7,20 @@
 //
 
 #import "DemoViewController+TableView.h"
+#import "NSLayoutConstraint+NNVisualFormat.h"
 
 @implementation DemoViewController (TableView)
 
 - (void)setupTableView {
     [self.view addSubview:self.tableView];
-    self.tableView.frame = self.view.bounds;
+    
+    self.tableView.translatesAutoresizingMaskIntoConstraints = false;
+    NSArray<NSLayoutConstraint *> *(^makeViewConstraint)(NSDictionary *view) = ^(NSDictionary *view) {
+        return [NSLayoutConstraint nn_constraintsWithVisualFormats:@[[NSString stringWithFormat:@"H:|[%@]|", view.allKeys.lastObject] ,
+                                                                     [NSString stringWithFormat:@"V:|[%@]|", view.allKeys.lastObject]]
+                                                             views:view];
+    };
+    [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"tableView" : self.tableView})];
 }
 
 - (NSArray<NSString *> *)cellData {
