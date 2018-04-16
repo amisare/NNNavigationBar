@@ -12,8 +12,6 @@
 #import "NSLayoutConstraint+NNVisualFormat.h"
 #import "UINavigationItem+NNBackgroundItemDelegate.h"
 
-#define iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
-
 static const void *kUINavigationBar_NNBackgroundViewHidden = &kUINavigationBar_NNBackgroundViewHidden;
 static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackgroundView;
 static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NNBackgroundImageView;
@@ -120,9 +118,6 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     if ([self.topItem isEqual:item]) {
         UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:item];
-        if (!backgroundImage) {
-            return;
-        }
         self.nn_backgroundDisplayImageView.image = backgroundImage;
     }
 }

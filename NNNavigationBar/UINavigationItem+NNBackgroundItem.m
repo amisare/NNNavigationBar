@@ -63,7 +63,8 @@ static const void *kUINavigationItem_NNBackgroundImages = &kUINavigationItem_NNB
 
 - (void)setBackgroundImage:(UIImage *)backgroundImage forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
     NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
-    [[self nn_backgroundImages] setObject:backgroundImage forKey:key];
+    UIImage *nonnullImage = (backgroundImage != nil) ? backgroundImage : [UIImage new];
+    [[self nn_backgroundImages] setObject:nonnullImage forKey:key];
 }
 
 - (UIImage *)backgroundImageForBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
@@ -81,21 +82,22 @@ static const void *kUINavigationItem_NNBackgroundImages = &kUINavigationItem_NNB
     return [self backgroundImageForBarPosition:barPosition barMetrics:barMetrics];
 }
 
-- (void)setBackgroundColor:(nullable UIColor *)backgroundColor forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
+- (void)setBackgroundColor:(UIColor *)backgroundColor forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
     NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
-    [[self nn_backgroundColors] setObject:backgroundColor forKey:key];
+    UIColor *nonnullColor = (backgroundColor != nil) ? backgroundColor : [UIColor clearColor];
+    [[self nn_backgroundColors] setObject:nonnullColor forKey:key];
 }
-- (nullable UIColor *)backgroundColorForBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
+- (UIColor *)backgroundColorForBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
     NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
     return [[self nn_backgroundColors] objectForKey:key];
 }
 
-- (void)setBackgroundColor:(nullable UIColor *)backgroundColor forBarMetrics:(UIBarMetrics)barMetrics {
+- (void)setBackgroundColor:(UIColor *)backgroundColor forBarMetrics:(UIBarMetrics)barMetrics {
     UIBarPosition barPosition = UIBarPositionAny;
     [self setBackgroundColor:backgroundColor forBarPosition:barPosition barMetrics:barMetrics];
 }
 
-- (nullable UIColor *)backgroundColorForBarPosition:(UIBarMetrics)barMetrics {
+- (UIColor *)backgroundColorForBarPosition:(UIBarMetrics)barMetrics {
     UIBarPosition barPosition = UIBarPositionAny;
     return [self backgroundColorForBarPosition:barPosition barMetrics:barMetrics];
 }
