@@ -68,11 +68,11 @@ NNNavigationBar是实现导航条背景过度动画的轻量级代码库。
                                                       
 ```
 
-1.使用runtime在UINavigationItem的Category中添加属性[.nn_xx]。
-2.每个UIViewController中都拥有一个UINavigationItem属性navigationItem，在UIViewController中修改navigationItem对象的属性[.nn_xx]。
-3.在UINavigationController push/pop UIViewController时，会将UIViewController的navigationItem对象 push/pop 给UINavigationBar。
-4.通过Method Swizzling方式hook UINavigationBar方法调用，获得对应方法的调用时机。
-5.在合适的时刻，UINavigationBar取得navigationItem对象中的属性[.nn_xx]，更新UINavigationBar状态（本代码库实现了背景的平滑过度）。
+1. 使用runtime在UINavigationItem的Category中添加属性[.nn_xx]。
+2. 每个UIViewController中都拥有一个UINavigationItem属性navigationItem，在UIViewController中修改navigationItem对象的属性[.nn_xx]。
+3. 在UINavigationController push/pop UIViewController时，会将UIViewController的navigationItem对象 push/pop 给UINavigationBar。
+4. 通过Method Swizzling方式hook UINavigationBar方法调用，获得对应方法的调用时机。
+5. 在合适的时刻，UINavigationBar取得navigationItem对象中的属性[.nn_xx]，更新UINavigationBar状态（本代码库实现了背景的平滑过度）。
 
 ## 使用
 
