@@ -77,7 +77,8 @@
             [self.navigationController popToViewController:toViewController animated:true];
         }
         else {
-            NSString *message = [NSString stringWithFormat:@"Now the controller stack count = %lu", self.navigationController.viewControllers.count];
+            NSUInteger count = self.navigationController.viewControllers.count;
+            NSString *message = [NSString stringWithFormat:@"Now the controller stack count = %lu", (unsigned long)count];
             message = [message stringByAppendingString:@"\n"];
             message = [message stringByAppendingString:@"The controller stack count must >= 3"];
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"😂" message:message preferredStyle:UIAlertControllerStyleAlert];
