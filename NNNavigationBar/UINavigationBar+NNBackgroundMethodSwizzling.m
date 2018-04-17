@@ -17,7 +17,9 @@
 #import "UINavigationBar+NNBackgroundStyle.h"
 
 #if DEBUG
-#define NN_NSLog(format, ...)      NSLog((@"[Line %04d] %s " format), __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__)
+#define NN_NSLog(format, ...)      {NSLog((@"[Line %04d] %s " format), __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__);}
+#else
+#define NN_NSLog(format, ...)
 #endif
 
 static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swizzledSelector) {
