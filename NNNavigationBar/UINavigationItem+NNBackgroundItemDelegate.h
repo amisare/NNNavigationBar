@@ -11,7 +11,7 @@
 @protocol NNBackgroundItemDelegate <NSObject>
 
 /**
- 背景色/数据更新代理
+ UINavigationItem 背景色/数据更新代理
  
  @param item UINavigationItem
  @param key  keyPath nn_backgroundColor/nn_backgroundImage

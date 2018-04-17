@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6781EA332085A6ED00C96B95 /* UINavigationBar+NNBackgroundStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 6781EA322085A6ED00C96B95 /* UINavigationBar+NNBackgroundStyle.m */; };
 		679AA53C20858D2E00749AF6 /* UINavigationBar+NNBackgroundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 679AA53B20858D2E00749AF6 /* UINavigationBar+NNBackgroundImageView.m */; };
 		679AA53F20858E4300749AF6 /* UINavigationBar+NNBackgroundMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 679AA53E20858E4300749AF6 /* UINavigationBar+NNBackgroundMethodSwizzling.m */; };
 		679AA54220858F5A00749AF6 /* UINavigationBar+NNBackgroundDelegateImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 679AA54120858F5A00749AF6 /* UINavigationBar+NNBackgroundDelegateImp.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6781EA312085A6ED00C96B95 /* UINavigationBar+NNBackgroundStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundStyle.h"; sourceTree = "<group>"; };
+		6781EA322085A6ED00C96B95 /* UINavigationBar+NNBackgroundStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundStyle.m"; sourceTree = "<group>"; };
 		679AA53A20858D2E00749AF6 /* UINavigationBar+NNBackgroundImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundImageView.h"; sourceTree = "<group>"; };
 		679AA53B20858D2E00749AF6 /* UINavigationBar+NNBackgroundImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundImageView.m"; sourceTree = "<group>"; };
 		679AA53D20858E4300749AF6 /* UINavigationBar+NNBackgroundMethodSwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundMethodSwizzling.h"; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 				67A6F46F207EFD430082A845 /* UINavigationBar+NNBackgroundView.m */,
 				679AA53A20858D2E00749AF6 /* UINavigationBar+NNBackgroundImageView.h */,
 				679AA53B20858D2E00749AF6 /* UINavigationBar+NNBackgroundImageView.m */,
+				6781EA312085A6ED00C96B95 /* UINavigationBar+NNBackgroundStyle.h */,
+				6781EA322085A6ED00C96B95 /* UINavigationBar+NNBackgroundStyle.m */,
 				679AA53D20858E4300749AF6 /* UINavigationBar+NNBackgroundMethodSwizzling.h */,
 				679AA53E20858E4300749AF6 /* UINavigationBar+NNBackgroundMethodSwizzling.m */,
 				679AA54020858F5A00749AF6 /* UINavigationBar+NNBackgroundDelegateImp.h */,
@@ -365,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6781EA332085A6ED00C96B95 /* UINavigationBar+NNBackgroundStyle.m in Sources */,
 				679AA53F20858E4300749AF6 /* UINavigationBar+NNBackgroundMethodSwizzling.m in Sources */,
 				67F80EB820808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.m in Sources */,
 				67F80EBC2080ACB00098B825 /* DemoViewController.m in Sources */,

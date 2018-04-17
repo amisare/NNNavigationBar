@@ -29,8 +29,10 @@
              @"pop",
              @"popStep2",
              @"popToRoot",
-             @"navHidden",
-             @"navShow",
+             @"hideNav",
+             @"showNav",
+             @"hidePrompt",
+             @"showPrompt",
              @"dismiss"
              ];
 }
@@ -80,12 +82,20 @@
         [self.navigationController popToRootViewControllerAnimated:true];
         return;
     }
-    if ([cell.textLabel.text isEqualToString:@"navHidden"]) {
+    if ([cell.textLabel.text isEqualToString:@"showNav"]) {
+        [self.navigationController setNavigationBarHidden:false animated:true];
+        return;
+    }
+    if ([cell.textLabel.text isEqualToString:@"hideNav"]) {
         [self.navigationController setNavigationBarHidden:true animated:true];
         return;
     }
-    if ([cell.textLabel.text isEqualToString:@"navShow"]) {
-        [self.navigationController setNavigationBarHidden:false animated:true];
+    if ([cell.textLabel.text isEqualToString:@"showPrompt"]) {
+        self.navigationItem.prompt = @"Navigation Bar Prompt";
+        return;
+    }
+    if ([cell.textLabel.text isEqualToString:@"hidePrompt"]) {
+        self.navigationItem.prompt = nil;
         return;
     }
     if ([cell.textLabel.text isEqualToString:@"dismiss"]) {

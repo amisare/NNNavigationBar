@@ -11,7 +11,7 @@
 @protocol NNBackgroundBarDelegate <NSObject>
 
 /**
- 背景色/数据更新代理
+ UINavigationBar 背景色/数据更新代理
  
  @param bar UINavigationBar
  @param key  keyPath nn_backgroundColor/nn_backgroundImage

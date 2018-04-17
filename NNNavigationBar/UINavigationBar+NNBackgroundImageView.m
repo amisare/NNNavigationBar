@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 #import "UIImage+NNImageWithColor.h"
 #import "UINavigationBar+NNBackgroundView.h"
+#import "UINavigationBar+NNBackgroundStyle.h"
 #import "UINavigationItem+NNBackgroundItem.h"
 
 static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NNBackgroundImageView;
@@ -33,11 +34,30 @@ static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigat
     UIImage *backgroundImage = nil;
     
     if (!backgroundImage) {
-        backgroundImage = item.nn_backgroundImage;
+        backgroundImage = [item nn_backgroundImageForBarPosition:self.nn_barPosition barMetrics:self.nn_activeBarMetrics];
     }
     
     if (!backgroundImage) {
-        backgroundImage = [UIImage nn_imageWithColor:item.nn_backgroundColor];
+        UIColor *backgroundColor = [item nn_backgroundColorForBarPosition:self.nn_barPosition barMetrics:self.nn_activeBarMetrics];
+        backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
+    }
+    
+    if (!backgroundImage) {
+        backgroundImage = [item nn_backgroundImageForBarPosition:UIBarPositionAny barMetrics:self.nn_activeBarMetrics];
+    }
+    
+    if (!backgroundImage) {
+        UIColor *backgroundColor = [item nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:self.nn_activeBarMetrics];
+        backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
+    }
+    
+    if (!backgroundImage) {
+        backgroundImage = [item nn_backgroundImageForBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    }
+    
+    if (!backgroundImage) {
+        UIColor *backgroundColor = [item nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+        backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
     }
     
     if (!backgroundImage) {
@@ -52,11 +72,30 @@ static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigat
     UIImage *backgroundImage = nil;
     
     if (!backgroundImage) {
-        backgroundImage = bar.nn_backgroundImage;
+        backgroundImage = [bar nn_backgroundImageForBarPosition:self.nn_barPosition barMetrics:self.nn_activeBarMetrics];
     }
     
     if (!backgroundImage) {
-        backgroundImage = [UIImage nn_imageWithColor:bar.nn_backgroundColor];
+        UIColor *backgroundColor = [bar nn_backgroundColorForBarPosition:self.nn_barPosition barMetrics:self.nn_activeBarMetrics];
+        backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
+    }
+    
+    if (!backgroundImage) {
+        backgroundImage = [bar nn_backgroundImageForBarPosition:UIBarPositionAny barMetrics:self.nn_activeBarMetrics];
+    }
+    
+    if (!backgroundImage) {
+        UIColor *backgroundColor = [bar nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:self.nn_activeBarMetrics];
+        backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
+    }
+    
+    if (!backgroundImage) {
+        backgroundImage = [bar nn_backgroundImageForBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    }
+    
+    if (!backgroundImage) {
+        UIColor *backgroundColor = [bar nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+        backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
     }
     
     if (!backgroundImage) {

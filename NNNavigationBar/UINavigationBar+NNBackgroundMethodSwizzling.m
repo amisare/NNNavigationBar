@@ -1,6 +1,6 @@
 //
 //  UINavigationBar+NNBackgroundMethodSwizzling.m
-//  NNNavigationBarDemo
+//  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/4/17.
 //  Copyright © 2018年 GuHaijun. All rights reserved.
@@ -14,6 +14,7 @@
 #import "UINavigationBar+NNBackgroundDelegateImp.h"
 #import "UINavigationItem+NNBackgroundItem.h"
 #import "UINavigationItem+NNBackgroundItemDelegate.h"
+#import "UINavigationBar+NNBackgroundStyle.h"
 
 static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swizzledSelector) {
     Method originalMethod = class_getInstanceMethod(class, originalSelector);
@@ -33,6 +34,14 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
+    nn_swizzleSelector(self,
+                       @selector(_barPosition),
+                       @selector(_nn_barPosition)
+                       );
+    nn_swizzleSelector(self,
+                       @selector(_activeBarMetrics),
+                       @selector(_nn_activeBarMetrics)
+                       );
     nn_swizzleSelector(self,
                        @selector(_pushNavigationItem:transition:),
                        @selector(_nn_pushNavigationItem:transition:)
@@ -67,6 +76,38 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
                        );
 #pragma clang diagnostic pop
     
+}
+
+
+
+- (UIBarPosition)_nn_barPosition {
+    UIBarPosition position = [self _nn_barPosition];
+    
+    NSLog(@"%@ %s", [self class], __func__);
+    NSLog(@"%ld", position);
+    
+    if (position != self.nn_barPosition) {
+        self.nn_barPosition = position;
+        self.nn_backgroundImageView.image = [self nn_backgroundImageFromNavigationBar:self];
+        self.nn_backgroundDisplayImageView.image = [self nn_backgroundImageFromNavigationItem:self.topItem];
+    }
+    
+    return position;
+}
+
+- (UIBarMetrics)_nn_activeBarMetrics {
+    UIBarMetrics metrics = [self _nn_activeBarMetrics];
+    
+    NSLog(@"%@ %s", [self class], __func__);
+    NSLog(@"%ld", metrics);
+    
+    if (metrics != self.nn_activeBarMetrics) {
+        self.nn_activeBarMetrics = metrics;
+        self.nn_backgroundImageView.image = [self nn_backgroundImageFromNavigationBar:self];
+        self.nn_backgroundDisplayImageView.image = [self nn_backgroundImageFromNavigationItem:self.topItem];
+    }
+    
+    return metrics;
 }
 
 - (void)_nn_pushNavigationItem:(UINavigationItem *)item transition:(int)transition {

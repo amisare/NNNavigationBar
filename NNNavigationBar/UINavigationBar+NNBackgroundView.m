@@ -80,22 +80,12 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
     return nn_backgroundView;
 }
 
-
 - (UIColor *)nn_backgroundColor {
     return [self nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
 }
 
 - (void)setNn_backgroundColor:(UIColor *)nn_backgroundColor {
     [self setNn_backgroundColor:nn_backgroundColor forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-    if (self.nn_backgroundBarDelegate &&
-        [self.nn_backgroundBarDelegate respondsToSelector:@selector(nn_navigationBar:backgroundChangeForKey:)]) {
-        [self.nn_backgroundBarDelegate nn_navigationBar:self backgroundChangeForKey:@"nn_backgroundColor"];
-    }
-}
-
-- (void)setNn_backgroundColor:(UIColor *)backgroundColor forBarMetrics:(UIBarMetrics)barMetrics {
-    UIBarPosition barPosition = UIBarPositionAny;
-    [self setNn_backgroundColor:backgroundColor forBarPosition:barPosition barMetrics:barMetrics];
 }
 
 - (UIColor *)nn_backgroundColorForBarPosition:(UIBarMetrics)barMetrics {
@@ -103,17 +93,28 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
     return [self nn_backgroundColorForBarPosition:barPosition barMetrics:barMetrics];
 }
 
-- (void)setNn_backgroundColor:(UIColor *)backgroundColor forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
-    NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
-    if (backgroundColor == nil) {
-        return;
-    }
-    [[self nn_backgroundColors] setObject:backgroundColor forKey:key];
+- (void)setNn_backgroundColor:(UIColor *)backgroundColor forBarMetrics:(UIBarMetrics)barMetrics {
+    UIBarPosition barPosition = UIBarPositionAny;
+    [self setNn_backgroundColor:backgroundColor forBarPosition:barPosition barMetrics:barMetrics];
 }
 
 - (UIColor *)nn_backgroundColorForBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
     NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
     return [[self nn_backgroundColors] objectForKey:key];
+}
+
+- (void)setNn_backgroundColor:(UIColor *)backgroundColor forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
+    NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
+    if (backgroundColor == nil) {
+        [[self nn_backgroundColors] removeObjectForKey:key];
+    }
+    else {
+        [[self nn_backgroundColors] setObject:backgroundColor forKey:key];
+    }
+    if (self.nn_backgroundBarDelegate &&
+        [self.nn_backgroundBarDelegate respondsToSelector:@selector(nn_navigationBar:backgroundChangeForKey:)]) {
+        [self.nn_backgroundBarDelegate nn_navigationBar:self backgroundChangeForKey:@"nn_backgroundColor"];
+    }
 }
 
 - (NSMutableDictionary *)nn_backgroundColors {
@@ -131,15 +132,6 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
 
 - (void)setNn_backgroundImage:(UIImage *)nn_backgroundImage {
     [self setNn_backgroundImage:nn_backgroundImage forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-    if (self.nn_backgroundBarDelegate &&
-        [self.nn_backgroundBarDelegate respondsToSelector:@selector(nn_navigationBar:backgroundChangeForKey:)]) {
-        [self.nn_backgroundBarDelegate nn_navigationBar:self backgroundChangeForKey:@"nn_backgroundImage"];
-    }
-}
-
-- (void)setNn_backgroundImage:(UIImage *)backgroundImage forBarMetrics:(UIBarMetrics)barMetrics {
-    UIBarPosition barPosition = UIBarPositionAny;
-    [self setNn_backgroundImage:backgroundImage forBarPosition:barPosition barMetrics:barMetrics];
 }
 
 - (UIImage *)nn_backgroundImageForBarMetrics:(UIBarMetrics)barMetrics {
@@ -147,17 +139,28 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
     return [self nn_backgroundImageForBarPosition:barPosition barMetrics:barMetrics];
 }
 
-- (void)setNn_backgroundImage:(UIImage *)backgroundImage forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
-    NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
-    if (backgroundImage == nil) {
-        return;
-    }
-    [[self nn_backgroundImages] setObject:backgroundImage forKey:key];
+- (void)setNn_backgroundImage:(UIImage *)backgroundImage forBarMetrics:(UIBarMetrics)barMetrics {
+    UIBarPosition barPosition = UIBarPositionAny;
+    [self setNn_backgroundImage:backgroundImage forBarPosition:barPosition barMetrics:barMetrics];
 }
 
 - (UIImage *)nn_backgroundImageForBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
     NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
     return [[self nn_backgroundImages] objectForKey:key];
+}
+
+- (void)setNn_backgroundImage:(UIImage *)backgroundImage forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
+    NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
+    if (backgroundImage == nil) {
+        [[self nn_backgroundImages] removeObjectForKey:key];
+    }
+    else {
+        [[self nn_backgroundImages] setObject:backgroundImage forKey:key];
+    }
+    if (self.nn_backgroundBarDelegate &&
+        [self.nn_backgroundBarDelegate respondsToSelector:@selector(nn_navigationBar:backgroundChangeForKey:)]) {
+        [self.nn_backgroundBarDelegate nn_navigationBar:self backgroundChangeForKey:@"nn_backgroundImage"];
+    }
 }
 
 - (NSMutableDictionary *)nn_backgroundImages {
