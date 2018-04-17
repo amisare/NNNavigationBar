@@ -37,7 +37,7 @@
     
     switch (self.type) {
         case DemoTypeColorOnly:
-            self.colorSlider.value = self.navigationController.navigationBar.nn_backgroundView.backgroundColor.alpha;
+            self.colorSlider.value = self.navigationController.navigationBar.nn_backgroundColor.alpha;
             break;
         case DemoTypeColorTransition:
             self.colorSlider.value = self.navigationItem.nn_backgroundColor.alpha;
@@ -114,7 +114,7 @@
                                   updateAlpha:colorSlider.value];
         [self.navigationController.navigationBar setNn_backgroundColor:colorUpdate
                                                         forBarPosition:UIBarPositionAny
-                                                            barMetrics:UIBarMetricsCompact];
+                                                            barMetrics:UIBarMetricsDefault];
     }
     {
         UIColor *colorUpdate = [UIColor color:[self.navigationController.navigationBar nn_backgroundColorForBarPosition:UIBarPositionAny
@@ -130,7 +130,7 @@
                                   updateAlpha:colorSlider.value];
         [self.navigationController.navigationBar setNn_backgroundColor:colorUpdate
                                                         forBarPosition:UIBarPositionAny
-                                                            barMetrics:UIBarMetricsCompact];
+                                                            barMetrics:UIBarMetricsDefaultPrompt];
     }
     {
         UIColor *colorUpdate = [UIColor color:[self.navigationController.navigationBar nn_backgroundColorForBarPosition:UIBarPositionAny
@@ -138,7 +138,7 @@
                                   updateAlpha:colorSlider.value];
         [self.navigationController.navigationBar setNn_backgroundColor:colorUpdate
                                                         forBarPosition:UIBarPositionAny
-                                                            barMetrics:UIBarMetricsCompact];
+                                                            barMetrics:UIBarMetricsCompactPrompt];
     }
 }
 

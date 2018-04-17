@@ -32,13 +32,28 @@
     [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"tableView" : self.tableView})];
 }
 
-- (NSArray<NSString *> *)cellData {
+- (NSArray<NSDictionary *> *)cellData {
     return @[
-             @"color background only",
-             @"image background only",
-             @"color background with transition",
-             @"image background with transition",
+             @{@"title"     : @"Set the backgroundColor on NavigationBar",
+               @"subtitle"  : @"The background attribute is globally valid"
+               },
+             
+             @{@"title"     : @"Set the backgroundImage on NavigationBar",
+               @"subtitle"  : @"The background attribute is globally valid",
+               },
+             
+             @{@"title"     : @"Set the backgroundColor on NavigationItem",
+               @"subtitle"  : @"The background property is currently valid",
+               },
+             
+             @{@"title"     : @"Set the backgroundImage on NavigationItem",
+               @"subtitle"  : @"The background property is currently valid",
+               }
              ];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 66;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -50,8 +65,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@""];
-    cell.textLabel.text = self.cellData[indexPath.row];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@""];
+    cell.textLabel.text = [self.cellData[indexPath.row] objectForKey:@"title"];
+    cell.detailTextLabel.text = [self.cellData[indexPath.row] objectForKey:@"subtitle"];
     return cell;
 }
 
@@ -60,16 +76,16 @@
     cell.selected = false;
     
     DemoType type = DemoTypeColorOnly;
-    if ([cell.textLabel.text isEqualToString:@"color background only"]) {
+    if ([cell.textLabel.text isEqualToString:@"Set the backgroundColor on NavigationBar"]) {
         type = DemoTypeColorOnly;
     }
-    if ([cell.textLabel.text isEqualToString:@"image background only"]) {
+    if ([cell.textLabel.text isEqualToString:@"Set the backgroundImage on NavigationBar"]) {
         type = DemoTypeImageOnly;
     }
-    if ([cell.textLabel.text isEqualToString:@"color background with transition"]) {
+    if ([cell.textLabel.text isEqualToString:@"Set the backgroundColor on NavigationItem"]) {
         type = DemoTypeColorTransition;
     }
-    if ([cell.textLabel.text isEqualToString:@"image background with transition"]) {
+    if ([cell.textLabel.text isEqualToString:@"Set the backgroundImage on NavigationItem"]) {
         type = DemoTypeImageTransition;
     }
     

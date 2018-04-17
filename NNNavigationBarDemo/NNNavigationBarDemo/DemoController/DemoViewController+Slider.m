@@ -7,39 +7,38 @@
 //
 
 #import "DemoViewController+Slider.h"
+#import "NSLayoutConstraint+NNVisualFormat.h"
 
 @implementation DemoViewController (Slider)
 
 - (void)setupSlider {
-    UIView *colorSliderContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 66)];
+    UIView *colorSliderContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 66)];
+    self.tableView.tableFooterView = colorSliderContentView;
     
     [colorSliderContentView addSubview:self.colorAlphaCurrentLabel];
-    self.colorAlphaCurrentLabel.frame = CGRectMake(0,
-                                                   0,
-                                                   self.view.bounds.size.width,
-                                                   22);
     [colorSliderContentView addSubview:self.colorAlphaMixLabel];
-    self.colorAlphaMixLabel.frame = CGRectMake(0,
-                                               self.colorAlphaCurrentLabel.frame.origin.y +
-                                               self.colorAlphaCurrentLabel.frame.size.height,
-                                               44,
-                                               44);
     [colorSliderContentView addSubview:self.colorAlphaMaxLabel];
-    self.colorAlphaMaxLabel.frame = CGRectMake(self.colorAlphaCurrentLabel.frame.size.width - 44,
-                                               self.colorAlphaCurrentLabel.frame.origin.y +
-                                               self.colorAlphaCurrentLabel.frame.size.height,
-                                               44,
-                                               44);
     [colorSliderContentView addSubview:self.colorSlider];
-    self.colorSlider.frame = CGRectMake(self.colorAlphaMixLabel.frame.size.width,
-                                        self.colorAlphaCurrentLabel.frame.origin.y +
-                                        self.colorAlphaCurrentLabel.frame.size.height,
-                                        self.colorAlphaCurrentLabel.frame.size.width -
-                                        self.colorAlphaMixLabel.frame.size.width -
-                                        self.colorAlphaMaxLabel.frame.size.width,
-                                        44);
+    self.colorAlphaCurrentLabel.translatesAutoresizingMaskIntoConstraints = false;
+    self.colorAlphaMixLabel.translatesAutoresizingMaskIntoConstraints = false;
+    self.colorAlphaMaxLabel.translatesAutoresizingMaskIntoConstraints = false;
+    self.colorSlider.translatesAutoresizingMaskIntoConstraints = false;
     
-    self.tableView.tableFooterView = colorSliderContentView;
+    
+    [NSLayoutConstraint activateConstraints:[NSLayoutConstraint nn_constraintsWithVisualFormats:@[@"H:|-0-[colorAlphaCurrentLabel]-0-|",
+                                                                                                  @"V:|-6-[colorAlphaCurrentLabel(==22)]",
+                                                                                                  @"H:|-0-[colorAlphaMixLabel(==44)]",
+                                                                                                  @"H:[colorAlphaMaxLabel(==44)]-0-|",
+                                                                                                  @"V:[colorAlphaCurrentLabel]-0-[colorAlphaMixLabel]-0-|",
+                                                                                                  @"V:[colorAlphaCurrentLabel]-0-[colorAlphaMaxLabel]-0-|",
+                                                                                                  @"V:[colorAlphaCurrentLabel]-0-[colorSlider]-0-|",
+                                                                                                  @"H:[colorAlphaMixLabel]-0-[colorSlider]-0-[colorAlphaMaxLabel]",
+                                                                                                  ]
+                                                                                          views:@{@"colorAlphaCurrentLabel" : self.colorAlphaCurrentLabel,
+                                                                                                  @"colorAlphaMixLabel" : self.colorAlphaMixLabel,
+                                                                                                  @"colorAlphaMaxLabel" : self.colorAlphaMaxLabel,
+                                                                                                  @"colorSlider" : self.colorSlider,
+                                                                                                  }]];
     
     self.colorAlphaMixLabel.text = [NSString stringWithFormat:@"%0.1f", self.colorSlider.minimumValue];
     self.colorAlphaMaxLabel.text = [NSString stringWithFormat:@"%0.1f", self.colorSlider.maximumValue];

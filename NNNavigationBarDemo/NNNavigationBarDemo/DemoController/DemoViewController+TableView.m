@@ -27,10 +27,10 @@
     return @[
              @"push",
              @"pop",
-             @"popStep2",
-             @"popToRoot",
-             @"hideNav",
-             @"showNav",
+             @"popToViewController",
+             @"popToRootViewController",
+             @"hideNavigationBar",
+             @"showNavigationBar",
              @"hidePrompt",
              @"showPrompt",
              @"dismiss"
@@ -46,10 +46,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@""];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@""];
     cell.textLabel.text = self.cellData[indexPath.row];
-    if ([cell.textLabel.text isEqualToString:@"popStep2"]) {
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"Controllers count must >= 3"];
+    if ([cell.textLabel.text isEqualToString:@"popToViewController"]) {
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Jump one at pop，The controller stack count must >= 3"];
     }
     else {
         cell.detailTextLabel.text = @"";
@@ -71,22 +71,33 @@
         [self.navigationController popViewControllerAnimated:true];
         return;
     }
-    if ([cell.textLabel.text isEqualToString:@"popStep2"]) {
+    if ([cell.textLabel.text isEqualToString:@"popToViewController"]) {
         if (self.navigationController.viewControllers.count >= 3) {
             UIViewController *toViewController = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count - 3];
             [self.navigationController popToViewController:toViewController animated:true];
         }
+        else {
+            NSString *message = [NSString stringWithFormat:@"Now the controller stack count = %ld", self.navigationController.viewControllers.count];
+            message = [message stringByAppendingString:@"\n"];
+            message = [message stringByAppendingString:@"The controller stack count must >= 3"];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"😂" message:message preferredStyle:UIAlertControllerStyleAlert];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [alert dismissViewControllerAnimated:true completion:nil];
+            });
+
+            [self.navigationController presentViewController:alert animated:true completion:nil];
+        }
         return;
     }
-    if ([cell.textLabel.text isEqualToString:@"popToRoot"]) {
+    if ([cell.textLabel.text isEqualToString:@"popToRootViewController"]) {
         [self.navigationController popToRootViewControllerAnimated:true];
         return;
     }
-    if ([cell.textLabel.text isEqualToString:@"showNav"]) {
+    if ([cell.textLabel.text isEqualToString:@"showNavigationBar"]) {
         [self.navigationController setNavigationBarHidden:false animated:true];
         return;
     }
-    if ([cell.textLabel.text isEqualToString:@"hideNav"]) {
+    if ([cell.textLabel.text isEqualToString:@"hideNavigationBar"]) {
         [self.navigationController setNavigationBarHidden:true animated:true];
         return;
     }
