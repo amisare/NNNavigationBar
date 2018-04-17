@@ -53,26 +53,26 @@ NNNavigationBar是实现导航条背景过度动画的轻量级代码库。
            |                         UINavigationBar.Items                          |
            |                               item stack                               V
            |<----- update Bar ------ | vcn.navigationItem | <------ navigationBar push/pop vcn.navigationItem
-           |            ⑤           |        ...         |                         ④
+           |          ④-②           |        ...         |                       ④-①
            |            |            | vc2.navigationItem |                         |
            |            |            | vc1.navigationItem |                         |
            |            |            | vc0.navigationItem |                         |
            |            |                                                           |
-           |            |                            ⑥                             |
-           |            |------------------------>  hook  <--------------------------|
+           |            |                           ④-③                            |
+           |            |------------------------>  hook  <-------------------------|
            |                                          |
            |                                          |
            |                                          |
-           |             ⑦                           |
+           |             ⑤                           |
            |<------ update Bar [.nn_xx] --------------|
                                                       
 ```
 
-
-1. 在UINavigationController进行push/pop操作时会把UIViewController的UINavigationItem属性'vc.navigationItem'传递给UINavigationBar，为UINavigationBar提供UIViewController的相关数据，如UINavigationBar的title值。
-2. 在UINavigationItem中添加当前UINavigationBar背景属性，在执行push操作时通过UINavigationItem将背景属性传递到UINavigationBar修改背景，实现不同背景的切换。
-3. 通过Method Swizzling方式hook UINavigationBar方法调用实现背景过度。
-
+1.使用runtime在UINavigationItem的Category中添加属性[.nn_xx]。
+2.每个UIViewController中都拥有一个UINavigationItem属性navigationItem，在UIViewController中修改navigationItem对象的属性[.nn_xx]。
+3.在UINavigationController push/pop UIViewController时，会将UIViewController的navigationItem对象 push/pop 给UINavigationBar。
+4.通过Method Swizzling方式hook UINavigationBar方法调用，获得对应方法的调用时机。
+5.在合适的时刻，UINavigationBar取得navigationItem对象中的属性[.nn_xx]，更新UINavigationBar状态（本代码库实现了背景的平滑过度）。
 
 ## 使用
 
