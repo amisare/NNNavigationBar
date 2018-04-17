@@ -100,7 +100,8 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
 
 - (UIColor *)nn_backgroundColorForBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
     NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
-    return [[self nn_backgroundColors] objectForKey:key];
+    NSDictionary *backgroundColors = [self nn_backgroundColors];
+    return [backgroundColors objectForKey:key];
 }
 
 - (void)setNn_backgroundColor:(UIColor *)backgroundColor forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
@@ -146,7 +147,8 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
 
 - (UIImage *)nn_backgroundImageForBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
     NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
-    return [[self nn_backgroundImages] objectForKey:key];
+    NSDictionary *backgroundImages = [self nn_backgroundImages];
+    return [backgroundImages objectForKey:key];
 }
 
 - (void)setNn_backgroundImage:(UIImage *)backgroundImage forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {

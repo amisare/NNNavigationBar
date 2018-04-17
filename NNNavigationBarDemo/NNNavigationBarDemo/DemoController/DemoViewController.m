@@ -67,6 +67,8 @@
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blueColor]}];
     
+    self.navigationItem.prompt = nil;
+    
     [self setupTableView];
     [self setupSlider];
     
@@ -226,11 +228,13 @@
 
 #pragma mark - lazy load
 
-- (UISlider *)colorSlider {
-    if (!_colorSlider) {
-        _colorSlider = [UISlider new];
+- (UILabel *)colorAlphaCurrentLabel {
+    if (!_colorAlphaCurrentLabel) {
+        _colorAlphaCurrentLabel = [UILabel new];
+        _colorAlphaCurrentLabel.textColor = [UIColor blackColor];
+        _colorAlphaCurrentLabel.textAlignment = NSTextAlignmentCenter;
     }
-    return _colorSlider;
+    return _colorAlphaCurrentLabel;
 }
 
 - (UILabel *)colorAlphaMixLabel {
@@ -251,13 +255,11 @@
     return _colorAlphaMaxLabel;
 }
 
-- (UILabel *)colorAlphaCurrentLabel {
-    if (!_colorAlphaCurrentLabel) {
-        _colorAlphaCurrentLabel = [UILabel new];
-        _colorAlphaCurrentLabel.textColor = [UIColor blackColor];
-        _colorAlphaCurrentLabel.textAlignment = NSTextAlignmentCenter;
+- (UISlider *)colorSlider {
+    if (!_colorSlider) {
+        _colorSlider = [UISlider new];
     }
-    return _colorAlphaCurrentLabel;
+    return _colorSlider;
 }
 
 - (UITableView *)tableView {

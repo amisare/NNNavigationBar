@@ -39,7 +39,8 @@ static const void *kUINavigationItem_NNBackgroundImages = &kUINavigationItem_NNB
 
 - (UIColor *)nn_backgroundColorForBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {
     NSString *key = UINavigationItem_NNBackgroundKey(barPosition, barMetrics);
-    return [[self nn_backgroundColors] objectForKey:key];
+    NSDictionary *backgroundColors = [self nn_backgroundColors];
+    return [backgroundColors objectForKey:key];
 }
 
 - (void)setNn_backgroundColor:(UIColor *)backgroundColor forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics {

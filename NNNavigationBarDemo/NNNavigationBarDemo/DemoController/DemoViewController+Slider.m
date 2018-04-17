@@ -24,14 +24,13 @@
     self.colorAlphaMaxLabel.translatesAutoresizingMaskIntoConstraints = false;
     self.colorSlider.translatesAutoresizingMaskIntoConstraints = false;
     
-    
     [NSLayoutConstraint activateConstraints:[NSLayoutConstraint nn_constraintsWithVisualFormats:@[@"H:|-0-[colorAlphaCurrentLabel]-0-|",
                                                                                                   @"V:|-6-[colorAlphaCurrentLabel(==22)]",
-                                                                                                  @"H:|-0-[colorAlphaMixLabel(==44)]",
-                                                                                                  @"H:[colorAlphaMaxLabel(==44)]-0-|",
                                                                                                   @"V:[colorAlphaCurrentLabel]-0-[colorAlphaMixLabel]-0-|",
                                                                                                   @"V:[colorAlphaCurrentLabel]-0-[colorAlphaMaxLabel]-0-|",
                                                                                                   @"V:[colorAlphaCurrentLabel]-0-[colorSlider]-0-|",
+                                                                                                  @"H:|-0-[colorAlphaMixLabel(==44)]",
+                                                                                                  @"H:[colorAlphaMaxLabel(==44)]-0-|",
                                                                                                   @"H:[colorAlphaMixLabel]-0-[colorSlider]-0-[colorAlphaMaxLabel]",
                                                                                                   ]
                                                                                           views:@{@"colorAlphaCurrentLabel" : self.colorAlphaCurrentLabel,
