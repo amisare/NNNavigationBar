@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol UINavigationItem_NNBackgroundItemDelegate <NSObject>
+@protocol NNBackgroundItemDelegate <NSObject>
 
 /**
  背景色/数据更新代理
@@ -22,6 +22,6 @@
 
 @interface UINavigationItem (NNBackgroundItemDelegate)
 
-@property (nonatomic, strong) id<UINavigationItem_NNBackgroundItemDelegate> nn_backgroundItemDelegate;
+@property (nonatomic, strong) id<NNBackgroundItemDelegate> nn_backgroundItemDelegate;
 
 @end

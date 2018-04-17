@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol UINavigationBar_NNBackgroundBarDelegate <NSObject>
+@protocol NNBackgroundBarDelegate <NSObject>
 
 /**
  背景色/数据更新代理
@@ -22,6 +22,6 @@
 
 @interface UINavigationBar (NNBackgroundBarDelegate)
 
-@property (nonatomic, strong) id<UINavigationBar_NNBackgroundBarDelegate> nn_backgroundBarDelegate;
+@property (nonatomic, strong) id<NNBackgroundBarDelegate> nn_backgroundBarDelegate;
 
 @end

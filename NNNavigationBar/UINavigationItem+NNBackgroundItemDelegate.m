@@ -9,16 +9,16 @@
 #import "UINavigationItem+NNBackgroundItemDelegate.h"
 #import <objc/runtime.h>
 
-static const void *kUINavigationItem_NNBackgroundItemDelegate = &kUINavigationItem_NNBackgroundItemDelegate;
+static const void *kNNBackgroundItemDelegate = &kNNBackgroundItemDelegate;
 
 @implementation UINavigationItem (NNBackgroundItemDelegate)
 
-- (id<UINavigationItem_NNBackgroundItemDelegate>)nn_backgroundItemDelegate {
-    return objc_getAssociatedObject(self, kUINavigationItem_NNBackgroundItemDelegate);
+- (id<NNBackgroundItemDelegate>)nn_backgroundItemDelegate {
+    return objc_getAssociatedObject(self, kNNBackgroundItemDelegate);
 }
 
-- (void)setNn_backgroundItemDelegate:(id<UINavigationItem_NNBackgroundItemDelegate>)nn_backgroundItemDelegate {
-    objc_setAssociatedObject(self, kUINavigationItem_NNBackgroundItemDelegate, nn_backgroundItemDelegate, OBJC_ASSOCIATION_RETAIN);
+- (void)setNn_backgroundItemDelegate:(id<NNBackgroundItemDelegate>)nn_backgroundItemDelegate {
+    objc_setAssociatedObject(self, kNNBackgroundItemDelegate, nn_backgroundItemDelegate, OBJC_ASSOCIATION_RETAIN);
 }
 
 @end
