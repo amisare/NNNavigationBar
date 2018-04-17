@@ -113,22 +113,34 @@ NNNavigationBar是实现导航条背景过度动画的轻量级代码库。
 
 ### CocoaPods
 
-你可以用以下命令来安装最新版的 CocoaPods：
+安装最新版的 CocoaPods：
 
 ```bash
 $ gem install cocoapods
 ```
 
-在 `podfile` 中添加以下代码：
+在 `podfile` 中添加：
 
 ```ruby
 pod 'NNNavigationBar'
 ```
 
-然后在终端运行以下命令：
+然后在终端执行：
 
 ```bash
 $ pod install
+```
+
+如安装失败，提示：
+
+```bash
+[!] Unable to find a specification for `NNNavigationBar`
+```
+
+尝试使用命令：
+
+```bash
+pod install --repo-update
 ```
 
 ## 系统要求
