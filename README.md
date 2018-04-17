@@ -1,6 +1,6 @@
 # NNNavigationBar
 
-本库用于实现UINavigationBar背景过度动画。
+本库用于实现UINavigationBar背景渐变过渡动画。
 
 ## 效果
 
@@ -9,11 +9,11 @@
 
 ## 介绍
 
-NNNavigationBar是实现导航条背景过度动画的轻量级代码库。
+NNNavigationBar是实现导航条背景渐变过渡动画的轻量级代码库。
 
 #### 实现
 
-- 代码库通过Category/Method Swizzling方式hook UINavigationBar的方法调用，实现导航条背景过度动画。
+- 代码库通过Category/Method Swizzling方式hook UINavigationBar的方法调用，实现导航条背景渐变过渡动画。
 
 #### 轻量
 
@@ -72,7 +72,7 @@ NNNavigationBar是实现导航条背景过度动画的轻量级代码库。
 2. 每个UIViewController中都拥有一个UINavigationItem属性navigationItem，在UIViewController中修改navigationItem对象的属性[.nn_xx]。
 3. 在UINavigationController push/pop UIViewController时，会将UIViewController的navigationItem对象 push/pop 给UINavigationBar。
 4. 通过Method Swizzling方式hook UINavigationBar方法调用，获得对应方法的调用时机。
-5. 在合适的时刻，UINavigationBar取得navigationItem对象中的属性[.nn_xx]，更新UINavigationBar状态（本代码库实现了背景的平滑过度）。
+5. 在合适的时刻，UINavigationBar取得navigationItem对象中的属性[.nn_xx]，更新UINavigationBar状态（本代码库实现了背景的平滑渐变过渡）。
 
 ## 使用
 
@@ -82,7 +82,7 @@ NNNavigationBar是实现导航条背景过度动画的轻量级代码库。
 #import "NNNavigationBar.h"
 ```
 
-2. 颜色过度
+2. 颜色渐变过渡
 
 ```
 - (void)viewDidLoad {
@@ -94,7 +94,7 @@ NNNavigationBar是实现导航条背景过度动画的轻量级代码库。
 }
 ```
 
-3. 图片过度
+3. 图片渐变过渡
 
 ```
 - (void)viewDidLoad {
