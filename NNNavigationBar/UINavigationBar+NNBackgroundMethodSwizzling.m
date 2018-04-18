@@ -38,49 +38,54 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [super load];
     
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-    nn_swizzleSelector(self,
-                       @selector(_barPosition),
-                       @selector(_nn_barPosition)
-                       );
-    nn_swizzleSelector(self,
-                       @selector(_activeBarMetrics),
-                       @selector(_nn_activeBarMetrics)
-                       );
-    nn_swizzleSelector(self,
-                       @selector(_pushNavigationItem:transition:),
-                       @selector(_nn_pushNavigationItem:transition:)
-                       );
-    nn_swizzleSelector(self,
-                       @selector(_completePushOperationAnimated:transitionAssistant:),
-                       @selector(_nn_completePushOperationAnimated:transitionAssistant:)
-                       );
-    nn_swizzleSelector(self,
-                       @selector(_popNavigationItemWithTransition:),
-                       @selector(_nn_popNavigationItemWithTransition:)
-                       );
-    nn_swizzleSelector(self,
-                       @selector(_completePopOperationAnimated:transitionAssistant:),
-                       @selector(_nn_completePopOperationAnimated:transitionAssistant:)
-                       );
-    nn_swizzleSelector(self,
-                       @selector(_updateInteractiveTransition:),
-                       @selector(_nn_updateInteractiveTransition:)
-                       );
-    nn_swizzleSelector(self,
-                       @selector(_cancelInteractiveTransition:completionSpeed:completionCurve:),
-                       @selector(_nn_cancelInteractiveTransition:completionSpeed:completionCurve:)
-                       );
-    nn_swizzleSelector(self,
-                       @selector(_finishInteractiveTransition:completionSpeed:completionCurve:),
-                       @selector(_nn_finishInteractiveTransition:completionSpeed:completionCurve:)
-                       );
-    nn_swizzleSelector(self,
-                       @selector(_didVisibleItemsChangeWithNewItems:oldItems:),
-                       @selector(_nn_didVisibleItemsChangeWithNewItems:oldItems:)
-                       );
+        nn_swizzleSelector(self,
+                           @selector(_barPosition),
+                           @selector(_nn_barPosition)
+                           );
+        nn_swizzleSelector(self,
+                           @selector(_activeBarMetrics),
+                           @selector(_nn_activeBarMetrics)
+                           );
+        nn_swizzleSelector(self,
+                           @selector(_pushNavigationItem:transition:),
+                           @selector(_nn_pushNavigationItem:transition:)
+                           );
+        nn_swizzleSelector(self,
+                           @selector(_completePushOperationAnimated:transitionAssistant:),
+                           @selector(_nn_completePushOperationAnimated:transitionAssistant:)
+                           );
+        nn_swizzleSelector(self,
+                           @selector(_popNavigationItemWithTransition:),
+                           @selector(_nn_popNavigationItemWithTransition:)
+                           );
+        nn_swizzleSelector(self,
+                           @selector(_completePopOperationAnimated:transitionAssistant:),
+                           @selector(_nn_completePopOperationAnimated:transitionAssistant:)
+                           );
+        nn_swizzleSelector(self,
+                           @selector(_updateInteractiveTransition:),
+                           @selector(_nn_updateInteractiveTransition:)
+                           );
+        nn_swizzleSelector(self,
+                           @selector(_cancelInteractiveTransition:completionSpeed:completionCurve:),
+                           @selector(_nn_cancelInteractiveTransition:completionSpeed:completionCurve:)
+                           );
+        nn_swizzleSelector(self,
+                           @selector(_finishInteractiveTransition:completionSpeed:completionCurve:),
+                           @selector(_nn_finishInteractiveTransition:completionSpeed:completionCurve:)
+                           );
+        nn_swizzleSelector(self,
+                           @selector(_didVisibleItemsChangeWithNewItems:oldItems:),
+                           @selector(_nn_didVisibleItemsChangeWithNewItems:oldItems:)
+                           );
 #pragma clang diagnostic pop
+        
+    });
     
 }
 
