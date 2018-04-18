@@ -11,24 +11,25 @@
 @implementation NSLayoutConstraint (NNVisualFormat)
 
 + (NSArray<__kindof NSLayoutConstraint *> *)nn_constraintsWithVisualFormats:(NSArray *)formats views:(NSDictionary<NSString *, id> *)views {
+    
     NSMutableArray *constraints = [NSMutableArray new];
     
-    for (id _formate in formats) {
-        NSString *formate = @"";
-        NSLayoutFormatOptions opts = 0;
+    for (id _format in formats) {
+        NSString *format = @"";
+        NSLayoutFormatOptions options = 0;
         NSDictionary<NSString *,id> * metrics = nil;
         
-        if ([_formate isKindOfClass:[NSString class]]) {
-            formate = _formate;
+        if ([_format isKindOfClass:[NSString class]]) {
+            format = _format;
         }
         
-        if ([_formate isKindOfClass:[NSDictionary class]]) {
-            formate = [[_formate objectForKey:@"formate"] length] ? [_formate objectForKey:@"formate"] : @"";
-            opts = [[_formate objectForKey:@"options"] unsignedIntegerValue];
-            metrics = [_formate objectForKey:@"metrics"];
+        if ([_format isKindOfClass:[NSDictionary class]]) {
+            format = [[_format objectForKey:@"format"] length] ? [_format objectForKey:@"format"] : @"";
+            options = [[_format objectForKey:@"options"] unsignedIntegerValue];
+            metrics = [_format objectForKey:@"metrics"];
         }
         
-        [constraints addObjectsFromArray:[self constraintsWithVisualFormat:formate options:opts metrics:metrics views:views]];
+        [constraints addObjectsFromArray:[self constraintsWithVisualFormat:format options:options metrics:metrics views:views]];
     }
     
     return constraints;
