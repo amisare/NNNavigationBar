@@ -87,7 +87,10 @@ NNNavigationBar是实现导航条背景渐变过渡动画的轻量级代码库�
 ```
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // 背景显示
+    // 去除系统背景
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    // 显示自定义背景
     self.navigationController.navigationBar.nn_backgroundViewHidden = false;
     // 设置背景颜色
     self.navigationItem.nn_backgroundColor = [UIColor orangeColor];
@@ -99,7 +102,10 @@ NNNavigationBar是实现导航条背景渐变过渡动画的轻量级代码库�
 ```
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // 背景显示
+    // 去除系统背景
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    // 显示自定义背景
     self.navigationController.navigationBar.nn_backgroundViewHidden = false;
     // 设置背景图片
     self.navigationItem.nn_backgroundImage = [UIImage imageNamed:xx_image];
