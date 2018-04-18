@@ -145,12 +145,9 @@
 			isa = PBXGroup;
 			children = (
 				67A6F46E207EFD430082A845 /* NNNavigationBar */,
+				67BEE0F4208703AF004765D1 /* Source */,
 				67A6F43C207EFD1B0082A845 /* AppDelegate.h */,
 				67A6F43D207EFD1B0082A845 /* AppDelegate.m */,
-				67A6F47F207F1AD00082A845 /* MainViewController.h */,
-				67A6F480207F1AD00082A845 /* MainViewController.m */,
-				67A6F491207F36250082A845 /* DemoController */,
-				67F80EC12080BA460098B825 /* DemoUtils */,
 				67A6F442207EFD1B0082A845 /* Main.storyboard */,
 				67A6F445207EFD1B0082A845 /* Assets.xcassets */,
 				67A6F447207EFD1B0082A845 /* LaunchScreen.storyboard */,
@@ -215,6 +212,17 @@
 				67A6F47D207F0FE00082A845 /* DemoViewController+TableView.m */,
 			);
 			path = DemoController;
+			sourceTree = "<group>";
+		};
+		67BEE0F4208703AF004765D1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				67A6F47F207F1AD00082A845 /* MainViewController.h */,
+				67A6F480207F1AD00082A845 /* MainViewController.m */,
+				67A6F491207F36250082A845 /* DemoController */,
+				67F80EC12080BA460098B825 /* DemoUtils */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		67F80EB920809A720098B825 /* Utils */ = {

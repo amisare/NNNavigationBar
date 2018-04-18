@@ -106,6 +106,23 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 - (UIBarMetrics)_nn_activeBarMetrics {
     UIBarMetrics metrics = [self _nn_activeBarMetrics];
     
+    //fix: metrics value not change on prompt mode in iOS 11
+    /*
+     * But there may be a bug here, in the case of a screen rotation.
+     * The last [self.topItem] witch UINavigatinBar got during the rotation is the topViewController's navigationItem,
+     * not the current viewController's navigationItem.
+     */
+    if (@available(iOS 11, *)) {
+        if (self.topItem.prompt != nil) {
+            if (metrics == UIBarMetricsDefault) {
+                metrics = UIBarMetricsDefaultPrompt;
+            }
+            if (metrics == UIBarMetricsCompact) {
+                metrics = UIBarMetricsCompactPrompt;
+            }
+        }
+    }
+    
     NN_NSLog(@"metrics:%ld", metrics);
     
     if (metrics != self.nn_activeBarMetrics) {
@@ -214,6 +231,21 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     self.nn_backgroundAssistantImageView.alpha = 0.0;
     
     return ret;
+}
+
+- (UIBarMetrics)_nn_recalculateBarMetrics:(UIBarMetrics)metrics prompt:(NSString *)prompt {
+    
+    if (prompt != nil) {
+        
+        if (metrics == UIBarMetricsDefault) {
+            return UIBarMetricsDefaultPrompt;
+        }
+        
+        if (metrics == UIBarMetricsCompact) {
+            return UIBarMetricsCompactPrompt;
+        }
+    }
+    return metrics;
 }
 
 - (void)_nn_animateBackgroundWithImage:(UIImage *)image transition:(int)transition {
