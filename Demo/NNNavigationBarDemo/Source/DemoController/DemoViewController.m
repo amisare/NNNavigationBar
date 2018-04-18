@@ -34,6 +34,8 @@
     NSLog(@"page:%@, %s", @(self.page).stringValue, __FUNCTION__);
     
     [self.navigationController setNavigationBarHidden:false animated:true];
+    //set prompt (show if self.prompt is not null)
+    self.navigationItem.prompt = self.prompt;
     
     switch (self.type) {
         case DemoTypeColorOnly:
@@ -52,6 +54,8 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     NSLog(@"page:%@, %s", @(self.page).stringValue, __FUNCTION__);
+    //hide prompt
+    self.navigationItem.prompt = nil;
 }
 
 - (void)viewDidLoad {
@@ -66,8 +70,6 @@
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blueColor]}];
-    
-    self.navigationItem.prompt = nil;
     
     [self setupTableView];
     [self setupSlider];
@@ -225,6 +227,10 @@
     self.tableView.tableFooterView = [UIView new];
 }
 
+- (void)setPrompt:(NSString *)prompt {
+    _prompt = prompt;
+    self.navigationItem.prompt = _prompt;
+}
 
 #pragma mark - lazy load
 

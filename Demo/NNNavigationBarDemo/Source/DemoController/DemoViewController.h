@@ -23,6 +23,7 @@ typedef NS_ENUM(NSUInteger, DemoType) {
 
 @property (nonatomic, assign) DemoType type;
 @property (nonatomic, assign) NSInteger page;
+@property (nonatomic, strong) NSString *prompt;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UISlider *colorSlider;
 @property (nonatomic, strong) UILabel *colorAlphaMixLabel;

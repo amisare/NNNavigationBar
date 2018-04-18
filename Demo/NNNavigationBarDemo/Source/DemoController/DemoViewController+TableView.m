@@ -103,11 +103,11 @@
         return;
     }
     if ([cell.textLabel.text isEqualToString:@"showPrompt"]) {
-        self.navigationItem.prompt = @"Navigation Bar Prompt";
+        self.prompt = @"Navigation Bar Prompt";
         return;
     }
     if ([cell.textLabel.text isEqualToString:@"hidePrompt"]) {
-        self.navigationItem.prompt = nil;
+        self.prompt = nil;
         return;
     }
     if ([cell.textLabel.text isEqualToString:@"dismiss"]) {
