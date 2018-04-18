@@ -18,7 +18,7 @@ static const void *kNNBackgroundItemDelegate = &kNNBackgroundItemDelegate;
 }
 
 - (void)setNn_backgroundItemDelegate:(id<NNBackgroundItemDelegate>)nn_backgroundItemDelegate {
-    objc_setAssociatedObject(self, kNNBackgroundItemDelegate, nn_backgroundItemDelegate, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, kNNBackgroundItemDelegate, nn_backgroundItemDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

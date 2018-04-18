@@ -15,19 +15,21 @@ static const void *kUINavigationBar_NNBackgroundStyleMetrics = &kUINavigationBar
 @implementation UINavigationBar (NNBackgroundStyle)
 
 - (UIBarPosition)nn_barPosition {
-    return [objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundStylePosition) integerValue];
+    UIBarPosition barPosition = [objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundStylePosition) integerValue];
+    return barPosition;
 }
 
 - (void)setNn_barPosition:(UIBarPosition)nn_barPosition {
-    objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundStylePosition, @(nn_barPosition), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundStylePosition, @(nn_barPosition), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (UIBarMetrics)nn_activeBarMetrics {
-    return [objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundStyleMetrics) integerValue];
+    UIBarMetrics metrics = [objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundStyleMetrics) integerValue];
+    return metrics;
 }
 
 - (void)setNn_activeBarMetrics:(UIBarMetrics)nn_activeBarMetrics {
-    objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundStyleMetrics, @(nn_activeBarMetrics), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundStyleMetrics, @(nn_activeBarMetrics), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

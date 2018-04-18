@@ -34,7 +34,7 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
 
 - (void)setNn_backgroundViewHidden:(BOOL)nn_backgroundViewHidden {
     
-    objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundViewHidden, @(nn_backgroundViewHidden), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundViewHidden, @(nn_backgroundViewHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (!nn_backgroundViewHidden) {
         UIView *backgroundView = [self valueForKey:@"_backgroundView"];
         if (backgroundView && ![backgroundView.subviews containsObject:self.nn_backgroundView]) {
@@ -73,7 +73,7 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
         [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"nn_backgroundAssistantImageView" : self.nn_backgroundAssistantImageView})];
         [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"nn_backgroundDisplayImageView" : self.nn_backgroundDisplayImageView})];
         
-        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundView, nn_backgroundView, OBJC_ASSOCIATION_RETAIN);
+        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundView, nn_backgroundView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         
         self.nn_backgroundBarDelegate = self;
     }
@@ -122,7 +122,7 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
     NSMutableDictionary *nn_backgroundColors = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundColors);
     if (!nn_backgroundColors) {
         nn_backgroundColors = [NSMutableDictionary new];
-        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundColors, nn_backgroundColors, OBJC_ASSOCIATION_RETAIN);
+        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundColors, nn_backgroundColors, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return nn_backgroundColors;
 }
@@ -169,7 +169,7 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
     NSMutableDictionary *nn_backgroundImages = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundImages);
     if (!nn_backgroundImages) {
         nn_backgroundImages = [NSMutableDictionary new];
-        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundImages, nn_backgroundImages, OBJC_ASSOCIATION_RETAIN);
+        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundImages, nn_backgroundImages, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return nn_backgroundImages;
 }

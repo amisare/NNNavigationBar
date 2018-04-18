@@ -108,9 +108,9 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     //fix: metrics value not change on prompt mode in iOS 11
     /*
-     * But there may be a bug here, in the case of a screen rotation.
-     * The last [self.topItem] witch UINavigatinBar got during the rotation is the topViewController's navigationItem,
-     * not the current viewController's navigationItem.
+     * The log here may be confusing to you, in the case of a screen rotation.
+     * The last [self.topItem] witch UINavigatinBar got during the rotation not the current viewController's navigationItem.
+     * It is a new object that helps to complete the animation. You do not need to pay attention to it and ignore the log output at this time.
      */
     if (@available(iOS 11, *)) {
         if (self.topItem.prompt != nil) {

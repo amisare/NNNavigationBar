@@ -112,7 +112,7 @@ static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigat
         nn_backgroundImageView.translatesAutoresizingMaskIntoConstraints = false;
         [nn_backgroundImageView setContentMode:UIViewContentModeScaleToFill];
         nn_backgroundImageView.image = [UIImage nn_imageWithColor:[UIColor clearColor]];
-        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundImageView, nn_backgroundImageView, OBJC_ASSOCIATION_RETAIN);
+        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundImageView, nn_backgroundImageView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return nn_backgroundImageView;
 }
@@ -124,7 +124,7 @@ static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigat
         nn_backgroundDisplayImageView.translatesAutoresizingMaskIntoConstraints = false;
         [nn_backgroundDisplayImageView setContentMode:UIViewContentModeScaleToFill];
         nn_backgroundDisplayImageView.image = [UIImage nn_imageWithColor:[UIColor clearColor]];
-        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundDisplayImageView, nn_backgroundDisplayImageView, OBJC_ASSOCIATION_RETAIN);
+        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundDisplayImageView, nn_backgroundDisplayImageView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return nn_backgroundDisplayImageView;
 }
@@ -136,7 +136,7 @@ static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigat
         nn_backgroundAssistantImageView.translatesAutoresizingMaskIntoConstraints = false;
         [nn_backgroundAssistantImageView setContentMode:UIViewContentModeScaleToFill];
         nn_backgroundAssistantImageView.image = [UIImage nn_imageWithColor:[UIColor clearColor]];
-        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundAssistantImageView, nn_backgroundAssistantImageView, OBJC_ASSOCIATION_RETAIN);
+        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundAssistantImageView, nn_backgroundAssistantImageView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return nn_backgroundAssistantImageView;
 }

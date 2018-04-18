@@ -61,7 +61,7 @@ static const void *kUINavigationItem_NNBackgroundImages = &kUINavigationItem_NNB
     NSMutableDictionary *nn_backgroundColors = objc_getAssociatedObject(self, kUINavigationItem_NNBackgroundColors);
     if (!nn_backgroundColors) {
         nn_backgroundColors = [NSMutableDictionary new];
-        objc_setAssociatedObject(self, kUINavigationItem_NNBackgroundColors, nn_backgroundColors, OBJC_ASSOCIATION_RETAIN);
+        objc_setAssociatedObject(self, kUINavigationItem_NNBackgroundColors, nn_backgroundColors, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return nn_backgroundColors;
 }
@@ -108,7 +108,7 @@ static const void *kUINavigationItem_NNBackgroundImages = &kUINavigationItem_NNB
     NSMutableDictionary *nn_backgroundImages = objc_getAssociatedObject(self, kUINavigationItem_NNBackgroundImages);
     if (!nn_backgroundImages) {
         nn_backgroundImages = [NSMutableDictionary new];
-        objc_setAssociatedObject(self, kUINavigationItem_NNBackgroundImages, nn_backgroundImages, OBJC_ASSOCIATION_RETAIN);
+        objc_setAssociatedObject(self, kUINavigationItem_NNBackgroundImages, nn_backgroundImages, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return nn_backgroundImages;
 }
