@@ -43,7 +43,7 @@ NNNavigationBar是实现导航条背景渐变过渡动画的轻量级代码库�
                                                                              |
                                  UINavigationController                      V
                                        vc stack                              ③            
-                                 |        vcn        | <------ navigationController push/pop vcn
+                                 |        vcn        | <----- navigationController push/pop vcn
                                  |        ...        |                       |
                                  |        vc1        |                       |
                                  |        vc0        |                       |          
