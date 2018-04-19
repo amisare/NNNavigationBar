@@ -16,10 +16,10 @@
 #import "UINavigationItem+NNBackgroundItemDelegate.h"
 #import "UINavigationBar+NNBackgroundStyle.h"
 
-#if DEBUG
-#define NN_NSLog(format, ...)      {NSLog((@"[Line %04d] %s " format), __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__);}
+#ifdef NNNavigationBarLoggingEnable
+#define NNLogInfo(format, ...)      {NSLog((@"[Line %04d] %s " format), __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__);}
 #else
-#define NN_NSLog(format, ...)
+#define NNLogInfo(format, ...)
 #endif
 
 static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swizzledSelector) {
@@ -92,7 +92,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 - (UIBarPosition)_nn_barPosition {
     UIBarPosition position = [self _nn_barPosition];
     
-    NN_NSLog(@"position:%ld", position);
+    NNLogInfo(@"position:%ld", (long)position);
     
     if (position != self.nn_barPosition) {
         self.nn_barPosition = position;
@@ -123,7 +123,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
         }
     }
     
-    NN_NSLog(@"metrics:%ld", metrics);
+    NNLogInfo(@"metrics:%ld", (long)metrics);
     
     if (metrics != self.nn_activeBarMetrics) {
         self.nn_activeBarMetrics = metrics;
@@ -138,7 +138,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_pushNavigationItem:item transition:transition];
     
-    NN_NSLog(@"item:%@ transition:%d",item, transition);
+    NNLogInfo(@"item:%@ transition:%d",item, transition);
     
     item.nn_backgroundItemDelegate = self;
     
@@ -150,7 +150,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_completePushOperationAnimated:animated transitionAssistant:assistant];
     
-    NN_NSLog(@"animated:%d assistant:%@",animated, assistant);
+    NNLogInfo(@"animated:%d assistant:%@",animated, assistant);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
     self.nn_backgroundDisplayImageView.image = backgroundImage;
@@ -162,7 +162,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     UINavigationItem *item = [self _nn_popNavigationItemWithTransition:transition];
     
-    NN_NSLog(@"transition:%d return:%@",transition, item);
+    NNLogInfo(@"transition:%d return:%@",transition, item);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
     [self _nn_animateBackgroundWithImage:backgroundImage transition:transition];
@@ -174,7 +174,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_completePopOperationAnimated:animated transitionAssistant:assistant];
     
-    NN_NSLog(@"animated:%d assistant:%@", animated, assistant);
+    NNLogInfo(@"animated:%d assistant:%@", animated, assistant);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
     self.nn_backgroundDisplayImageView.image = backgroundImage;
@@ -186,7 +186,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_updateInteractiveTransition:percentComplete];
     
-    NN_NSLog(@"percentComplete:%f", percentComplete);
+    NNLogInfo(@"percentComplete:%f", percentComplete);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
     self.nn_backgroundAssistantImageView.image = backgroundImage;
@@ -198,7 +198,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_cancelInteractiveTransition:transition completionSpeed:speed completionCurve:curve];
     
-    NN_NSLog(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
+    NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
     [UIView animateWithDuration:0.25 * transition animations:^{
         self.nn_backgroundDisplayImageView.alpha = 1.0;
@@ -210,7 +210,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_finishInteractiveTransition:transition completionSpeed:speed completionCurve:curve];
     
-    NN_NSLog(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
+    NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
     self.nn_backgroundDisplayImageView.image = backgroundImage;
@@ -223,7 +223,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 - (BOOL)_nn_didVisibleItemsChangeWithNewItems:(NSArray<UINavigationItem *> *)newItems oldItems:(NSArray<UINavigationItem *> *)oldItems {
     BOOL ret = [self _nn_didVisibleItemsChangeWithNewItems:newItems oldItems:oldItems];
     
-    NN_NSLog(@"newItems:%@ oldItems:%@", newItems, oldItems);
+    NNLogInfo(@"newItems:%@ oldItems:%@", newItems, oldItems);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:newItems.lastObject];
     self.nn_backgroundDisplayImageView.image = backgroundImage;
