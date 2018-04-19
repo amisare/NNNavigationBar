@@ -26,6 +26,7 @@
 		67A6F481207F1AD00082A845 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A6F480207F1AD00082A845 /* MainViewController.m */; };
 		67A6F490207F2F430082A845 /* UIColor+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A6F48F207F2F430082A845 /* UIColor+Help.m */; };
 		67A9A58B20850D3E000B6A2A /* UINavigationBar+NNBackgroundBarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A9A58A20850D3E000B6A2A /* UINavigationBar+NNBackgroundBarDelegate.m */; };
+		67A9A58E2088D1BA000B6A2A /* UINavigationBar+NNBackgroundAssistantItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A9A58D2088D1BA000B6A2A /* UINavigationBar+NNBackgroundAssistantItems.m */; };
 		67F80EB820808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F80EB720808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.m */; };
 		67F80EBC2080ACB00098B825 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F80EBB2080ACB00098B825 /* DemoViewController.m */; };
 		67F80EBF2080ACF70098B825 /* DemoViewController+Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F80EBE2080ACF70098B825 /* DemoViewController+Slider.m */; };
@@ -88,6 +89,8 @@
 		67A6F48F207F2F430082A845 /* UIColor+Help.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Help.m"; sourceTree = "<group>"; };
 		67A9A58920850D3E000B6A2A /* UINavigationBar+NNBackgroundBarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundBarDelegate.h"; sourceTree = "<group>"; };
 		67A9A58A20850D3E000B6A2A /* UINavigationBar+NNBackgroundBarDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundBarDelegate.m"; sourceTree = "<group>"; };
+		67A9A58C2088D1BA000B6A2A /* UINavigationBar+NNBackgroundAssistantItems.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundAssistantItems.h"; sourceTree = "<group>"; };
+		67A9A58D2088D1BA000B6A2A /* UINavigationBar+NNBackgroundAssistantItems.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundAssistantItems.m"; sourceTree = "<group>"; };
 		67D26E5E208858D6003299F2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		67F80EB620808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+NNVisualFormat.h"; sourceTree = "<group>"; };
 		67F80EB720808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+NNVisualFormat.m"; sourceTree = "<group>"; };
@@ -187,6 +190,8 @@
 				679AA53B20858D2E00749AF6 /* UINavigationBar+NNBackgroundImageView.m */,
 				6781EA312085A6ED00C96B95 /* UINavigationBar+NNBackgroundStyle.h */,
 				6781EA322085A6ED00C96B95 /* UINavigationBar+NNBackgroundStyle.m */,
+				67A9A58C2088D1BA000B6A2A /* UINavigationBar+NNBackgroundAssistantItems.h */,
+				67A9A58D2088D1BA000B6A2A /* UINavigationBar+NNBackgroundAssistantItems.m */,
 				679AA53D20858E4300749AF6 /* UINavigationBar+NNBackgroundMethodSwizzling.h */,
 				679AA53E20858E4300749AF6 /* UINavigationBar+NNBackgroundMethodSwizzling.m */,
 				679AA54020858F5A00749AF6 /* UINavigationBar+NNBackgroundDelegateImp.h */,
@@ -395,6 +400,7 @@
 				67A9A58B20850D3E000B6A2A /* UINavigationBar+NNBackgroundBarDelegate.m in Sources */,
 				67A6F490207F2F430082A845 /* UIColor+Help.m in Sources */,
 				67A6F44C207EFD1B0082A845 /* main.m in Sources */,
+				67A9A58E2088D1BA000B6A2A /* UINavigationBar+NNBackgroundAssistantItems.m in Sources */,
 				67A6F478207EFD430082A845 /* UINavigationBar+NNBackgroundView.m in Sources */,
 				67A6F43E207EFD1B0082A845 /* AppDelegate.m in Sources */,
 			);
