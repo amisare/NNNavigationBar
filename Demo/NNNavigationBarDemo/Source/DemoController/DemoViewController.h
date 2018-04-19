@@ -15,6 +15,7 @@ typedef NS_ENUM(NSUInteger, DemoType) {
     DemoTypeImageOnly,
     DemoTypeColorTransition,
     DemoTypeImageTransition,
+    DemoTypeBackgroundAlpha,
 };
 
 @interface DemoViewController : UIViewController

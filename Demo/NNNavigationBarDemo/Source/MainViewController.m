@@ -48,6 +48,10 @@
              
              @{@"title"     : @"Set the backgroundImage on NavigationItem",
                @"subtitle"  : @"The background property is currently valid",
+               },
+             
+             @{@"title"     : @"Set the backgroundAlpha on NavigationItem",
+               @"subtitle"  : @"The background property is currently valid",
                }
              ];
 }
@@ -87,6 +91,9 @@
     }
     if ([cell.textLabel.text isEqualToString:@"Set the backgroundImage on NavigationItem"]) {
         type = DemoTypeImageTransition;
+    }
+    if ([cell.textLabel.text isEqualToString:@"Set the backgroundAlpha on NavigationItem"]) {
+        type = DemoTypeBackgroundAlpha;
     }
     
     DemoViewController *vc = [[DemoViewController alloc] initWithType:type];

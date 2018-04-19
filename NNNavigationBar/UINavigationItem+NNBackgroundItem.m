@@ -13,6 +13,7 @@
 
 static const void *kUINavigationItem_NNBackgroundColors = &kUINavigationItem_NNBackgroundColors;
 static const void *kUINavigationItem_NNBackgroundImages = &kUINavigationItem_NNBackgroundImages;
+static const void *kUINavigationItem_NNBackgroundAlpha = &kUINavigationItem_NNBackgroundAlpha;
 
 #define UINavigationItem_NNBackgroundKey(barPosition, barMetrics) [@(barPosition << (sizeof(barPosition) * 8 / 2) | barMetrics) stringValue]
 
@@ -111,6 +112,20 @@ static const void *kUINavigationItem_NNBackgroundImages = &kUINavigationItem_NNB
         objc_setAssociatedObject(self, kUINavigationItem_NNBackgroundImages, nn_backgroundImages, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return nn_backgroundImages;
+}
+
+- (CGFloat)nn_backgroundAlpha {
+    id alphaObjc = objc_getAssociatedObject(self, kUINavigationItem_NNBackgroundAlpha);
+    CGFloat alpha = (alphaObjc == nil) ? 1.0 : [alphaObjc floatValue];
+    return alpha;
+}
+
+- (void)setNn_backgroundAlpha:(CGFloat)nn_backgroundAlpha {
+    objc_setAssociatedObject(self, kUINavigationItem_NNBackgroundAlpha, @(nn_backgroundAlpha), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.nn_backgroundItemDelegate &&
+        [self.nn_backgroundItemDelegate respondsToSelector:@selector(nn_navigationItem:backgroundChangeForKey:)]) {
+        [self.nn_backgroundItemDelegate nn_navigationItem:self backgroundChangeForKey:@"nn_backgroundAlpha"];
+    }
 }
 
 @end

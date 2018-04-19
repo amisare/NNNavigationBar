@@ -44,6 +44,9 @@
         case DemoTypeColorTransition:
             self.colorSlider.value = self.navigationItem.nn_backgroundColor.alpha;
             break;
+        case DemoTypeBackgroundAlpha:
+            self.colorSlider.value = self.navigationItem.nn_backgroundAlpha;
+            break;
             
         default:
             break;
@@ -89,6 +92,10 @@
             
         case DemoTypeImageTransition:
             [self setupImageTransition];
+            break;
+            
+        case DemoTypeBackgroundAlpha:
+            [self setupBackgoundAlpha];
             break;
             
         default:
@@ -225,6 +232,25 @@
                                     barMetrics:UIBarMetricsCompactPrompt];
     
     self.tableView.tableFooterView = [UIView new];
+}
+
+
+#pragma mark - DemoTypeBackgroundAlpha
+
+- (void)setupBackgoundAlpha {
+    self.navigationController.navigationBar.nn_backgroundViewHidden = false;
+    
+    [self.navigationController.navigationBar setNn_backgroundImage:[UIImage imageNamed:@"image0"] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+//    self.navigationController.navigationBar.nn_backgroundView.alpha = self.navigationItem.nn_backgroundAlpha;
+    
+    [self.colorSlider addTarget:self action:@selector(handleColorSliderAlpha:) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)handleColorSliderAlpha:(UISlider *)colorSlider {
+    NSLog(@"%s alpha: %f", __FUNCTION__, colorSlider.value);
+    
+    self.navigationItem.nn_backgroundAlpha = self.colorSlider.value;
+    
 }
 
 - (void)setPrompt:(NSString *)prompt {

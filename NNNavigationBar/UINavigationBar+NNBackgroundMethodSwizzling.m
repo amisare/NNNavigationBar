@@ -144,6 +144,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:item];
     [self _nn_animateBackgroundWithImage:backgroundImage transition:transition];
+    [self _nn_animateBackgroundWithAlpha:item.nn_backgroundAlpha transition:transition];
 }
 
 - (void)_nn_completePushOperationAnimated:(BOOL)animated transitionAssistant:(id)assistant {
@@ -156,7 +157,11 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     self.nn_backgroundDisplayImageView.image = backgroundImage;
     self.nn_backgroundDisplayImageView.alpha = 1.0;
     self.nn_backgroundAssistantImageView.alpha = 0.0;
+    
+    self.nn_backgroundView.alpha = self.topItem.nn_backgroundAlpha;
 }
+
+static UINavigationItem *popItem;
 
 - (UINavigationItem *)_nn_popNavigationItemWithTransition:(int)transition {
     
@@ -164,8 +169,11 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     NNLogInfo(@"transition:%d return:%@",transition, item);
     
+    popItem = item;
+    
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
     [self _nn_animateBackgroundWithImage:backgroundImage transition:transition];
+    [self _nn_animateBackgroundWithAlpha:self.topItem.nn_backgroundAlpha transition:transition];
     
     return item;
 }
@@ -180,6 +188,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     self.nn_backgroundDisplayImageView.image = backgroundImage;
     self.nn_backgroundDisplayImageView.alpha = 1.0;
     self.nn_backgroundAssistantImageView.alpha = 0.0;
+    
+    self.nn_backgroundView.alpha = self.topItem.nn_backgroundAlpha;
 }
 
 - (void)_nn_updateInteractiveTransition:(CGFloat)percentComplete {
@@ -192,6 +202,11 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     self.nn_backgroundAssistantImageView.image = backgroundImage;
     self.nn_backgroundDisplayImageView.alpha = 1.0 - percentComplete;
     self.nn_backgroundAssistantImageView.alpha = percentComplete;
+    
+    
+    CGFloat deltAlpha = popItem.nn_backgroundAlpha - self.nn_backgroundView.alpha;
+    NNLogInfo(@"%f, %f, %f", popItem.nn_backgroundAlpha, deltAlpha, popItem.nn_backgroundAlpha - deltAlpha * percentComplete);
+    self.nn_backgroundView.alpha = self.topItem.nn_backgroundAlpha + deltAlpha * percentComplete;
 }
 
 - (void)_nn_cancelInteractiveTransition:(CGFloat)transition completionSpeed:(CGFloat)speed completionCurve:(double)curve {
@@ -218,6 +233,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
         self.nn_backgroundDisplayImageView.alpha = 0.0;
         self.nn_backgroundAssistantImageView.alpha = 1.0;
     }];
+    
+    self.nn_backgroundView.alpha = self.topItem.nn_backgroundAlpha;
 }
 
 - (BOOL)_nn_didVisibleItemsChangeWithNewItems:(NSArray<UINavigationItem *> *)newItems oldItems:(NSArray<UINavigationItem *> *)oldItems {
@@ -229,6 +246,9 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     self.nn_backgroundDisplayImageView.image = backgroundImage;
     self.nn_backgroundDisplayImageView.alpha = 1.0;
     self.nn_backgroundAssistantImageView.alpha = 0.0;
+    
+    
+    self.nn_backgroundView.alpha = newItems.lastObject.nn_backgroundAlpha;
     
     return ret;
 }
@@ -281,6 +301,17 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
             return;
         }
     };
+}
+
+- (void)_nn_animateBackgroundWithAlpha:(CGFloat)alpha transition:(int)transition {
+    if (@(transition).boolValue) {
+        [UIView animateWithDuration:0.25 animations:^{
+            self.nn_backgroundView.alpha = alpha;
+        }];
+    }
+    else {
+        self.nn_backgroundView.alpha = alpha;
+    }
 }
 
 @end
