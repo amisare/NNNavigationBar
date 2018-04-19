@@ -303,4 +303,8 @@
     return _tableView;
 }
 
+- (void)dealloc {
+    NSLog(@"dealloc: %ld", (long)self.page);
+}
+
 @end

@@ -191,7 +191,6 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 - (void)_nn_pushNavigationItem:(UINavigationItem *)item transition:(int)transition {
     
     [self _nn_pushNavigationItem:item transition:transition];
-    
     NNLogInfo(@"item:%@ transition:%d",item, transition);
     
     item.nn_backgroundItemDelegate = self;
@@ -204,19 +203,15 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 - (void)_nn_completePushOperationAnimated:(BOOL)animated transitionAssistant:(id)assistant {
     
     [self _nn_completePushOperationAnimated:animated transitionAssistant:assistant];
-    
     NNLogInfo(@"animated:%d assistant:%@",animated, assistant);
     
     [self _nn_endAnimationForBackgroundImageWithItem:self.topItem];
     [self _nn_endAnimationForBackgroundViewWithItem:self.topItem];
 }
 
-static UINavigationItem *popItem;
-
 - (UINavigationItem *)_nn_popNavigationItemWithTransition:(int)transition {
     
     UINavigationItem *item = [self _nn_popNavigationItemWithTransition:transition];
-    
     NNLogInfo(@"transition:%d return:%@",transition, item);
     
     [self _nn_startAnimationForBackgroundImageWithItem:self.topItem transition:transition];
@@ -231,7 +226,6 @@ static UINavigationItem *popItem;
 - (void)_nn_completePopOperationAnimated:(BOOL)animated transitionAssistant:(id)assistant {
     
     [self _nn_completePopOperationAnimated:animated transitionAssistant:assistant];
-    
     NNLogInfo(@"animated:%d assistant:%@", animated, assistant);
     
     [self _nn_endAnimationForBackgroundImageWithItem:self.topItem];
@@ -241,7 +235,6 @@ static UINavigationItem *popItem;
 - (void)_nn_updateInteractiveTransition:(CGFloat)percentComplete {
     
     [self _nn_updateInteractiveTransition:percentComplete];
-    
     NNLogInfo(@"percentComplete:%f", percentComplete);
     
     UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
@@ -256,40 +249,21 @@ static UINavigationItem *popItem;
 - (void)_nn_cancelInteractiveTransition:(CGFloat)transition completionSpeed:(CGFloat)speed completionCurve:(double)curve {
     
     [self _nn_cancelInteractiveTransition:transition completionSpeed:speed completionCurve:curve];
-    
     NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
-    [UIView animateWithDuration:0.25 * transition animations:^{
-        self.nn_backgroundDisplayImageView.alpha = 1.0;
-        self.nn_backgroundAssistantImageView.alpha = 0.0;
-    }];
-    
-    [UIView animateWithDuration:0.25 * transition animations:^{
-        self.nn_backgroundView.alpha = self.assistantItems.lastObject.nn_backgroundAlpha;
-    }];
+    [self _nn_startAnimationForInteractiveWithItem:self.assistantItems.lastObject transition:transition finished:false];
 }
 
 - (void)_nn_finishInteractiveTransition:(CGFloat)transition completionSpeed:(CGFloat)speed completionCurve:(double)curve {
     
     [self _nn_finishInteractiveTransition:transition completionSpeed:speed completionCurve:curve];
-    
     NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
-    UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
-    self.nn_backgroundDisplayImageView.image = backgroundImage;
-    [UIView animateWithDuration:0.25 * (1 - transition) animations:^{
-        self.nn_backgroundDisplayImageView.alpha = 0.0;
-        self.nn_backgroundAssistantImageView.alpha = 1.0;
-    }];
-    
-    [UIView animateWithDuration:0.25 * (1 - transition) animations:^{
-        self.nn_backgroundView.alpha = self.topItem.nn_backgroundAlpha;
-    }];
+    [self _nn_startAnimationForInteractiveWithItem:self.topItem transition:transition finished:true];
 }
 
 - (BOOL)_nn_didVisibleItemsChangeWithNewItems:(NSArray<UINavigationItem *> *)newItems oldItems:(NSArray<UINavigationItem *> *)oldItems {
     BOOL ret = [self _nn_didVisibleItemsChangeWithNewItems:newItems oldItems:oldItems];
-    
     NNLogInfo(@"newItems:%@ oldItems:%@", newItems, oldItems);
     
     [self _nn_endAnimationForBackgroundImageWithItem:newItems.lastObject];
@@ -340,8 +314,9 @@ static UINavigationItem *popItem;
                 self.nn_backgroundDisplayImageView.alpha = 0.0;
                 self.nn_backgroundAssistantImageView.alpha = 1.0;
             } completion:^(BOOL finished) {
+                // a new animation cause the finished to false
                 if (finished) {
-                    self.nn_backgroundDisplayImageView.image = backgroundImage;
+                    [self _nn_endAnimationForBackgroundImageWithItem:self.topItem];
                 }
                 self.nn_backgroundDisplayImageView.alpha = 1.0;
                 self.nn_backgroundAssistantImageView.alpha = 0.0;
@@ -360,6 +335,7 @@ static UINavigationItem *popItem;
 }
 
 - (void)_nn_startAnimationForBackgroundViewWithItem:(UINavigationItem *)item transition:(int)transition {
+    
     if (@(transition).boolValue) {
         [UIView animateWithDuration:0.25 animations:^{
             self.nn_backgroundView.alpha = item.nn_backgroundAlpha;
@@ -372,6 +348,24 @@ static UINavigationItem *popItem;
 
 - (void)_nn_endAnimationForBackgroundViewWithItem:(UINavigationItem *)item {
     self.nn_backgroundView.alpha = item.nn_backgroundAlpha;
+}
+
+- (void)_nn_startAnimationForInteractiveWithItem:(UINavigationItem *)item
+                                      transition:(CGFloat)transition
+                                        finished:(BOOL)finished {
+    
+    NSTimeInterval duration = finished ?  0.25 * (1 - transition) : 0.25 * transition;
+    
+    UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:item];
+    self.nn_backgroundDisplayImageView.image = backgroundImage;
+    [UIView animateWithDuration:duration animations:^{
+        self.nn_backgroundDisplayImageView.alpha = 1.0;
+        self.nn_backgroundAssistantImageView.alpha = 0.0;
+    }];
+    
+    [UIView animateWithDuration:duration animations:^{
+        self.nn_backgroundView.alpha = item.nn_backgroundAlpha;
+    }];
 }
 
 @end
