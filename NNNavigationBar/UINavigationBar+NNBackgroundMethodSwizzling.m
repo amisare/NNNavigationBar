@@ -35,61 +35,6 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 
 @implementation UINavigationBar (NNBackgroundMethodSwizzling)
 
-/*
- iOS11.x
- push:
- _pushNavigationItem:transition:
- |
- V
- _completePushOperationAnimated:transitionAssistant:
- 
- pop:
- _popNavigationItemWithTransition:
- |
- V
- _completePopOperationAnimated:transitionAssistant:
- 
- popx:
- _nn_didVisibleItemsChangeWithNewItems:oldItems:
- |
- V
- _completePopOperationAnimated:transitionAssistant:
- 
- gesturePop:
- _popNavigationItemWithTransition:
- |
- V
- _updateInteractiveTransition: ...
- |
- V
- _nn_cancelInteractiveTransition:completionSpeed:completionCurve: / _nn_finishInteractiveTransition:completionSpeed:completionCurve:
- |
- V
- _completePopOperationAnimated:transitionAssistant:
- 
- 
- iOS8.x-iOS10.x
- push:
- _pushNavigationItem:transition:
- 
- pop:
- _popNavigationItemWithTransition:
-
- popx:
- _didVisibleItemsChangeWithNewItems:oldItems:
- 
- gesturePop:
- _popNavigationItemWithTransition:
- |
- V
- _updateInteractiveTransition: ...
- |
- V
- _nn_cancelInteractiveTransition:completionSpeed:completionCurve: / _nn_finishInteractiveTransition:completionSpeed:completionCurve:
- 
- 
- */
-
 + (void)load {
     
     [super load];
@@ -99,46 +44,50 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
         
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
-        nn_swizzleSelector(self,
-                           @selector(_barPosition),
-                           @selector(_nn_barPosition)
-                           );
-        nn_swizzleSelector(self,
-                           @selector(_activeBarMetrics),
-                           @selector(_nn_activeBarMetrics)
-                           );
-        nn_swizzleSelector(self,
-                           @selector(_pushNavigationItem:transition:),
-                           @selector(_nn_pushNavigationItem:transition:)
-                           );
-        nn_swizzleSelector(self,
-                           @selector(_completePushOperationAnimated:transitionAssistant:),
-                           @selector(_nn_completePushOperationAnimated:transitionAssistant:)
-                           );
-        nn_swizzleSelector(self,
-                           @selector(_popNavigationItemWithTransition:),
-                           @selector(_nn_popNavigationItemWithTransition:)
-                           );
-        nn_swizzleSelector(self,
-                           @selector(_completePopOperationAnimated:transitionAssistant:),
-                           @selector(_nn_completePopOperationAnimated:transitionAssistant:)
-                           );
-        nn_swizzleSelector(self,
-                           @selector(_updateInteractiveTransition:),
-                           @selector(_nn_updateInteractiveTransition:)
-                           );
-        nn_swizzleSelector(self,
-                           @selector(_cancelInteractiveTransition:completionSpeed:completionCurve:),
-                           @selector(_nn_cancelInteractiveTransition:completionSpeed:completionCurve:)
-                           );
-        nn_swizzleSelector(self,
-                           @selector(_finishInteractiveTransition:completionSpeed:completionCurve:),
-                           @selector(_nn_finishInteractiveTransition:completionSpeed:completionCurve:)
-                           );
-        nn_swizzleSelector(self,
-                           @selector(_didVisibleItemsChangeWithNewItems:oldItems:),
-                           @selector(_nn_didVisibleItemsChangeWithNewItems:oldItems:)
-                           );
+        if (@available(iOS 8, *)) {
+            nn_swizzleSelector(self,
+                               @selector(_barPosition),
+                               @selector(_nn_barPosition)
+                               );
+            nn_swizzleSelector(self,
+                               @selector(_activeBarMetrics),
+                               @selector(_nn_activeBarMetrics)
+                               );
+            nn_swizzleSelector(self,
+                               @selector(_pushNavigationItem:transition:),
+                               @selector(_nn_pushNavigationItem:transition:)
+                               );
+            nn_swizzleSelector(self,
+                               @selector(_popNavigationItemWithTransition:),
+                               @selector(_nn_popNavigationItemWithTransition:)
+                               );
+            nn_swizzleSelector(self,
+                               @selector(_updateInteractiveTransition:),
+                               @selector(_nn_updateInteractiveTransition:)
+                               );
+            nn_swizzleSelector(self,
+                               @selector(_cancelInteractiveTransition:completionSpeed:completionCurve:),
+                               @selector(_nn_cancelInteractiveTransition:completionSpeed:completionCurve:)
+                               );
+            nn_swizzleSelector(self,
+                               @selector(_finishInteractiveTransition:completionSpeed:completionCurve:),
+                               @selector(_nn_finishInteractiveTransition:completionSpeed:completionCurve:)
+                               );
+            nn_swizzleSelector(self,
+                               @selector(_didVisibleItemsChangeWithNewItems:oldItems:),
+                               @selector(_nn_didVisibleItemsChangeWithNewItems:oldItems:)
+                               );
+        }
+        if (@available(iOS 11, *)) {
+            nn_swizzleSelector(self,
+                               @selector(_completePushOperationAnimated:transitionAssistant:),
+                               @selector(_nn_completePushOperationAnimated:transitionAssistant:)
+                               );
+            nn_swizzleSelector(self,
+                               @selector(_completePopOperationAnimated:transitionAssistant:),
+                               @selector(_nn_completePopOperationAnimated:transitionAssistant:)
+                               );
+        }
 #pragma clang diagnostic pop
         
     });
@@ -236,13 +185,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     [self _nn_updateInteractiveTransition:percentComplete];
     NNLogInfo(@"percentComplete:%f", percentComplete);
     
-    UIImage *backgroundImage = [self nn_backgroundImageFromItem:self.topItem];
-    self.nn_backgroundAssistantImageView.image = backgroundImage;
-    self.nn_backgroundDisplayImageView.alpha = 1.0 - percentComplete;
-    self.nn_backgroundAssistantImageView.alpha = percentComplete;
-    
-    CGFloat deltAlpha = self.assistantItems.lastObject.nn_backgroundAlpha - self.topItem.nn_backgroundAlpha;
-    self.nn_backgroundView.alpha = self.topItem.nn_backgroundAlpha + deltAlpha * (1.0 - percentComplete);
+    [self _nn_startAnimationForInteractive:percentComplete];
 }
 
 - (void)_nn_cancelInteractiveTransition:(CGFloat)transition completionSpeed:(CGFloat)speed completionCurve:(double)curve {
@@ -250,7 +193,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     [self _nn_cancelInteractiveTransition:transition completionSpeed:speed completionCurve:curve];
     NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
-    [self _nn_startAnimationForInteractiveWithItem:self.assistantItems.lastObject transition:transition finished:false];
+    [self _nn_endAnimationForInteractiveWithItem:self.assistantItems.lastObject transition:transition finished:false];
 }
 
 - (void)_nn_finishInteractiveTransition:(CGFloat)transition completionSpeed:(CGFloat)speed completionCurve:(double)curve {
@@ -258,7 +201,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     [self _nn_finishInteractiveTransition:transition completionSpeed:speed completionCurve:curve];
     NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
-    [self _nn_startAnimationForInteractiveWithItem:self.topItem transition:transition finished:true];
+    [self _nn_endAnimationForInteractiveWithItem:self.topItem transition:transition finished:true];
 }
 
 - (BOOL)_nn_didVisibleItemsChangeWithNewItems:(NSArray<UINavigationItem *> *)newItems oldItems:(NSArray<UINavigationItem *> *)oldItems {
@@ -348,9 +291,20 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     self.nn_backgroundView.alpha = item.nn_backgroundAlpha;
 }
 
-- (void)_nn_startAnimationForInteractiveWithItem:(UINavigationItem *)item
-                                      transition:(CGFloat)transition
-                                        finished:(BOOL)finished {
+- (void)_nn_startAnimationForInteractive:(CGFloat)percentComplete {
+    
+    UIImage *backgroundImage = [self nn_backgroundImageFromItem:self.topItem];
+    self.nn_backgroundAssistantImageView.image = backgroundImage;
+    self.nn_backgroundDisplayImageView.alpha = 1.0 - percentComplete;
+    self.nn_backgroundAssistantImageView.alpha = percentComplete;
+    
+    CGFloat deltAlpha = self.assistantItems.lastObject.nn_backgroundAlpha - self.topItem.nn_backgroundAlpha;
+    self.nn_backgroundView.alpha = self.topItem.nn_backgroundAlpha + deltAlpha * (1.0 - percentComplete);
+}
+
+- (void)_nn_endAnimationForInteractiveWithItem:(UINavigationItem *)item
+                                    transition:(CGFloat)transition
+                                      finished:(BOOL)finished {
     
     NSTimeInterval duration = 0.25 * (finished ?  (1 - transition) : transition);
     
@@ -367,5 +321,6 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
         self.nn_backgroundView.alpha = item.nn_backgroundAlpha;
     }];
 }
+
 
 @end
