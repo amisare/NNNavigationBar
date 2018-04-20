@@ -8,12 +8,9 @@
 
 #import "UINavigationBar+NNMethodSwizzling.h"
 #import <objc/runtime.h>
-#import "UIImage+NNImageWithColor.h"
 #import "UINavigationBar+NNBackgroundView.h"
 #import "UINavigationBar+NNBackgroundImageView.h"
 #import "UINavigationBar+NNBackgroundDelegateImp.h"
-#import "UINavigationItem+NNBackgroundItem.h"
-#import "UINavigationItem+NNBackgroundItemDelegate.h"
 #import "UINavigationBar+NNBackgroundStyle.h"
 #import "UINavigationBar+NNAssistantItems.h"
 #import "UINavigationBar+NNTransition.h"
