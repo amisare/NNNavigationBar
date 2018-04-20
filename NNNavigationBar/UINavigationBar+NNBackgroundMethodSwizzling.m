@@ -151,8 +151,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     if (position != self.nn_barPosition) {
         NNLogInfo(@"position:%ld", (long)position);
         self.nn_barPosition = position;
-        self.nn_backgroundImageView.image = [self nn_backgroundImageFromNavigationBar:self];
-        self.nn_backgroundDisplayImageView.image = [self nn_backgroundImageFromNavigationItem:self.topItem];
+        self.nn_backgroundImageView.image = [self nn_backgroundImageFromBar:self];
+        self.nn_backgroundDisplayImageView.image = [self nn_backgroundImageFromItem:self.topItem];
     }
     
     return position;
@@ -181,8 +181,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     if (metrics != self.nn_activeBarMetrics) {
         NNLogInfo(@"metrics:%ld", (long)metrics);
         self.nn_activeBarMetrics = metrics;
-        self.nn_backgroundImageView.image = [self nn_backgroundImageFromNavigationBar:self];
-        self.nn_backgroundDisplayImageView.image = [self nn_backgroundImageFromNavigationItem:self.topItem];
+        self.nn_backgroundImageView.image = [self nn_backgroundImageFromBar:self];
+        self.nn_backgroundDisplayImageView.image = [self nn_backgroundImageFromItem:self.topItem];
     }
     
     return metrics;
@@ -237,7 +237,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     [self _nn_updateInteractiveTransition:percentComplete];
     NNLogInfo(@"percentComplete:%f", percentComplete);
     
-    UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:self.topItem];
+    UIImage *backgroundImage = [self nn_backgroundImageFromItem:self.topItem];
     self.nn_backgroundAssistantImageView.image = backgroundImage;
     self.nn_backgroundDisplayImageView.alpha = 1.0 - percentComplete;
     self.nn_backgroundAssistantImageView.alpha = percentComplete;
@@ -266,8 +266,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     BOOL ret = [self _nn_didVisibleItemsChangeWithNewItems:newItems oldItems:oldItems];
     NNLogInfo(@"newItems:%@ oldItems:%@", newItems, oldItems);
     
-    [self _nn_endAnimationForBackgroundImageWithItem:newItems.lastObject];
-    [self _nn_endAnimationForBackgroundViewWithItem:newItems.lastObject];
+    [self _nn_startAnimationForBackgroundImageWithItem:newItems.lastObject transition:true];
+    [self _nn_startAnimationForBackgroundViewWithItem:newItems.lastObject transition:true];
     
     self.assistantItems = [NSMutableArray arrayWithArray:newItems];
     
@@ -291,7 +291,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 
 - (void)_nn_startAnimationForBackgroundImageWithItem:(UINavigationItem *)item transition:(int)transition {
     
-    UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:item];
+    UIImage *backgroundImage = [self nn_backgroundImageFromItem:item];
     
     self.nn_backgroundAssistantImageView.image = backgroundImage;
     self.nn_backgroundDisplayImageView.alpha = 1.0;
@@ -300,7 +300,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     if (@(transition).boolValue) {
         
         // iOS 11.x +
-        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0) {
+        if (@available(iOS 11, *)) {
             [UIView animateWithDuration:0.25 animations:^{
                 self.nn_backgroundDisplayImageView.alpha = 0.0;
                 self.nn_backgroundAssistantImageView.alpha = 1.0;
@@ -309,17 +309,16 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
         }
         
         // iOS 8.x - 10.x
-        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        if (@available(iOS 8, *)) {
             [UIView animateWithDuration:0.25 animations:^{
                 self.nn_backgroundDisplayImageView.alpha = 0.0;
                 self.nn_backgroundAssistantImageView.alpha = 1.0;
             } completion:^(BOOL finished) {
                 // a new animation cause the finished to false
-                if (finished) {
-                    [self _nn_endAnimationForBackgroundImageWithItem:self.topItem];
+                if (!finished) {
+                    return;
                 }
-                self.nn_backgroundDisplayImageView.alpha = 1.0;
-                self.nn_backgroundAssistantImageView.alpha = 0.0;
+                [self _nn_endAnimationForBackgroundImageWithItem:self.topItem];
             }];
             return;
         }
@@ -328,7 +327,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 
 - (void)_nn_endAnimationForBackgroundImageWithItem:(UINavigationItem *)item {
     
-    UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:item];
+    UIImage *backgroundImage = [self nn_backgroundImageFromItem:item];
     self.nn_backgroundDisplayImageView.image = backgroundImage;
     self.nn_backgroundDisplayImageView.alpha = 1.0;
     self.nn_backgroundAssistantImageView.alpha = 0.0;
@@ -354,13 +353,15 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
                                       transition:(CGFloat)transition
                                         finished:(BOOL)finished {
     
-    NSTimeInterval duration = finished ?  0.25 * (1 - transition) : 0.25 * transition;
+    NSTimeInterval duration = 0.25 * (finished ?  (1 - transition) : transition);
     
-    UIImage *backgroundImage = [self nn_backgroundImageFromNavigationItem:item];
+    UIImage *backgroundImage = [self nn_backgroundImageFromItem:item];
     self.nn_backgroundDisplayImageView.image = backgroundImage;
     [UIView animateWithDuration:duration animations:^{
         self.nn_backgroundDisplayImageView.alpha = 1.0;
         self.nn_backgroundAssistantImageView.alpha = 0.0;
+    } completion:^(BOOL finished) {
+        [self _nn_endAnimationForBackgroundImageWithItem:item];
     }];
     
     [UIView animateWithDuration:duration animations:^{

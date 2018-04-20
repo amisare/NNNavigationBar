@@ -304,7 +304,7 @@
 }
 
 - (void)dealloc {
-    NSLog(@"dealloc: %ld", (long)self.page);
+    NSLog(@"dealloc");
 }
 
 @end

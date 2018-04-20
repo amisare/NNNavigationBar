@@ -29,7 +29,7 @@ static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigat
 
 @implementation UINavigationBar (NNBackgroundImageView)
 
-- (UIImage *)nn_backgroundImageFromNavigationItem:(UINavigationItem *)item {
+- (UIImage *)nn_backgroundImageFromItem:(UINavigationItem *)item {
     
     UIImage *backgroundImage = nil;
     
@@ -67,7 +67,7 @@ static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigat
     return backgroundImage;
 }
 
-- (UIImage *)nn_backgroundImageFromNavigationBar:(UINavigationBar *)bar {
+- (UIImage *)nn_backgroundImageFromBar:(UINavigationBar *)bar {
     
     UIImage *backgroundImage = nil;
     

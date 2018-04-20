@@ -13,7 +13,7 @@
 - (UIImageView *)nn_backgroundImageView;
 - (UIImageView *)nn_backgroundDisplayImageView;
 - (UIImageView *)nn_backgroundAssistantImageView;
-- (UIImage *)nn_backgroundImageFromNavigationBar:(UINavigationBar *)bar;
-- (UIImage *)nn_backgroundImageFromNavigationItem:(UINavigationItem *)item;
+- (UIImage *)nn_backgroundImageFromBar:(UINavigationBar *)bar;
+- (UIImage *)nn_backgroundImageFromItem:(UINavigationItem *)item;
 
 @end
