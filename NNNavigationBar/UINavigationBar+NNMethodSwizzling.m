@@ -1,12 +1,12 @@
 //
-//  UINavigationBar+NNBackgroundMethodSwizzling.m
+//  UINavigationBar+NNMethodSwizzling.m
 //  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/4/17.
 //  Copyright © 2018年 GuHaijun. All rights reserved.
 //
 
-#import "UINavigationBar+NNBackgroundMethodSwizzling.h"
+#import "UINavigationBar+NNMethodSwizzling.h"
 #import <objc/runtime.h>
 #import "UIImage+NNImageWithColor.h"
 #import "UINavigationBar+NNBackgroundView.h"
@@ -15,7 +15,8 @@
 #import "UINavigationItem+NNBackgroundItem.h"
 #import "UINavigationItem+NNBackgroundItemDelegate.h"
 #import "UINavigationBar+NNBackgroundStyle.h"
-#import "UINavigationBar+NNBackgroundAssistantItems.h"
+#import "UINavigationBar+NNAssistantItems.h"
+#import "UINavigationBar+NNTransition.h"
 
 #ifdef NNNavigationBarLoggingEnable
 #define NNLogInfo(format, ...)      {NSLog((@"[Line %04d] %s " format), __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__);}
@@ -33,7 +34,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     }
 }
 
-@implementation UINavigationBar (NNBackgroundMethodSwizzling)
+@implementation UINavigationBar (NNMethodSwizzling)
 
 + (void)load {
     
@@ -147,9 +148,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     NNLogInfo(@"item:%@ transition:%d",item, transition);
     
     item.nn_backgroundItemDelegate = self;
-    [self _nn_startAnimationForBackgroundImageWithItem:self.topItem transition:transition];
-    [self _nn_startAnimationForBackgroundViewWithItem:self.topItem transition:transition];
-    [self _nn_startAnimationForTintColorWithItem:self.topItem transition:transition];
+    [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
+                                         withObject:@{@"item":self.topItem, @"transition":@(transition)}];
     
     self.assistantItems = [NSMutableArray arrayWithArray:self.items];
 }
@@ -159,9 +159,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     [self _nn_completePushOperationAnimated:animated transitionAssistant:assistant];
     NNLogInfo(@"animated:%d assistant:%@",animated, assistant);
     
-    [self _nn_endAnimationForBackgroundImageWithItem:self.topItem];
-    [self _nn_endAnimationForBackgroundViewWithItem:self.topItem];
-    [self _nn_endAnimationForTintColorWithItem:self.topItem];
+    [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endTransitionWithParams:)
+                                         withObject:@{@"item":self.topItem}];
 }
 
 - (UINavigationItem *)_nn_popNavigationItemWithTransition:(int)transition {
@@ -171,10 +170,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     UINavigationItem *item = [self _nn_popNavigationItemWithTransition:transition];
     NNLogInfo(@"transition:%d return:%@",transition, item);
     
-    [self _nn_startAnimationForBackgroundImageWithItem:self.topItem transition:transition];
-    [self _nn_startAnimationForBackgroundViewWithItem:self.topItem transition:transition];
-    [self _nn_startAnimationForTintColorWithItem:self.topItem transition:transition];
-    
+    [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
+                                         withObject:@{@"item":self.topItem, @"transition":@(transition)}];
     return item;
 }
 
@@ -183,9 +180,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     [self _nn_completePopOperationAnimated:animated transitionAssistant:assistant];
     NNLogInfo(@"animated:%d assistant:%@", animated, assistant);
     
-    [self _nn_endAnimationForBackgroundImageWithItem:self.topItem];
-    [self _nn_endAnimationForBackgroundViewWithItem:self.topItem];
-    [self _nn_endAnimationForTintColorWithItem:self.topItem];
+    [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endTransitionWithParams:)
+                                         withObject:@{@"item":self.topItem}];
 }
 
 - (void)_nn_updateInteractiveTransition:(CGFloat)percentComplete {
@@ -193,7 +189,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     [self _nn_updateInteractiveTransition:percentComplete];
     NNLogInfo(@"percentComplete:%f", percentComplete);
     
-    [self _nn_startAnimationForInteractive:percentComplete];
+    [self.nn_transitions makeObjectsPerformSelector:@selector(nn_updateInteractiveTransitionWithParams:)
+                                         withObject:@{@"percentComplete" : @(percentComplete)}];
 }
 
 - (void)_nn_cancelInteractiveTransition:(CGFloat)transition completionSpeed:(CGFloat)speed completionCurve:(double)curve {
@@ -201,7 +198,12 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     [self _nn_cancelInteractiveTransition:transition completionSpeed:speed completionCurve:curve];
     NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
-    [self _nn_endAnimationForInteractiveWithItem:self.assistantItems.lastObject transition:transition finished:false];
+    
+    [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endInteractiveTransitionWithParams:)
+                                         withObject:@{@"item" : self.assistantItems.lastObject,
+                                                      @"transition" : @(transition),
+                                                      @"finished" : @(false)
+                                                      }];
 }
 
 - (void)_nn_finishInteractiveTransition:(CGFloat)transition completionSpeed:(CGFloat)speed completionCurve:(double)curve {
@@ -209,19 +211,21 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     [self _nn_finishInteractiveTransition:transition completionSpeed:speed completionCurve:curve];
     NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
-    [self _nn_endAnimationForInteractiveWithItem:self.topItem transition:transition finished:true];
+    [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endInteractiveTransitionWithParams:)
+                                         withObject:@{@"item" : self.topItem,
+                                                      @"transition" : @(transition),
+                                                      @"finished" : @(true)
+                                                      }];
 }
 
 - (BOOL)_nn_didVisibleItemsChangeWithNewItems:(NSArray<UINavigationItem *> *)newItems oldItems:(NSArray<UINavigationItem *> *)oldItems {
     BOOL ret = [self _nn_didVisibleItemsChangeWithNewItems:newItems oldItems:oldItems];
     NNLogInfo(@"newItems:%@ oldItems:%@", newItems, oldItems);
     
-    [self _nn_startAnimationForBackgroundImageWithItem:newItems.lastObject transition:true];
-    [self _nn_startAnimationForBackgroundViewWithItem:newItems.lastObject transition:true];
-    [self _nn_startAnimationForTintColorWithItem:newItems.lastObject transition:true];
     
+    [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
+                                         withObject:@{@"item":newItems.lastObject, @"transition":@(true)}];
     self.assistantItems = [NSMutableArray arrayWithArray:newItems];
-    
     return ret;
 }
 
@@ -240,104 +244,6 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     return metrics;
 }
 
-- (void)_nn_startAnimationForBackgroundImageWithItem:(UINavigationItem *)item transition:(int)transition {
-    
-    UIImage *backgroundImage = [self nn_backgroundImageFromItem:item];
-    
-    self.nn_backgroundAssistantImageView.image = backgroundImage;
-    self.nn_backgroundDisplayImageView.alpha = 1.0;
-    self.nn_backgroundAssistantImageView.alpha = 0.0;
-    
-    if (@(transition).boolValue) {
-        
-        // iOS 11.x +
-        if (@available(iOS 11, *)) {
-            [UIView animateWithDuration:0.25 animations:^{
-                self.nn_backgroundDisplayImageView.alpha = 0.0;
-                self.nn_backgroundAssistantImageView.alpha = 1.0;
-            }];
-            return;
-        }
-        
-        // iOS 8.x - 10.x
-        if (@available(iOS 8, *)) {
-            [UIView animateWithDuration:0.25 animations:^{
-                self.nn_backgroundDisplayImageView.alpha = 0.0;
-                self.nn_backgroundAssistantImageView.alpha = 1.0;
-            } completion:^(BOOL finished) {
-                // a new animation cause the finished to false
-                if (!finished) {
-                    return;
-                }
-                [self _nn_endAnimationForBackgroundImageWithItem:self.topItem];
-            }];
-            return;
-        }
-    };
-}
-
-- (void)_nn_endAnimationForBackgroundImageWithItem:(UINavigationItem *)item {
-    
-    UIImage *backgroundImage = [self nn_backgroundImageFromItem:item];
-    self.nn_backgroundDisplayImageView.image = backgroundImage;
-    self.nn_backgroundDisplayImageView.alpha = 1.0;
-    self.nn_backgroundAssistantImageView.alpha = 0.0;
-}
-
-- (void)_nn_startAnimationForBackgroundViewWithItem:(UINavigationItem *)item transition:(int)transition {
-    
-    if (@(transition).boolValue) {
-        [UIView animateWithDuration:0.25 animations:^{
-            self.nn_backgroundView.alpha = item.nn_backgroundAlpha;
-        }];
-    }
-    else {
-        self.nn_backgroundView.alpha = item.nn_backgroundAlpha;
-    }
-}
-
-- (void)_nn_endAnimationForBackgroundViewWithItem:(UINavigationItem *)item {
-    self.nn_backgroundView.alpha = item.nn_backgroundAlpha;
-}
-
-- (void)_nn_startAnimationForTintColorWithItem:(UINavigationItem *)item transition:(int)transition {
-    self.tintColor = item.nn_tintColor;
-}
-
-- (void)_nn_endAnimationForTintColorWithItem:(UINavigationItem *)item {
-    self.tintColor = item.nn_tintColor;
-}
-
-- (void)_nn_startAnimationForInteractive:(CGFloat)percentComplete {
-    
-    UIImage *backgroundImage = [self nn_backgroundImageFromItem:self.topItem];
-    self.nn_backgroundAssistantImageView.image = backgroundImage;
-    self.nn_backgroundDisplayImageView.alpha = 1.0 - percentComplete;
-    self.nn_backgroundAssistantImageView.alpha = percentComplete;
-    
-    CGFloat deltAlpha = self.assistantItems.lastObject.nn_backgroundAlpha - self.topItem.nn_backgroundAlpha;
-    self.nn_backgroundView.alpha = self.topItem.nn_backgroundAlpha + deltAlpha * (1.0 - percentComplete);
-}
-
-- (void)_nn_endAnimationForInteractiveWithItem:(UINavigationItem *)item
-                                    transition:(CGFloat)transition
-                                      finished:(BOOL)finished {
-    
-    NSTimeInterval duration = 0.25 * (finished ?  (1 - transition) : transition);
-    
-    UIImage *backgroundImage = [self nn_backgroundImageFromItem:item];
-    self.nn_backgroundDisplayImageView.image = backgroundImage;
-    [UIView animateWithDuration:duration animations:^{
-        self.nn_backgroundDisplayImageView.alpha = 1.0;
-        self.nn_backgroundAssistantImageView.alpha = 0.0;
-    } completion:^(BOOL finished) {
-        [self _nn_endAnimationForBackgroundImageWithItem:item];
-    }];
-    
-    [UIView animateWithDuration:duration animations:^{
-        self.nn_backgroundView.alpha = item.nn_backgroundAlpha;
-    }];
-}
-
-
 @end
+
+

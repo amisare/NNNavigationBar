@@ -1,5 +1,5 @@
 //
-//  UINavigationBar+NNBackgroundMethodSwizzling.h
+//  UINavigationBar+NNMethodSwizzling.h
 //  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/4/17.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UINavigationBar (NNBackgroundMethodSwizzling)
+@interface UINavigationBar (NNMethodSwizzling)
 
 @end

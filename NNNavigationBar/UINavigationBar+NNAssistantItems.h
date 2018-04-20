@@ -1,5 +1,5 @@
 //
-//  UINavigationBar+NNBackgroundAssistantItems.h
+//  UINavigationBar+NNAssistantItems.h
 //  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/4/19.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UINavigationBar (NNBackgroundAssistantItems)
+@interface UINavigationBar (NNAssistantItems)
 
 @property(nullable,nonatomic,copy) NSMutableArray<UINavigationItem *> *assistantItems;
 
