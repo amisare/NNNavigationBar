@@ -1,6 +1,6 @@
 //
 //  UINavigationBar+NNTransitionForBackgroundImage.h
-//  NNNavigationBarDemo
+//  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/4/20.
 //  Copyright © 2018年 GuHaijun. All rights reserved.
