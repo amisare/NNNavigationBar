@@ -69,6 +69,7 @@
     
     self.title = @(self.page).stringValue;
     self.view.backgroundColor = [UIColor whiteColor];
+    [UIColor color:self.navigationController.navigationBar.tintColor updateAlpha:1];
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
@@ -172,8 +173,12 @@
     [self.navigationController.navigationBar setNn_backgroundColor:[UIColor purpleColor] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setNn_backgroundColor:[UIColor brownColor] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsCompact];
     
+    [self.navigationItem setNn_tintColor:[UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1]];
+    self.navigationController.navigationBar.tintAdjustmentMode = UIViewTintAdjustmentModeNormal;
+    
     BOOL boolValue = @(self.page % 3 == 2).boolValue;
     if (boolValue) {
+        
         [self.navigationItem setNn_backgroundColor:[UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1]
                                     forBarPosition:UIBarPositionAny
                                         barMetrics:UIBarMetricsDefault];

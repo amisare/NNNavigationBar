@@ -10,9 +10,11 @@
 
 @interface UINavigationItem (NNBackgroundItem)
 
+@property (nonatomic, strong) UIColor *nn_tintColor;
+@property (nonatomic, assign) CGFloat nn_backgroundAlpha;
+
 @property (nonatomic, strong) UIColor *nn_backgroundColor;
 @property (nonatomic, strong) UIImage *nn_backgroundImage;
-@property (nonatomic, assign) CGFloat nn_backgroundAlpha;
 
 
 /* In general, you should specify a value for the normal state to be used by other states which don't have a custom value set.

@@ -32,6 +32,10 @@
     if ([key isEqualToString:@"nn_backgroundAlpha"]) {
         self.nn_backgroundView.alpha = item.nn_backgroundAlpha;
     }
+    
+    if ([key isEqualToString:@"nn_tintColor"]) {
+        self.tintColor = item.nn_tintColor;
+    }
 }
 
 @end

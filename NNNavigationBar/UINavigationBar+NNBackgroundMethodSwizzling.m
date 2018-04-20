@@ -46,6 +46,10 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 #pragma clang diagnostic ignored "-Wundeclared-selector"
         if (@available(iOS 8, *)) {
             nn_swizzleSelector(self,
+                               @selector(setTintColor),
+                               @selector(_nn_setTintColor)
+                               );
+            nn_swizzleSelector(self,
                                @selector(_barPosition),
                                @selector(_nn_barPosition)
                                );
@@ -145,6 +149,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     item.nn_backgroundItemDelegate = self;
     [self _nn_startAnimationForBackgroundImageWithItem:self.topItem transition:transition];
     [self _nn_startAnimationForBackgroundViewWithItem:self.topItem transition:transition];
+    [self _nn_startAnimationForTintColorWithItem:self.topItem transition:transition];
     
     self.assistantItems = [NSMutableArray arrayWithArray:self.items];
 }
@@ -156,6 +161,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_endAnimationForBackgroundImageWithItem:self.topItem];
     [self _nn_endAnimationForBackgroundViewWithItem:self.topItem];
+    [self _nn_endAnimationForTintColorWithItem:self.topItem];
 }
 
 - (UINavigationItem *)_nn_popNavigationItemWithTransition:(int)transition {
@@ -167,6 +173,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_startAnimationForBackgroundImageWithItem:self.topItem transition:transition];
     [self _nn_startAnimationForBackgroundViewWithItem:self.topItem transition:transition];
+    [self _nn_startAnimationForTintColorWithItem:self.topItem transition:transition];
     
     return item;
 }
@@ -178,6 +185,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_endAnimationForBackgroundImageWithItem:self.topItem];
     [self _nn_endAnimationForBackgroundViewWithItem:self.topItem];
+    [self _nn_endAnimationForTintColorWithItem:self.topItem];
 }
 
 - (void)_nn_updateInteractiveTransition:(CGFloat)percentComplete {
@@ -210,6 +218,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     [self _nn_startAnimationForBackgroundImageWithItem:newItems.lastObject transition:true];
     [self _nn_startAnimationForBackgroundViewWithItem:newItems.lastObject transition:true];
+    [self _nn_startAnimationForTintColorWithItem:newItems.lastObject transition:true];
     
     self.assistantItems = [NSMutableArray arrayWithArray:newItems];
     
@@ -289,6 +298,14 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 
 - (void)_nn_endAnimationForBackgroundViewWithItem:(UINavigationItem *)item {
     self.nn_backgroundView.alpha = item.nn_backgroundAlpha;
+}
+
+- (void)_nn_startAnimationForTintColorWithItem:(UINavigationItem *)item transition:(int)transition {
+    self.tintColor = item.nn_tintColor;
+}
+
+- (void)_nn_endAnimationForTintColorWithItem:(UINavigationItem *)item {
+    self.tintColor = item.nn_tintColor;
 }
 
 - (void)_nn_startAnimationForInteractive:(CGFloat)percentComplete {

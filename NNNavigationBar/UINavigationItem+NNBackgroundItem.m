@@ -14,6 +14,7 @@
 static const void *kUINavigationItem_NNBackgroundColors = &kUINavigationItem_NNBackgroundColors;
 static const void *kUINavigationItem_NNBackgroundImages = &kUINavigationItem_NNBackgroundImages;
 static const void *kUINavigationItem_NNBackgroundAlpha = &kUINavigationItem_NNBackgroundAlpha;
+static const void *kUINavigationItem_NNBackgroundTintColor = &kUINavigationItem_NNBackgroundTintColor;
 
 #define UINavigationItem_NNBackgroundKey(barPosition, barMetrics) [@(barPosition << (sizeof(barPosition) * 8 / 2) | barMetrics) stringValue]
 
@@ -115,8 +116,8 @@ static const void *kUINavigationItem_NNBackgroundAlpha = &kUINavigationItem_NNBa
 }
 
 - (CGFloat)nn_backgroundAlpha {
-    id alphaObjc = objc_getAssociatedObject(self, kUINavigationItem_NNBackgroundAlpha);
-    CGFloat alpha = (alphaObjc == nil) ? 1.0 : [alphaObjc floatValue];
+    id objc = objc_getAssociatedObject(self, kUINavigationItem_NNBackgroundAlpha);
+    CGFloat alpha = (objc == nil) ? 1.0 : [objc floatValue];
     return alpha;
 }
 
@@ -125,6 +126,20 @@ static const void *kUINavigationItem_NNBackgroundAlpha = &kUINavigationItem_NNBa
     if (self.nn_backgroundItemDelegate &&
         [self.nn_backgroundItemDelegate respondsToSelector:@selector(nn_navigationItem:backgroundChangeForKey:)]) {
         [self.nn_backgroundItemDelegate nn_navigationItem:self backgroundChangeForKey:@"nn_backgroundAlpha"];
+    }
+}
+
+- (UIColor *)nn_tintColor {
+    id objc = objc_getAssociatedObject(self, kUINavigationItem_NNBackgroundTintColor);
+    return objc ? objc : [UIColor clearColor];
+}
+
+- (void)setNn_tintColor:(UIColor *)nn_tintColor {
+    UIColor *tintColor = nn_tintColor ? nn_tintColor : [UIColor clearColor];
+    objc_setAssociatedObject(self, kUINavigationItem_NNBackgroundTintColor, tintColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.nn_backgroundItemDelegate &&
+        [self.nn_backgroundItemDelegate respondsToSelector:@selector(nn_navigationItem:backgroundChangeForKey:)]) {
+        [self.nn_backgroundItemDelegate nn_navigationItem:self backgroundChangeForKey:@"nn_tintColor"];
     }
 }
 
