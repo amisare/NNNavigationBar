@@ -22,6 +22,6 @@
 
 @interface UINavigationItem (NNBackgroundItemDelegate)
 
-@property (nonatomic, strong) id<NNBackgroundItemDelegate> nn_backgroundItemDelegate;
+@property (nonatomic, weak) id<NNBackgroundItemDelegate> nn_backgroundItemDelegate;
 
 @end

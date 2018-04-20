@@ -22,6 +22,6 @@
 
 @interface UINavigationBar (NNBackgroundBarDelegate)
 
-@property (nonatomic, strong) id<NNBackgroundBarDelegate> nn_backgroundBarDelegate;
+@property (nonatomic, weak) id<NNBackgroundBarDelegate> nn_backgroundBarDelegate;
 
 @end

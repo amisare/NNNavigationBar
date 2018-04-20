@@ -8,6 +8,7 @@
 
 #import "DemoViewController+Slider.h"
 #import "NSLayoutConstraint+NNVisualFormat.h"
+#import "NSObject+FBKVOController.h"
 
 @implementation DemoViewController (Slider)
 
@@ -42,24 +43,17 @@
     self.colorAlphaMixLabel.text = [NSString stringWithFormat:@"%0.1f", self.colorSlider.minimumValue];
     self.colorAlphaMaxLabel.text = [NSString stringWithFormat:@"%0.1f", self.colorSlider.maximumValue];
     
-    [self.colorSlider addObserver:self forKeyPath:@"value" options:NSKeyValueObservingOptionNew context:nil];
     [self.colorSlider addTarget:self action:@selector(handleColorSlider:) forControlEvents:UIControlEventValueChanged];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-    if ([keyPath isEqualToString:@"value"]) {
+    
+    [self.KVOControllerNonRetaining observe:self.colorSlider keyPath:@"value" options:NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSKeyValueChangeKey,id> * _Nonnull change) {
         if (change[NSKeyValueChangeNewKey] != [NSNull null] && change[NSKeyValueChangeNewKey] != nil) {
             self.colorAlphaCurrentLabel.text = [[change objectForKey:NSKeyValueChangeNewKey] stringValue];
         }
-    }
+    }];
 }
 
 - (void)handleColorSlider:(UISlider *)colorSlider {
     self.colorAlphaCurrentLabel.text = @(self.colorSlider.value).stringValue;
-}
-
-- (void)dealloc {
-    [self.colorSlider removeObserver:self forKeyPath:@"value"];
 }
 
 @end

@@ -14,11 +14,15 @@ static const void *kNNBackgroundBarDelegate = &kNNBackgroundBarDelegate;
 @implementation UINavigationBar (NNBackgroundBarDelegate)
 
 - (id<NNBackgroundBarDelegate>)nn_backgroundBarDelegate {
-    return objc_getAssociatedObject(self, kNNBackgroundBarDelegate);
+    NSMapTable *table = objc_getAssociatedObject(self,kNNBackgroundBarDelegate);
+    id<NNBackgroundBarDelegate> delegate = [table objectForKey:@"kNNBackgroundBarDelegate"];
+    return delegate;
 }
 
 - (void)setNn_backgroundBarDelegate:(id<NNBackgroundBarDelegate>)nn_backgroundBarDelegate {
-    objc_setAssociatedObject(self, kNNBackgroundBarDelegate, nn_backgroundBarDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    NSMapTable *table = [NSMapTable strongToWeakObjectsMapTable];
+    [table setObject:nn_backgroundBarDelegate forKey:@"kNNBackgroundBarDelegate"];
+    objc_setAssociatedObject(self, kNNBackgroundBarDelegate, table, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

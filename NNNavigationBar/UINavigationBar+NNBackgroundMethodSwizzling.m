@@ -211,14 +211,13 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 
 - (UINavigationItem *)_nn_popNavigationItemWithTransition:(int)transition {
     
+    self.assistantItems = [NSMutableArray arrayWithArray:self.items];
+    
     UINavigationItem *item = [self _nn_popNavigationItemWithTransition:transition];
     NNLogInfo(@"transition:%d return:%@",transition, item);
     
     [self _nn_startAnimationForBackgroundImageWithItem:self.topItem transition:transition];
     [self _nn_startAnimationForBackgroundViewWithItem:self.topItem transition:transition];
-    
-    self.assistantItems = [NSMutableArray arrayWithArray:self.items];
-    [self.assistantItems addObject:item];
     
     return item;
 }

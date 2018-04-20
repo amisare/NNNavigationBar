@@ -241,8 +241,6 @@
     self.navigationController.navigationBar.nn_backgroundViewHidden = false;
     
     [self.navigationController.navigationBar setNn_backgroundImage:[UIImage imageNamed:@"image0"] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-//    self.navigationController.navigationBar.nn_backgroundView.alpha = self.navigationItem.nn_backgroundAlpha;
-    
     [self.colorSlider addTarget:self action:@selector(handleColorSliderAlpha:) forControlEvents:UIControlEventValueChanged];
 }
 
@@ -250,7 +248,6 @@
     NSLog(@"%s alpha: %f", __FUNCTION__, colorSlider.value);
     
     self.navigationItem.nn_backgroundAlpha = self.colorSlider.value;
-    
 }
 
 - (void)setPrompt:(NSString *)prompt {
