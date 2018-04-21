@@ -11,6 +11,7 @@
 #import "UIImage+NNImageWithColor.h"
 #import "UINavigationItem+NNBackgroundItemDelegate.h"
 
+static const void *kUINavigationItem_NNAlpha = &kUINavigationItem_NNAlpha;
 static const void *kUINavigationItem_NNBackgroundColors = &kUINavigationItem_NNBackgroundColors;
 static const void *kUINavigationItem_NNBackgroundImages = &kUINavigationItem_NNBackgroundImages;
 static const void *kUINavigationItem_NNBackgroundAlpha = &kUINavigationItem_NNBackgroundAlpha;
@@ -126,6 +127,20 @@ static const void *kUINavigationItem_NNBackgroundTintColor = &kUINavigationItem_
     if (self.nn_backgroundItemDelegate &&
         [self.nn_backgroundItemDelegate respondsToSelector:@selector(nn_navigationItem:backgroundChangeForKey:)]) {
         [self.nn_backgroundItemDelegate nn_navigationItem:self backgroundChangeForKey:@"nn_backgroundAlpha"];
+    }
+}
+
+- (CGFloat)nn_alpha {
+    id objc = objc_getAssociatedObject(self, kUINavigationItem_NNAlpha);
+    CGFloat alpha = (objc == nil) ? 1.0 : [objc floatValue];
+    return alpha;
+}
+
+- (void)setNn_alpha:(CGFloat)nn_alpha {
+    objc_setAssociatedObject(self, kUINavigationItem_NNAlpha, @(nn_alpha), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.nn_backgroundItemDelegate &&
+        [self.nn_backgroundItemDelegate respondsToSelector:@selector(nn_navigationItem:backgroundChangeForKey:)]) {
+        [self.nn_backgroundItemDelegate nn_navigationItem:self backgroundChangeForKey:@"nn_alpha"];
     }
 }
 

@@ -11,6 +11,7 @@
 #import "UINavigationBar+NNTransitionForBackgroundImage.h"
 #import "UINavigationBar+NNTransitionForBackgroundView.h"
 #import "UINavigationBar+NNTransitionForTintColor.h"
+#import "UINavigationBar+NNTransitionForBarAlpha.h"
 
 static const void *kUINavigationBar_NNTransitions = &kUINavigationBar_NNTransitions;
 
@@ -23,6 +24,7 @@ static const void *kUINavigationBar_NNTransitions = &kUINavigationBar_NNTransiti
         [nn_transitions addObject:[[NNBackgroundImageTransition alloc] initWithNavigationBar:self]];
         [nn_transitions addObject:[[NNBackgroundViewTransition alloc] initWithNavigationBar:self]];
         [nn_transitions addObject:[[NNTintColorTransition alloc] initWithNavigationBar:self]];
+        [nn_transitions addObject:[[NNBarAlphaTransition alloc] initWithNavigationBar:self]];
         objc_setAssociatedObject(self, kUINavigationBar_NNTransitions, nn_transitions, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return nn_transitions;

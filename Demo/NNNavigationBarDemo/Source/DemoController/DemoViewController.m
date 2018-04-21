@@ -45,7 +45,7 @@
             self.colorSlider.value = self.navigationItem.nn_backgroundColor.alpha;
             break;
         case DemoTypeBackgroundAlpha:
-            self.colorSlider.value = self.navigationItem.nn_backgroundAlpha;
+            self.colorSlider.value = self.navigationItem.nn_alpha;
             break;
             
         default:
@@ -173,8 +173,7 @@
     [self.navigationController.navigationBar setNn_backgroundColor:[UIColor purpleColor] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setNn_backgroundColor:[UIColor brownColor] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsCompact];
     
-    [self.navigationItem setNn_tintColor:[UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1]];
-    self.navigationController.navigationBar.tintAdjustmentMode = UIViewTintAdjustmentModeNormal;
+//    [self.navigationItem setNn_tintColor:[UIColor colorWithRed:arc4random()%255/255.0 green:arc4random()%255/255.0 blue:arc4random()%255/255.0 alpha:1]];
     
     BOOL boolValue = @(self.page % 3 == 2).boolValue;
     if (boolValue) {
@@ -252,7 +251,7 @@
 - (void)handleColorSliderAlpha:(UISlider *)colorSlider {
     NSLog(@"%s alpha: %f", __FUNCTION__, colorSlider.value);
     
-    self.navigationItem.nn_backgroundAlpha = self.colorSlider.value;
+    self.navigationItem.nn_alpha = self.colorSlider.value;
 }
 
 - (void)setPrompt:(NSString *)prompt {
