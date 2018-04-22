@@ -36,12 +36,6 @@
     if ([key isEqualToString:@"nn_tintColor"]) {
         self.tintColor = item.nn_tintColor;
     }
-    
-    if ([key isEqualToString:@"nn_alpha"]) {
-        for (UIView *view in self.subviews) {
-            view.alpha = item.nn_alpha;
-        }
-    }
 }
 
 @end

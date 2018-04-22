@@ -28,29 +28,22 @@
 }
 
 - (void)nn_startTransitionWithParams:(NSDictionary *)params {
-    
     UINavigationItem *item = [params objectForKey:@"item"];
-//    NSNumber *transition = [params objectForKey:@"transition"];
-//    self.bar.tintColor = item.nn_tintColor;
+    self.bar.tintColor = item.nn_tintColor;
 }
 
 - (void)nn_endTransitionWithParams:(NSDictionary *)params {
     UINavigationItem *item = [params objectForKey:@"item"];
-//    self.bar.tintColor = item.nn_tintColor;
+    self.bar.tintColor = item.nn_tintColor;
 }
 
 - (void)nn_updateInteractiveTransitionWithParams:(NSDictionary *)params {
     
-//    CGFloat percentComplete = [[params objectForKey:@"percentComplete"] floatValue];
- 
 }
 
 - (void)nn_endInteractiveTransitionWithParams:(NSDictionary *)params {
-    
-//    UINavigationItem *item = [params objectForKey:@"item"];
-//    CGFloat transition = [[params objectForKey:@"transition"] floatValue];
-//    BOOL finished = [[params objectForKey:@"item"] boolValue];
-    
+    UINavigationItem *item = [params objectForKey:@"item"];
+    self.bar.tintColor = item.nn_tintColor;
 }
 
 @end

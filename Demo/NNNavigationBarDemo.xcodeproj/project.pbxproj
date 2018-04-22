@@ -34,7 +34,6 @@
 		67A9A597208A3507000B6A2A /* UINavigationBar+NNTransitionForBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A9A596208A3507000B6A2A /* UINavigationBar+NNTransitionForBackgroundView.m */; };
 		67A9A59A208A351A000B6A2A /* UINavigationBar+NNTransitionForTintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A9A599208A351A000B6A2A /* UINavigationBar+NNTransitionForTintColor.m */; };
 		67A9A5A1208A3B6A000B6A2A /* UINavigationBar+NNTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A9A5A0208A3B6A000B6A2A /* UINavigationBar+NNTransition.m */; };
-		67E14933208ACB41001C821B /* UINavigationBar+NNTransitionForBarAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E14932208ACB41001C821B /* UINavigationBar+NNTransitionForBarAlpha.m */; };
 		67F80EB820808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F80EB720808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.m */; };
 		67F80EBC2080ACB00098B825 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F80EBB2080ACB00098B825 /* DemoViewController.m */; };
 		67F80EBF2080ACF70098B825 /* DemoViewController+Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F80EBE2080ACF70098B825 /* DemoViewController+Slider.m */; };
@@ -114,8 +113,6 @@
 		67A9A59F208A3B6A000B6A2A /* UINavigationBar+NNTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransition.h"; sourceTree = "<group>"; };
 		67A9A5A0208A3B6A000B6A2A /* UINavigationBar+NNTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTransition.m"; sourceTree = "<group>"; };
 		67D26E5E208858D6003299F2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		67E14931208ACB41001C821B /* UINavigationBar+NNTransitionForBarAlpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransitionForBarAlpha.h"; sourceTree = "<group>"; };
-		67E14932208ACB41001C821B /* UINavigationBar+NNTransitionForBarAlpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTransitionForBarAlpha.m"; sourceTree = "<group>"; };
 		67F80EB620808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+NNVisualFormat.h"; sourceTree = "<group>"; };
 		67F80EB720808DD90098B825 /* NSLayoutConstraint+NNVisualFormat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+NNVisualFormat.m"; sourceTree = "<group>"; };
 		67F80EBA2080ACB00098B825 /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
@@ -268,8 +265,6 @@
 				67A9A593208A34FD000B6A2A /* UINavigationBar+NNTransitionForBackgroundImage.m */,
 				67A9A595208A3507000B6A2A /* UINavigationBar+NNTransitionForBackgroundView.h */,
 				67A9A596208A3507000B6A2A /* UINavigationBar+NNTransitionForBackgroundView.m */,
-				67E14931208ACB41001C821B /* UINavigationBar+NNTransitionForBarAlpha.h */,
-				67E14932208ACB41001C821B /* UINavigationBar+NNTransitionForBarAlpha.m */,
 				67A9A598208A351A000B6A2A /* UINavigationBar+NNTransitionForTintColor.h */,
 				67A9A599208A351A000B6A2A /* UINavigationBar+NNTransitionForTintColor.m */,
 			);
@@ -451,7 +446,6 @@
 				67A6F47E207F0FE00082A845 /* DemoViewController+TableView.m in Sources */,
 				67A6F479207EFD430082A845 /* UINavigationItem+NNBackgroundItem.m in Sources */,
 				67A9A594208A34FD000B6A2A /* UINavigationBar+NNTransitionForBackgroundImage.m in Sources */,
-				67E14933208ACB41001C821B /* UINavigationBar+NNTransitionForBarAlpha.m in Sources */,
 				67F80EBF2080ACF70098B825 /* DemoViewController+Slider.m in Sources */,
 				679AA54220858F5A00749AF6 /* UINavigationBar+NNBackgroundDelegateImp.m in Sources */,
 				67A5B6CC2089A82C0020515A /* NSObject+FBKVOController.m in Sources */,

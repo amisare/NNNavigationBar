@@ -45,7 +45,7 @@
             self.colorSlider.value = self.navigationItem.nn_backgroundColor.alpha;
             break;
         case DemoTypeBackgroundAlpha:
-            self.colorSlider.value = self.navigationItem.nn_alpha;
+            self.colorSlider.value = self.navigationItem.nn_backgroundAlpha;
             break;
             
         default:
@@ -66,6 +66,8 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     NSLog(@"page:%@, %s", @(self.page).stringValue, __FUNCTION__);
+    
+    self.automaticallyAdjustsScrollViewInsets = false;
     
     self.title = @(self.page).stringValue;
     self.view.backgroundColor = [UIColor whiteColor];
@@ -251,7 +253,7 @@
 - (void)handleColorSliderAlpha:(UISlider *)colorSlider {
     NSLog(@"%s alpha: %f", __FUNCTION__, colorSlider.value);
     
-    self.navigationItem.nn_alpha = self.colorSlider.value;
+    self.navigationItem.nn_backgroundAlpha = self.colorSlider.value;
 }
 
 - (void)setPrompt:(NSString *)prompt {

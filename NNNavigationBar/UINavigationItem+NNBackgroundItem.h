@@ -11,7 +11,6 @@
 @interface UINavigationItem (NNBackgroundItem)
 
 @property (nonatomic, strong) UIColor *nn_tintColor;
-@property (nonatomic, assign) CGFloat nn_alpha;
 @property (nonatomic, assign) CGFloat nn_backgroundAlpha;
 
 @property (nonatomic, strong) UIColor *nn_backgroundColor;
