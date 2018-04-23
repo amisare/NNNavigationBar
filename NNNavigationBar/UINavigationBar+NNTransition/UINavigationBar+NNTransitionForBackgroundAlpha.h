@@ -1,5 +1,5 @@
 //
-//  UINavigationBar+NNTransitionForBackgroundView.h
+//  UINavigationBar+NNTransitionForBackgroundAlpha.h
 //  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/4/20.

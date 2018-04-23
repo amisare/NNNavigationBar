@@ -1,12 +1,12 @@
 //
-//  UINavigationBar+NNTransitionForBackgroundView.m
+//  UINavigationBar+NNTransitionForBackgroundAlpha.m
 //  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/4/20.
 //  Copyright © 2018年 GuHaijun. All rights reserved.
 //
 
-#import "UINavigationBar+NNTransitionForBackgroundView.h"
+#import "UINavigationBar+NNTransitionForBackgroundAlpha.h"
 #import "UINavigationBar+NNBackgroundView.h"
 #import "UINavigationItem+NNBackgroundItem.h"
 #import "UINavigationBar+NNAssistantItems.h"

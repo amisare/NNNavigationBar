@@ -9,7 +9,7 @@
 #import "UINavigationBar+NNTransition.h"
 #import <objc/runtime.h>
 #import "UINavigationBar+NNTransitionForBackgroundImage.h"
-#import "UINavigationBar+NNTransitionForBackgroundView.h"
+#import "UINavigationBar+NNTransitionForBackgroundAlpha.h"
 #import "UINavigationBar+NNTransitionForTintColor.h"
 
 static const void *kUINavigationBar_NNTransitions = &kUINavigationBar_NNTransitions;
