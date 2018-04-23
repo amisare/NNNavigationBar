@@ -19,6 +19,7 @@ static const void *kUINavigationBar_NNBackgroundColors = &kUINavigationBar_NNBac
 static const void *kUINavigationBar_NNBackgroundImages = &kUINavigationBar_NNBackgroundImages;
 static const void *kUINavigationBar_NNBackgroundViewHidden = &kUINavigationBar_NNBackgroundViewHidden;
 static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackgroundView;
+static const void *kUINavigationBar_NNBackgroundTintColor = &kUINavigationBar_NNBackgroundTintColor;
 
 @interface _NNNavigationBarBackgroundView : UIImageView @end
 @implementation _NNNavigationBarBackgroundView @end
@@ -172,6 +173,22 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
         objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundImages, nn_backgroundImages, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return nn_backgroundImages;
+}
+
+- (UIColor *)nn_tintColor {
+    id objc = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundTintColor);
+    return objc;
+}
+
+- (void)setNn_tintColor:(UIColor *)nn_tintColor {
+    if (nn_tintColor == nil) {
+        return;
+    }
+    objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundTintColor, nn_tintColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (self.nn_backgroundBarDelegate &&
+        [self.nn_backgroundBarDelegate respondsToSelector:@selector(nn_navigationBar:backgroundChangeForKey:)]) {
+        [self.nn_backgroundBarDelegate nn_navigationBar:self backgroundChangeForKey:@"nn_tintColor"];
+    }
 }
 
 @end

@@ -34,7 +34,14 @@
     }
     
     if ([key isEqualToString:@"nn_tintColor"]) {
-        self.tintColor = item.nn_tintColor;
+        UIColor *tintColor = nil;
+        if (!tintColor) {
+            tintColor = item.nn_tintColor;
+        }
+        if (!tintColor) {
+            tintColor = self.nn_tintColor;
+        }
+        self.tintColor = tintColor;
     }
 }
 

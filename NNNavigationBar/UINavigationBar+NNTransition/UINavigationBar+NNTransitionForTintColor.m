@@ -29,12 +29,12 @@
 
 - (void)nn_startTransitionWithParams:(NSDictionary *)params {
     UINavigationItem *item = [params objectForKey:@"item"];
-    self.bar.tintColor = item.nn_tintColor;
+    self.bar.tintColor = [self tintColorFromeBar:self.bar item:item];
 }
 
 - (void)nn_endTransitionWithParams:(NSDictionary *)params {
     UINavigationItem *item = [params objectForKey:@"item"];
-    self.bar.tintColor = item.nn_tintColor;
+    self.bar.tintColor = [self tintColorFromeBar:self.bar item:item];
 }
 
 - (void)nn_updateInteractiveTransitionWithParams:(NSDictionary *)params {
@@ -43,7 +43,17 @@
 
 - (void)nn_endInteractiveTransitionWithParams:(NSDictionary *)params {
     UINavigationItem *item = [params objectForKey:@"item"];
-    self.bar.tintColor = item.nn_tintColor;
+    self.bar.tintColor = [self tintColorFromeBar:self.bar item:item];
+}
+
+- (UIColor *)tintColorFromeBar:(UINavigationBar *)bar item:(UINavigationItem *)item {
+    if (item.nn_tintColor) {
+        return item.nn_tintColor;
+    }
+    if (bar.nn_tintColor) {
+        return bar.nn_tintColor;
+    }
+    return nil;
 }
 
 @end

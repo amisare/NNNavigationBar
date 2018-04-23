@@ -14,6 +14,8 @@
 @property (nonatomic, assign) BOOL nn_backgroundViewHidden;
 - (UIView *)nn_backgroundView;
 
+@property (nonatomic, strong) UIColor *nn_tintColor;
+
 @property (nonatomic, strong) UIColor *nn_backgroundColor;
 @property (nonatomic, strong) UIImage *nn_backgroundImage;
 

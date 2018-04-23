@@ -132,12 +132,14 @@ static const void *kUINavigationItem_NNBackgroundTintColor = &kUINavigationItem_
 
 - (UIColor *)nn_tintColor {
     id objc = objc_getAssociatedObject(self, kUINavigationItem_NNBackgroundTintColor);
-    return objc ? objc : [UIColor clearColor];
+    return objc;
 }
 
 - (void)setNn_tintColor:(UIColor *)nn_tintColor {
-    UIColor *tintColor = nn_tintColor ? nn_tintColor : [UIColor clearColor];
-    objc_setAssociatedObject(self, kUINavigationItem_NNBackgroundTintColor, tintColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    if (nn_tintColor == nil) {
+        return;
+    }
+    objc_setAssociatedObject(self, kUINavigationItem_NNBackgroundTintColor, nn_tintColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.nn_backgroundItemDelegate &&
         [self.nn_backgroundItemDelegate respondsToSelector:@selector(nn_navigationItem:backgroundChangeForKey:)]) {
         [self.nn_backgroundItemDelegate nn_navigationItem:self backgroundChangeForKey:@"nn_tintColor"];
