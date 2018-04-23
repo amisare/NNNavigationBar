@@ -60,10 +60,6 @@ static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigat
         backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
     }
     
-    if (!backgroundImage) {
-        backgroundImage = [UIImage new];
-    }
-    
     return backgroundImage;
 }
 
@@ -96,10 +92,6 @@ static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigat
     if (!backgroundImage) {
         UIColor *backgroundColor = [bar nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
         backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
-    }
-    
-    if (!backgroundImage) {
-        backgroundImage = [UIImage new];
     }
     
     return backgroundImage;
