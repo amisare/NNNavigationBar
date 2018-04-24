@@ -95,8 +95,8 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     if (position != self.nn_barPosition) {
         NNLogInfo(@"position:%ld", (long)position);
-        self.nn_barPosition = position;
         
+        self.nn_barPosition = position;
         for (id<NNTransition> transition in self.nn_transitions) {
             if ([transition respondsToSelector:@selector(nn_updateBarStyleTransitionWithParams:)]) {
                 [transition nn_updateBarStyleTransitionWithParams:@{@"barPosition" : @(position),
@@ -131,12 +131,12 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     
     if (metrics != self.nn_activeBarMetrics) {
         NNLogInfo(@"metrics:%ld", (long)metrics);
-        self.nn_activeBarMetrics = metrics;
         
+        self.nn_activeBarMetrics = metrics;
         for (id<NNTransition> transition in self.nn_transitions) {
             if ([transition respondsToSelector:@selector(nn_updateBarStyleTransitionWithParams:)]) {
-                [transition nn_updateBarStyleTransitionWithParams:@{@"barPosition" : @(metrics),
-                                                                    @"barMetrics" : @(self.nn_activeBarMetrics)
+                [transition nn_updateBarStyleTransitionWithParams:@{@"barPosition" : @(self.nn_barPosition),
+                                                                    @"barMetrics" : @(metrics)
                                                                     }];
             }
         }
@@ -230,21 +230,6 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
                                          withObject:@{@"item":newItems.lastObject, @"transition":@(true)}];
     self.assistantItems = [NSMutableArray arrayWithArray:newItems];
     return ret;
-}
-
-- (UIBarMetrics)_nn_recalculateBarMetrics:(UIBarMetrics)metrics prompt:(NSString *)prompt {
-    
-    if (prompt != nil) {
-        
-        if (metrics == UIBarMetricsDefault) {
-            return UIBarMetricsDefaultPrompt;
-        }
-        
-        if (metrics == UIBarMetricsCompact) {
-            return UIBarMetricsCompactPrompt;
-        }
-    }
-    return metrics;
 }
 
 @end
