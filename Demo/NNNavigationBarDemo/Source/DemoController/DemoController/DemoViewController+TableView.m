@@ -62,7 +62,7 @@
     cell.selected = false;
     
     if ([cell.textLabel.text isEqualToString:@"push"]) {
-        DemoViewController *vc = [[DemoViewController alloc] initWithType:self.type];
+        DemoViewController *vc = [[self class] new];
         vc.page = self.page + 1;
         [self.navigationController pushViewController:vc animated:true];
         return;

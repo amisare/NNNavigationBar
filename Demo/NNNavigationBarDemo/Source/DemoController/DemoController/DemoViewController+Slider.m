@@ -43,7 +43,7 @@
     self.colorAlphaMixLabel.text = [NSString stringWithFormat:@"%0.1f", self.colorSlider.minimumValue];
     self.colorAlphaMaxLabel.text = [NSString stringWithFormat:@"%0.1f", self.colorSlider.maximumValue];
     
-    [self.colorSlider addTarget:self action:@selector(handleColorSlider:) forControlEvents:UIControlEventValueChanged];
+    [self.colorSlider addTarget:self action:@selector(_handleColorSlider:) forControlEvents:UIControlEventValueChanged];
     
     [self.KVOControllerNonRetaining observe:self.colorSlider keyPath:@"value" options:NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSKeyValueChangeKey,id> * _Nonnull change) {
         if (change[NSKeyValueChangeNewKey] != [NSNull null] && change[NSKeyValueChangeNewKey] != nil) {
@@ -52,7 +52,7 @@
     }];
 }
 
-- (void)handleColorSlider:(UISlider *)colorSlider {
+- (void)_handleColorSlider:(UISlider *)colorSlider {
     self.colorAlphaCurrentLabel.text = @(self.colorSlider.value).stringValue;
 }
 

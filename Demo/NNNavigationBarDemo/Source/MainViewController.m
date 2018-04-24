@@ -9,6 +9,11 @@
 #import "MainViewController.h"
 #import "DemoViewController.h"
 #import "NSLayoutConstraint+NNVisualFormat.h"
+#import "BarBackgroundColorVC.h"
+#import "BarBackgroundImageVC.h"
+#import "ItemBackgroundAlphaVC.h"
+#import "ItemBackgroundImageVC.h"
+#import "ItemBackgroundColorVC.h"
 
 @interface MainViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -79,24 +84,23 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.selected = false;
     
-    DemoType type = DemoTypeColorOnly;
+    DemoViewController *vc = nil;
     if ([cell.textLabel.text isEqualToString:@"Set the backgroundColor on NavigationBar"]) {
-        type = DemoTypeColorOnly;
+        vc = [BarBackgroundColorVC new];
     }
     if ([cell.textLabel.text isEqualToString:@"Set the backgroundImage on NavigationBar"]) {
-        type = DemoTypeImageOnly;
+        vc = [BarBackgroundImageVC new];
     }
     if ([cell.textLabel.text isEqualToString:@"Set the backgroundColor on NavigationItem"]) {
-        type = DemoTypeColorTransition;
+        vc = [ItemBackgroundColorVC new];
     }
     if ([cell.textLabel.text isEqualToString:@"Set the backgroundImage on NavigationItem"]) {
-        type = DemoTypeImageTransition;
+        vc = [ItemBackgroundImageVC new];
     }
     if ([cell.textLabel.text isEqualToString:@"Set the backgroundAlpha on NavigationItem"]) {
-        type = DemoTypeBackgroundAlpha;
+        vc = [ItemBackgroundAlphaVC new];
     }
     
-    DemoViewController *vc = [[DemoViewController alloc] initWithType:type];
     UINavigationController *nav = [[UINavigationController alloc] initWithNavigationBarClass:[UINavigationBar class] toolbarClass:[UIToolbar class]];
     [nav pushViewController:vc animated:false];
     [self presentViewController:nav animated:true completion:nil];

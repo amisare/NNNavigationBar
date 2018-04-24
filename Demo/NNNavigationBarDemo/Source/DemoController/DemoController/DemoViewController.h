@@ -10,19 +10,8 @@
 #import "NNNavigationBar.h"
 #import "UIColor+Help.h"
 
-typedef NS_ENUM(NSUInteger, DemoType) {
-    DemoTypeColorOnly,
-    DemoTypeImageOnly,
-    DemoTypeColorTransition,
-    DemoTypeImageTransition,
-    DemoTypeBackgroundAlpha,
-};
-
 @interface DemoViewController : UIViewController
 
-- (instancetype)initWithType:(DemoType)type;
-
-@property (nonatomic, assign) DemoType type;
 @property (nonatomic, assign) NSInteger page;
 @property (nonatomic, strong) NSString *prompt;
 @property (nonatomic, strong) UITableView *tableView;
