@@ -11,5 +11,7 @@
 
 #import "UINavigationBar+NNBackgroundView.h"
 #import "UINavigationItem+NNBackgroundItem.h"
+#import "UINavigationBar+NNTintColor.h"
+#import "UINavigationItem+NNTintColor.h"
 
 #endif /* NNNavigationBar_h */

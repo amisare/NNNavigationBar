@@ -1,8 +1,8 @@
 //
-//  UINavigationBar+NNBackgroundBarDelegate.h
+//  UINavigationBar+NNBackgroundDelegate.h
 //  NNNavigationBar
 //
-//  Created by GuHaijun on 2018/4/17.
+//  Created by GuHaijun on 2018/4/24.
 //  Copyright © 2018年 GuHaijun. All rights reserved.
 //
 
@@ -17,11 +17,5 @@
  @param key  keyPath nn_backgroundColor/nn_backgroundImage
  */
 - (void)nn_navigationBar:(UINavigationBar *)bar backgroundChangeForKey:(NSString *)key;
-
-@end
-
-@interface UINavigationBar (NNBackgroundBarDelegate)
-
-@property (nonatomic, weak) id<NNBackgroundBarDelegate> nn_backgroundBarDelegate;
 
 @end

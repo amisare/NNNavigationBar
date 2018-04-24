@@ -8,12 +8,10 @@
 
 #import "UINavigationBar+NNMethodSwizzling.h"
 #import <objc/runtime.h>
-#import "UINavigationBar+NNBackgroundView.h"
-#import "UINavigationBar+NNBackgroundImageView.h"
-#import "UINavigationBar+NNBackgroundDelegateImp.h"
-#import "UINavigationBar+NNBackgroundStyle.h"
-#import "UINavigationBar+NNAssistantItems.h"
 #import "UINavigationBar+NNTransition.h"
+#import "UINavigationBar+NNBarStyle.h"
+#import "UINavigationBar+NNAssistantItems.h"
+#import "UINavigationItem+NNDelegate.h"
 
 #ifdef NNNavigationBarLoggingEnable
 #define NNLogInfo(format, ...)      {NSLog((@"[Line %04d] %s " format), __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__);}
@@ -43,10 +41,6 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
         if (@available(iOS 8, *)) {
-            nn_swizzleSelector(self,
-                               @selector(setTintColor),
-                               @selector(_nn_setTintColor)
-                               );
             nn_swizzleSelector(self,
                                @selector(_barPosition),
                                @selector(_nn_barPosition)
@@ -102,8 +96,14 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     if (position != self.nn_barPosition) {
         NNLogInfo(@"position:%ld", (long)position);
         self.nn_barPosition = position;
-        self.nn_backgroundImageView.image = [self nn_backgroundImageFromBar:self];
-        self.nn_backgroundDisplayImageView.image = [self nn_backgroundImageFromItem:self.topItem];
+        
+        for (id<NNTransition> transition in self.nn_transitions) {
+            if ([transition respondsToSelector:@selector(nn_updateBarStyleTransitionWithParams:)]) {
+                [transition nn_updateBarStyleTransitionWithParams:@{@"barPosition" : @(position),
+                                                                    @"barMetrics" : @(self.nn_activeBarMetrics)
+                                                                    }];
+            }
+        }
     }
     
     return position;
@@ -132,8 +132,14 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     if (metrics != self.nn_activeBarMetrics) {
         NNLogInfo(@"metrics:%ld", (long)metrics);
         self.nn_activeBarMetrics = metrics;
-        self.nn_backgroundImageView.image = [self nn_backgroundImageFromBar:self];
-        self.nn_backgroundDisplayImageView.image = [self nn_backgroundImageFromItem:self.topItem];
+        
+        for (id<NNTransition> transition in self.nn_transitions) {
+            if ([transition respondsToSelector:@selector(nn_updateBarStyleTransitionWithParams:)]) {
+                [transition nn_updateBarStyleTransitionWithParams:@{@"barPosition" : @(metrics),
+                                                                    @"barMetrics" : @(self.nn_activeBarMetrics)
+                                                                    }];
+            }
+        }
     }
     
     return metrics;
@@ -144,7 +150,7 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     [self _nn_pushNavigationItem:item transition:transition];
     NNLogInfo(@"item:%@ transition:%d",item, transition);
     
-    item.nn_backgroundItemDelegate = self;
+    item.nn_delegate = self;
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
                                          withObject:@{@"item":self.topItem, @"transition":@(transition)}];
     

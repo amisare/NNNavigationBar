@@ -8,10 +8,6 @@
 
 #import "UINavigationBar+NNTransition.h"
 #import <objc/runtime.h>
-#import "UINavigationBar+NNTransitionForBackgroundImage.h"
-#import "UINavigationBar+NNTransitionForBackgroundAlpha.h"
-#import "UINavigationBar+NNTransitionForTintColor.h"
-#import "UINavigationBar+NNTransitionClass.h"
 
 static const void *kUINavigationBar_NNTransitions = &kUINavigationBar_NNTransitions;
 

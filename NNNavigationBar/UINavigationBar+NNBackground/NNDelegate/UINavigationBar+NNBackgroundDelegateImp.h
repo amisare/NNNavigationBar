@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UINavigationBar+NNBackgroundBarDelegate.h"
-#import "UINavigationItem+NNBackgroundItemDelegate.h"
+#import "UINavigationBar+NNDelegate.h"
+#import "UINavigationItem+NNDelegate.h"
+#import "UINavigationBar+NNBackgroundDelegate.h"
+#import "UINavigationItem+NNBackgroundDelegate.h"
 
 @interface UINavigationBar (NNBackgroundDelegate) <NNBackgroundBarDelegate, NNBackgroundItemDelegate>
 

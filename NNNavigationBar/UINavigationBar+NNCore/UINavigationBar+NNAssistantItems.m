@@ -9,17 +9,17 @@
 #import "UINavigationBar+NNAssistantItems.h"
 #import <objc/runtime.h>
 
-static const void *kUINavigationBar_NNBackgroundAssistantItems = &kUINavigationBar_NNBackgroundAssistantItems;
+static const void *kUINavigationBar_NNAssistantItems = &kUINavigationBar_NNAssistantItems;
 
 @implementation UINavigationBar (NNAssistantItems)
 
 - (NSMutableArray<UINavigationItem *> *)assistantItems {
-    NSMutableArray *assistantItems = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundAssistantItems);
+    NSMutableArray *assistantItems = objc_getAssociatedObject(self, kUINavigationBar_NNAssistantItems);
     return assistantItems;
 }
 
 - (void)setAssistantItems:(NSMutableArray<UINavigationItem *> *)assistantItems {
-    objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundAssistantItems, assistantItems, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kUINavigationBar_NNAssistantItems, assistantItems, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

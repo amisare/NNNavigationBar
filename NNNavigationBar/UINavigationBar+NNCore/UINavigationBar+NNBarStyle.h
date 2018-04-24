@@ -1,5 +1,5 @@
 //
-//  UINavigationBar+NNBackgroundStyle.h
+//  UINavigationBar+NNBarStyle.h
 //  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/4/17.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UINavigationBar (NNBackgroundStyle)
+@interface UINavigationBar (NNBarStyle)
 
 @property (nonatomic, assign) UIBarPosition nn_barPosition;
 @property (nonatomic, assign) UIBarMetrics nn_activeBarMetrics;

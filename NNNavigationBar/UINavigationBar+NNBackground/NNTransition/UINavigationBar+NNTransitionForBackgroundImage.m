@@ -8,7 +8,6 @@
 
 #import "UINavigationBar+NNTransitionForBackgroundImage.h"
 #import "UINavigationBar+NNBackgroundImageView.h"
-#import "UINavigationBar+NNTransitionClass.h"
 
 @interface NNBackgroundImageTransition()
 
@@ -105,6 +104,18 @@
     } completion:^(BOOL finished) {
         [self nn_endTransitionWithParams:@{@"item" : item}];
     }];
+}
+
+- (void)nn_updateBarStyleTransitionWithParams:(NSDictionary *)params {
+    
+    {
+        UIImage *backgroundImage = [self.bar nn_backgroundImageFromBar:self.bar];
+        self.bar.nn_backgroundImageView.image = backgroundImage;
+    }
+    {
+        UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:self.bar.topItem];
+        self.bar.nn_backgroundDisplayImageView.image = backgroundImage;
+    }
 }
 
 @end

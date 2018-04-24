@@ -10,7 +10,6 @@
 #import "UINavigationBar+NNBackgroundView.h"
 #import "UINavigationItem+NNBackgroundItem.h"
 #import "UINavigationBar+NNAssistantItems.h"
-#import "UINavigationBar+NNTransitionClass.h"
 
 @interface NNBackgroundViewTransition()
 

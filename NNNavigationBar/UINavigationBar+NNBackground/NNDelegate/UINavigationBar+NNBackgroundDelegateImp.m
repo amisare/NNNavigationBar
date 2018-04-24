@@ -9,6 +9,8 @@
 #import "UINavigationBar+NNBackgroundDelegateImp.h"
 #import "UINavigationBar+NNBackgroundImageView.h"
 #import "UINavigationBar+NNBackgroundView.h"
+#import "UINavigationBar+NNTransitionForTintColor.h"
+#import "UINavigationItem+NNBackgroundItem.h"
 
 @implementation UINavigationBar (NNBackgroundDelegate)
 
@@ -31,17 +33,6 @@
     
     if ([key isEqualToString:@"nn_backgroundAlpha"]) {
         self.nn_backgroundView.alpha = item.nn_backgroundAlpha;
-    }
-    
-    if ([key isEqualToString:@"nn_tintColor"]) {
-        UIColor *tintColor = nil;
-        if (!tintColor) {
-            tintColor = item.nn_tintColor;
-        }
-        if (!tintColor) {
-            tintColor = self.nn_tintColor;
-        }
-        self.tintColor = tintColor;
     }
 }
 
