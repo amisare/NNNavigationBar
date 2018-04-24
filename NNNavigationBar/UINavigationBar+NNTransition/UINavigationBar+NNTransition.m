@@ -11,21 +11,37 @@
 #import "UINavigationBar+NNTransitionForBackgroundImage.h"
 #import "UINavigationBar+NNTransitionForBackgroundAlpha.h"
 #import "UINavigationBar+NNTransitionForTintColor.h"
+#import "UINavigationBar+NNTransitionClass.h"
 
 static const void *kUINavigationBar_NNTransitions = &kUINavigationBar_NNTransitions;
 
 @implementation UINavigationBar (NNTransition)
 
-- (NSMutableArray<id<NNTransition>> *)nn_transitions {
-    NSMutableArray *nn_transitions = objc_getAssociatedObject(self, kUINavigationBar_NNTransitions);
+- (NSArray<id<NNTransition>> *)nn_transitions {
+    
+    NSArray *nn_transitions = objc_getAssociatedObject(self, kUINavigationBar_NNTransitions);
     if (!nn_transitions) {
-        nn_transitions = [NSMutableArray new];
-        [nn_transitions addObject:[[NNBackgroundImageTransition alloc] initWithNavigationBar:self]];
-        [nn_transitions addObject:[[NNBackgroundViewTransition alloc] initWithNavigationBar:self]];
-        [nn_transitions addObject:[[NNTintColorTransition alloc] initWithNavigationBar:self]];
+        nn_transitions = [NSArray arrayWithArray:[self nn_registedTransitions]];
         objc_setAssociatedObject(self, kUINavigationBar_NNTransitions, nn_transitions, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return nn_transitions;
+}
+
+- (NSArray<id<NNTransition>> *)nn_registedTransitions {
+    
+    NSMutableArray *transitions = [NSMutableArray new];
+    size_t clazzCount = NNTransitionClassCount();
+    for (size_t i = 0; i < clazzCount; i++) {
+        char cClazzName[256] = {0};
+        NNTransitionClassFetch(cClazzName, i);
+        NSString *sClazzName = [NSString stringWithUTF8String:cClazzName];
+        NSLog(@"%@", sClazzName);
+        Class clazz = NSClassFromString(sClazzName);
+        if (clazz) {
+            [transitions addObject:[[clazz alloc] initWithNavigationBar:self]];
+        }
+    }
+    return transitions;
 }
 
 @end

@@ -67,8 +67,6 @@
     
     NSLog(@"page:%@, %s", @(self.page).stringValue, __FUNCTION__);
     
-    self.automaticallyAdjustsScrollViewInsets = false;
-    
     self.title = @(self.page).stringValue;
     self.view.backgroundColor = [UIColor whiteColor];
     [UIColor color:self.navigationController.navigationBar.tintColor updateAlpha:1];

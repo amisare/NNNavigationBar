@@ -20,6 +20,6 @@
 
 @interface UINavigationBar (NNTransition)
 
-- (NSMutableArray<id<NNTransition>> *)nn_transitions;
+- (NSArray<id<NNTransition>> *)nn_transitions;
 
 @end

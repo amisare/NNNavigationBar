@@ -10,6 +10,7 @@
 #import "UINavigationBar+NNBackgroundView.h"
 #import "UINavigationItem+NNBackgroundItem.h"
 #import "UINavigationBar+NNAssistantItems.h"
+#import "UINavigationBar+NNTransitionClass.h"
 
 @interface NNTintColorTransition()
 
@@ -18,6 +19,12 @@
 @end
 
 @implementation NNTintColorTransition
+
++ (void)load {
+    [super load];
+    const char *clazz = [NSStringFromClass(self) UTF8String];
+    NNTransitionClassRegister(clazz, (int)strlen(clazz));
+}
 
 - (instancetype)initWithNavigationBar:(UINavigationBar *)bar {
     self = [super init];

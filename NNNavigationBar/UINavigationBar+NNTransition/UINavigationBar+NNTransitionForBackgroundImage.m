@@ -8,6 +8,7 @@
 
 #import "UINavigationBar+NNTransitionForBackgroundImage.h"
 #import "UINavigationBar+NNBackgroundImageView.h"
+#import "UINavigationBar+NNTransitionClass.h"
 
 @interface NNBackgroundImageTransition()
 
@@ -16,6 +17,12 @@
 @end
 
 @implementation NNBackgroundImageTransition
+
++ (void)load {
+    [super load];
+    const char *clazz = [NSStringFromClass(self) UTF8String];
+    NNTransitionClassRegister(clazz, strlen(clazz));
+}
 
 - (instancetype)initWithNavigationBar:(UINavigationBar *)bar {
     self = [super init];
