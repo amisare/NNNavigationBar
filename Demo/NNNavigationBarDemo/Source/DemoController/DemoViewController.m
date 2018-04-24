@@ -42,7 +42,7 @@
             self.colorSlider.value = self.navigationController.navigationBar.nn_backgroundColor.alpha;
             break;
         case DemoTypeColorTransition:
-            self.colorSlider.value = self.navigationItem.nn_backgroundColor.alpha;
+            self.colorSlider.value = self.navigationItem.nn_backgroundAlpha;
             break;
         case DemoTypeBackgroundAlpha:
             self.colorSlider.value = self.navigationItem.nn_backgroundAlpha;
@@ -69,7 +69,6 @@
     
     self.title = @(self.page).stringValue;
     self.view.backgroundColor = [UIColor whiteColor];
-    [UIColor color:self.navigationController.navigationBar.tintColor updateAlpha:1];
     
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
@@ -198,23 +197,7 @@
 - (void)handleColorSliderColorTransition:(UISlider *)colorSlider {
     NSLog(@"%s alpha: %f", __FUNCTION__, colorSlider.value);
     
-    {
-        UIColor *colorUpdate = [UIColor color:[self.navigationItem nn_backgroundColorForBarPosition:UIBarPositionAny
-                                                                                         barMetrics:UIBarMetricsDefault]
-                                  updateAlpha:colorSlider.value];
-        [self.navigationItem setNn_backgroundColor:colorUpdate
-                                    forBarPosition:UIBarPositionAny
-                                        barMetrics:UIBarMetricsDefault];
-    }
-    
-    {
-        UIColor *colorUpdate = [UIColor color:[self.navigationItem nn_backgroundColorForBarPosition:UIBarPositionAny
-                                                                                         barMetrics:UIBarMetricsCompact]
-                                  updateAlpha:colorSlider.value];
-        [self.navigationItem setNn_backgroundColor:colorUpdate
-                                    forBarPosition:UIBarPositionAny
-                                        barMetrics:UIBarMetricsCompact];
-    }
+    self.navigationItem.nn_backgroundAlpha = colorSlider.value;
 }
 
 #pragma mark - DemoTypeImageTransition
