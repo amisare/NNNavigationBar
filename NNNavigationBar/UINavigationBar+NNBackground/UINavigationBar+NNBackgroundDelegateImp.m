@@ -9,7 +9,6 @@
 #import "UINavigationBar+NNBackgroundDelegateImp.h"
 #import "UINavigationBar+NNBackgroundImageView.h"
 #import "UINavigationBar+NNBackgroundView.h"
-#import "UINavigationBar+NNTransitionForTintColor.h"
 #import "UINavigationItem+NNBackgroundItem.h"
 
 @implementation UINavigationBar (NNBackgroundDelegate)
