@@ -16,6 +16,6 @@
  @param bar UINavigationBar
  @param colors  @"tintColorOld"/@"tintColorNew"
  */
-- (void)nn_navigationBar:(UINavigationBar *)bar tintColorChange:(NSDictionary *)colors;
+- (void) nn_navigationBar:(UINavigationBar *)bar tintColorChange:(NSDictionary *)colors;
 
 @end

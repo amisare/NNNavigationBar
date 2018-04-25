@@ -249,9 +249,9 @@
 			isa = PBXGroup;
 			children = (
 				67A6F477207EFD430082A845 /* NNNavigationBar.h */,
-				67CAE866208EEFBB00672BAF /* UINavigationBar+NNCore */,
-				67CAE864208EEF5600672BAF /* UINavigationBar+NNBackground */,
-				67CAE865208EEF7400672BAF /* UINavigationBar+NNTintColor */,
+				67CAE866208EEFBB00672BAF /* Core */,
+				67CAE864208EEF5600672BAF /* Background */,
+				67CAE865208EEF7400672BAF /* TintColor */,
 				67F80EB920809A720098B825 /* Utils */,
 			);
 			name = NNNavigationBar;
@@ -288,7 +288,7 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
-		67CAE864208EEF5600672BAF /* UINavigationBar+NNBackground */ = {
+		67CAE864208EEF5600672BAF /* Background */ = {
 			isa = PBXGroup;
 			children = (
 				67A6F475207EFD430082A845 /* UINavigationBar+NNBackgroundView.h */,
@@ -297,36 +297,26 @@
 				679AA53B20858D2E00749AF6 /* UINavigationBar+NNBackgroundImageView.m */,
 				67A6F476207EFD430082A845 /* UINavigationItem+NNBackgroundItem.h */,
 				67A6F472207EFD430082A845 /* UINavigationItem+NNBackgroundItem.m */,
-				67CAE870208EF68300672BAF /* UINavigationBar+NNBackgroundDelegate.h */,
-				67CAE86D208EF62900672BAF /* UINavigationItem+NNBackgroundDelegate.h */,
-				679AA54020858F5A00749AF6 /* UINavigationBar+NNBackgroundDelegateImp.h */,
-				679AA54120858F5A00749AF6 /* UINavigationBar+NNBackgroundDelegateImp.m */,
-				67A9A592208A34FD000B6A2A /* UINavigationBar+NNTransitionForBackgroundImage.h */,
-				67A9A593208A34FD000B6A2A /* UINavigationBar+NNTransitionForBackgroundImage.m */,
-				67A9A595208A3507000B6A2A /* UINavigationBar+NNTransitionForBackgroundAlpha.h */,
-				67A9A596208A3507000B6A2A /* UINavigationBar+NNTransitionForBackgroundAlpha.m */,
+				67E2BF3220905C7900DE84B6 /* Delegate */,
+				67E2BF3320905C7900DE84B6 /* Transition */,
 			);
-			path = "UINavigationBar+NNBackground";
+			path = Background;
 			sourceTree = "<group>";
 		};
-		67CAE865208EEF7400672BAF /* UINavigationBar+NNTintColor */ = {
+		67CAE865208EEF7400672BAF /* TintColor */ = {
 			isa = PBXGroup;
 			children = (
 				67CAE86A208EF07300672BAF /* UINavigationBar+NNTintColor.h */,
 				67CAE86B208EF07300672BAF /* UINavigationBar+NNTintColor.m */,
 				67CAE867208EF03D00672BAF /* UINavigationItem+NNTintColor.h */,
 				67CAE868208EF03D00672BAF /* UINavigationItem+NNTintColor.m */,
-				67CAE873208EFBBF00672BAF /* UINavigationBar+NNTintColorDelegate.h */,
-				67CAE876208EFBCB00672BAF /* UINavigationItem+NNTintColorDelegate.h */,
-				67CAE879208EFD1F00672BAF /* UINavigationBar+NNTintColorDelegateImp.h */,
-				67CAE87A208EFD1F00672BAF /* UINavigationBar+NNTintColorDelegateImp.m */,
-				67A9A598208A351A000B6A2A /* UINavigationBar+NNTransitionForTintColor.h */,
-				67A9A599208A351A000B6A2A /* UINavigationBar+NNTransitionForTintColor.m */,
+				67E2BF3520905C9000DE84B6 /* Delegate */,
+				67E2BF3420905C9000DE84B6 /* Transition */,
 			);
-			path = "UINavigationBar+NNTintColor";
+			path = TintColor;
 			sourceTree = "<group>";
 		};
-		67CAE866208EEFBB00672BAF /* UINavigationBar+NNCore */ = {
+		67CAE866208EEFBB00672BAF /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				679AA53D20858E4300749AF6 /* UINavigationBar+NNMethodSwizzling.h */,
@@ -344,7 +334,7 @@
 				67A6F471207EFD430082A845 /* UINavigationItem+NNDelegate.h */,
 				67A6F473207EFD430082A845 /* UINavigationItem+NNDelegate.m */,
 			);
-			path = "UINavigationBar+NNCore";
+			path = Core;
 			sourceTree = "<group>";
 		};
 		67CAE890208F3BB800672BAF /* DemoController */ = {
@@ -358,6 +348,48 @@
 				67A6F47D207F0FE00082A845 /* DemoViewController+TableView.m */,
 			);
 			path = DemoController;
+			sourceTree = "<group>";
+		};
+		67E2BF3220905C7900DE84B6 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				67CAE870208EF68300672BAF /* UINavigationBar+NNBackgroundDelegate.h */,
+				67CAE86D208EF62900672BAF /* UINavigationItem+NNBackgroundDelegate.h */,
+				679AA54020858F5A00749AF6 /* UINavigationBar+NNBackgroundDelegateImp.h */,
+				679AA54120858F5A00749AF6 /* UINavigationBar+NNBackgroundDelegateImp.m */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		67E2BF3320905C7900DE84B6 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				67A9A592208A34FD000B6A2A /* UINavigationBar+NNTransitionForBackgroundImage.h */,
+				67A9A593208A34FD000B6A2A /* UINavigationBar+NNTransitionForBackgroundImage.m */,
+				67A9A595208A3507000B6A2A /* UINavigationBar+NNTransitionForBackgroundAlpha.h */,
+				67A9A596208A3507000B6A2A /* UINavigationBar+NNTransitionForBackgroundAlpha.m */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		67E2BF3420905C9000DE84B6 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				67A9A598208A351A000B6A2A /* UINavigationBar+NNTransitionForTintColor.h */,
+				67A9A599208A351A000B6A2A /* UINavigationBar+NNTransitionForTintColor.m */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		67E2BF3520905C9000DE84B6 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				67CAE873208EFBBF00672BAF /* UINavigationBar+NNTintColorDelegate.h */,
+				67CAE876208EFBCB00672BAF /* UINavigationItem+NNTintColorDelegate.h */,
+				67CAE879208EFD1F00672BAF /* UINavigationBar+NNTintColorDelegateImp.h */,
+				67CAE87A208EFD1F00672BAF /* UINavigationBar+NNTintColorDelegateImp.m */,
+			);
+			path = Delegate;
 			sourceTree = "<group>";
 		};
 		67F80EB920809A720098B825 /* Utils */ = {
