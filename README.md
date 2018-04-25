@@ -1,5 +1,10 @@
 # NNNavigationBar
 
+[![GitHub release](https://img.shields.io/github/release/amisare/NNNavigationBar.svg)](https://github.com/amisare/NNNavigationBar/releases)
+[![CocoaPods](https://img.shields.io/cocoapods/v/NNNavigationBar.svg)](https://cocoapods.org/pods/NNNavigationBar)
+[![CocoaPods](https://img.shields.io/cocoapods/p/NNNavigationBar.svg)](https://cocoapods.org/pods/NNNavigationBar)
+[![GitHub license](https://img.shields.io/github/license/amisare/NNNavigationBar.svg)](https://github.com/amisare/NNNavigationBar/blob/master/LICENSE)
+
 本库用于实现UINavigationBar背景渐变过渡动画。
 
 ## 效果
