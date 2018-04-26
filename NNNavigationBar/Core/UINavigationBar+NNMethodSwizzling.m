@@ -29,6 +29,75 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     }
 }
 
+static inline SEL class_findInstanceSelector(Class cls, ...) {
+    
+    SEL ret = nil;
+    
+    unsigned int methodCount = 0;
+    Method* methodList = class_copyMethodList(cls, &methodCount);
+    
+    for (unsigned int i = 0; i < methodCount; i++) {
+        Method method = methodList[i];
+        SEL sel = method_getName(method);
+        size_t nameLength = strlen(sel_getName(sel));
+        char *name = calloc(nameLength + 1, sizeof(char));
+        strcpy(name, sel_getName(sel));
+        
+        BOOL isMatch = NO;
+        
+        { // match name length
+            va_list ap;
+            va_start (ap, cls);
+            int _nameLength = 0;
+            char *_name = va_arg(ap, char *);
+            while (nil != _name) {
+                _nameLength += strlen(_name);
+                _name = va_arg(ap, char *);
+            }
+            va_end (ap);
+            if (nameLength != _nameLength) {
+                goto endNoMatch;
+            }
+        }
+        
+        { // match name chars
+            va_list ap;
+            va_start (ap, cls);
+            char *s2_name = va_arg(ap, char *);
+            size_t nameIndex = 0;
+            while (nil != s2_name) {
+                char *s1_name = &(name[nameIndex]);
+                if (strlen(s1_name) < strlen(s2_name)) {
+                    va_end (ap);
+                    goto endNoMatch;
+                }
+                if (0 != memcmp(s1_name, s2_name, strlen(s2_name))) {
+                    va_end (ap);
+                    goto endNoMatch;
+                }
+                nameIndex += strlen(s2_name);
+                s2_name = va_arg(ap, char *);
+            }
+            va_end (ap);
+        }
+        
+        isMatch = YES;
+        
+    endNoMatch:
+        free(name);
+        if (NO == isMatch) {
+            continue;
+        }
+        else {
+            ret = sel;
+            break;
+        }
+    }
+    free(methodList);
+    
+    return ret;
+}
+
 @implementation UINavigationBar (NNMethodSwizzling)
 
 + (void)load {
@@ -42,11 +111,13 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
 #pragma clang diagnostic ignored "-Wundeclared-selector"
         if (@available(iOS 8, *)) {
             nn_swizzleSelector(self,
+//                               class_findInstanceSelector(self, "_", "bar", "Position", nil),
                                @selector(_barPosition),
                                @selector(_nn_barPosition)
                                );
             nn_swizzleSelector(self,
-                               @selector(_activeBarMetrics),
+//                               @selector(_activeBarMetrics),
+                               class_findInstanceSelector(self, "_", "active", "BarMetrics", nil),
                                @selector(_nn_activeBarMetrics)
                                );
             nn_swizzleSelector(self,
