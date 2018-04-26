@@ -29,14 +29,15 @@ static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swi
     }
 }
 
-static inline SEL class_findInstanceSelector(Class cls, ...) {
+static inline Method class_findInstanceMethod(Class cls, ...) {
     
-    SEL ret = nil;
+    Method ret = nil;
     
     unsigned int methodCount = 0;
     Method* methodList = class_copyMethodList(cls, &methodCount);
     
     for (unsigned int i = 0; i < methodCount; i++) {
+        
         Method method = methodList[i];
         SEL sel = method_getName(method);
         size_t nameLength = strlen(sel_getName(sel));
@@ -56,7 +57,7 @@ static inline SEL class_findInstanceSelector(Class cls, ...) {
             }
             va_end (ap);
             if (nameLength != _nameLength) {
-                goto endNoMatch;
+                goto endMatch;
             }
         }
         
@@ -69,27 +70,26 @@ static inline SEL class_findInstanceSelector(Class cls, ...) {
                 char *s1_name = &(name[nameIndex]);
                 if (strlen(s1_name) < strlen(s2_name)) {
                     va_end (ap);
-                    goto endNoMatch;
+                    goto endMatch;
                 }
                 if (0 != memcmp(s1_name, s2_name, strlen(s2_name))) {
                     va_end (ap);
-                    goto endNoMatch;
+                    goto endMatch;
                 }
                 nameIndex += strlen(s2_name);
                 s2_name = va_arg(ap, char *);
             }
+            isMatch = YES;
             va_end (ap);
         }
         
-        isMatch = YES;
-        
-    endNoMatch:
+    endMatch:
         free(name);
-        if (NO == isMatch) {
+        if (isMatch == NO) {
             continue;
         }
         else {
-            ret = sel;
+            ret = method;
             break;
         }
     }
@@ -111,15 +111,18 @@ static inline SEL class_findInstanceSelector(Class cls, ...) {
 #pragma clang diagnostic ignored "-Wundeclared-selector"
         if (@available(iOS 8, *)) {
             nn_swizzleSelector(self,
-//                               class_findInstanceSelector(self, "_", "bar", "Position", nil),
                                @selector(_barPosition),
                                @selector(_nn_barPosition)
                                );
-            nn_swizzleSelector(self,
-//                               @selector(_activeBarMetrics),
-                               class_findInstanceSelector(self, "_", "active", "BarMetrics", nil),
-                               @selector(_nn_activeBarMetrics)
-                               );
+//            nn_swizzleSelector(self,
+////                               @selector(_activeBarMetrics),
+//                               class_findInstanceMethod(self, "_", "active", "BarMetrics", nil),
+//                               @selector(_nn_activeBarMetrics)
+//                               );
+            
+            Method originalMethod = class_findInstanceMethod(self, "_", "active", "BarMetrics", nil);
+            Method swizzledMethod = class_findInstanceMethod(self, "_", "nn", "_", "active", "BarMetrics", nil);
+            method_exchangeImplementations(originalMethod, swizzledMethod);
             nn_swizzleSelector(self,
                                @selector(_pushNavigationItem:transition:),
                                @selector(_nn_pushNavigationItem:transition:)
