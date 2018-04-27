@@ -29,10 +29,10 @@ static inline Method class_findInstanceMethod(Class cls, ...) {
     for (unsigned int i = 0; i < methodCount; i++) {
         
         Method method = methodList[i];
-        SEL sel = method_getName(method);
-        size_t nameLength = strlen(sel_getName(sel));
-        char *name = calloc(nameLength + 1, sizeof(char));
-        strcpy(name, sel_getName(sel));
+        const char *selName = sel_getName(method_getName(method));
+        char *name = calloc(strlen(selName) + 1, sizeof(char));
+        strcpy(name, selName);
+        size_t nameLength = strlen(name);
         
         BOOL isMatch = NO;
         
@@ -90,6 +90,7 @@ static inline Method class_findInstanceMethod(Class cls, ...) {
 
 static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod) {
     if (originalMethod == nil || swizzledMethod == nil) {
+        NNLogInfo(@"originalMethod:%@, swizzledMethod:%@", originalMethod, swizzledMethod);
         return;
     }
     method_exchangeImplementations(originalMethod, swizzledMethod);
@@ -223,6 +224,7 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
 - (void)_nn_scomplete_sPush_sOperation_sAnimated:(BOOL)animated _stransition_sAssistant:(id)assistant {
     
     [self _nn_scomplete_sPush_sOperation_sAnimated:animated _stransition_sAssistant:assistant];
+    NNLogInfo(@"%@", [[assistant superclass] class]);
     NNLogInfo(@"animated:%d assistant:%@",animated, assistant);
     
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endTransitionWithParams:)
