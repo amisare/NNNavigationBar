@@ -35,17 +35,17 @@ static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigat
     UIImage *backgroundImage = nil;
     
     if (backgroundImage == nil) {
-        backgroundImage = [item nn_backgroundImageForBarPosition:self.nn_barPosition barMetrics:self.nn_activeBarMetrics];
+        backgroundImage = [item nn_backgroundImageForBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
     }
     if (backgroundImage == nil) {
-        UIColor *backgroundColor = [item nn_backgroundColorForBarPosition:self.nn_barPosition barMetrics:self.nn_activeBarMetrics];
+        UIColor *backgroundColor = [item nn_backgroundColorForBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
         backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
     }
     if (backgroundImage == nil) {
-        backgroundImage = [item nn_backgroundImageForBarPosition:UIBarPositionAny barMetrics:self.nn_activeBarMetrics];
+        backgroundImage = [item nn_backgroundImageForBarPosition:UIBarPositionAny barMetrics:self.nn_sbarMetrics];
     }
     if (backgroundImage == nil) {
-        UIColor *backgroundColor = [item nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:self.nn_activeBarMetrics];
+        UIColor *backgroundColor = [item nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:self.nn_sbarMetrics];
         backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
     }
     if (backgroundImage == nil) {
@@ -64,17 +64,17 @@ static const void *kUINavigationBar_NNBackgroundAssistantImageView = &kUINavigat
     UIImage *backgroundImage = nil;
     
     if (backgroundImage == nil) {
-        backgroundImage = [bar nn_backgroundImageForBarPosition:self.nn_barPosition barMetrics:self.nn_activeBarMetrics];
+        backgroundImage = [bar nn_backgroundImageForBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
     }
     if (backgroundImage == nil) {
-        UIColor *backgroundColor = [bar nn_backgroundColorForBarPosition:self.nn_barPosition barMetrics:self.nn_activeBarMetrics];
+        UIColor *backgroundColor = [bar nn_backgroundColorForBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
         backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
     }
     if (backgroundImage == nil) {
-        backgroundImage = [bar nn_backgroundImageForBarPosition:UIBarPositionAny barMetrics:self.nn_activeBarMetrics];
+        backgroundImage = [bar nn_backgroundImageForBarPosition:UIBarPositionAny barMetrics:self.nn_sbarMetrics];
     }
     if (backgroundImage == nil) {
-        UIColor *backgroundColor = [bar nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:self.nn_activeBarMetrics];
+        UIColor *backgroundColor = [bar nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:self.nn_sbarMetrics];
         backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
     }
     if (backgroundImage == nil) {

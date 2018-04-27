@@ -10,7 +10,7 @@
 
 @interface UINavigationBar (NNBarStyle)
 
-@property (nonatomic, assign) UIBarPosition nn_barPosition;
-@property (nonatomic, assign) UIBarMetrics nn_activeBarMetrics;
+@property (nonatomic, assign) UIBarPosition nn_sbarPosition;
+@property (nonatomic, assign) UIBarMetrics nn_sbarMetrics;
 
 @end

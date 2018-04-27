@@ -19,16 +19,6 @@
 #define NNLogInfo(format, ...)
 #endif
 
-static inline void nn_swizzleSelector(Class class, SEL originalSelector, SEL swizzledSelector) {
-    Method originalMethod = class_getInstanceMethod(class, originalSelector);
-    Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
-    if (class_addMethod(class, originalSelector, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))) {
-        class_replaceMethod(class, swizzledSelector, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod));
-    } else {
-        method_exchangeImplementations(originalMethod, swizzledMethod);
-    }
-}
-
 static inline Method class_findInstanceMethod(Class cls, ...) {
     
     Method ret = nil;
@@ -98,6 +88,13 @@ static inline Method class_findInstanceMethod(Class cls, ...) {
     return ret;
 }
 
+static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod) {
+    if (originalMethod == nil || swizzledMethod == nil) {
+        return;
+    }
+    method_exchangeImplementations(originalMethod, swizzledMethod);
+}
+
 @implementation UINavigationBar (NNMethodSwizzling)
 
 + (void)load {
@@ -109,54 +106,46 @@ static inline Method class_findInstanceMethod(Class cls, ...) {
         
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
+        
+#define o(key)    (key)
+#define s(key)    ("_s"key)
+        
+        static char *originalPrefix = "_";
+        static char *swizzledPrefix = "_nn";
+        
         if (@available(iOS 8, *)) {
-            nn_swizzleSelector(self,
-                               @selector(_barPosition),
-                               @selector(_nn_barPosition)
-                               );
-//            nn_swizzleSelector(self,
-////                               @selector(_activeBarMetrics),
-//                               class_findInstanceMethod(self, "_", "active", "BarMetrics", nil),
-//                               @selector(_nn_activeBarMetrics)
-//                               );
-            
-            Method originalMethod = class_findInstanceMethod(self, "_", "active", "BarMetrics", nil);
-            Method swizzledMethod = class_findInstanceMethod(self, "_", "nn", "_", "active", "BarMetrics", nil);
-            method_exchangeImplementations(originalMethod, swizzledMethod);
-            nn_swizzleSelector(self,
-                               @selector(_pushNavigationItem:transition:),
-                               @selector(_nn_pushNavigationItem:transition:)
-                               );
-            nn_swizzleSelector(self,
-                               @selector(_popNavigationItemWithTransition:),
-                               @selector(_nn_popNavigationItemWithTransition:)
-                               );
-            nn_swizzleSelector(self,
-                               @selector(_updateInteractiveTransition:),
-                               @selector(_nn_updateInteractiveTransition:)
-                               );
-            nn_swizzleSelector(self,
-                               @selector(_cancelInteractiveTransition:completionSpeed:completionCurve:),
-                               @selector(_nn_cancelInteractiveTransition:completionSpeed:completionCurve:)
-                               );
-            nn_swizzleSelector(self,
-                               @selector(_finishInteractiveTransition:completionSpeed:completionCurve:),
-                               @selector(_nn_finishInteractiveTransition:completionSpeed:completionCurve:)
-                               );
-            nn_swizzleSelector(self,
-                               @selector(_didVisibleItemsChangeWithNewItems:oldItems:),
-                               @selector(_nn_didVisibleItemsChangeWithNewItems:oldItems:)
-                               );
+            nn_swizzleMethod(class_findInstanceMethod(self, originalPrefix, o("bar"), o("Position"), nil),
+                             class_findInstanceMethod(self, swizzledPrefix, s("bar"), s("Position"), nil)
+                             );
+            nn_swizzleMethod(class_findInstanceMethod(self, originalPrefix, o("active"), o("Bar"), o("Metrics"), nil),
+                             class_findInstanceMethod(self, swizzledPrefix, s("active"), s("Bar"), s("Metrics"), nil)
+                             );
+            nn_swizzleMethod(class_findInstanceMethod(self, originalPrefix, o("push"), o("Navigation"), o("Item:"), o("transition:"), nil),
+                             class_findInstanceMethod(self, swizzledPrefix, s("push"), s("Navigation"), s("Item:"), s("transition:"), nil)
+                             );
+            nn_swizzleMethod(class_findInstanceMethod(self, originalPrefix, o("pop"), o("Navigation"), o("Item"), o("With"), o("Transition:"), nil),
+                             class_findInstanceMethod(self, swizzledPrefix, s("pop"), s("Navigation"), s("Item"), s("With"), s("Transition:"), nil)
+                             );
+            nn_swizzleMethod(class_findInstanceMethod(self, originalPrefix, o("update"), o("Interactive"), o("Transition:"), nil),
+                             class_findInstanceMethod(self, swizzledPrefix, s("update"), s("Interactive"), s("Transition:"), nil)
+                             );
+            nn_swizzleMethod(class_findInstanceMethod(self, originalPrefix, o("cancel"), o("Interactive"), o("Transition:"), o("completion"), o("Speed:"), o("completion"), o("Curve:"), nil),
+                             class_findInstanceMethod(self, swizzledPrefix, s("cancel"), s("Interactive"), s("Transition:"), s("completion"), s("Speed:"), s("completion"), s("Curve:"), nil)
+                             );
+            nn_swizzleMethod(class_findInstanceMethod(self, originalPrefix, o("finish"), o("Interactive"), o("Transition:"), o("completion"), o("Speed:"), o("completion"), o("Curve:"), nil),
+                             class_findInstanceMethod(self, swizzledPrefix, s("finish"), s("Interactive"), s("Transition:"), s("completion"), s("Speed:"), s("completion"), s("Curve:"), nil)
+                             );
+            nn_swizzleMethod(class_findInstanceMethod(self, originalPrefix, o("did"), o("Visible"), o("Items"), o("Change"), o("With"), o("New"), o("Items:"), o("old"), o("Items:"), nil),
+                             class_findInstanceMethod(self, swizzledPrefix, s("did"), s("Visible"), s("Items"), s("Change"), s("With"), s("New"), s("Items:"), s("old"), s("Items:"), nil)
+                             );
         }
         if (@available(iOS 11, *)) {
-            nn_swizzleSelector(self,
-                               @selector(_completePushOperationAnimated:transitionAssistant:),
-                               @selector(_nn_completePushOperationAnimated:transitionAssistant:)
-                               );
-            nn_swizzleSelector(self,
-                               @selector(_completePopOperationAnimated:transitionAssistant:),
-                               @selector(_nn_completePopOperationAnimated:transitionAssistant:)
-                               );
+            nn_swizzleMethod(class_findInstanceMethod(self, originalPrefix, o("complete"), o("Pop"), o("Operation"), o("Animated:"), o("transition"), o("Assistant:"), nil),
+                             class_findInstanceMethod(self, swizzledPrefix, s("complete"), s("Pop"), s("Operation"), s("Animated:"), s("transition"), s("Assistant:"), nil)
+                             );
+            nn_swizzleMethod(class_findInstanceMethod(self, originalPrefix, o("complete"), o("Push"), o("Operation"), o("Animated:"), o("transition"), o("Assistant:"), nil),
+                             class_findInstanceMethod(self, swizzledPrefix, s("complete"), s("Push"), s("Operation"), s("Animated:"), s("transition"), s("Assistant:"), nil)
+                             );
         }
 #pragma clang diagnostic pop
         
@@ -164,17 +153,17 @@ static inline Method class_findInstanceMethod(Class cls, ...) {
     
 }
 
-- (UIBarPosition)_nn_barPosition {
-    UIBarPosition position = [self _nn_barPosition];
+- (UIBarPosition)_nn_sbar_sPosition {
+    UIBarPosition position = [self _nn_sbar_sPosition];
     
-    if (position != self.nn_barPosition) {
+    if (position != self.nn_sbarPosition) {
         NNLogInfo(@"position:%ld", (long)position);
         
-        self.nn_barPosition = position;
+        self.nn_sbarPosition = position;
         for (id<NNTransition> transition in self.nn_transitions) {
             if ([transition respondsToSelector:@selector(nn_updateBarStyleTransitionWithParams:)]) {
                 [transition nn_updateBarStyleTransitionWithParams:@{@"barPosition" : @(position),
-                                                                    @"barMetrics" : @(self.nn_activeBarMetrics)
+                                                                    @"barMetrics" : @(self.nn_sbarMetrics)
                                                                     }];
             }
         }
@@ -183,8 +172,8 @@ static inline Method class_findInstanceMethod(Class cls, ...) {
     return position;
 }
 
-- (UIBarMetrics)_nn_activeBarMetrics {
-    UIBarMetrics metrics = [self _nn_activeBarMetrics];
+- (UIBarMetrics)_nn_sactive_sBar_sMetrics {
+    UIBarMetrics metrics = [self _nn_sactive_sBar_sMetrics];
     
     //fix: metrics value not change on prompt mode in iOS 11
     /*
@@ -203,13 +192,13 @@ static inline Method class_findInstanceMethod(Class cls, ...) {
         }
     }
     
-    if (metrics != self.nn_activeBarMetrics) {
+    if (metrics != self.nn_sbarMetrics) {
         NNLogInfo(@"metrics:%ld", (long)metrics);
         
-        self.nn_activeBarMetrics = metrics;
+        self.nn_sbarMetrics = metrics;
         for (id<NNTransition> transition in self.nn_transitions) {
             if ([transition respondsToSelector:@selector(nn_updateBarStyleTransitionWithParams:)]) {
-                [transition nn_updateBarStyleTransitionWithParams:@{@"barPosition" : @(self.nn_barPosition),
+                [transition nn_updateBarStyleTransitionWithParams:@{@"barPosition" : @(self.nn_sbarPosition),
                                                                     @"barMetrics" : @(metrics)
                                                                     }];
             }
@@ -219,9 +208,9 @@ static inline Method class_findInstanceMethod(Class cls, ...) {
     return metrics;
 }
 
-- (void)_nn_pushNavigationItem:(UINavigationItem *)item transition:(int)transition {
+- (void)_nn_spush_sNavigation_sItem:(UINavigationItem *)item _stransition:(int)transition {
     
-    [self _nn_pushNavigationItem:item transition:transition];
+    [self _nn_spush_sNavigation_sItem:item _stransition:transition];
     NNLogInfo(@"item:%@ transition:%d",item, transition);
     
     item.nn_delegate = self;
@@ -231,20 +220,20 @@ static inline Method class_findInstanceMethod(Class cls, ...) {
     self.assistantItems = [NSMutableArray arrayWithArray:self.items];
 }
 
-- (void)_nn_completePushOperationAnimated:(BOOL)animated transitionAssistant:(id)assistant {
+- (void)_nn_scomplete_sPush_sOperation_sAnimated:(BOOL)animated _stransition_sAssistant:(id)assistant {
     
-    [self _nn_completePushOperationAnimated:animated transitionAssistant:assistant];
+    [self _nn_scomplete_sPush_sOperation_sAnimated:animated _stransition_sAssistant:assistant];
     NNLogInfo(@"animated:%d assistant:%@",animated, assistant);
     
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endTransitionWithParams:)
                                          withObject:@{@"item":self.topItem}];
 }
 
-- (UINavigationItem *)_nn_popNavigationItemWithTransition:(int)transition {
+- (UINavigationItem *)_nn_spop_sNavigation_sItem_sWith_sTransition:(int)transition {
     
     self.assistantItems = [NSMutableArray arrayWithArray:self.items];
     
-    UINavigationItem *item = [self _nn_popNavigationItemWithTransition:transition];
+    UINavigationItem *item = [self _nn_spop_sNavigation_sItem_sWith_sTransition:transition];
     NNLogInfo(@"transition:%d return:%@",transition, item);
     
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
@@ -252,27 +241,27 @@ static inline Method class_findInstanceMethod(Class cls, ...) {
     return item;
 }
 
-- (void)_nn_completePopOperationAnimated:(BOOL)animated transitionAssistant:(id)assistant {
+- (void)_nn_scomplete_sPop_sOperation_sAnimated:(BOOL)animated _stransition_sAssistant:(id)assistant {
     
-    [self _nn_completePopOperationAnimated:animated transitionAssistant:assistant];
+    [self _nn_scomplete_sPop_sOperation_sAnimated:animated _stransition_sAssistant:assistant];
     NNLogInfo(@"animated:%d assistant:%@", animated, assistant);
     
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endTransitionWithParams:)
                                          withObject:@{@"item":self.topItem}];
 }
 
-- (void)_nn_updateInteractiveTransition:(CGFloat)percentComplete {
+- (void)_nn_supdate_sInteractive_sTransition:(CGFloat)percentComplete {
     
-    [self _nn_updateInteractiveTransition:percentComplete];
+    [self _nn_supdate_sInteractive_sTransition:percentComplete];
     NNLogInfo(@"percentComplete:%f", percentComplete);
     
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_updateInteractiveTransitionWithParams:)
                                          withObject:@{@"percentComplete" : @(percentComplete)}];
 }
 
-- (void)_nn_cancelInteractiveTransition:(CGFloat)transition completionSpeed:(CGFloat)speed completionCurve:(double)curve {
+- (void)_nn_scancel_sInteractive_sTransition:(CGFloat)transition _scompletion_sSpeed:(CGFloat)speed _scompletion_sCurve:(double)curve {
     
-    [self _nn_cancelInteractiveTransition:transition completionSpeed:speed completionCurve:curve];
+    [self _nn_scancel_sInteractive_sTransition:transition _scompletion_sSpeed:speed _scompletion_sCurve:curve];
     NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
     
@@ -283,9 +272,9 @@ static inline Method class_findInstanceMethod(Class cls, ...) {
                                                       }];
 }
 
-- (void)_nn_finishInteractiveTransition:(CGFloat)transition completionSpeed:(CGFloat)speed completionCurve:(double)curve {
+- (void)_nn_sfinish_sInteractive_sTransition:(CGFloat)transition _scompletion_sSpeed:(CGFloat)speed _scompletion_sCurve:(double)curve {
     
-    [self _nn_finishInteractiveTransition:transition completionSpeed:speed completionCurve:curve];
+    [self _nn_sfinish_sInteractive_sTransition:transition _scompletion_sSpeed:speed _scompletion_sCurve:curve];
     NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endInteractiveTransitionWithParams:)
@@ -295,8 +284,8 @@ static inline Method class_findInstanceMethod(Class cls, ...) {
                                                       }];
 }
 
-- (BOOL)_nn_didVisibleItemsChangeWithNewItems:(NSArray<UINavigationItem *> *)newItems oldItems:(NSArray<UINavigationItem *> *)oldItems {
-    BOOL ret = [self _nn_didVisibleItemsChangeWithNewItems:newItems oldItems:oldItems];
+- (BOOL)_nn_sdid_sVisible_sItems_sChange_sWith_sNew_sItems:(NSArray<UINavigationItem *> *)newItems _sold_sItems:(NSArray<UINavigationItem *> *)oldItems {
+    BOOL ret = [self _nn_sdid_sVisible_sItems_sChange_sWith_sNew_sItems:newItems _sold_sItems:oldItems];
     NNLogInfo(@"newItems:%@ oldItems:%@", newItems, oldItems);
     
     
