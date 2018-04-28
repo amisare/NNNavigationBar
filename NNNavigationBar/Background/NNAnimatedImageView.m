@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) CADisplayLink *nn_displayLink;
 @property (nonatomic, assign) NSTimeInterval nn_frameTimeCount;
+@property (nonatomic, assign) dispatch_queue_t queue;
 
 @end
 
@@ -20,16 +21,12 @@
 
 - (void)setNn_fromImage:(UIImage *)nn_fromImage {
     _nn_fromImage = nn_fromImage;
-    self.image = [UIImage imageTransitionFromImage:self.nn_fromImage
-                                           toImage:self.nn_toImage
-                                           process:self.nn_animationProcessing];
+    [self refreshImage];
 }
 
 - (void)setNn_toImage:(UIImage *)nn_toImage {
     _nn_toImage = nn_toImage;
-    self.image = [UIImage imageTransitionFromImage:self.nn_fromImage
-                                           toImage:self.nn_toImage
-                                           process:self.nn_animationProcessing];
+    [self refreshImage];
 }
 
 - (void)setNn_animationProcess:(CGFloat)nn_animationProcess {
@@ -88,9 +85,18 @@
     self.nn_animationProcessing += (self.nn_isReversed ? (-deltaProcess) : deltaProcess);
     self.nn_frameTimeCount = 0.0;
     
-    self.image = [UIImage imageTransitionFromImage:self.nn_fromImage
-                                           toImage:self.nn_toImage
-                                           process:self.nn_animationProcessing];
+    [self refreshImage];
+}
+
+- (void)refreshImage {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        UIImage *image = [UIImage imageTransitionFromImage:self.nn_fromImage
+                                                   toImage:self.nn_toImage
+                                                   process:self.nn_animationProcessing];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.image = image;
+        });
+    });
 }
 
 @end
