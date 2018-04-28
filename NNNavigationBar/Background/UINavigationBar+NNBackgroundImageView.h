@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NNAnimatedImageView.h"
 
 @interface UINavigationBar (NNBackgroundImageView)
 
-- (UIImageView *)nn_backgroundImageView;
-- (UIImageView *)nn_backgroundDisplayImageView;
-- (UIImageView *)nn_backgroundAssistantImageView;
+- (NNAnimatedImageView *)nn_backgroundImageView;
 - (UIImage *)nn_backgroundImageFromBar:(UINavigationBar *)bar;
 - (UIImage *)nn_backgroundImageFromItem:(UINavigationItem *)item;
+- (UIImage *)nn_backgroundImageFromItemAtIndex:(NSUInteger)index;
 
 @end

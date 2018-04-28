@@ -8,6 +8,7 @@
 
 #import "UINavigationBar+NNTransitionForBackgroundImage.h"
 #import "UINavigationBar+NNBackgroundImageView.h"
+#import "UINavigationBar+NNAssistantItems.h"
 
 @interface NNBackgroundImageTransition()
 
@@ -36,56 +37,35 @@
     UINavigationItem *item = [params objectForKey:@"item"];
     NSNumber *transition = [params objectForKey:@"transition"];
     
-    UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:item];
-    
-    self.bar.nn_backgroundAssistantImageView.image = backgroundImage;
-    self.bar.nn_backgroundDisplayImageView.alpha = 1.0;
-    self.bar.nn_backgroundAssistantImageView.alpha = 0.0;
-    
-    if (transition.boolValue) {
-        
-        // iOS 11.x +
-        if (@available(iOS 11, *)) {
-            [UIView animateWithDuration:0.25 animations:^{
-                self.bar.nn_backgroundDisplayImageView.alpha = 0.0;
-                self.bar.nn_backgroundAssistantImageView.alpha = 1.0;
-            }];
-            return;
-        }
-        
-        // iOS 8.x - 10.x
-        if (@available(iOS 8, *)) {
-            [UIView animateWithDuration:0.25 animations:^{
-                self.bar.nn_backgroundDisplayImageView.alpha = 0.0;
-                self.bar.nn_backgroundAssistantImageView.alpha = 1.0;
-            } completion:^(BOOL finished) {
-                // a new animation cause the finished to false
-                if (!finished) {
-                    return;
-                }
-                [self nn_endTransitionWithParams:@{@"item" : self.bar.topItem}];
-            }];
-            return;
-        }
-    };
+    NSUInteger itemIndex = [self.bar.items indexOfObject:item];
+    UIImage *backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
+
+    self.bar.nn_backgroundImageView.nn_fromImage = self.bar.nn_backgroundImageView.image;
+    self.bar.nn_backgroundImageView.nn_toImage = backgroundImage;
+    self.bar.nn_backgroundImageView.nn_reversed = false;
+    self.bar.nn_backgroundImageView.nn_animationDuration = 0.25;
+    self.bar.nn_backgroundImageView.nn_animationProcess = .0f;
+    self.bar.nn_backgroundImageView.nn_animating = transition.boolValue;
 }
 
 - (void)nn_endTransitionWithParams:(NSDictionary *)params {
     
     UINavigationItem *item = [params objectForKey:@"item"];
     UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:item];
-    self.bar.nn_backgroundDisplayImageView.image = backgroundImage;
-    self.bar.nn_backgroundDisplayImageView.alpha = 1.0;
-    self.bar.nn_backgroundAssistantImageView.alpha = 0.0;
+//    self.bar.nn_backgroundDisplayImageView.image = backgroundImage;
+//    self.bar.nn_backgroundDisplayImageView.alpha = 1.0;
+//    self.bar.nn_backgroundAssistantImageView.alpha = 0.0;
+    
+    
 }
 
 - (void)nn_updateInteractiveTransitionWithParams:(NSDictionary *)params {
     
     CGFloat percentComplete = [[params objectForKey:@"percentComplete"] floatValue];
     UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:self.bar.topItem];
-    self.bar.nn_backgroundAssistantImageView.image = backgroundImage;
-    self.bar.nn_backgroundDisplayImageView.alpha = 1.0 - percentComplete;
-    self.bar.nn_backgroundAssistantImageView.alpha = percentComplete;
+    self.bar.nn_backgroundImageView.nn_toImage = backgroundImage;
+    self.bar.nn_backgroundImageView.nn_animationProcess = percentComplete;
+    
 }
 
 - (void)nn_endInteractiveTransitionWithParams:(NSDictionary *)params {
@@ -94,27 +74,21 @@
     CGFloat transition = [[params objectForKey:@"transition"] floatValue];
     BOOL finished = [[params objectForKey:@"finished"] boolValue];
     
-    NSTimeInterval duration = 0.25 * (finished ?  (1 - transition) : transition);
+//    UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:item];
+
+    self.bar.nn_backgroundImageView.nn_reversed = !finished;
+    self.bar.nn_backgroundImageView.nn_animationDuration = 0.25;
+    self.bar.nn_backgroundImageView.nn_animationProcess = transition;
+    self.bar.nn_backgroundImageView.nn_animating = true;
     
-    UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:item];
-    self.bar.nn_backgroundDisplayImageView.image = backgroundImage;
-    [UIView animateWithDuration:duration animations:^{
-        self.bar.nn_backgroundDisplayImageView.alpha = 1.0;
-        self.bar.nn_backgroundAssistantImageView.alpha = 0.0;
-    } completion:^(BOOL finished) {
-        [self nn_endTransitionWithParams:@{@"item" : item}];
-    }];
 }
 
 - (void)nn_updateBarStyleTransitionWithParams:(NSDictionary *)params {
     
+    NSUInteger itemIndex = [self.bar.assistantItems indexOfObject:self.bar.topItem];
     {
-        UIImage *backgroundImage = [self.bar nn_backgroundImageFromBar:self.bar];
-        self.bar.nn_backgroundImageView.image = backgroundImage;
-    }
-    {
-        UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:self.bar.topItem];
-        self.bar.nn_backgroundDisplayImageView.image = backgroundImage;
+        UIImage *backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
+        self.bar.nn_backgroundImageView.nn_fromImage = backgroundImage;
     }
 }
 

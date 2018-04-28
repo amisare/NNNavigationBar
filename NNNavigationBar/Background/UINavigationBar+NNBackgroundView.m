@@ -59,8 +59,6 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
         nn_backgroundView = [_NNNavigationBarBackgroundView new];
         nn_backgroundView.translatesAutoresizingMaskIntoConstraints = false;
         [nn_backgroundView addSubview:self.nn_backgroundImageView];
-        [nn_backgroundView addSubview:self.nn_backgroundAssistantImageView];
-        [nn_backgroundView addSubview:self.nn_backgroundDisplayImageView];
         
         NSArray<NSLayoutConstraint *> *(^makeViewConstraint)(NSDictionary *view) = ^(NSDictionary *view) {
             return [NSLayoutConstraint nn_constraintsWithVisualFormats:@[[NSString stringWithFormat:@"H:|[%@]|", view.allKeys.lastObject] ,
@@ -69,8 +67,6 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
         };
         
         [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"nn_backgroundImageView" : self.nn_backgroundImageView})];
-        [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"nn_backgroundAssistantImageView" : self.nn_backgroundAssistantImageView})];
-        [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"nn_backgroundDisplayImageView" : self.nn_backgroundDisplayImageView})];
         
         objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundView, nn_backgroundView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         

@@ -213,6 +213,7 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     
     [self _nn_spush_sNavigation_sItem:item _stransition:transition];
     NNLogInfo(@"item:%@ transition:%d",item, transition);
+    self.assistantItems = [NSMutableArray arrayWithArray:self.items];
     
     item.nn_delegate = self;
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
@@ -224,7 +225,6 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
 - (void)_nn_scomplete_sPush_sOperation_sAnimated:(BOOL)animated _stransition_sAssistant:(id)assistant {
     
     [self _nn_scomplete_sPush_sOperation_sAnimated:animated _stransition_sAssistant:assistant];
-    NNLogInfo(@"%@", [[assistant superclass] class]);
     NNLogInfo(@"animated:%d assistant:%@",animated, assistant);
     
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endTransitionWithParams:)
