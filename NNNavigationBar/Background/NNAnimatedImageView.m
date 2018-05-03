@@ -29,18 +29,17 @@
 
 - (instancetype)init {
     self = [super init];
-    self.nn_animationProcess = 0.0f;
-    [self addSubview:self.displayImageView];
-    [self addSubview:self.fadeImageView];
-    
-    NSArray<NSLayoutConstraint *> *(^makeViewConstraint)(NSDictionary *view) = ^(NSDictionary *view) {
-        return [NSLayoutConstraint nn_constraintsWithVisualFormats:@[[NSString stringWithFormat:@"H:|[%@]|", view.allKeys.lastObject] ,
-                                                                     [NSString stringWithFormat:@"V:|[%@]|", view.allKeys.lastObject]]
-                                                             views:view];
-    };
-    [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"displayImageView" : self.displayImageView})];
-    [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"fadeImageView" : self.fadeImageView})];
-    
+    if (self) {
+        [self addSubview:self.displayImageView];
+        [self addSubview:self.fadeImageView];
+        NSArray<NSLayoutConstraint *> *(^makeViewConstraint)(NSDictionary *view) = ^(NSDictionary *view) {
+            return [NSLayoutConstraint nn_constraintsWithVisualFormats:@[[NSString stringWithFormat:@"H:|[%@]|", view.allKeys.lastObject] ,
+                                                                         [NSString stringWithFormat:@"V:|[%@]|", view.allKeys.lastObject]]
+                                                                 views:view];
+        };
+        [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"displayImageView" : self.displayImageView})];
+        [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"fadeImageView" : self.fadeImageView})];
+    }
     return self;
 }
 
