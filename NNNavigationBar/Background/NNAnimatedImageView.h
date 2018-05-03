@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NNAnimatedImageView : UIImageView
+@interface NNAnimatedImageView : UIView
 
-@property (nonatomic, strong) UIImage *nn_fromImage;
+@property (nonatomic, strong) UIImage *nn_image;
 @property (nonatomic, strong) UIImage *nn_toImage;
 @property (nonatomic, assign, getter=nn_isAnimating) BOOL nn_animating;
 @property (nonatomic, assign, getter=nn_isReversed) BOOL nn_reversed;

@@ -40,7 +40,7 @@
     NSUInteger itemIndex = [self.bar.items indexOfObject:item];
     UIImage *backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
 
-    self.bar.nn_backgroundImageView.nn_fromImage = self.bar.nn_backgroundImageView.image;
+//    self.bar.nn_backgroundImageView.nn_nnImage = self.bar.nn_backgroundImageView.image;
     self.bar.nn_backgroundImageView.nn_toImage = backgroundImage;
     self.bar.nn_backgroundImageView.nn_reversed = false;
     self.bar.nn_backgroundImageView.nn_animationDuration = 0.25;
@@ -88,7 +88,7 @@
     NSUInteger itemIndex = [self.bar.assistantItems indexOfObject:self.bar.topItem];
     {
         UIImage *backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
-        self.bar.nn_backgroundImageView.nn_fromImage = backgroundImage;
+        self.bar.nn_backgroundImageView.nn_image = backgroundImage;
     }
 }
 

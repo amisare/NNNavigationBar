@@ -100,7 +100,7 @@ static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NN
         nn_backgroundImageView = [_NNNavigationBarBackgroundImageView new];
         nn_backgroundImageView.translatesAutoresizingMaskIntoConstraints = false;
         [nn_backgroundImageView setContentMode:UIViewContentModeScaleToFill];
-        nn_backgroundImageView.image = [UIImage nn_imageWithColor:[UIColor clearColor]];
+        nn_backgroundImageView.nn_image = [UIImage nn_imageWithColor:[UIColor clearColor]];
         nn_backgroundImageView.nn_frameDuration = 0.016;
         objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundImageView, nn_backgroundImageView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
