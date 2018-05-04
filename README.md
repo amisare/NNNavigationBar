@@ -136,7 +136,7 @@ $ gem install cocoapods
 在 `podfile` 中添加：
 
 ```ruby
-pod 'NNNavigationBar', '~> 2.2.0'
+pod 'NNNavigationBar', '~> 2.3.0'
 ```
 
 然后在终端执行：
