@@ -292,7 +292,7 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     
     
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
-                                         withObject:@{@"item":newItems.lastObject, @"transition":@(true)}];
+                                         withObject:@{@"item":newItems.lastObject, @"transition":@(3)}];
     self.assistantItems = [NSMutableArray arrayWithArray:newItems];
     return ret;
 }

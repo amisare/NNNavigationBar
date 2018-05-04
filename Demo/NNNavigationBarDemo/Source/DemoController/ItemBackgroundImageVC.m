@@ -21,7 +21,7 @@
 }
 
 - (void)setupUI {
-    [self.navigationItem setNn_backgroundTransitionAlpha:@(self.page % 2).boolValue];
+    [self.navigationItem setNn_backgroundTranslucentTransition:@(self.page % 2).boolValue];
     [self.navigationItem setNn_backgroundImage:[UIImage imageNamed:@(self.page % 2).boolValue ? @"image0" : @"image1"]
                                 forBarPosition:UIBarPositionAny
                                     barMetrics:UIBarMetricsDefault];

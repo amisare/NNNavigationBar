@@ -17,7 +17,7 @@
 
 static const void *kUINavigationBar_NNBackgroundViewHidden = &kUINavigationBar_NNBackgroundViewHidden;
 static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackgroundView;
-static const void *kUINavigationBar_NNBackgroundTransitionAlpha = &kUINavigationBar_NNBackgroundTransitionAlpha;
+static const void *kUINavigationBar_NNBackgroundTranslucentTransition = &kUINavigationBar_NNBackgroundTranslucentTransition;
 static const void *kUINavigationBar_NNBackgroundColors = &kUINavigationBar_NNBackgroundColors;
 static const void *kUINavigationBar_NNBackgroundImages = &kUINavigationBar_NNBackgroundImages;
 
@@ -76,12 +76,12 @@ static const void *kUINavigationBar_NNBackgroundImages = &kUINavigationBar_NNBac
     return nn_backgroundView;
 }
 
-- (BOOL)nn_isBackgroundTransitionAlpha {
-    return [objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundTransitionAlpha) boolValue];
+- (BOOL)nn_backgroundTranslucentTransition {
+    return [objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundTranslucentTransition) boolValue];
 }
 
-- (void)setNn_backgroundTransitionAlpha:(BOOL)nn_backgroundTransitionAlpha {
-    objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundTransitionAlpha, @(nn_backgroundTransitionAlpha), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setNn_backgroundTranslucentTransition:(BOOL)nn_backgroundTranslucentTransition {
+    objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundTranslucentTransition, @(nn_backgroundTranslucentTransition), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (UIColor *)nn_backgroundColor {

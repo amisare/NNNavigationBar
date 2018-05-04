@@ -12,7 +12,7 @@
 
 @property (nonatomic, assign) CGFloat nn_backgroundAlpha;
 
-@property (nonatomic, assign, getter=nn_isBackgroundTransitionAlpha) BOOL nn_backgroundTransitionAlpha;
+@property (nonatomic, assign) BOOL nn_backgroundTranslucentTransition;
 @property (nonatomic, strong) UIColor *nn_backgroundColor;
 @property (nonatomic, strong) UIImage *nn_backgroundImage;
 

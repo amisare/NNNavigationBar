@@ -12,7 +12,7 @@
 #import "UINavigationItem+NNDelegate.h"
 #import "UINavigationItem+NNBackgroundDelegate.h"
 
-static const void *kUINavigationBar_NNBackgroundTransitionAlpha = &kUINavigationBar_NNBackgroundTransitionAlpha;
+static const void *kUINavigationItem_NNBackgroundTranslucentTransition = &kUINavigationItem_NNBackgroundTranslucentTransition;
 static const void *kUINavigationItem_NNBackgroundColors = &kUINavigationItem_NNBackgroundColors;
 static const void *kUINavigationItem_NNBackgroundImages = &kUINavigationItem_NNBackgroundImages;
 static const void *kUINavigationItem_NNBackgroundAlpha = &kUINavigationItem_NNBackgroundAlpha;
@@ -22,12 +22,12 @@ static const void *kUINavigationItem_NNBackgroundAlpha = &kUINavigationItem_NNBa
 
 @implementation UINavigationItem (NNBackgroundItem)
 
-- (BOOL)nn_isBackgroundTransitionAlpha {
-    return [objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundTransitionAlpha) boolValue];
+- (BOOL)nn_backgroundTranslucentTransition {
+    return [objc_getAssociatedObject(self, kUINavigationItem_NNBackgroundTranslucentTransition) boolValue];
 }
 
-- (void)setNn_backgroundTransitionAlpha:(BOOL)nn_backgroundTransitionAlpha {
-    objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundTransitionAlpha, @(nn_backgroundTransitionAlpha), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setNn_backgroundTranslucentTransition:(BOOL)nn_backgroundTranslucentTransition {
+    objc_setAssociatedObject(self, kUINavigationItem_NNBackgroundTranslucentTransition, @(nn_backgroundTranslucentTransition), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (UIColor *)nn_backgroundColor {

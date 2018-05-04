@@ -13,6 +13,18 @@
 
 @required
 - (instancetype)initWithNavigationBar:(UINavigationBar *)bar;
+/**
+ nn_startTransitionWithParams:
+
+ @param params
+ key: transition
+ {
+     0: no anmiation
+     1: push
+     2: pop
+     3: pop multi-vcs include popToRootViewController
+ }
+ */
 - (void)nn_startTransitionWithParams:(NSDictionary *)params;
 - (void)nn_endTransitionWithParams:(NSDictionary *)params;
 - (void)nn_updateInteractiveTransitionWithParams:(NSDictionary *)params;

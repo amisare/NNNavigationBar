@@ -27,7 +27,6 @@
     
     if ([key isEqualToString:@"nn_backgroundColor"] || [key isEqualToString:@"nn_backgroundImage"]) {
         UIImage *backgroundImage = [self nn_backgroundImageFromItem:item];
-//        self.nn_backgroundDisplayImageView.image = backgroundImage;
         self.nn_backgroundImageView.nn_image = backgroundImage;
     }
     

@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NNAnimatedImageView.h"
+#import "NNFadeAnimationImageView.h"
 
 @interface UINavigationBar (NNBackgroundImageView)
 
-- (NNAnimatedImageView *)nn_backgroundImageView;
+- (NNFadeAnimationImageView *)nn_backgroundImageView;
 - (UIImage *)nn_backgroundImageFromBar:(UINavigationBar *)bar;
 - (UIImage *)nn_backgroundImageFromItem:(UINavigationItem *)item;
 - (UIImage *)nn_backgroundImageFromItemAtIndex:(NSUInteger)index;
-- (BOOL)nn_backgroundTransitionAlphaFromItemAtIndex:(NSUInteger)index;
+- (BOOL)nn_backgroundTranslucentFromItemAtIndex:(NSUInteger)index;
 
 @end

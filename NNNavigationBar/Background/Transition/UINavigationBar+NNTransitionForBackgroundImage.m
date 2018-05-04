@@ -39,14 +39,15 @@
     
     NSUInteger itemIndex = [self.bar.items indexOfObject:item];
     UIImage *backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
-    BOOL isBackgroundTransitionAlpha = [self.bar nn_backgroundTransitionAlphaFromItemAtIndex:itemIndex];
+    BOOL isBackgroundTranslucent = [self.bar nn_backgroundTranslucentFromItemAtIndex:itemIndex];
 
     self.bar.nn_backgroundImageView.nn_toImage = backgroundImage;
-    self.bar.nn_backgroundImageView.nn_animationAlpha = isBackgroundTransitionAlpha;
+    self.bar.nn_backgroundImageView.nn_hasAnimation = transition.boolValue;
+    self.bar.nn_backgroundImageView.nn_hasTranslucentEffect = isBackgroundTranslucent;
     self.bar.nn_backgroundImageView.nn_reversed = false;
     self.bar.nn_backgroundImageView.nn_animationDuration = 0.25;
     self.bar.nn_backgroundImageView.nn_animationProcess = .0f;
-    self.bar.nn_backgroundImageView.nn_animating = transition.boolValue;
+    self.bar.nn_backgroundImageView.nn_animationState = NNFadeAnimationStateStart;
 }
 
 - (void)nn_endTransitionWithParams:(NSDictionary *)params {
@@ -64,14 +65,13 @@
 
 - (void)nn_endInteractiveTransitionWithParams:(NSDictionary *)params {
     
-//    UINavigationItem *item = [params objectForKey:@"item"];
     CGFloat transition = [[params objectForKey:@"transition"] floatValue];
     BOOL finished = [[params objectForKey:@"finished"] boolValue];
     
     self.bar.nn_backgroundImageView.nn_reversed = !finished;
     self.bar.nn_backgroundImageView.nn_animationDuration = 0.25;
     self.bar.nn_backgroundImageView.nn_animationProcess = transition;
-    self.bar.nn_backgroundImageView.nn_animating = true;
+    self.bar.nn_backgroundImageView.nn_animationState = NNFadeAnimationStateStart;
 }
 
 - (void)nn_updateBarStyleTransitionWithParams:(NSDictionary *)params {
