@@ -60,8 +60,12 @@
 - (void)nn_updateInteractiveTransitionWithParams:(NSDictionary *)params {
     
     CGFloat percentComplete = [[params objectForKey:@"percentComplete"] floatValue];
-    NSUInteger itemIndex = [self.bar.items indexOfObject:self.bar.topItem];
-    UIImage *backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
+    
+    UIImage *backgroundImage = nil;
+    if ([self.bar.assistantItems containsObject:self.bar.topItem]) {
+        NSUInteger itemIndex = [self.bar.items indexOfObject:self.bar.topItem];
+        backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
+    }
     self.bar.nn_backgroundImageView.nn_toImage = backgroundImage;
     self.bar.nn_backgroundImageView.nn_animationProcess = percentComplete;
 }
