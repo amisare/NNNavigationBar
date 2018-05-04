@@ -213,13 +213,11 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     
     [self _nn_spush_sNavigation_sItem:item _stransition:transition];
     NNLogInfo(@"item:%@ transition:%d",item, transition);
-    self.assistantItems = [NSMutableArray arrayWithArray:self.items];
     
+    self.assistantItems = [NSMutableArray arrayWithArray:self.items];
     item.nn_delegate = self;
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
                                          withObject:@{@"item":self.topItem, @"transition":@(transition)}];
-    
-    self.assistantItems = [NSMutableArray arrayWithArray:self.items];
 }
 
 - (void)_nn_scomplete_sPush_sOperation_sAnimated:(BOOL)animated _stransition_sAssistant:(id)assistant {
@@ -266,7 +264,6 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     [self _nn_scancel_sInteractive_sTransition:transition _scompletion_sSpeed:speed _scompletion_sCurve:curve];
     NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
-    
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endInteractiveTransitionWithParams:)
                                          withObject:@{@"item" : self.assistantItems.lastObject,
                                                       @"transition" : @(transition),
@@ -290,10 +287,9 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     BOOL ret = [self _nn_sdid_sVisible_sItems_sChange_sWith_sNew_sItems:newItems _sold_sItems:oldItems];
     NNLogInfo(@"newItems:%@ oldItems:%@", newItems, oldItems);
     
-    
+    self.assistantItems = [NSMutableArray arrayWithArray:newItems];
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
                                          withObject:@{@"item":newItems.lastObject, @"transition":@(3)}];
-    self.assistantItems = [NSMutableArray arrayWithArray:newItems];
     return ret;
 }
 

@@ -81,6 +81,10 @@ static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NN
 
 - (UIImage *)nn_backgroundImageFromItemAtIndex:(NSUInteger)index {
     
+    if (index >= self.assistantItems.count) {
+        return nil;
+    }
+    
     UINavigationItem *item = [self.assistantItems objectAtIndex:index];
     
     UIImage *backgroundImage = nil;
@@ -95,6 +99,10 @@ static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NN
 }
 
 - (BOOL)nn_backgroundTranslucentFromItemAtIndex:(NSUInteger)index {
+    
+    if (index >= self.assistantItems.count) {
+        return false;
+    }
     
     UINavigationItem *item = [self.assistantItems objectAtIndex:index];
     
