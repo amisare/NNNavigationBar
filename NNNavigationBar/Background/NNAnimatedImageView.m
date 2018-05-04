@@ -7,9 +7,7 @@
 //
 
 #import "NNAnimatedImageView.h"
-#import "UIImage+NNImageTransition.h"
 #import "NSLayoutConstraint+NNVisualFormat.h"
-#import "UIImage+NNImageWithColor.h"
 
 @interface _NNAnimatedDisplayImageView : UIImageView @end
 @implementation _NNAnimatedDisplayImageView @end
@@ -18,10 +16,10 @@
 
 @interface NNAnimatedImageView()
 
-@property (nonatomic, strong) CADisplayLink *nn_displayLink;
-@property (nonatomic, assign) NSTimeInterval nn_frameTimeCount;
-@property (nonatomic, strong) UIImageView *displayImageView;
-@property (nonatomic, strong) UIImageView *fadeImageView;
+@property (nonatomic, strong) CADisplayLink *_nn_displayLink;
+@property (nonatomic, assign) NSTimeInterval _nn_frameTimeCount;
+@property (nonatomic, strong) UIImageView *_nn_displayImageView;
+@property (nonatomic, strong) UIImageView *_nn_fadeImageView;
 
 @end
 
@@ -30,23 +28,23 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self addSubview:self.displayImageView];
-        [self addSubview:self.fadeImageView];
+        [self addSubview:self._nn_displayImageView];
+        [self addSubview:self._nn_fadeImageView];
         NSArray<NSLayoutConstraint *> *(^makeViewConstraint)(NSDictionary *view) = ^(NSDictionary *view) {
             return [NSLayoutConstraint nn_constraintsWithVisualFormats:@[[NSString stringWithFormat:@"H:|[%@]|", view.allKeys.lastObject] ,
                                                                          [NSString stringWithFormat:@"V:|[%@]|", view.allKeys.lastObject]]
                                                                  views:view];
         };
-        [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"displayImageView" : self.displayImageView})];
-        [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"fadeImageView" : self.fadeImageView})];
+        [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"displayImageView" : self._nn_displayImageView})];
+        [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"fadeImageView" : self._nn_fadeImageView})];
     }
     return self;
 }
 
 - (void)setNn_image:(UIImage *)nn_image {
     _nn_image = nn_image;
-    self.displayImageView.image = nn_image;
-    [self transitImageView];
+    self._nn_displayImageView.image = nn_image;
+    [self _nn_transitImageView];
 }
 
 - (void)setImage:(UIImage *)image {
@@ -54,99 +52,89 @@
 
 - (void)setNn_toImage:(UIImage *)nn_toImage {
     _nn_toImage = nn_toImage;
-    self.fadeImageView.image = _nn_toImage;
-    [self transitImageView];
+    self._nn_fadeImageView.image = _nn_toImage;
+    [self _nn_transitImageView];
 }
 
 - (void)setNn_animationProcess:(CGFloat)nn_animationProcess {
     _nn_animationProcess = nn_animationProcess;
     self.nn_animating = false;
     self.nn_animationProcessing = _nn_animationProcess;
-    [self transitImageView];
+    [self _nn_transitImageView];
 }
 
 - (void)setNn_animating:(BOOL)nn_animating {
     
     if (nn_animating == true &&
-        self.nn_displayLink == nil &&
+        self._nn_displayLink == nil &&
         self.nn_animationDuration != 0 &&
         self.nn_frameDuration != 0) {
-        CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleLinkTick)];
+        CADisplayLink *link = [CADisplayLink displayLinkWithTarget:self selector:@selector(_nn_handleLinkTick)];
         [link addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-        self.nn_displayLink = link;
+        self._nn_displayLink = link;
         _nn_animating = nn_animating;
         return;
     }
     
     if (nn_animating == false &&
-        self.nn_displayLink != nil) {
-        CADisplayLink *link = self.nn_displayLink;
+        self._nn_displayLink != nil) {
+        CADisplayLink *link = self._nn_displayLink;
         link.paused = true;
         [link invalidate];
-        self.nn_frameTimeCount = .0f;
-        self.nn_displayLink = nil;
+        self._nn_frameTimeCount = .0f;
+        self._nn_displayLink = nil;
     }
     
     _nn_animating = false;
 }
 
-- (void)handleLinkTick {
+- (void)_nn_handleLinkTick {
     
-    self.nn_frameTimeCount += self.nn_displayLink.duration;
-    if (self.nn_frameTimeCount < self.nn_frameDuration) {
+    self._nn_frameTimeCount += self._nn_displayLink.duration;
+    if (self._nn_frameTimeCount < self.nn_frameDuration) {
         return;
     }
     
-    CGFloat deltaProcess = self.nn_frameTimeCount / self.nn_animationDuration;
+    CGFloat deltaProcess = self._nn_frameTimeCount / self.nn_animationDuration;
     self.nn_animationProcessing += (self.nn_isReversed ? (-deltaProcess) : deltaProcess);
-    self.nn_frameTimeCount = 0.0;
+    self._nn_frameTimeCount = 0.0;
     
     
     if (self.nn_animationProcessing >= 1.0f || self.nn_animationProcessing < 0.0f) {
         self.nn_animating = false;
         self.nn_animationProcessing = 0.0f;
-        [self nn_animationFinished];
+        [self _nn_animationFinished];
     }
     
-    [self transitImageView];
+    [self _nn_transitImageView];
 }
 
-- (void)nn_animationFinished {
+- (void)_nn_animationFinished {
     if (!self.nn_isReversed) {
-        self.displayImageView.image = self.fadeImageView.image;
+        self._nn_displayImageView.image = self._nn_fadeImageView.image;
+        self._nn_fadeImageView.image = nil;
     }
 }
 
-- (UIImageView *)fadeImageView {
-    if (!_fadeImageView) {
-        _fadeImageView = [_NNAnimatedFadeImageView new];
-        _fadeImageView.translatesAutoresizingMaskIntoConstraints = false;
+- (UIImageView *)_nn_fadeImageView {
+    if (!__nn_fadeImageView) {
+        __nn_fadeImageView = [_NNAnimatedFadeImageView new];
+        __nn_fadeImageView.translatesAutoresizingMaskIntoConstraints = false;
     }
-    return _fadeImageView;
+    return __nn_fadeImageView;
 }
 
-- (UIImageView *)displayImageView {
-    if (!_displayImageView) {
-        _displayImageView = [_NNAnimatedDisplayImageView new];
-        _displayImageView.translatesAutoresizingMaskIntoConstraints = false;
+- (UIImageView *)_nn_displayImageView {
+    if (!__nn_displayImageView) {
+        __nn_displayImageView = [_NNAnimatedDisplayImageView new];
+        __nn_displayImageView.translatesAutoresizingMaskIntoConstraints = false;
     }
-    return _displayImageView;
+    return __nn_displayImageView;
 }
 
-- (void)transitImageView {
-    self.displayImageView.alpha = (1 - self.nn_animationProcessing);
-    self.fadeImageView.alpha = self.nn_animationProcessing;
+- (void)_nn_transitImageView {
+    self._nn_displayImageView.alpha = self.nn_animationAlpha ? (1 - self.nn_animationProcessing) : 1.0f;
+    self._nn_fadeImageView.alpha = self.nn_animationProcessing;
 }
-
-//- (void)refreshImage {
-//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-//        UIImage *image = [UIImage imageTransitionFromImage:self.nn_fromImage
-//                                                   toImage:self.nn_toImage
-//                                                   process:self.nn_animationProcessing];
-//        dispatch_sync(dispatch_get_main_queue(), ^{
-//            self.image = image;
-//        });
-//    });
-//}
 
 @end

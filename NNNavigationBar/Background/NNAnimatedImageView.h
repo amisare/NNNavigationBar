@@ -14,6 +14,7 @@
 @property (nonatomic, strong) UIImage *nn_toImage;
 @property (nonatomic, assign, getter=nn_isAnimating) BOOL nn_animating;
 @property (nonatomic, assign, getter=nn_isReversed) BOOL nn_reversed;
+@property (nonatomic, assign, getter=nn_isAnimationAlpha) BOOL nn_animationAlpha;
 @property (nonatomic, assign) CGFloat nn_animationProcess;
 @property (nonatomic, assign) NSTimeInterval nn_animationDuration;
 @property (nonatomic, assign) NSTimeInterval nn_frameDuration;

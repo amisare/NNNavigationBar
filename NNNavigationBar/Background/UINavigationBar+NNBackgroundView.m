@@ -15,10 +15,11 @@
 #import "UINavigationBar+NNBackgroundImageView.h"
 #import "UINavigationBar+NNBackgroundDelegateImp.h"
 
-static const void *kUINavigationBar_NNBackgroundColors = &kUINavigationBar_NNBackgroundColors;
-static const void *kUINavigationBar_NNBackgroundImages = &kUINavigationBar_NNBackgroundImages;
 static const void *kUINavigationBar_NNBackgroundViewHidden = &kUINavigationBar_NNBackgroundViewHidden;
 static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackgroundView;
+static const void *kUINavigationBar_NNBackgroundTransitionAlpha = &kUINavigationBar_NNBackgroundTransitionAlpha;
+static const void *kUINavigationBar_NNBackgroundColors = &kUINavigationBar_NNBackgroundColors;
+static const void *kUINavigationBar_NNBackgroundImages = &kUINavigationBar_NNBackgroundImages;
 
 @interface _NNNavigationBarBackgroundView : UIImageView @end
 @implementation _NNNavigationBarBackgroundView @end
@@ -73,6 +74,14 @@ static const void *kUINavigationBar_NNBackgroundView = &kUINavigationBar_NNBackg
         self.nn_delegate = self;
     }
     return nn_backgroundView;
+}
+
+- (BOOL)nn_isBackgroundTransitionAlpha {
+    return [objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundTransitionAlpha) boolValue];
+}
+
+- (void)setNn_backgroundTransitionAlpha:(BOOL)nn_backgroundTransitionAlpha {
+    objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundTransitionAlpha, @(nn_backgroundTransitionAlpha), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (UIColor *)nn_backgroundColor {

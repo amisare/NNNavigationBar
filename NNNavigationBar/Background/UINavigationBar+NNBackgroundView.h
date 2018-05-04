@@ -13,6 +13,7 @@
 @property (nonatomic, assign) BOOL nn_backgroundViewHidden;
 - (UIView *)nn_backgroundView;
 
+@property (nonatomic, assign, getter=nn_isBackgroundTransitionAlpha) BOOL nn_backgroundTransitionAlpha;
 @property (nonatomic, strong) UIColor *nn_backgroundColor;
 @property (nonatomic, strong) UIImage *nn_backgroundImage;
 

@@ -15,5 +15,6 @@
 - (UIImage *)nn_backgroundImageFromBar:(UINavigationBar *)bar;
 - (UIImage *)nn_backgroundImageFromItem:(UINavigationItem *)item;
 - (UIImage *)nn_backgroundImageFromItemAtIndex:(NSUInteger)index;
+- (BOOL)nn_backgroundTransitionAlphaFromItemAtIndex:(NSUInteger)index;
 
 @end

@@ -39,9 +39,10 @@
     
     NSUInteger itemIndex = [self.bar.items indexOfObject:item];
     UIImage *backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
+    BOOL isBackgroundTransitionAlpha = [self.bar nn_backgroundTransitionAlphaFromItemAtIndex:itemIndex];
 
-//    self.bar.nn_backgroundImageView.nn_nnImage = self.bar.nn_backgroundImageView.image;
     self.bar.nn_backgroundImageView.nn_toImage = backgroundImage;
+    self.bar.nn_backgroundImageView.nn_animationAlpha = isBackgroundTransitionAlpha;
     self.bar.nn_backgroundImageView.nn_reversed = false;
     self.bar.nn_backgroundImageView.nn_animationDuration = 0.25;
     self.bar.nn_backgroundImageView.nn_animationProcess = .0f;
@@ -49,12 +50,6 @@
 }
 
 - (void)nn_endTransitionWithParams:(NSDictionary *)params {
-    
-//    UINavigationItem *item = [params objectForKey:@"item"];
-//    UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:item];
-//    self.bar.nn_backgroundDisplayImageView.image = backgroundImage;
-//    self.bar.nn_backgroundDisplayImageView.alpha = 1.0;
-//    self.bar.nn_backgroundAssistantImageView.alpha = 0.0;
     
 }
 
@@ -65,31 +60,25 @@
     UIImage *backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
     self.bar.nn_backgroundImageView.nn_toImage = backgroundImage;
     self.bar.nn_backgroundImageView.nn_animationProcess = percentComplete;
-    
 }
 
 - (void)nn_endInteractiveTransitionWithParams:(NSDictionary *)params {
     
-    UINavigationItem *item = [params objectForKey:@"item"];
+//    UINavigationItem *item = [params objectForKey:@"item"];
     CGFloat transition = [[params objectForKey:@"transition"] floatValue];
     BOOL finished = [[params objectForKey:@"finished"] boolValue];
     
-//    UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:item];
-
     self.bar.nn_backgroundImageView.nn_reversed = !finished;
     self.bar.nn_backgroundImageView.nn_animationDuration = 0.25;
     self.bar.nn_backgroundImageView.nn_animationProcess = transition;
     self.bar.nn_backgroundImageView.nn_animating = true;
-    
 }
 
 - (void)nn_updateBarStyleTransitionWithParams:(NSDictionary *)params {
     
     NSUInteger itemIndex = [self.bar.assistantItems indexOfObject:self.bar.topItem];
-    {
-        UIImage *backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
-        self.bar.nn_backgroundImageView.nn_image = backgroundImage;
-    }
+    UIImage *backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
+    self.bar.nn_backgroundImageView.nn_image = backgroundImage;
 }
 
 @end

@@ -94,6 +94,18 @@ static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NN
     return backgroundImage;
 }
 
+- (BOOL)nn_backgroundTransitionAlphaFromItemAtIndex:(NSUInteger)index {
+    
+    UINavigationItem *item = [self.assistantItems objectAtIndex:index];
+    
+    if (item.nn_isBackgroundTransitionAlpha) {
+        return true;
+    }
+    else {
+        return self.nn_isBackgroundTransitionAlpha;
+    }
+}
+
 - (_NNNavigationBarBackgroundImageView *)nn_backgroundImageView {
     _NNNavigationBarBackgroundImageView *nn_backgroundImageView = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundImageView);
     if (!nn_backgroundImageView) {
