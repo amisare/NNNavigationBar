@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 #import "UINavigationBar+NNTransition.h"
 #import "UINavigationBar+NNBarStyle.h"
-#import "UINavigationBar+NNAssistantItems.h"
+#import "UINavigationBar+NNLatestPopItem.h"
 #import "UINavigationItem+NNDelegate.h"
 
 #ifdef NNNavigationBarLoggingEnable
@@ -214,7 +214,6 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     [self _nn_spush_sNavigation_sItem:item _stransition:transition];
     NNLogInfo(@"item:%@ transition:%d",item, transition);
     
-    self.assistantItems = [NSMutableArray arrayWithArray:self.items];
     item.nn_delegate = self;
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
                                          withObject:@{@"item":self.topItem, @"transition":@(transition)}];
@@ -231,11 +230,10 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
 
 - (UINavigationItem *)_nn_spop_sNavigation_sItem_sWith_sTransition:(int)transition {
     
-    self.assistantItems = [NSMutableArray arrayWithArray:self.items];
-    
     UINavigationItem *item = [self _nn_spop_sNavigation_sItem_sWith_sTransition:transition];
     NNLogInfo(@"transition:%d return:%@",transition, item);
     
+    self.nn_latestPopItem = item;
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
                                          withObject:@{@"item":self.topItem, @"transition":@(transition)}];
     return item;
@@ -255,8 +253,14 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     [self _nn_supdate_sInteractive_sTransition:percentComplete];
     NNLogInfo(@"percentComplete:%f", percentComplete);
     
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params addEntriesFromDictionary:@{@"itemWillPush" : self.topItem,
+                                       @"percentComplete" : @(percentComplete)}];
+    if (self.nn_latestPopItem) {
+        [params setObject:self.nn_latestPopItem forKey:@"itemWillPop"];
+    }
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_updateInteractiveTransitionWithParams:)
-                                         withObject:@{@"percentComplete" : @(percentComplete)}];
+                                         withObject:params];
 }
 
 - (void)_nn_scancel_sInteractive_sTransition:(CGFloat)transition _scompletion_sSpeed:(CGFloat)speed _scompletion_sCurve:(double)curve {
@@ -264,11 +268,14 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     [self _nn_scancel_sInteractive_sTransition:transition _scompletion_sSpeed:speed _scompletion_sCurve:curve];
     NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params addEntriesFromDictionary:@{@"transition" : @(transition),
+                                       @"finished" : @(false)}];
+    if (self.nn_latestPopItem) {
+        [params setObject:self.nn_latestPopItem forKey:@"item"];
+    }
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endInteractiveTransitionWithParams:)
-                                         withObject:@{@"item" : self.assistantItems.lastObject,
-                                                      @"transition" : @(transition),
-                                                      @"finished" : @(false)
-                                                      }];
+                                         withObject:params];
 }
 
 - (void)_nn_sfinish_sInteractive_sTransition:(CGFloat)transition _scompletion_sSpeed:(CGFloat)speed _scompletion_sCurve:(double)curve {
@@ -286,8 +293,9 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
 - (BOOL)_nn_sdid_sVisible_sItems_sChange_sWith_sNew_sItems:(NSArray<UINavigationItem *> *)newItems _sold_sItems:(NSArray<UINavigationItem *> *)oldItems {
     BOOL ret = [self _nn_sdid_sVisible_sItems_sChange_sWith_sNew_sItems:newItems _sold_sItems:oldItems];
     NNLogInfo(@"newItems:%@ oldItems:%@", newItems, oldItems);
-    
-    self.assistantItems = [NSMutableArray arrayWithArray:newItems];
+    if (oldItems.count > newItems.count) {
+        self.nn_latestPopItem = oldItems.lastObject;
+    }
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
                                          withObject:@{@"item":newItems.lastObject, @"transition":@(3)}];
     return ret;

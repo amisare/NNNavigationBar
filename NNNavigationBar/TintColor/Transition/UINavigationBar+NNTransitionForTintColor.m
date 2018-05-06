@@ -7,7 +7,6 @@
 //
 
 #import "UINavigationBar+NNTransitionForTintColor.h"
-#import "UINavigationBar+NNAssistantItems.h"
 #import "UINavigationBar+NNTintColor.h"
 #import "UINavigationItem+NNTintColor.h"
 

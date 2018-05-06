@@ -8,7 +8,6 @@
 
 #import "UINavigationBar+NNTransitionForBackgroundImage.h"
 #import "UINavigationBar+NNBackgroundImageView.h"
-#import "UINavigationBar+NNAssistantItems.h"
 
 @interface NNBackgroundImageTransition()
 
@@ -37,13 +36,9 @@
     UINavigationItem *item = [params objectForKey:@"item"];
     NSNumber *transition = [params objectForKey:@"transition"];
     
-    UIImage *backgroundImage = nil;
-    BOOL isBackgroundTranslucent = false;
-    if ([self.bar.assistantItems containsObject:item]) {
-        NSUInteger itemIndex = [self.bar.assistantItems indexOfObject:item];
-        backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
-        isBackgroundTranslucent = [self.bar nn_backgroundTranslucentFromItemAtIndex:itemIndex];
-    }
+    UIImage *backgroundImage = [self.bar nn_backgroundImageFromBar:self.bar item:item default:nil];
+    BOOL isBackgroundTranslucent = [self.bar nn_backgroundTranslucentFromBar:self.bar item:item default:false];
+
     self.bar.nn_backgroundImageView.nn_toImage = backgroundImage;
     self.bar.nn_backgroundImageView.nn_hasAnimation = transition.boolValue;
     self.bar.nn_backgroundImageView.nn_hasTranslucentEffect = isBackgroundTranslucent;
@@ -60,12 +55,9 @@
 - (void)nn_updateInteractiveTransitionWithParams:(NSDictionary *)params {
     
     CGFloat percentComplete = [[params objectForKey:@"percentComplete"] floatValue];
+    UINavigationItem *itemWillPush = [params objectForKey:@"itemWillPush"];
     
-    UIImage *backgroundImage = nil;
-    if ([self.bar.assistantItems containsObject:self.bar.topItem]) {
-        NSUInteger itemIndex = [self.bar.items indexOfObject:self.bar.topItem];
-        backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
-    }
+    UIImage *backgroundImage = [self.bar nn_backgroundImageFromBar:self.bar item:itemWillPush default:nil];
     self.bar.nn_backgroundImageView.nn_toImage = backgroundImage;
     self.bar.nn_backgroundImageView.nn_animationProcess = percentComplete;
 }
@@ -82,12 +74,8 @@
 }
 
 - (void)nn_updateBarStyleTransitionWithParams:(NSDictionary *)params {
-    
-    UIImage *backgroundImage = nil;
-    if ([self.bar.assistantItems containsObject:self.bar.topItem]) {
-        NSUInteger itemIndex = [self.bar.assistantItems indexOfObject:self.bar.topItem];
-        backgroundImage = [self.bar nn_backgroundImageFromItemAtIndex:itemIndex];
-    }
+
+    UIImage *backgroundImage = [self.bar nn_backgroundImageFromBar:self.bar item:self.bar.topItem default:nil];
     self.bar.nn_backgroundImageView.nn_image = backgroundImage;
 }
 

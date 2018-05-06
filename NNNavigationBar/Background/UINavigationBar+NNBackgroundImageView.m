@@ -10,9 +10,10 @@
 #import <objc/runtime.h>
 #import "UIImage+NNImageWithColor.h"
 #import "UINavigationBar+NNBarStyle.h"
-#import "UINavigationBar+NNAssistantItems.h"
 #import "UINavigationBar+NNBackgroundView.h"
 #import "UINavigationItem+NNBackgroundItem.h"
+#import "UINavigationBar+NNBackgroundImage.h"
+#import "UINavigationItem+NNBackgroundImage.h"
 
 static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NNBackgroundImageView;
 
@@ -23,95 +24,42 @@ static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NN
 
 - (UIImage *)nn_backgroundImageFromItem:(UINavigationItem *)item {
     
-    UIImage *backgroundImage = nil;
-    
-    if (backgroundImage == nil) {
-        backgroundImage = [item nn_backgroundImageForBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
-    }
-    if (backgroundImage == nil) {
-        UIColor *backgroundColor = [item nn_backgroundColorForBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
-        backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
-    }
-    if (backgroundImage == nil) {
-        backgroundImage = [item nn_backgroundImageForBarPosition:UIBarPositionAny barMetrics:self.nn_sbarMetrics];
-    }
-    if (backgroundImage == nil) {
-        UIColor *backgroundColor = [item nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:self.nn_sbarMetrics];
-        backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
-    }
-    if (backgroundImage == nil) {
-        backgroundImage = [item nn_backgroundImageForBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-    }
-    if (backgroundImage == nil) {
-        UIColor *backgroundColor = [item nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-        backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
-    }
-    
+    UIImage *backgroundImage = [item nn_imageForBackgroundAtBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
     return backgroundImage;
 }
 
 - (UIImage *)nn_backgroundImageFromBar:(UINavigationBar *)bar {
     
-    UIImage *backgroundImage = nil;
-    
-    if (backgroundImage == nil) {
-        backgroundImage = [bar nn_backgroundImageForBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
-    }
-    if (backgroundImage == nil) {
-        UIColor *backgroundColor = [bar nn_backgroundColorForBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
-        backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
-    }
-    if (backgroundImage == nil) {
-        backgroundImage = [bar nn_backgroundImageForBarPosition:UIBarPositionAny barMetrics:self.nn_sbarMetrics];
-    }
-    if (backgroundImage == nil) {
-        UIColor *backgroundColor = [bar nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:self.nn_sbarMetrics];
-        backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
-    }
-    if (backgroundImage == nil) {
-        backgroundImage = [bar nn_backgroundImageForBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-    }
-    if (backgroundImage == nil) {
-        UIColor *backgroundColor = [bar nn_backgroundColorForBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-        backgroundImage = [UIImage nn_imageWithColor:backgroundColor];
-    }
-    
+    UIImage *backgroundImage = [bar nn_imageForBackgroundAtBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
     return backgroundImage;
 }
 
-- (UIImage *)nn_backgroundImageFromItemAtIndex:(NSUInteger)index {
+- (UIImage *)nn_backgroundImageFromBar:(UINavigationBar *)bar item:(UINavigationItem*)item default:(UIImage *)defaultImage {
     
-    if (index >= self.assistantItems.count) {
-        return nil;
+    {
+        UIImage *backgroundImage = [self nn_backgroundImageFromItem:item];
+        if (backgroundImage) {
+            return backgroundImage;
+        }
     }
-    
-    UINavigationItem *item = [self.assistantItems objectAtIndex:index];
-    
-    UIImage *backgroundImage = nil;
-    if (backgroundImage == nil) {
-        backgroundImage = [self nn_backgroundImageFromItem:item];
+    {
+        UIImage *backgroundImage = [self nn_backgroundImageFromBar:self];
+        if (backgroundImage) {
+            return backgroundImage;
+        }
     }
-    if (backgroundImage == nil) {
-        backgroundImage = [self nn_backgroundImageFromBar:self];
-    }
-    
-    return backgroundImage;
+    return defaultImage;
 }
 
-- (BOOL)nn_backgroundTranslucentFromItemAtIndex:(NSUInteger)index {
-    
-    if (index >= self.assistantItems.count) {
-        return false;
-    }
-    
-    UINavigationItem *item = [self.assistantItems objectAtIndex:index];
+- (BOOL)nn_backgroundTranslucentFromBar:(UINavigationBar *)bar item:(UINavigationItem*)item default:(BOOL)defaultValue {
     
     if (item.nn_backgroundTranslucentTransition) {
         return true;
     }
-    else {
-        return self.nn_backgroundTranslucentTransition;
+    if (self.nn_backgroundTranslucentTransition) {
+        return true;
     }
+    return defaultValue;
 }
 
 - (_NNNavigationBarBackgroundImageView *)nn_backgroundImageView {
