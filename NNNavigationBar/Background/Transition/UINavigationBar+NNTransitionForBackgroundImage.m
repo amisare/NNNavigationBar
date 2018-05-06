@@ -36,8 +36,8 @@
     UINavigationItem *item = [params objectForKey:@"item"];
     NSNumber *transition = [params objectForKey:@"transition"];
     
-    UIImage *backgroundImage = [self.bar nn_backgroundImageFromBar:self.bar item:item default:nil];
-    BOOL isBackgroundTranslucent = [self.bar nn_backgroundTranslucentFromBar:self.bar item:item default:false];
+    UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:item];
+    BOOL isBackgroundTranslucent = [self.bar nn_backgroundTranslucentFromItem:item];
 
     self.bar.nn_backgroundImageView.nn_toImage = backgroundImage;
     self.bar.nn_backgroundImageView.nn_hasAnimation = transition.boolValue;
@@ -57,7 +57,7 @@
     CGFloat percentComplete = [[params objectForKey:@"percentComplete"] floatValue];
     UINavigationItem *itemWillPush = [params objectForKey:@"itemWillPush"];
     
-    UIImage *backgroundImage = [self.bar nn_backgroundImageFromBar:self.bar item:itemWillPush default:nil];
+    UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:itemWillPush];
     self.bar.nn_backgroundImageView.nn_toImage = backgroundImage;
     self.bar.nn_backgroundImageView.nn_animationProcess = percentComplete;
 }
@@ -75,7 +75,7 @@
 
 - (void)nn_updateBarStyleTransitionWithParams:(NSDictionary *)params {
 
-    UIImage *backgroundImage = [self.bar nn_backgroundImageFromBar:self.bar item:self.bar.topItem default:nil];
+    UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:self.bar.topItem];
     self.bar.nn_backgroundImageView.nn_image = backgroundImage;
 }
 

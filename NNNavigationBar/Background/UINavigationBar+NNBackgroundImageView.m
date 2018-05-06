@@ -24,34 +24,17 @@ static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NN
 
 - (UIImage *)nn_backgroundImageFromItem:(UINavigationItem *)item {
     
-    UIImage *backgroundImage = [item nn_imageForBackgroundAtBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
+    UIImage *backgroundImage = nil;
+    if (backgroundImage == nil) {
+        backgroundImage = [item nn_imageForBackgroundAtBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
+    }
+    if (backgroundImage == nil) {
+        backgroundImage = [self nn_imageForBackgroundAtBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
+    }
     return backgroundImage;
 }
 
-- (UIImage *)nn_backgroundImageFromBar:(UINavigationBar *)bar {
-    
-    UIImage *backgroundImage = [bar nn_imageForBackgroundAtBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
-    return backgroundImage;
-}
-
-- (UIImage *)nn_backgroundImageFromBar:(UINavigationBar *)bar item:(UINavigationItem*)item default:(UIImage *)defaultImage {
-    
-    {
-        UIImage *backgroundImage = [self nn_backgroundImageFromItem:item];
-        if (backgroundImage) {
-            return backgroundImage;
-        }
-    }
-    {
-        UIImage *backgroundImage = [self nn_backgroundImageFromBar:self];
-        if (backgroundImage) {
-            return backgroundImage;
-        }
-    }
-    return defaultImage;
-}
-
-- (BOOL)nn_backgroundTranslucentFromBar:(UINavigationBar *)bar item:(UINavigationItem*)item default:(BOOL)defaultValue {
+- (BOOL)nn_backgroundTranslucentFromItem:(UINavigationItem*)item {
     
     if (item.nn_backgroundTranslucentTransition) {
         return true;
@@ -59,7 +42,7 @@ static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NN
     if (self.nn_backgroundTranslucentTransition) {
         return true;
     }
-    return defaultValue;
+    return false;
 }
 
 - (_NNNavigationBarBackgroundImageView *)nn_backgroundImageView {

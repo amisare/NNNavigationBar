@@ -15,7 +15,7 @@
 
 - (void)nn_navigationBar:(UINavigationBar *)bar backgroundChangeForKey:(NSString *)key {
     
-    UIImage *backgroundImage = [self nn_backgroundImageFromBar:self];
+    UIImage *backgroundImage = [self nn_backgroundImageFromItem:self.topItem];
     self.nn_backgroundImageView.nn_image = backgroundImage;
 }
 

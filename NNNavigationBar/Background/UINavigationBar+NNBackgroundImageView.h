@@ -12,9 +12,7 @@
 @interface UINavigationBar (NNBackgroundImageView)
 
 - (NNFadeAnimationImageView *)nn_backgroundImageView;
-- (UIImage *)nn_backgroundImageFromBar:(UINavigationBar *)bar;
 - (UIImage *)nn_backgroundImageFromItem:(UINavigationItem *)item;
-- (UIImage *)nn_backgroundImageFromBar:(UINavigationBar *)bar item:(UINavigationItem*)item default:(UIImage *)defaultImage;
-- (BOOL)nn_backgroundTranslucentFromBar:(UINavigationBar *)bar item:(UINavigationItem*)item default:(BOOL)defaultValue;
+- (BOOL)nn_backgroundTranslucentFromItem:(UINavigationItem *)item;
 
 @end
