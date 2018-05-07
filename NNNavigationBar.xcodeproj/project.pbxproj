@@ -210,9 +210,9 @@
 		67E456BC20A007C200E58475 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
+				67E456BF20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.h */,
 				67E456BD20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.m */,
 				67E456BE20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.h */,
-				67E456BF20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.h */,
 				67E456C020A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.m */,
 			);
 			path = Transition;

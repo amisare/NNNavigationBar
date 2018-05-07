@@ -10,13 +10,13 @@
 #import "UINavigationBar+NNBackgroundView.h"
 #import "UINavigationItem+NNBackgroundItem.h"
 
-@interface NNBackgroundViewTransition()
+@interface NNBackgroundAlphaTransition()
 
 @property (nonatomic, weak) UINavigationBar *bar;
 
 @end
 
-@implementation NNBackgroundViewTransition
+@implementation NNBackgroundAlphaTransition
 
 + (void)load {
     [super load];
@@ -55,7 +55,7 @@
 - (void)nn_updateInteractiveTransitionWithParams:(NSDictionary *)params {
     
     CGFloat percentComplete = [[params objectForKey:@"percentComplete"] floatValue];
-    UINavigationItem *itemWillPop = [params objectForKey:@"itemWillPush"];
+    UINavigationItem *itemWillPop = [params objectForKey:@"itemWillPop"];
     UINavigationItem *itemWillPush = [params objectForKey:@"itemWillPush"];
     
     CGFloat deltAlpha = itemWillPop.nn_backgroundAlpha - itemWillPush.nn_backgroundAlpha;

@@ -25,7 +25,8 @@
 		67CAE889208F38DF00672BAF /* ItemBackgroundAlphaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAE888208F38DF00672BAF /* ItemBackgroundAlphaVC.m */; };
 		67CAE88C208F38F500672BAF /* BarBackgroundImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAE88B208F38F500672BAF /* BarBackgroundImageVC.m */; };
 		67CAE88F208F38FE00672BAF /* BarBackgroundColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAE88E208F38FE00672BAF /* BarBackgroundColorVC.m */; };
-		67E4572C20A00AFC00E58475 /* NNNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E4572B20A00AFC00E58475 /* NNNavigationBar.framework */; };
+		67E4573120A02A7D00E58475 /* NNNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E4572B20A00AFC00E58475 /* NNNavigationBar.framework */; };
+		67E4573320A02AAE00E58475 /* NNNavigationBar.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 67E4572B20A00AFC00E58475 /* NNNavigationBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		67F80EBC2080ACB00098B825 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F80EBB2080ACB00098B825 /* DemoViewController.m */; };
 		67F80EBF2080ACF70098B825 /* DemoViewController+Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F80EBE2080ACF70098B825 /* DemoViewController+Slider.m */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,19 @@
 			remoteInfo = NNNavigationBarDemo;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		67E4573220A02AA300E58475 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				67E4573320A02AAE00E58475 /* NNNavigationBar.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		67A5B6C62089A82C0020515A /* KVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVOController.h; sourceTree = "<group>"; };
@@ -97,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67E4572C20A00AFC00E58475 /* NNNavigationBar.framework in Frameworks */,
+				67E4573120A02A7D00E58475 /* NNNavigationBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +270,7 @@
 				67A6F435207EFD1B0082A845 /* Sources */,
 				67A6F436207EFD1B0082A845 /* Frameworks */,
 				67A6F437207EFD1B0082A845 /* Resources */,
+				67E4573220A02AA300E58475 /* CopyFiles */,
 			);
 			buildRules = (
 			);
