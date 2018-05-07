@@ -8,6 +8,7 @@
 
 #import "UINavigationBar+NNMethodSwizzling.h"
 #import <objc/runtime.h>
+#import "NNNavigationBar.h"
 #import "UINavigationBar+NNTransition.h"
 #import "UINavigationBar+NNBarStyle.h"
 #import "UINavigationBar+NNLatestPopItem.h"
