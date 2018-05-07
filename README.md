@@ -10,7 +10,7 @@
 ## 效果
 
 ![ColorTransition](https://raw.githubusercontent.com/amisare/Screenshots/master/NNNavigationBar/Screenshots_00.gif)
-![ImageTransition](https://raw.githubusercontent.com/amisare/Screenshots/master/NNNavigationBar/Screenshots_00.gif)
+![ImageTransition](https://raw.githubusercontent.com/amisare/Screenshots/master/NNNavigationBar/Screenshots_01.gif)
 
 ## 介绍
 
