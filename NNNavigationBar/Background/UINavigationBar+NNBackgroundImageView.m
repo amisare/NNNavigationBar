@@ -22,6 +22,19 @@ static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NN
 
 @implementation UINavigationBar (NNBackgroundImageView)
 
+- (_NNNavigationBarBackgroundImageView *)nn_backgroundImageView {
+    _NNNavigationBarBackgroundImageView *nn_backgroundImageView = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundImageView);
+    if (!nn_backgroundImageView) {
+        nn_backgroundImageView = [_NNNavigationBarBackgroundImageView new];
+        nn_backgroundImageView.translatesAutoresizingMaskIntoConstraints = false;
+        [nn_backgroundImageView setContentMode:UIViewContentModeScaleToFill];
+        nn_backgroundImageView.nn_image = [UIImage nn_imageWithColor:[UIColor clearColor]];
+        nn_backgroundImageView.nn_frameDuration = 0.016;
+        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundImageView, nn_backgroundImageView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return nn_backgroundImageView;
+}
+
 - (UIImage *)nn_backgroundImageFromItem:(UINavigationItem *)item {
     
     UIImage *backgroundImage = nil;
@@ -43,19 +56,6 @@ static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NN
         return true;
     }
     return false;
-}
-
-- (_NNNavigationBarBackgroundImageView *)nn_backgroundImageView {
-    _NNNavigationBarBackgroundImageView *nn_backgroundImageView = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundImageView);
-    if (!nn_backgroundImageView) {
-        nn_backgroundImageView = [_NNNavigationBarBackgroundImageView new];
-        nn_backgroundImageView.translatesAutoresizingMaskIntoConstraints = false;
-        [nn_backgroundImageView setContentMode:UIViewContentModeScaleToFill];
-        nn_backgroundImageView.nn_image = [UIImage nn_imageWithColor:[UIColor clearColor]];
-        nn_backgroundImageView.nn_frameDuration = 0.016;
-        objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundImageView, nn_backgroundImageView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    return nn_backgroundImageView;
 }
 
 @end
