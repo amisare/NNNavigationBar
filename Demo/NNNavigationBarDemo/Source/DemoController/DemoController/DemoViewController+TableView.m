@@ -7,7 +7,6 @@
 //
 
 #import "DemoViewController+TableView.h"
-#import "NSLayoutConstraint+NNVisualFormat.h"
 
 @implementation DemoViewController (TableView)
 

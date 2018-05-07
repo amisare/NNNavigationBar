@@ -2,16 +2,23 @@
 //  NNNavigationBar.h
 //  NNNavigationBar
 //
-//  Created by GuHaijun on 2018/4/11.
+//  Created by GuHaijun on 2018/5/7.
 //  Copyright © 2018年 GuHaijun. All rights reserved.
 //
 
-#ifndef NNNavigationBar_h
-#define NNNavigationBar_h
+#import <UIKit/UIKit.h>
 
-#import "UINavigationBar+NNBackgroundView.h"
-#import "UINavigationItem+NNBackgroundItem.h"
-#import "UINavigationBar+NNTintColor.h"
-#import "UINavigationItem+NNTintColor.h"
+//! Project version number for NNNavigationBar.
+FOUNDATION_EXPORT double NNNavigationBarVersionNumber;
 
-#endif /* NNNavigationBar_h */
+//! Project version string for NNNavigationBar.
+FOUNDATION_EXPORT const unsigned char NNNavigationBarVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <NNNavigationBar/PublicHeader.h>
+
+#import <NNNavigationBar/UINavigationBar+NNBackgroundView.h>
+#import <NNNavigationBar/UINavigationItem+NNBackgroundItem.h>
+#import <NNNavigationBar/UINavigationBar+NNTintColor.h>
+#import <NNNavigationBar/UINavigationItem+NNTintColor.h>
+#import <NNNavigationBar/NSLayoutConstraint+NNVisualFormat.h>
+#import <NNNavigationBar/UIImage+NNImageWithColor.h>

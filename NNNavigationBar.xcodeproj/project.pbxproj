@@ -1,0 +1,715 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		67E456A920A0073A00E58475 /* NNNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E4569F20A0073A00E58475 /* NNNavigationBar.framework */; };
+		67E456AE20A0073A00E58475 /* NNNavigationBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456AD20A0073A00E58475 /* NNNavigationBarTests.m */; };
+		67E456F420A007C200E58475 /* UINavigationBar+NNBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456BB20A007C200E58475 /* UINavigationBar+NNBackgroundView.m */; };
+		67E456F520A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456BD20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.m */; };
+		67E456F620A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456BE20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.h */; };
+		67E456F720A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456BF20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.h */; };
+		67E456F820A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C020A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.m */; };
+		67E456F920A007C200E58475 /* UINavigationBar+NNBackgroundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C120A007C200E58475 /* UINavigationBar+NNBackgroundImageView.m */; };
+		67E456FA20A007C200E58475 /* UINavigationItem+NNBackgroundItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C220A007C200E58475 /* UINavigationItem+NNBackgroundItem.m */; };
+		67E456FB20A007C200E58475 /* UINavigationItem+NNBackgroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C320A007C200E58475 /* UINavigationItem+NNBackgroundImage.m */; };
+		67E456FC20A007C200E58475 /* UINavigationBar+NNBackgroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C420A007C200E58475 /* UINavigationBar+NNBackgroundImage.m */; };
+		67E456FD20A007C200E58475 /* NNFadeAnimationImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C520A007C200E58475 /* NNFadeAnimationImageView.m */; };
+		67E456FE20A007C200E58475 /* UINavigationBar+NNBackgroundDelegateImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C720A007C200E58475 /* UINavigationBar+NNBackgroundDelegateImp.m */; };
+		67E456FF20A007C200E58475 /* UINavigationBar+NNBackgroundDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456C820A007C200E58475 /* UINavigationBar+NNBackgroundDelegate.h */; };
+		67E4570020A007C200E58475 /* UINavigationBar+NNBackgroundDelegateImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456C920A007C200E58475 /* UINavigationBar+NNBackgroundDelegateImp.h */; };
+		67E4570120A007C200E58475 /* UINavigationItem+NNBackgroundDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456CA20A007C200E58475 /* UINavigationItem+NNBackgroundDelegate.h */; };
+		67E4570220A007C200E58475 /* UINavigationBar+NNBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456CB20A007C200E58475 /* UINavigationBar+NNBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67E4570320A007C200E58475 /* UINavigationBar+NNBackgroundImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456CC20A007C200E58475 /* UINavigationBar+NNBackgroundImage.h */; };
+		67E4570420A007C200E58475 /* UINavigationItem+NNBackgroundImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456CD20A007C200E58475 /* UINavigationItem+NNBackgroundImage.h */; };
+		67E4570520A007C200E58475 /* UINavigationItem+NNBackgroundItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456CE20A007C200E58475 /* UINavigationItem+NNBackgroundItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67E4570620A007C200E58475 /* UINavigationBar+NNBackgroundImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456CF20A007C200E58475 /* UINavigationBar+NNBackgroundImageView.h */; };
+		67E4570720A007C200E58475 /* NNFadeAnimationImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456D020A007C200E58475 /* NNFadeAnimationImageView.h */; };
+		67E4570820A007C200E58475 /* UINavigationBar+NNBarStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456D220A007C200E58475 /* UINavigationBar+NNBarStyle.h */; };
+		67E4570920A007C200E58475 /* UINavigationBar+NNTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456D320A007C200E58475 /* UINavigationBar+NNTransition.h */; };
+		67E4570A20A007C200E58475 /* UINavigationBar+NNMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456D420A007C200E58475 /* UINavigationBar+NNMethodSwizzling.m */; };
+		67E4570B20A007C200E58475 /* UINavigationItem+NNDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456D520A007C200E58475 /* UINavigationItem+NNDelegate.m */; };
+		67E4570C20A007C200E58475 /* UINavigationBar+NNTransitionClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456D620A007C200E58475 /* UINavigationBar+NNTransitionClass.h */; };
+		67E4570D20A007C200E58475 /* UINavigationBar+NNLatestPopItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456D720A007C200E58475 /* UINavigationBar+NNLatestPopItem.h */; };
+		67E4570E20A007C200E58475 /* UINavigationBar+NNDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456D820A007C200E58475 /* UINavigationBar+NNDelegate.m */; };
+		67E4570F20A007C200E58475 /* UINavigationBar+NNTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456D920A007C200E58475 /* UINavigationBar+NNTransition.m */; };
+		67E4571020A007C200E58475 /* UINavigationBar+NNBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456DA20A007C200E58475 /* UINavigationBar+NNBarStyle.m */; };
+		67E4571120A007C200E58475 /* UINavigationBar+NNMethodSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456DB20A007C200E58475 /* UINavigationBar+NNMethodSwizzling.h */; };
+		67E4571220A007C200E58475 /* UINavigationBar+NNTransitionClass.c in Sources */ = {isa = PBXBuildFile; fileRef = 67E456DC20A007C200E58475 /* UINavigationBar+NNTransitionClass.c */; };
+		67E4571320A007C200E58475 /* UINavigationItem+NNDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456DD20A007C200E58475 /* UINavigationItem+NNDelegate.h */; };
+		67E4571420A007C200E58475 /* UINavigationBar+NNDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456DE20A007C200E58475 /* UINavigationBar+NNDelegate.h */; };
+		67E4571520A007C200E58475 /* UINavigationBar+NNLatestPopItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456DF20A007C200E58475 /* UINavigationBar+NNLatestPopItem.m */; };
+		67E4571620A007C200E58475 /* UIImage+NNImageWithColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456E120A007C200E58475 /* UIImage+NNImageWithColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67E4571720A007C200E58475 /* NSLayoutConstraint+NNVisualFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456E220A007C200E58475 /* NSLayoutConstraint+NNVisualFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67E4571820A007C200E58475 /* NSLayoutConstraint+NNVisualFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456E320A007C200E58475 /* NSLayoutConstraint+NNVisualFormat.m */; };
+		67E4571920A007C200E58475 /* UIImage+NNImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456E420A007C200E58475 /* UIImage+NNImageWithColor.m */; };
+		67E4571A20A007C200E58475 /* NNNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456E520A007C200E58475 /* NNNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67E4571B20A007C200E58475 /* UINavigationBar+NNTransitionForTintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456E820A007C200E58475 /* UINavigationBar+NNTransitionForTintColor.m */; };
+		67E4571C20A007C200E58475 /* UINavigationBar+NNTransitionForTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456E920A007C200E58475 /* UINavigationBar+NNTransitionForTintColor.h */; };
+		67E4571D20A007C200E58475 /* UINavigationBar+NNTintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456EA20A007C200E58475 /* UINavigationBar+NNTintColor.m */; };
+		67E4571E20A007C200E58475 /* UINavigationBar+NNTintColorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456EC20A007C200E58475 /* UINavigationBar+NNTintColorDelegate.h */; };
+		67E4571F20A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456ED20A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.h */; };
+		67E4572020A007C200E58475 /* UINavigationItem+NNTintColorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456EE20A007C200E58475 /* UINavigationItem+NNTintColorDelegate.h */; };
+		67E4572120A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456EF20A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.m */; };
+		67E4572220A007C200E58475 /* UINavigationItem+NNTintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456F020A007C200E58475 /* UINavigationItem+NNTintColor.m */; };
+		67E4572320A007C200E58475 /* UINavigationBar+NNTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456F120A007C200E58475 /* UINavigationBar+NNTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67E4572420A007C200E58475 /* UINavigationItem+NNTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456F220A007C200E58475 /* UINavigationItem+NNTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		67E456AA20A0073A00E58475 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 67E4569620A0073900E58475 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67E4569E20A0073A00E58475;
+			remoteInfo = NNNavigationBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		67E4569F20A0073A00E58475 /* NNNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NNNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67E456A820A0073A00E58475 /* NNNavigationBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NNNavigationBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67E456AD20A0073A00E58475 /* NNNavigationBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNNavigationBarTests.m; sourceTree = "<group>"; };
+		67E456AF20A0073A00E58475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67E456BB20A007C200E58475 /* UINavigationBar+NNBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundView.m"; sourceTree = "<group>"; };
+		67E456BD20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTransitionForBackgroundAlpha.m"; sourceTree = "<group>"; };
+		67E456BE20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransitionForBackgroundImage.h"; sourceTree = "<group>"; };
+		67E456BF20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransitionForBackgroundAlpha.h"; sourceTree = "<group>"; };
+		67E456C020A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTransitionForBackgroundImage.m"; sourceTree = "<group>"; };
+		67E456C120A007C200E58475 /* UINavigationBar+NNBackgroundImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundImageView.m"; sourceTree = "<group>"; };
+		67E456C220A007C200E58475 /* UINavigationItem+NNBackgroundItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+NNBackgroundItem.m"; sourceTree = "<group>"; };
+		67E456C320A007C200E58475 /* UINavigationItem+NNBackgroundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+NNBackgroundImage.m"; sourceTree = "<group>"; };
+		67E456C420A007C200E58475 /* UINavigationBar+NNBackgroundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundImage.m"; sourceTree = "<group>"; };
+		67E456C520A007C200E58475 /* NNFadeAnimationImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNFadeAnimationImageView.m; sourceTree = "<group>"; };
+		67E456C720A007C200E58475 /* UINavigationBar+NNBackgroundDelegateImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundDelegateImp.m"; sourceTree = "<group>"; };
+		67E456C820A007C200E58475 /* UINavigationBar+NNBackgroundDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundDelegate.h"; sourceTree = "<group>"; };
+		67E456C920A007C200E58475 /* UINavigationBar+NNBackgroundDelegateImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundDelegateImp.h"; sourceTree = "<group>"; };
+		67E456CA20A007C200E58475 /* UINavigationItem+NNBackgroundDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNBackgroundDelegate.h"; sourceTree = "<group>"; };
+		67E456CB20A007C200E58475 /* UINavigationBar+NNBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundView.h"; sourceTree = "<group>"; };
+		67E456CC20A007C200E58475 /* UINavigationBar+NNBackgroundImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundImage.h"; sourceTree = "<group>"; };
+		67E456CD20A007C200E58475 /* UINavigationItem+NNBackgroundImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNBackgroundImage.h"; sourceTree = "<group>"; };
+		67E456CE20A007C200E58475 /* UINavigationItem+NNBackgroundItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNBackgroundItem.h"; sourceTree = "<group>"; };
+		67E456CF20A007C200E58475 /* UINavigationBar+NNBackgroundImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundImageView.h"; sourceTree = "<group>"; };
+		67E456D020A007C200E58475 /* NNFadeAnimationImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNFadeAnimationImageView.h; sourceTree = "<group>"; };
+		67E456D220A007C200E58475 /* UINavigationBar+NNBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBarStyle.h"; sourceTree = "<group>"; };
+		67E456D320A007C200E58475 /* UINavigationBar+NNTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransition.h"; sourceTree = "<group>"; };
+		67E456D420A007C200E58475 /* UINavigationBar+NNMethodSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNMethodSwizzling.m"; sourceTree = "<group>"; };
+		67E456D520A007C200E58475 /* UINavigationItem+NNDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+NNDelegate.m"; sourceTree = "<group>"; };
+		67E456D620A007C200E58475 /* UINavigationBar+NNTransitionClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransitionClass.h"; sourceTree = "<group>"; };
+		67E456D720A007C200E58475 /* UINavigationBar+NNLatestPopItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNLatestPopItem.h"; sourceTree = "<group>"; };
+		67E456D820A007C200E58475 /* UINavigationBar+NNDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNDelegate.m"; sourceTree = "<group>"; };
+		67E456D920A007C200E58475 /* UINavigationBar+NNTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTransition.m"; sourceTree = "<group>"; };
+		67E456DA20A007C200E58475 /* UINavigationBar+NNBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBarStyle.m"; sourceTree = "<group>"; };
+		67E456DB20A007C200E58475 /* UINavigationBar+NNMethodSwizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNMethodSwizzling.h"; sourceTree = "<group>"; };
+		67E456DC20A007C200E58475 /* UINavigationBar+NNTransitionClass.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "UINavigationBar+NNTransitionClass.c"; sourceTree = "<group>"; };
+		67E456DD20A007C200E58475 /* UINavigationItem+NNDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNDelegate.h"; sourceTree = "<group>"; };
+		67E456DE20A007C200E58475 /* UINavigationBar+NNDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNDelegate.h"; sourceTree = "<group>"; };
+		67E456DF20A007C200E58475 /* UINavigationBar+NNLatestPopItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNLatestPopItem.m"; sourceTree = "<group>"; };
+		67E456E120A007C200E58475 /* UIImage+NNImageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+NNImageWithColor.h"; sourceTree = "<group>"; };
+		67E456E220A007C200E58475 /* NSLayoutConstraint+NNVisualFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+NNVisualFormat.h"; sourceTree = "<group>"; };
+		67E456E320A007C200E58475 /* NSLayoutConstraint+NNVisualFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+NNVisualFormat.m"; sourceTree = "<group>"; };
+		67E456E420A007C200E58475 /* UIImage+NNImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+NNImageWithColor.m"; sourceTree = "<group>"; };
+		67E456E520A007C200E58475 /* NNNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNavigationBar.h; sourceTree = "<group>"; };
+		67E456E820A007C200E58475 /* UINavigationBar+NNTransitionForTintColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTransitionForTintColor.m"; sourceTree = "<group>"; };
+		67E456E920A007C200E58475 /* UINavigationBar+NNTransitionForTintColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransitionForTintColor.h"; sourceTree = "<group>"; };
+		67E456EA20A007C200E58475 /* UINavigationBar+NNTintColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTintColor.m"; sourceTree = "<group>"; };
+		67E456EC20A007C200E58475 /* UINavigationBar+NNTintColorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTintColorDelegate.h"; sourceTree = "<group>"; };
+		67E456ED20A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTintColorDelegateImp.h"; sourceTree = "<group>"; };
+		67E456EE20A007C200E58475 /* UINavigationItem+NNTintColorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNTintColorDelegate.h"; sourceTree = "<group>"; };
+		67E456EF20A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTintColorDelegateImp.m"; sourceTree = "<group>"; };
+		67E456F020A007C200E58475 /* UINavigationItem+NNTintColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+NNTintColor.m"; sourceTree = "<group>"; };
+		67E456F120A007C200E58475 /* UINavigationBar+NNTintColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTintColor.h"; sourceTree = "<group>"; };
+		67E456F220A007C200E58475 /* UINavigationItem+NNTintColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNTintColor.h"; sourceTree = "<group>"; };
+		67E4572F20A0156800E58475 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		67E4569B20A0073A00E58475 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67E456A520A0073A00E58475 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67E456A920A0073A00E58475 /* NNNavigationBar.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		67E4569520A0073900E58475 = {
+			isa = PBXGroup;
+			children = (
+				67E456B920A007C200E58475 /* NNNavigationBar */,
+				67E4572E20A0156800E58475 /* Supporting Files */,
+				67E456AC20A0073A00E58475 /* NNNavigationBarTests */,
+				67E456A020A0073A00E58475 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		67E456A020A0073A00E58475 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				67E4569F20A0073A00E58475 /* NNNavigationBar.framework */,
+				67E456A820A0073A00E58475 /* NNNavigationBarTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		67E456AC20A0073A00E58475 /* NNNavigationBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				67E456AD20A0073A00E58475 /* NNNavigationBarTests.m */,
+				67E456AF20A0073A00E58475 /* Info.plist */,
+			);
+			path = NNNavigationBarTests;
+			sourceTree = "<group>";
+		};
+		67E456B920A007C200E58475 /* NNNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				67E456E520A007C200E58475 /* NNNavigationBar.h */,
+				67E456D120A007C200E58475 /* Core */,
+				67E456BA20A007C200E58475 /* Background */,
+				67E456E620A007C200E58475 /* TintColor */,
+				67E456E020A007C200E58475 /* Utils */,
+			);
+			path = NNNavigationBar;
+			sourceTree = "<group>";
+		};
+		67E456BA20A007C200E58475 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				67E456D020A007C200E58475 /* NNFadeAnimationImageView.h */,
+				67E456C520A007C200E58475 /* NNFadeAnimationImageView.m */,
+				67E456CC20A007C200E58475 /* UINavigationBar+NNBackgroundImage.h */,
+				67E456C420A007C200E58475 /* UINavigationBar+NNBackgroundImage.m */,
+				67E456CF20A007C200E58475 /* UINavigationBar+NNBackgroundImageView.h */,
+				67E456C120A007C200E58475 /* UINavigationBar+NNBackgroundImageView.m */,
+				67E456CB20A007C200E58475 /* UINavigationBar+NNBackgroundView.h */,
+				67E456BB20A007C200E58475 /* UINavigationBar+NNBackgroundView.m */,
+				67E456CD20A007C200E58475 /* UINavigationItem+NNBackgroundImage.h */,
+				67E456C320A007C200E58475 /* UINavigationItem+NNBackgroundImage.m */,
+				67E456CE20A007C200E58475 /* UINavigationItem+NNBackgroundItem.h */,
+				67E456C220A007C200E58475 /* UINavigationItem+NNBackgroundItem.m */,
+				67E456C620A007C200E58475 /* Delegate */,
+				67E456BC20A007C200E58475 /* Transition */,
+			);
+			path = Background;
+			sourceTree = "<group>";
+		};
+		67E456BC20A007C200E58475 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				67E456BD20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.m */,
+				67E456BE20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.h */,
+				67E456BF20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.h */,
+				67E456C020A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.m */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		67E456C620A007C200E58475 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				67E456C720A007C200E58475 /* UINavigationBar+NNBackgroundDelegateImp.m */,
+				67E456C820A007C200E58475 /* UINavigationBar+NNBackgroundDelegate.h */,
+				67E456C920A007C200E58475 /* UINavigationBar+NNBackgroundDelegateImp.h */,
+				67E456CA20A007C200E58475 /* UINavigationItem+NNBackgroundDelegate.h */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		67E456D120A007C200E58475 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				67E456D220A007C200E58475 /* UINavigationBar+NNBarStyle.h */,
+				67E456DA20A007C200E58475 /* UINavigationBar+NNBarStyle.m */,
+				67E456D720A007C200E58475 /* UINavigationBar+NNLatestPopItem.h */,
+				67E456DF20A007C200E58475 /* UINavigationBar+NNLatestPopItem.m */,
+				67E456DB20A007C200E58475 /* UINavigationBar+NNMethodSwizzling.h */,
+				67E456D420A007C200E58475 /* UINavigationBar+NNMethodSwizzling.m */,
+				67E456D320A007C200E58475 /* UINavigationBar+NNTransition.h */,
+				67E456D920A007C200E58475 /* UINavigationBar+NNTransition.m */,
+				67E456DC20A007C200E58475 /* UINavigationBar+NNTransitionClass.c */,
+				67E456D620A007C200E58475 /* UINavigationBar+NNTransitionClass.h */,
+				67E456DE20A007C200E58475 /* UINavigationBar+NNDelegate.h */,
+				67E456D820A007C200E58475 /* UINavigationBar+NNDelegate.m */,
+				67E456DD20A007C200E58475 /* UINavigationItem+NNDelegate.h */,
+				67E456D520A007C200E58475 /* UINavigationItem+NNDelegate.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		67E456E020A007C200E58475 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				67E456E220A007C200E58475 /* NSLayoutConstraint+NNVisualFormat.h */,
+				67E456E320A007C200E58475 /* NSLayoutConstraint+NNVisualFormat.m */,
+				67E456E120A007C200E58475 /* UIImage+NNImageWithColor.h */,
+				67E456E420A007C200E58475 /* UIImage+NNImageWithColor.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		67E456E620A007C200E58475 /* TintColor */ = {
+			isa = PBXGroup;
+			children = (
+				67E456F120A007C200E58475 /* UINavigationBar+NNTintColor.h */,
+				67E456EA20A007C200E58475 /* UINavigationBar+NNTintColor.m */,
+				67E456F220A007C200E58475 /* UINavigationItem+NNTintColor.h */,
+				67E456F020A007C200E58475 /* UINavigationItem+NNTintColor.m */,
+				67E456EB20A007C200E58475 /* Delegate */,
+				67E456E720A007C200E58475 /* Transition */,
+			);
+			path = TintColor;
+			sourceTree = "<group>";
+		};
+		67E456E720A007C200E58475 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				67E456E820A007C200E58475 /* UINavigationBar+NNTransitionForTintColor.m */,
+				67E456E920A007C200E58475 /* UINavigationBar+NNTransitionForTintColor.h */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		67E456EB20A007C200E58475 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				67E456EC20A007C200E58475 /* UINavigationBar+NNTintColorDelegate.h */,
+				67E456ED20A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.h */,
+				67E456EE20A007C200E58475 /* UINavigationItem+NNTintColorDelegate.h */,
+				67E456EF20A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.m */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		67E4572E20A0156800E58475 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				67E4572F20A0156800E58475 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		67E4569C20A0073A00E58475 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67E4571A20A007C200E58475 /* NNNavigationBar.h in Headers */,
+				67E4570220A007C200E58475 /* UINavigationBar+NNBackgroundView.h in Headers */,
+				67E4570520A007C200E58475 /* UINavigationItem+NNBackgroundItem.h in Headers */,
+				67E4572320A007C200E58475 /* UINavigationBar+NNTintColor.h in Headers */,
+				67E4572420A007C200E58475 /* UINavigationItem+NNTintColor.h in Headers */,
+				67E4571720A007C200E58475 /* NSLayoutConstraint+NNVisualFormat.h in Headers */,
+				67E4571620A007C200E58475 /* UIImage+NNImageWithColor.h in Headers */,
+				67E4570820A007C200E58475 /* UINavigationBar+NNBarStyle.h in Headers */,
+				67E4570120A007C200E58475 /* UINavigationItem+NNBackgroundDelegate.h in Headers */,
+				67E4570020A007C200E58475 /* UINavigationBar+NNBackgroundDelegateImp.h in Headers */,
+				67E4571E20A007C200E58475 /* UINavigationBar+NNTintColorDelegate.h in Headers */,
+				67E4571120A007C200E58475 /* UINavigationBar+NNMethodSwizzling.h in Headers */,
+				67E4571C20A007C200E58475 /* UINavigationBar+NNTransitionForTintColor.h in Headers */,
+				67E4570C20A007C200E58475 /* UINavigationBar+NNTransitionClass.h in Headers */,
+				67E4570D20A007C200E58475 /* UINavigationBar+NNLatestPopItem.h in Headers */,
+				67E456F720A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.h in Headers */,
+				67E456FF20A007C200E58475 /* UINavigationBar+NNBackgroundDelegate.h in Headers */,
+				67E4570620A007C200E58475 /* UINavigationBar+NNBackgroundImageView.h in Headers */,
+				67E4570420A007C200E58475 /* UINavigationItem+NNBackgroundImage.h in Headers */,
+				67E4570920A007C200E58475 /* UINavigationBar+NNTransition.h in Headers */,
+				67E456F620A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.h in Headers */,
+				67E4572020A007C200E58475 /* UINavigationItem+NNTintColorDelegate.h in Headers */,
+				67E4571F20A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.h in Headers */,
+				67E4571320A007C200E58475 /* UINavigationItem+NNDelegate.h in Headers */,
+				67E4570320A007C200E58475 /* UINavigationBar+NNBackgroundImage.h in Headers */,
+				67E4571420A007C200E58475 /* UINavigationBar+NNDelegate.h in Headers */,
+				67E4570720A007C200E58475 /* NNFadeAnimationImageView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		67E4569E20A0073A00E58475 /* NNNavigationBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67E456B320A0073A00E58475 /* Build configuration list for PBXNativeTarget "NNNavigationBar" */;
+			buildPhases = (
+				67E4569A20A0073A00E58475 /* Sources */,
+				67E4569B20A0073A00E58475 /* Frameworks */,
+				67E4569C20A0073A00E58475 /* Headers */,
+				67E4569D20A0073A00E58475 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NNNavigationBar;
+			productName = NNNavigationBar;
+			productReference = 67E4569F20A0073A00E58475 /* NNNavigationBar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		67E456A720A0073A00E58475 /* NNNavigationBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67E456B620A0073A00E58475 /* Build configuration list for PBXNativeTarget "NNNavigationBarTests" */;
+			buildPhases = (
+				67E456A420A0073A00E58475 /* Sources */,
+				67E456A520A0073A00E58475 /* Frameworks */,
+				67E456A620A0073A00E58475 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				67E456AB20A0073A00E58475 /* PBXTargetDependency */,
+			);
+			name = NNNavigationBarTests;
+			productName = NNNavigationBarTests;
+			productReference = 67E456A820A0073A00E58475 /* NNNavigationBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		67E4569620A0073900E58475 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = GuHaijun;
+				TargetAttributes = {
+					67E4569E20A0073A00E58475 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					67E456A720A0073A00E58475 = {
+						CreatedOnToolsVersion = 9.3;
+					};
+				};
+			};
+			buildConfigurationList = 67E4569920A0073900E58475 /* Build configuration list for PBXProject "NNNavigationBar" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 67E4569520A0073900E58475;
+			productRefGroup = 67E456A020A0073A00E58475 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				67E4569E20A0073A00E58475 /* NNNavigationBar */,
+				67E456A720A0073A00E58475 /* NNNavigationBarTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		67E4569D20A0073A00E58475 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67E456A620A0073A00E58475 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67E4569A20A0073A00E58475 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67E456F420A007C200E58475 /* UINavigationBar+NNBackgroundView.m in Sources */,
+				67E456FA20A007C200E58475 /* UINavigationItem+NNBackgroundItem.m in Sources */,
+				67E456FC20A007C200E58475 /* UINavigationBar+NNBackgroundImage.m in Sources */,
+				67E4571520A007C200E58475 /* UINavigationBar+NNLatestPopItem.m in Sources */,
+				67E4571D20A007C200E58475 /* UINavigationBar+NNTintColor.m in Sources */,
+				67E4571220A007C200E58475 /* UINavigationBar+NNTransitionClass.c in Sources */,
+				67E4571020A007C200E58475 /* UINavigationBar+NNBarStyle.m in Sources */,
+				67E456FB20A007C200E58475 /* UINavigationItem+NNBackgroundImage.m in Sources */,
+				67E4570E20A007C200E58475 /* UINavigationBar+NNDelegate.m in Sources */,
+				67E4570A20A007C200E58475 /* UINavigationBar+NNMethodSwizzling.m in Sources */,
+				67E4571920A007C200E58475 /* UIImage+NNImageWithColor.m in Sources */,
+				67E456F520A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.m in Sources */,
+				67E4570F20A007C200E58475 /* UINavigationBar+NNTransition.m in Sources */,
+				67E456F920A007C200E58475 /* UINavigationBar+NNBackgroundImageView.m in Sources */,
+				67E456FE20A007C200E58475 /* UINavigationBar+NNBackgroundDelegateImp.m in Sources */,
+				67E4571820A007C200E58475 /* NSLayoutConstraint+NNVisualFormat.m in Sources */,
+				67E4571B20A007C200E58475 /* UINavigationBar+NNTransitionForTintColor.m in Sources */,
+				67E456F820A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.m in Sources */,
+				67E4572120A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.m in Sources */,
+				67E4572220A007C200E58475 /* UINavigationItem+NNTintColor.m in Sources */,
+				67E456FD20A007C200E58475 /* NNFadeAnimationImageView.m in Sources */,
+				67E4570B20A007C200E58475 /* UINavigationItem+NNDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67E456A420A0073A00E58475 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67E456AE20A0073A00E58475 /* NNNavigationBarTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		67E456AB20A0073A00E58475 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 67E4569E20A0073A00E58475 /* NNNavigationBar */;
+			targetProxy = 67E456AA20A0073A00E58475 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		67E456B120A0073A00E58475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		67E456B220A0073A00E58475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		67E456B420A0073A00E58475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"NNNavigationBarLoggingEnable=1",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nn.NNNavigationBar;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67E456B520A0073A00E58475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nn.NNNavigationBar;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		67E456B720A0073A00E58475 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NNNavigationBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nn.NNNavigationBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		67E456B820A0073A00E58475 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NNNavigationBarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.nn.NNNavigationBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		67E4569920A0073900E58475 /* Build configuration list for PBXProject "NNNavigationBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67E456B120A0073A00E58475 /* Debug */,
+				67E456B220A0073A00E58475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67E456B320A0073A00E58475 /* Build configuration list for PBXNativeTarget "NNNavigationBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67E456B420A0073A00E58475 /* Debug */,
+				67E456B520A0073A00E58475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		67E456B620A0073A00E58475 /* Build configuration list for PBXNativeTarget "NNNavigationBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67E456B720A0073A00E58475 /* Debug */,
+				67E456B820A0073A00E58475 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 67E4569620A0073900E58475 /* Project object */;
+}

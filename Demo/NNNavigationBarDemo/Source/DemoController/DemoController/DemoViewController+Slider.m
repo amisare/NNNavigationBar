@@ -7,7 +7,6 @@
 //
 
 #import "DemoViewController+Slider.h"
-#import "NSLayoutConstraint+NNVisualFormat.h"
 #import "NSObject+FBKVOController.h"
 
 @implementation DemoViewController (Slider)

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NNNavigationBar.h"
+#import <NNNavigationBar/NNNavigationBar.h>
 #import "UIColor+Help.h"
 
 @interface DemoViewController : UIViewController
