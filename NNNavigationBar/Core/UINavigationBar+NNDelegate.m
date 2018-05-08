@@ -11,7 +11,7 @@
 
 static const void *kUINavigationBar_NNDelegate = &kUINavigationBar_NNDelegate;
 
-@implementation UINavigationBar (NNBackgroundBarDelegate)
+@implementation UINavigationBar (NNDelegate)
 
 - (id)nn_delegate {
     NSMapTable *table = objc_getAssociatedObject(self,kUINavigationBar_NNDelegate);
