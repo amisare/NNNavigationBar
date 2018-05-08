@@ -22,7 +22,7 @@
      0: no anmiation
      1: push
      2: pop
-     3: pop multi-vcs include popToRootViewController
+     3: pop multi-viewControllers include popToRootViewController
  }
  */
 - (void)nn_startTransitionWithParams:(NSDictionary *)params;

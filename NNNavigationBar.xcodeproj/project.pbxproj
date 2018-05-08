@@ -232,18 +232,18 @@
 		67E456D120A007C200E58475 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				67E456D220A007C200E58475 /* UINavigationBar+NNBarStyle.h */,
-				67E456DA20A007C200E58475 /* UINavigationBar+NNBarStyle.m */,
-				67E456DE20A007C200E58475 /* UINavigationBar+NNDelegate.h */,
-				67E456D820A007C200E58475 /* UINavigationBar+NNDelegate.m */,
-				67E456D720A007C200E58475 /* UINavigationBar+NNLatestPopItem.h */,
-				67E456DF20A007C200E58475 /* UINavigationBar+NNLatestPopItem.m */,
 				67E456DB20A007C200E58475 /* UINavigationBar+NNMethodSwizzling.h */,
 				67E456D420A007C200E58475 /* UINavigationBar+NNMethodSwizzling.m */,
 				67E456D320A007C200E58475 /* UINavigationBar+NNTransition.h */,
 				67E456D920A007C200E58475 /* UINavigationBar+NNTransition.m */,
-				67E456DC20A007C200E58475 /* UINavigationBar+NNTransitionClass.c */,
 				67E456D620A007C200E58475 /* UINavigationBar+NNTransitionClass.h */,
+				67E456DC20A007C200E58475 /* UINavigationBar+NNTransitionClass.c */,
+				67E456D220A007C200E58475 /* UINavigationBar+NNBarStyle.h */,
+				67E456DA20A007C200E58475 /* UINavigationBar+NNBarStyle.m */,
+				67E456D720A007C200E58475 /* UINavigationBar+NNLatestPopItem.h */,
+				67E456DF20A007C200E58475 /* UINavigationBar+NNLatestPopItem.m */,
+				67E456DE20A007C200E58475 /* UINavigationBar+NNDelegate.h */,
+				67E456D820A007C200E58475 /* UINavigationBar+NNDelegate.m */,
 				67E456DD20A007C200E58475 /* UINavigationItem+NNDelegate.h */,
 				67E456D520A007C200E58475 /* UINavigationItem+NNDelegate.m */,
 			);
