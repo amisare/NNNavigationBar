@@ -15,10 +15,6 @@
 @implementation _NNAnimatedFadeImageView @end
 
 @interface NNFadeAnimationImageView()
-//{
-//    BOOL _nn_animating;
-//    CGFloat _nn_animationProcessing;
-//}
 
 @property (nonatomic, strong) CADisplayLink *_nn_displayLink;
 @property (nonatomic, assign) NSTimeInterval _nn_frameTimeCount;
