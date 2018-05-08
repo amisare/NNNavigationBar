@@ -15,7 +15,7 @@
 		67E456F720A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456BF20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.h */; };
 		67E456F820A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C020A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.m */; };
 		67E456F920A007C200E58475 /* UINavigationBar+NNBackgroundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C120A007C200E58475 /* UINavigationBar+NNBackgroundImageView.m */; };
-		67E456FA20A007C200E58475 /* UINavigationItem+NNBackgroundItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C220A007C200E58475 /* UINavigationItem+NNBackgroundItem.m */; };
+		67E456FA20A007C200E58475 /* UINavigationItem+NNBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C220A007C200E58475 /* UINavigationItem+NNBackgroundView.m */; };
 		67E456FB20A007C200E58475 /* UINavigationItem+NNBackgroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C320A007C200E58475 /* UINavigationItem+NNBackgroundImage.m */; };
 		67E456FC20A007C200E58475 /* UINavigationBar+NNBackgroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C420A007C200E58475 /* UINavigationBar+NNBackgroundImage.m */; };
 		67E456FD20A007C200E58475 /* NNFadeAnimationImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456C520A007C200E58475 /* NNFadeAnimationImageView.m */; };
@@ -26,7 +26,7 @@
 		67E4570220A007C200E58475 /* UINavigationBar+NNBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456CB20A007C200E58475 /* UINavigationBar+NNBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		67E4570320A007C200E58475 /* UINavigationBar+NNBackgroundImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456CC20A007C200E58475 /* UINavigationBar+NNBackgroundImage.h */; };
 		67E4570420A007C200E58475 /* UINavigationItem+NNBackgroundImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456CD20A007C200E58475 /* UINavigationItem+NNBackgroundImage.h */; };
-		67E4570520A007C200E58475 /* UINavigationItem+NNBackgroundItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456CE20A007C200E58475 /* UINavigationItem+NNBackgroundItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		67E4570520A007C200E58475 /* UINavigationItem+NNBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456CE20A007C200E58475 /* UINavigationItem+NNBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		67E4570620A007C200E58475 /* UINavigationBar+NNBackgroundImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456CF20A007C200E58475 /* UINavigationBar+NNBackgroundImageView.h */; };
 		67E4570720A007C200E58475 /* NNFadeAnimationImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456D020A007C200E58475 /* NNFadeAnimationImageView.h */; };
 		67E4570820A007C200E58475 /* UINavigationBar+NNBarStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E456D220A007C200E58475 /* UINavigationBar+NNBarStyle.h */; };
@@ -81,7 +81,7 @@
 		67E456BF20A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransitionForBackgroundAlpha.h"; sourceTree = "<group>"; };
 		67E456C020A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTransitionForBackgroundImage.m"; sourceTree = "<group>"; };
 		67E456C120A007C200E58475 /* UINavigationBar+NNBackgroundImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundImageView.m"; sourceTree = "<group>"; };
-		67E456C220A007C200E58475 /* UINavigationItem+NNBackgroundItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+NNBackgroundItem.m"; sourceTree = "<group>"; };
+		67E456C220A007C200E58475 /* UINavigationItem+NNBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+NNBackgroundView.m"; sourceTree = "<group>"; };
 		67E456C320A007C200E58475 /* UINavigationItem+NNBackgroundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+NNBackgroundImage.m"; sourceTree = "<group>"; };
 		67E456C420A007C200E58475 /* UINavigationBar+NNBackgroundImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundImage.m"; sourceTree = "<group>"; };
 		67E456C520A007C200E58475 /* NNFadeAnimationImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNFadeAnimationImageView.m; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		67E456CB20A007C200E58475 /* UINavigationBar+NNBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundView.h"; sourceTree = "<group>"; };
 		67E456CC20A007C200E58475 /* UINavigationBar+NNBackgroundImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundImage.h"; sourceTree = "<group>"; };
 		67E456CD20A007C200E58475 /* UINavigationItem+NNBackgroundImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNBackgroundImage.h"; sourceTree = "<group>"; };
-		67E456CE20A007C200E58475 /* UINavigationItem+NNBackgroundItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNBackgroundItem.h"; sourceTree = "<group>"; };
+		67E456CE20A007C200E58475 /* UINavigationItem+NNBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNBackgroundView.h"; sourceTree = "<group>"; };
 		67E456CF20A007C200E58475 /* UINavigationBar+NNBackgroundImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundImageView.h"; sourceTree = "<group>"; };
 		67E456D020A007C200E58475 /* NNFadeAnimationImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNFadeAnimationImageView.h; sourceTree = "<group>"; };
 		67E456D220A007C200E58475 /* UINavigationBar+NNBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBarStyle.h"; sourceTree = "<group>"; };
@@ -191,16 +191,16 @@
 			children = (
 				67E456D020A007C200E58475 /* NNFadeAnimationImageView.h */,
 				67E456C520A007C200E58475 /* NNFadeAnimationImageView.m */,
-				67E456CC20A007C200E58475 /* UINavigationBar+NNBackgroundImage.h */,
-				67E456C420A007C200E58475 /* UINavigationBar+NNBackgroundImage.m */,
-				67E456CF20A007C200E58475 /* UINavigationBar+NNBackgroundImageView.h */,
-				67E456C120A007C200E58475 /* UINavigationBar+NNBackgroundImageView.m */,
 				67E456CB20A007C200E58475 /* UINavigationBar+NNBackgroundView.h */,
 				67E456BB20A007C200E58475 /* UINavigationBar+NNBackgroundView.m */,
+				67E456CF20A007C200E58475 /* UINavigationBar+NNBackgroundImageView.h */,
+				67E456C120A007C200E58475 /* UINavigationBar+NNBackgroundImageView.m */,
+				67E456CC20A007C200E58475 /* UINavigationBar+NNBackgroundImage.h */,
+				67E456C420A007C200E58475 /* UINavigationBar+NNBackgroundImage.m */,
+				67E456CE20A007C200E58475 /* UINavigationItem+NNBackgroundView.h */,
+				67E456C220A007C200E58475 /* UINavigationItem+NNBackgroundView.m */,
 				67E456CD20A007C200E58475 /* UINavigationItem+NNBackgroundImage.h */,
 				67E456C320A007C200E58475 /* UINavigationItem+NNBackgroundImage.m */,
-				67E456CE20A007C200E58475 /* UINavigationItem+NNBackgroundItem.h */,
-				67E456C220A007C200E58475 /* UINavigationItem+NNBackgroundItem.m */,
 				67E456C620A007C200E58475 /* Delegate */,
 				67E456BC20A007C200E58475 /* Transition */,
 			);
@@ -221,9 +221,9 @@
 		67E456C620A007C200E58475 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
+				67E456C920A007C200E58475 /* UINavigationBar+NNBackgroundDelegateImp.h */,
 				67E456C720A007C200E58475 /* UINavigationBar+NNBackgroundDelegateImp.m */,
 				67E456C820A007C200E58475 /* UINavigationBar+NNBackgroundDelegate.h */,
-				67E456C920A007C200E58475 /* UINavigationBar+NNBackgroundDelegateImp.h */,
 				67E456CA20A007C200E58475 /* UINavigationItem+NNBackgroundDelegate.h */,
 			);
 			path = Delegate;
@@ -234,6 +234,8 @@
 			children = (
 				67E456D220A007C200E58475 /* UINavigationBar+NNBarStyle.h */,
 				67E456DA20A007C200E58475 /* UINavigationBar+NNBarStyle.m */,
+				67E456DE20A007C200E58475 /* UINavigationBar+NNDelegate.h */,
+				67E456D820A007C200E58475 /* UINavigationBar+NNDelegate.m */,
 				67E456D720A007C200E58475 /* UINavigationBar+NNLatestPopItem.h */,
 				67E456DF20A007C200E58475 /* UINavigationBar+NNLatestPopItem.m */,
 				67E456DB20A007C200E58475 /* UINavigationBar+NNMethodSwizzling.h */,
@@ -242,8 +244,6 @@
 				67E456D920A007C200E58475 /* UINavigationBar+NNTransition.m */,
 				67E456DC20A007C200E58475 /* UINavigationBar+NNTransitionClass.c */,
 				67E456D620A007C200E58475 /* UINavigationBar+NNTransitionClass.h */,
-				67E456DE20A007C200E58475 /* UINavigationBar+NNDelegate.h */,
-				67E456D820A007C200E58475 /* UINavigationBar+NNDelegate.m */,
 				67E456DD20A007C200E58475 /* UINavigationItem+NNDelegate.h */,
 				67E456D520A007C200E58475 /* UINavigationItem+NNDelegate.m */,
 			);
@@ -277,8 +277,8 @@
 		67E456E720A007C200E58475 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
-				67E456E820A007C200E58475 /* UINavigationBar+NNTransitionForTintColor.m */,
 				67E456E920A007C200E58475 /* UINavigationBar+NNTransitionForTintColor.h */,
+				67E456E820A007C200E58475 /* UINavigationBar+NNTransitionForTintColor.m */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -288,8 +288,8 @@
 			children = (
 				67E456EC20A007C200E58475 /* UINavigationBar+NNTintColorDelegate.h */,
 				67E456ED20A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.h */,
-				67E456EE20A007C200E58475 /* UINavigationItem+NNTintColorDelegate.h */,
 				67E456EF20A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.m */,
+				67E456EE20A007C200E58475 /* UINavigationItem+NNTintColorDelegate.h */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -311,7 +311,7 @@
 			files = (
 				67E4571A20A007C200E58475 /* NNNavigationBar.h in Headers */,
 				67E4570220A007C200E58475 /* UINavigationBar+NNBackgroundView.h in Headers */,
-				67E4570520A007C200E58475 /* UINavigationItem+NNBackgroundItem.h in Headers */,
+				67E4570520A007C200E58475 /* UINavigationItem+NNBackgroundView.h in Headers */,
 				67E4572320A007C200E58475 /* UINavigationBar+NNTintColor.h in Headers */,
 				67E4572420A007C200E58475 /* UINavigationItem+NNTintColor.h in Headers */,
 				67E4571720A007C200E58475 /* NSLayoutConstraint+NNVisualFormat.h in Headers */,
@@ -436,7 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67E456F420A007C200E58475 /* UINavigationBar+NNBackgroundView.m in Sources */,
-				67E456FA20A007C200E58475 /* UINavigationItem+NNBackgroundItem.m in Sources */,
+				67E456FA20A007C200E58475 /* UINavigationItem+NNBackgroundView.m in Sources */,
 				67E456FC20A007C200E58475 /* UINavigationBar+NNBackgroundImage.m in Sources */,
 				67E4571520A007C200E58475 /* UINavigationBar+NNLatestPopItem.m in Sources */,
 				67E4571D20A007C200E58475 /* UINavigationBar+NNTintColor.m in Sources */,

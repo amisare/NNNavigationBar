@@ -1,12 +1,12 @@
 //
-//  UINavigationItem+NNBackgroundItem.m
+//  UINavigationItem+NNBackgroundView.m
 //  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/4/11.
 //  Copyright © 2018年 GuHaijun. All rights reserved.
 //
 
-#import "UINavigationItem+NNBackgroundItem.h"
+#import "UINavigationItem+NNBackgroundView.h"
 #import <objc/runtime.h>
 #import "UIImage+NNImageWithColor.h"
 #import "UINavigationItem+NNDelegate.h"
@@ -20,7 +20,7 @@ static const void *kUINavigationItem_NNBackgroundAlpha = &kUINavigationItem_NNBa
 #define UINavigationItem_NNBackgroundKey(barPosition, barMetrics) [@(barPosition << (sizeof(barPosition) * 8 / 2) | barMetrics) stringValue]
 
 
-@implementation UINavigationItem (NNBackgroundItem)
+@implementation UINavigationItem (NNBackgroundView)
 
 - (BOOL)nn_backgroundTranslucentTransition {
     return [objc_getAssociatedObject(self, kUINavigationItem_NNBackgroundTranslucentTransition) boolValue];

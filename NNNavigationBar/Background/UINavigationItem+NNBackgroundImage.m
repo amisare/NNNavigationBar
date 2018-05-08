@@ -8,7 +8,7 @@
 
 #import "UINavigationItem+NNBackgroundImage.h"
 #import "UIImage+NNImageWithColor.h"
-#import "UINavigationItem+NNBackgroundItem.h"
+#import "UINavigationItem+NNBackgroundView.h"
 
 @implementation UINavigationItem (NNBackgroundImage)
 

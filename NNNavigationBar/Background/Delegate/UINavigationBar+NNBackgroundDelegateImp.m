@@ -9,7 +9,7 @@
 #import "UINavigationBar+NNBackgroundDelegateImp.h"
 #import "UINavigationBar+NNBackgroundImageView.h"
 #import "UINavigationBar+NNBackgroundView.h"
-#import "UINavigationItem+NNBackgroundItem.h"
+#import "UINavigationItem+NNBackgroundView.h"
 
 @implementation UINavigationBar (NNBackgroundDelegate)
 

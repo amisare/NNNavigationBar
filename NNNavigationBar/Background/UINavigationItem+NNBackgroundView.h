@@ -1,5 +1,5 @@
 //
-//  UINavigationItem+NNBackgroundItem.h
+//  UINavigationItem+NNBackgroundView.h
 //  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/4/11.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UINavigationItem (NNBackgroundItem)
+@interface UINavigationItem (NNBackgroundView)
 
 @property (nonatomic, assign) CGFloat nn_backgroundAlpha;
 

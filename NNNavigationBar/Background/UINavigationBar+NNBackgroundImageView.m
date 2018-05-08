@@ -11,7 +11,7 @@
 #import "UIImage+NNImageWithColor.h"
 #import "UINavigationBar+NNBarStyle.h"
 #import "UINavigationBar+NNBackgroundView.h"
-#import "UINavigationItem+NNBackgroundItem.h"
+#import "UINavigationItem+NNBackgroundView.h"
 #import "UINavigationBar+NNBackgroundImage.h"
 #import "UINavigationItem+NNBackgroundImage.h"
 

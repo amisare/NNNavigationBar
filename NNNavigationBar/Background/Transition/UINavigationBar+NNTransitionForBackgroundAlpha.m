@@ -8,7 +8,7 @@
 
 #import "UINavigationBar+NNTransitionForBackgroundAlpha.h"
 #import "UINavigationBar+NNBackgroundView.h"
-#import "UINavigationItem+NNBackgroundItem.h"
+#import "UINavigationItem+NNBackgroundView.h"
 
 @interface NNBackgroundAlphaTransition()
 

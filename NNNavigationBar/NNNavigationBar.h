@@ -17,7 +17,7 @@ FOUNDATION_EXPORT const unsigned char NNNavigationBarVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <NNNavigationBar/PublicHeader.h>
 
 #import <NNNavigationBar/UINavigationBar+NNBackgroundView.h>
-#import <NNNavigationBar/UINavigationItem+NNBackgroundItem.h>
+#import <NNNavigationBar/UINavigationItem+NNBackgroundView.h>
 #import <NNNavigationBar/UINavigationBar+NNTintColor.h>
 #import <NNNavigationBar/UINavigationItem+NNTintColor.h>
 #import <NNNavigationBar/NSLayoutConstraint+NNVisualFormat.h>
