@@ -29,28 +29,29 @@ static const void *kUINavigationBar_NNBackgroundImages = &kUINavigationBar_NNBac
 @implementation UINavigationBar (NNBackgroundView)
 
 - (BOOL)nn_backgroundViewHidden {
-    return [objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundViewHidden) boolValue];
+    
+    id objc = objc_getAssociatedObject(self, kUINavigationBar_NNBackgroundViewHidden);
+    BOOL hidden = (objc == nil) ? true : [objc boolValue];
+    return hidden;
 }
 
 - (void)setNn_backgroundViewHidden:(BOOL)nn_backgroundViewHidden {
     
     objc_setAssociatedObject(self, kUINavigationBar_NNBackgroundViewHidden, @(nn_backgroundViewHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    if (!nn_backgroundViewHidden) {
-        UIView *backgroundView = [self valueForKey:@"_backgroundView"];
-        if (backgroundView && ![backgroundView.subviews containsObject:self.nn_backgroundView]) {
-            [backgroundView addSubview:self.nn_backgroundView];
-            
-            NSArray<NSLayoutConstraint *> *(^makeViewConstraint)(NSDictionary *view) = ^(NSDictionary *view) {
-                return [NSLayoutConstraint nn_constraintsWithVisualFormats:@[[NSString stringWithFormat:@"H:|[%@]|", view.allKeys.lastObject] ,
-                                                                             [NSString stringWithFormat:@"V:|[%@]|", view.allKeys.lastObject]]
-                                                                     views:view];
-            };
-            [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"nn_backgroundView" : self.nn_backgroundView})];
-        }
+    
+    UIView *backgroundView = [self valueForKey:@"_backgroundView"];
+    if (backgroundView && ![backgroundView.subviews containsObject:self.nn_backgroundView]) {
+        [backgroundView addSubview:self.nn_backgroundView];
+        
+        NSArray<NSLayoutConstraint *> *(^makeViewConstraint)(NSDictionary *view) = ^(NSDictionary *view) {
+            return [NSLayoutConstraint nn_constraintsWithVisualFormats:@[[NSString stringWithFormat:@"H:|[%@]|", view.allKeys.lastObject] ,
+                                                                         [NSString stringWithFormat:@"V:|[%@]|", view.allKeys.lastObject]]
+                                                                 views:view];
+        };
+        [NSLayoutConstraint activateConstraints:makeViewConstraint(@{@"nn_backgroundView" : self.nn_backgroundView})];
     }
-    else {
-        [self.nn_backgroundView removeFromSuperview];
-    }
+    
+    self.nn_backgroundView.hidden = nn_backgroundViewHidden;
 }
 
 - (UIView *)nn_backgroundView {
