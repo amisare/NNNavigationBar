@@ -24,6 +24,11 @@
 }
 
 - (void)nn_navigationItem:(UINavigationItem *)item tintColorChange:(NSDictionary *)colors {
+    
+    if (![item isEqual:self.topItem]) {
+        return;
+    }
+    
     UIColor *tintColor = [colors objectForKey:@"tintColorNew"];
     if (tintColor) {
         self.tintColor = tintColor;

@@ -286,9 +286,9 @@
 		67E456EB20A007C200E58475 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				67E456EC20A007C200E58475 /* UINavigationBar+NNTintColorDelegate.h */,
 				67E456ED20A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.h */,
 				67E456EF20A007C200E58475 /* UINavigationBar+NNTintColorDelegateImp.m */,
+				67E456EC20A007C200E58475 /* UINavigationBar+NNTintColorDelegate.h */,
 				67E456EE20A007C200E58475 /* UINavigationItem+NNTintColorDelegate.h */,
 			);
 			path = Delegate;
