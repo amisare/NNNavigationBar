@@ -31,7 +31,6 @@ static const void *kUINavigationBar_NNTransitions = &kUINavigationBar_NNTransiti
         char cClazzName[256] = {0};
         NNTransitionClassFetch(cClazzName, i);
         NSString *sClazzName = [NSString stringWithUTF8String:cClazzName];
-        NSLog(@"%@", sClazzName);
         Class clazz = NSClassFromString(sClazzName);
         if (clazz) {
             [transitions addObject:[[clazz alloc] initWithNavigationBar:self]];
