@@ -3,126 +3,113 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		67A5B6CC2089A82C0020515A /* NSObject+FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A5B6C82089A82C0020515A /* NSObject+FBKVOController.m */; };
-		67A5B6CD2089A82C0020515A /* FBKVOController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A5B6C92089A82C0020515A /* FBKVOController.m */; };
-		67A5B6CE2089A82C0020515A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67A5B6CA2089A82C0020515A /* Info.plist */; };
-		67A6F43E207EFD1B0082A845 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A6F43D207EFD1B0082A845 /* AppDelegate.m */; };
-		67A6F444207EFD1B0082A845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67A6F442207EFD1B0082A845 /* Main.storyboard */; };
-		67A6F446207EFD1B0082A845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67A6F445207EFD1B0082A845 /* Assets.xcassets */; };
-		67A6F449207EFD1B0082A845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67A6F447207EFD1B0082A845 /* LaunchScreen.storyboard */; };
-		67A6F44C207EFD1B0082A845 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A6F44B207EFD1B0082A845 /* main.m */; };
-		67A6F456207EFD1B0082A845 /* NNNavigationBarDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A6F455207EFD1B0082A845 /* NNNavigationBarDemoTests.m */; };
-		67A6F461207EFD1B0082A845 /* NNNavigationBarDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A6F460207EFD1B0082A845 /* NNNavigationBarDemoUITests.m */; };
-		67A6F47E207F0FE00082A845 /* DemoViewController+TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A6F47D207F0FE00082A845 /* DemoViewController+TableView.m */; };
-		67A6F481207F1AD00082A845 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A6F480207F1AD00082A845 /* MainViewController.m */; };
-		67A6F490207F2F430082A845 /* UIColor+Help.m in Sources */ = {isa = PBXBuildFile; fileRef = 67A6F48F207F2F430082A845 /* UIColor+Help.m */; };
-		67CAE883208F38BF00672BAF /* ItemBackgroundColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAE882208F38BF00672BAF /* ItemBackgroundColorVC.m */; };
-		67CAE886208F38CC00672BAF /* ItemBackgroundImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAE885208F38CC00672BAF /* ItemBackgroundImageVC.m */; };
-		67CAE889208F38DF00672BAF /* ItemBackgroundAlphaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAE888208F38DF00672BAF /* ItemBackgroundAlphaVC.m */; };
-		67CAE88C208F38F500672BAF /* BarBackgroundImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAE88B208F38F500672BAF /* BarBackgroundImageVC.m */; };
-		67CAE88F208F38FE00672BAF /* BarBackgroundColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CAE88E208F38FE00672BAF /* BarBackgroundColorVC.m */; };
-		67E4573120A02A7D00E58475 /* NNNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E4572B20A00AFC00E58475 /* NNNavigationBar.framework */; };
-		67E4573320A02AAE00E58475 /* NNNavigationBar.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 67E4572B20A00AFC00E58475 /* NNNavigationBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		67F80EBC2080ACB00098B825 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F80EBB2080ACB00098B825 /* DemoViewController.m */; };
-		67F80EBF2080ACF70098B825 /* DemoViewController+Slider.m in Sources */ = {isa = PBXBuildFile; fileRef = 67F80EBE2080ACF70098B825 /* DemoViewController+Slider.m */; };
+		674FF4D920AAB1B80041C6ED /* NNNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E93B2120A53CBF0083B38B /* NNNavigationBar.framework */; };
+		674FF4DA20AAB1B80041C6ED /* NNNavigationBar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 67E93B2120A53CBF0083B38B /* NNNavigationBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		676456CF20A94A2C00B74853 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456CE20A94A2C00B74853 /* PickerController.swift */; };
+		676456D220A94B4600B74853 /* PickerImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456D020A94B4600B74853 /* PickerImageCell.swift */; };
+		676456D320A94B4600B74853 /* PickerImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 676456D120A94B4600B74853 /* PickerImageCell.xib */; };
+		67E93AE720A53C170083B38B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AE620A53C170083B38B /* AppDelegate.swift */; };
+		67E93AE920A53C170083B38B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AE820A53C170083B38B /* ViewController.swift */; };
+		67E93AEC20A53C170083B38B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E93AEA20A53C170083B38B /* Main.storyboard */; };
+		67E93AEE20A53C180083B38B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67E93AED20A53C180083B38B /* Assets.xcassets */; };
+		67E93AF120A53C180083B38B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E93AEF20A53C180083B38B /* LaunchScreen.storyboard */; };
+		67E93AFC20A53C190083B38B /* NNNavigationBarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AFB20A53C190083B38B /* NNNavigationBarDemoTests.swift */; };
+		67E93B0720A53C190083B38B /* NNNavigationBarDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B0620A53C190083B38B /* NNNavigationBarDemoUITests.swift */; };
+		67E93B2B20A53F3A0083B38B /* MainHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B2920A53F3A0083B38B /* MainHeaderCell.swift */; };
+		67E93B2C20A53F3A0083B38B /* MainHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E93B2A20A53F3A0083B38B /* MainHeaderCell.xib */; };
+		67E93B2F20A53F5B0083B38B /* MainSettingSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B2D20A53F5B0083B38B /* MainSettingSegmentCell.swift */; };
+		67E93B3020A53F5B0083B38B /* MainSettingSegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E93B2E20A53F5B0083B38B /* MainSettingSegmentCell.xib */; };
+		67E93B3320A53F750083B38B /* MainSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B3120A53F750083B38B /* MainSettingCell.swift */; };
+		67E93B3420A53F750083B38B /* MainSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E93B3220A53F750083B38B /* MainSettingCell.xib */; };
+		67E93B3720A53F8D0083B38B /* MainSettingImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B3520A53F8D0083B38B /* MainSettingImageCell.swift */; };
+		67E93B3820A53F8D0083B38B /* MainSettingImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E93B3620A53F8D0083B38B /* MainSettingImageCell.xib */; };
+		67E93B3B20A53FA10083B38B /* MainSettingSwitcherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B3920A53FA10083B38B /* MainSettingSwitcherCell.swift */; };
+		67E93B3C20A53FA10083B38B /* MainSettingSwitcherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E93B3A20A53FA10083B38B /* MainSettingSwitcherCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		67A6F452207EFD1B0082A845 /* PBXContainerItemProxy */ = {
+		67E93AF820A53C190083B38B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 67A6F431207EFD1B0082A845 /* Project object */;
+			containerPortal = 67E93ADB20A53C170083B38B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 67A6F438207EFD1B0082A845;
+			remoteGlobalIDString = 67E93AE220A53C170083B38B;
 			remoteInfo = NNNavigationBarDemo;
 		};
-		67A6F45D207EFD1B0082A845 /* PBXContainerItemProxy */ = {
+		67E93B0320A53C190083B38B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 67A6F431207EFD1B0082A845 /* Project object */;
+			containerPortal = 67E93ADB20A53C170083B38B /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 67A6F438207EFD1B0082A845;
+			remoteGlobalIDString = 67E93AE220A53C170083B38B;
 			remoteInfo = NNNavigationBarDemo;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		67E4573220A02AA300E58475 /* CopyFiles */ = {
+		674FF4DB20AAB1B80041C6ED /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				67E4573320A02AAE00E58475 /* NNNavigationBar.framework in CopyFiles */,
+				674FF4DA20AAB1B80041C6ED /* NNNavigationBar.framework in Embed Frameworks */,
 			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		67A5B6C62089A82C0020515A /* KVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVOController.h; sourceTree = "<group>"; };
-		67A5B6C72089A82C0020515A /* FBKVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBKVOController.h; sourceTree = "<group>"; };
-		67A5B6C82089A82C0020515A /* NSObject+FBKVOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FBKVOController.m"; sourceTree = "<group>"; };
-		67A5B6C92089A82C0020515A /* FBKVOController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBKVOController.m; sourceTree = "<group>"; };
-		67A5B6CA2089A82C0020515A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		67A5B6CB2089A82C0020515A /* NSObject+FBKVOController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FBKVOController.h"; sourceTree = "<group>"; };
-		67A6F439207EFD1B0082A845 /* NNNavigationBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NNNavigationBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		67A6F43C207EFD1B0082A845 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		67A6F43D207EFD1B0082A845 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		67A6F443207EFD1B0082A845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		67A6F445207EFD1B0082A845 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		67A6F448207EFD1B0082A845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		67A6F44A207EFD1B0082A845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		67A6F44B207EFD1B0082A845 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		67A6F451207EFD1B0082A845 /* NNNavigationBarDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NNNavigationBarDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		67A6F455207EFD1B0082A845 /* NNNavigationBarDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNNavigationBarDemoTests.m; sourceTree = "<group>"; };
-		67A6F457207EFD1B0082A845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		67A6F45C207EFD1B0082A845 /* NNNavigationBarDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NNNavigationBarDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		67A6F460207EFD1B0082A845 /* NNNavigationBarDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNNavigationBarDemoUITests.m; sourceTree = "<group>"; };
-		67A6F462207EFD1B0082A845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		67A6F47C207F0FE00082A845 /* DemoViewController+TableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoViewController+TableView.h"; sourceTree = "<group>"; };
-		67A6F47D207F0FE00082A845 /* DemoViewController+TableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DemoViewController+TableView.m"; sourceTree = "<group>"; };
-		67A6F47F207F1AD00082A845 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		67A6F480207F1AD00082A845 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		67A6F48E207F2F430082A845 /* UIColor+Help.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Help.h"; sourceTree = "<group>"; };
-		67A6F48F207F2F430082A845 /* UIColor+Help.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Help.m"; sourceTree = "<group>"; };
-		67CAE881208F38BF00672BAF /* ItemBackgroundColorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemBackgroundColorVC.h; sourceTree = "<group>"; };
-		67CAE882208F38BF00672BAF /* ItemBackgroundColorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemBackgroundColorVC.m; sourceTree = "<group>"; };
-		67CAE884208F38CC00672BAF /* ItemBackgroundImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemBackgroundImageVC.h; sourceTree = "<group>"; };
-		67CAE885208F38CC00672BAF /* ItemBackgroundImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemBackgroundImageVC.m; sourceTree = "<group>"; };
-		67CAE887208F38DF00672BAF /* ItemBackgroundAlphaVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemBackgroundAlphaVC.h; sourceTree = "<group>"; };
-		67CAE888208F38DF00672BAF /* ItemBackgroundAlphaVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemBackgroundAlphaVC.m; sourceTree = "<group>"; };
-		67CAE88A208F38F500672BAF /* BarBackgroundImageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarBackgroundImageVC.h; sourceTree = "<group>"; };
-		67CAE88B208F38F500672BAF /* BarBackgroundImageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarBackgroundImageVC.m; sourceTree = "<group>"; };
-		67CAE88D208F38FE00672BAF /* BarBackgroundColorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarBackgroundColorVC.h; sourceTree = "<group>"; };
-		67CAE88E208F38FE00672BAF /* BarBackgroundColorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarBackgroundColorVC.m; sourceTree = "<group>"; };
-		67D26E5E208858D6003299F2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		67E4572B20A00AFC00E58475 /* NNNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NNNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		67F80EBA2080ACB00098B825 /* DemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
-		67F80EBB2080ACB00098B825 /* DemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
-		67F80EBD2080ACF70098B825 /* DemoViewController+Slider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoViewController+Slider.h"; sourceTree = "<group>"; };
-		67F80EBE2080ACF70098B825 /* DemoViewController+Slider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DemoViewController+Slider.m"; sourceTree = "<group>"; };
+		676456CE20A94A2C00B74853 /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
+		676456D020A94B4600B74853 /* PickerImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerImageCell.swift; sourceTree = "<group>"; };
+		676456D120A94B4600B74853 /* PickerImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerImageCell.xib; sourceTree = "<group>"; };
+		67E93AE320A53C170083B38B /* NNNavigationBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NNNavigationBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		67E93AE620A53C170083B38B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		67E93AE820A53C170083B38B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		67E93AEB20A53C170083B38B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		67E93AED20A53C180083B38B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		67E93AF020A53C180083B38B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		67E93AF220A53C180083B38B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67E93AF720A53C190083B38B /* NNNavigationBarDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NNNavigationBarDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67E93AFB20A53C190083B38B /* NNNavigationBarDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNNavigationBarDemoTests.swift; sourceTree = "<group>"; };
+		67E93AFD20A53C190083B38B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67E93B0220A53C190083B38B /* NNNavigationBarDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NNNavigationBarDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		67E93B0620A53C190083B38B /* NNNavigationBarDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NNNavigationBarDemoUITests.swift; sourceTree = "<group>"; };
+		67E93B0820A53C190083B38B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67E93B2120A53CBF0083B38B /* NNNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NNNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67E93B2320A53CD10083B38B /* NNNavigationBarDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NNNavigationBarDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		67E93B2920A53F3A0083B38B /* MainHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderCell.swift; sourceTree = "<group>"; };
+		67E93B2A20A53F3A0083B38B /* MainHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainHeaderCell.xib; sourceTree = "<group>"; };
+		67E93B2D20A53F5B0083B38B /* MainSettingSegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingSegmentCell.swift; sourceTree = "<group>"; };
+		67E93B2E20A53F5B0083B38B /* MainSettingSegmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingSegmentCell.xib; sourceTree = "<group>"; };
+		67E93B3120A53F750083B38B /* MainSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingCell.swift; sourceTree = "<group>"; };
+		67E93B3220A53F750083B38B /* MainSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingCell.xib; sourceTree = "<group>"; };
+		67E93B3520A53F8D0083B38B /* MainSettingImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingImageCell.swift; sourceTree = "<group>"; };
+		67E93B3620A53F8D0083B38B /* MainSettingImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingImageCell.xib; sourceTree = "<group>"; };
+		67E93B3920A53FA10083B38B /* MainSettingSwitcherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingSwitcherCell.swift; sourceTree = "<group>"; };
+		67E93B3A20A53FA10083B38B /* MainSettingSwitcherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingSwitcherCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		67A6F436207EFD1B0082A845 /* Frameworks */ = {
+		67E93AE020A53C170083B38B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67E4573120A02A7D00E58475 /* NNNavigationBar.framework in Frameworks */,
+				674FF4D920AAB1B80041C6ED /* NNNavigationBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67A6F44E207EFD1B0082A845 /* Frameworks */ = {
+		67E93AF420A53C190083B38B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67A6F459207EFD1B0082A845 /* Frameworks */ = {
+		67E93AFF20A53C190083B38B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -132,145 +119,91 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		67A5B6C52089A82C0020515A /* FBKVOController */ = {
+		67E93ADA20A53C170083B38B = {
 			isa = PBXGroup;
 			children = (
-				67A5B6C72089A82C0020515A /* FBKVOController.h */,
-				67A5B6C92089A82C0020515A /* FBKVOController.m */,
-				67A5B6CA2089A82C0020515A /* Info.plist */,
-				67A5B6C62089A82C0020515A /* KVOController.h */,
-				67A5B6CB2089A82C0020515A /* NSObject+FBKVOController.h */,
-				67A5B6C82089A82C0020515A /* NSObject+FBKVOController.m */,
-			);
-			path = FBKVOController;
-			sourceTree = "<group>";
-		};
-		67A6F430207EFD1B0082A845 = {
-			isa = PBXGroup;
-			children = (
-				67A6F43B207EFD1B0082A845 /* NNNavigationBarDemo */,
-				67A6F454207EFD1B0082A845 /* NNNavigationBarDemoTests */,
-				67A6F45F207EFD1B0082A845 /* NNNavigationBarDemoUITests */,
-				67A6F43A207EFD1B0082A845 /* Products */,
-				67E4572A20A00AFC00E58475 /* Frameworks */,
+				67E93AE520A53C170083B38B /* NNNavigationBarDemo */,
+				67E93AFA20A53C190083B38B /* NNNavigationBarDemoTests */,
+				67E93B0520A53C190083B38B /* NNNavigationBarDemoUITests */,
+				67E93AE420A53C170083B38B /* Products */,
+				67E93B2020A53CBF0083B38B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		67A6F43A207EFD1B0082A845 /* Products */ = {
+		67E93AE420A53C170083B38B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				67A6F439207EFD1B0082A845 /* NNNavigationBarDemo.app */,
-				67A6F451207EFD1B0082A845 /* NNNavigationBarDemoTests.xctest */,
-				67A6F45C207EFD1B0082A845 /* NNNavigationBarDemoUITests.xctest */,
+				67E93AE320A53C170083B38B /* NNNavigationBarDemo.app */,
+				67E93AF720A53C190083B38B /* NNNavigationBarDemoTests.xctest */,
+				67E93B0220A53C190083B38B /* NNNavigationBarDemoUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		67A6F43B207EFD1B0082A845 /* NNNavigationBarDemo */ = {
+		67E93AE520A53C170083B38B /* NNNavigationBarDemo */ = {
 			isa = PBXGroup;
 			children = (
-				67BEE0F4208703AF004765D1 /* Source */,
-				67A6F43C207EFD1B0082A845 /* AppDelegate.h */,
-				67A6F43D207EFD1B0082A845 /* AppDelegate.m */,
-				67D26E5E208858D6003299F2 /* PrefixHeader.pch */,
-				67A6F442207EFD1B0082A845 /* Main.storyboard */,
-				67A6F445207EFD1B0082A845 /* Assets.xcassets */,
-				67A6F447207EFD1B0082A845 /* LaunchScreen.storyboard */,
-				67A6F44A207EFD1B0082A845 /* Info.plist */,
-				67A6F44B207EFD1B0082A845 /* main.m */,
+				67E93AE620A53C170083B38B /* AppDelegate.swift */,
+				67E93AE820A53C170083B38B /* ViewController.swift */,
+				67E93B2920A53F3A0083B38B /* MainHeaderCell.swift */,
+				67E93B2A20A53F3A0083B38B /* MainHeaderCell.xib */,
+				67E93B3120A53F750083B38B /* MainSettingCell.swift */,
+				67E93B3220A53F750083B38B /* MainSettingCell.xib */,
+				67E93B2D20A53F5B0083B38B /* MainSettingSegmentCell.swift */,
+				67E93B2E20A53F5B0083B38B /* MainSettingSegmentCell.xib */,
+				67E93B3520A53F8D0083B38B /* MainSettingImageCell.swift */,
+				67E93B3620A53F8D0083B38B /* MainSettingImageCell.xib */,
+				67E93B3920A53FA10083B38B /* MainSettingSwitcherCell.swift */,
+				67E93B3A20A53FA10083B38B /* MainSettingSwitcherCell.xib */,
+				676456CE20A94A2C00B74853 /* PickerController.swift */,
+				676456D020A94B4600B74853 /* PickerImageCell.swift */,
+				676456D120A94B4600B74853 /* PickerImageCell.xib */,
+				67E93AEA20A53C170083B38B /* Main.storyboard */,
+				67E93AED20A53C180083B38B /* Assets.xcassets */,
+				67E93AEF20A53C180083B38B /* LaunchScreen.storyboard */,
+				67E93AF220A53C180083B38B /* Info.plist */,
+				67E93B2320A53CD10083B38B /* NNNavigationBarDemo-Bridging-Header.h */,
 			);
 			path = NNNavigationBarDemo;
 			sourceTree = "<group>";
 		};
-		67A6F454207EFD1B0082A845 /* NNNavigationBarDemoTests */ = {
+		67E93AFA20A53C190083B38B /* NNNavigationBarDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				67A6F455207EFD1B0082A845 /* NNNavigationBarDemoTests.m */,
-				67A6F457207EFD1B0082A845 /* Info.plist */,
+				67E93AFB20A53C190083B38B /* NNNavigationBarDemoTests.swift */,
+				67E93AFD20A53C190083B38B /* Info.plist */,
 			);
 			path = NNNavigationBarDemoTests;
 			sourceTree = "<group>";
 		};
-		67A6F45F207EFD1B0082A845 /* NNNavigationBarDemoUITests */ = {
+		67E93B0520A53C190083B38B /* NNNavigationBarDemoUITests */ = {
 			isa = PBXGroup;
 			children = (
-				67A6F460207EFD1B0082A845 /* NNNavigationBarDemoUITests.m */,
-				67A6F462207EFD1B0082A845 /* Info.plist */,
+				67E93B0620A53C190083B38B /* NNNavigationBarDemoUITests.swift */,
+				67E93B0820A53C190083B38B /* Info.plist */,
 			);
 			path = NNNavigationBarDemoUITests;
 			sourceTree = "<group>";
 		};
-		67A6F491207F36250082A845 /* DemoController */ = {
+		67E93B2020A53CBF0083B38B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				67CAE890208F3BB800672BAF /* DemoController */,
-				67CAE88D208F38FE00672BAF /* BarBackgroundColorVC.h */,
-				67CAE88E208F38FE00672BAF /* BarBackgroundColorVC.m */,
-				67CAE88A208F38F500672BAF /* BarBackgroundImageVC.h */,
-				67CAE88B208F38F500672BAF /* BarBackgroundImageVC.m */,
-				67CAE881208F38BF00672BAF /* ItemBackgroundColorVC.h */,
-				67CAE882208F38BF00672BAF /* ItemBackgroundColorVC.m */,
-				67CAE884208F38CC00672BAF /* ItemBackgroundImageVC.h */,
-				67CAE885208F38CC00672BAF /* ItemBackgroundImageVC.m */,
-				67CAE887208F38DF00672BAF /* ItemBackgroundAlphaVC.h */,
-				67CAE888208F38DF00672BAF /* ItemBackgroundAlphaVC.m */,
-			);
-			path = DemoController;
-			sourceTree = "<group>";
-		};
-		67BEE0F4208703AF004765D1 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				67A6F47F207F1AD00082A845 /* MainViewController.h */,
-				67A6F480207F1AD00082A845 /* MainViewController.m */,
-				67A6F491207F36250082A845 /* DemoController */,
-				67F80EC12080BA460098B825 /* DemoUtils */,
-				67A5B6C52089A82C0020515A /* FBKVOController */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		67CAE890208F3BB800672BAF /* DemoController */ = {
-			isa = PBXGroup;
-			children = (
-				67F80EBA2080ACB00098B825 /* DemoViewController.h */,
-				67F80EBB2080ACB00098B825 /* DemoViewController.m */,
-				67F80EBD2080ACF70098B825 /* DemoViewController+Slider.h */,
-				67F80EBE2080ACF70098B825 /* DemoViewController+Slider.m */,
-				67A6F47C207F0FE00082A845 /* DemoViewController+TableView.h */,
-				67A6F47D207F0FE00082A845 /* DemoViewController+TableView.m */,
-			);
-			path = DemoController;
-			sourceTree = "<group>";
-		};
-		67E4572A20A00AFC00E58475 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				67E4572B20A00AFC00E58475 /* NNNavigationBar.framework */,
+				67E93B2120A53CBF0083B38B /* NNNavigationBar.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		67F80EC12080BA460098B825 /* DemoUtils */ = {
-			isa = PBXGroup;
-			children = (
-				67A6F48F207F2F430082A845 /* UIColor+Help.m */,
-				67A6F48E207F2F430082A845 /* UIColor+Help.h */,
-			);
-			path = DemoUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		67A6F438207EFD1B0082A845 /* NNNavigationBarDemo */ = {
+		67E93AE220A53C170083B38B /* NNNavigationBarDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 67A6F465207EFD1B0082A845 /* Build configuration list for PBXNativeTarget "NNNavigationBarDemo" */;
+			buildConfigurationList = 67E93B0B20A53C190083B38B /* Build configuration list for PBXNativeTarget "NNNavigationBarDemo" */;
 			buildPhases = (
-				67A6F435207EFD1B0082A845 /* Sources */,
-				67A6F436207EFD1B0082A845 /* Frameworks */,
-				67A6F437207EFD1B0082A845 /* Resources */,
-				67E4573220A02AA300E58475 /* CopyFiles */,
+				67E93ADF20A53C170083B38B /* Sources */,
+				67E93AE020A53C170083B38B /* Frameworks */,
+				67E93AE120A53C170083B38B /* Resources */,
+				674FF4DB20AAB1B80041C6ED /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,110 +211,114 @@
 			);
 			name = NNNavigationBarDemo;
 			productName = NNNavigationBarDemo;
-			productReference = 67A6F439207EFD1B0082A845 /* NNNavigationBarDemo.app */;
+			productReference = 67E93AE320A53C170083B38B /* NNNavigationBarDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		67A6F450207EFD1B0082A845 /* NNNavigationBarDemoTests */ = {
+		67E93AF620A53C190083B38B /* NNNavigationBarDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 67A6F468207EFD1B0082A845 /* Build configuration list for PBXNativeTarget "NNNavigationBarDemoTests" */;
+			buildConfigurationList = 67E93B0E20A53C190083B38B /* Build configuration list for PBXNativeTarget "NNNavigationBarDemoTests" */;
 			buildPhases = (
-				67A6F44D207EFD1B0082A845 /* Sources */,
-				67A6F44E207EFD1B0082A845 /* Frameworks */,
-				67A6F44F207EFD1B0082A845 /* Resources */,
+				67E93AF320A53C190083B38B /* Sources */,
+				67E93AF420A53C190083B38B /* Frameworks */,
+				67E93AF520A53C190083B38B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				67A6F453207EFD1B0082A845 /* PBXTargetDependency */,
+				67E93AF920A53C190083B38B /* PBXTargetDependency */,
 			);
 			name = NNNavigationBarDemoTests;
 			productName = NNNavigationBarDemoTests;
-			productReference = 67A6F451207EFD1B0082A845 /* NNNavigationBarDemoTests.xctest */;
+			productReference = 67E93AF720A53C190083B38B /* NNNavigationBarDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		67A6F45B207EFD1B0082A845 /* NNNavigationBarDemoUITests */ = {
+		67E93B0120A53C190083B38B /* NNNavigationBarDemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 67A6F46B207EFD1B0082A845 /* Build configuration list for PBXNativeTarget "NNNavigationBarDemoUITests" */;
+			buildConfigurationList = 67E93B1120A53C190083B38B /* Build configuration list for PBXNativeTarget "NNNavigationBarDemoUITests" */;
 			buildPhases = (
-				67A6F458207EFD1B0082A845 /* Sources */,
-				67A6F459207EFD1B0082A845 /* Frameworks */,
-				67A6F45A207EFD1B0082A845 /* Resources */,
+				67E93AFE20A53C190083B38B /* Sources */,
+				67E93AFF20A53C190083B38B /* Frameworks */,
+				67E93B0020A53C190083B38B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				67A6F45E207EFD1B0082A845 /* PBXTargetDependency */,
+				67E93B0420A53C190083B38B /* PBXTargetDependency */,
 			);
 			name = NNNavigationBarDemoUITests;
 			productName = NNNavigationBarDemoUITests;
-			productReference = 67A6F45C207EFD1B0082A845 /* NNNavigationBarDemoUITests.xctest */;
+			productReference = 67E93B0220A53C190083B38B /* NNNavigationBarDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		67A6F431207EFD1B0082A845 /* Project object */ = {
+		67E93ADB20A53C170083B38B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = GuHaijun;
 				TargetAttributes = {
-					67A6F438207EFD1B0082A845 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+					67E93AE220A53C170083B38B = {
+						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
-					67A6F450207EFD1B0082A845 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 67A6F438207EFD1B0082A845;
+					67E93AF620A53C190083B38B = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 67E93AE220A53C170083B38B;
 					};
-					67A6F45B207EFD1B0082A845 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 67A6F438207EFD1B0082A845;
+					67E93B0120A53C190083B38B = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 67E93AE220A53C170083B38B;
 					};
 				};
 			};
-			buildConfigurationList = 67A6F434207EFD1B0082A845 /* Build configuration list for PBXProject "NNNavigationBarDemo" */;
-			compatibilityVersion = "Xcode 8.0";
+			buildConfigurationList = 67E93ADE20A53C170083B38B /* Build configuration list for PBXProject "NNNavigationBarDemo" */;
+			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 67A6F430207EFD1B0082A845;
-			productRefGroup = 67A6F43A207EFD1B0082A845 /* Products */;
+			mainGroup = 67E93ADA20A53C170083B38B;
+			productRefGroup = 67E93AE420A53C170083B38B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				67A6F438207EFD1B0082A845 /* NNNavigationBarDemo */,
-				67A6F450207EFD1B0082A845 /* NNNavigationBarDemoTests */,
-				67A6F45B207EFD1B0082A845 /* NNNavigationBarDemoUITests */,
+				67E93AE220A53C170083B38B /* NNNavigationBarDemo */,
+				67E93AF620A53C190083B38B /* NNNavigationBarDemoTests */,
+				67E93B0120A53C190083B38B /* NNNavigationBarDemoUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		67A6F437207EFD1B0082A845 /* Resources */ = {
+		67E93AE120A53C170083B38B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67A5B6CE2089A82C0020515A /* Info.plist in Resources */,
-				67A6F449207EFD1B0082A845 /* LaunchScreen.storyboard in Resources */,
-				67A6F446207EFD1B0082A845 /* Assets.xcassets in Resources */,
-				67A6F444207EFD1B0082A845 /* Main.storyboard in Resources */,
+				67E93B3C20A53FA10083B38B /* MainSettingSwitcherCell.xib in Resources */,
+				67E93B3020A53F5B0083B38B /* MainSettingSegmentCell.xib in Resources */,
+				67E93AF120A53C180083B38B /* LaunchScreen.storyboard in Resources */,
+				67E93B2C20A53F3A0083B38B /* MainHeaderCell.xib in Resources */,
+				67E93B3420A53F750083B38B /* MainSettingCell.xib in Resources */,
+				67E93AEE20A53C180083B38B /* Assets.xcassets in Resources */,
+				67E93B3820A53F8D0083B38B /* MainSettingImageCell.xib in Resources */,
+				67E93AEC20A53C170083B38B /* Main.storyboard in Resources */,
+				676456D320A94B4600B74853 /* PickerImageCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67A6F44F207EFD1B0082A845 /* Resources */ = {
+		67E93AF520A53C190083B38B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67A6F45A207EFD1B0082A845 /* Resources */ = {
+		67E93B0020A53C190083B38B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -391,71 +328,66 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		67A6F435207EFD1B0082A845 /* Sources */ = {
+		67E93ADF20A53C170083B38B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67CAE88C208F38F500672BAF /* BarBackgroundImageVC.m in Sources */,
-				67F80EBC2080ACB00098B825 /* DemoViewController.m in Sources */,
-				67A5B6CD2089A82C0020515A /* FBKVOController.m in Sources */,
-				67A6F47E207F0FE00082A845 /* DemoViewController+TableView.m in Sources */,
-				67CAE889208F38DF00672BAF /* ItemBackgroundAlphaVC.m in Sources */,
-				67F80EBF2080ACF70098B825 /* DemoViewController+Slider.m in Sources */,
-				67CAE886208F38CC00672BAF /* ItemBackgroundImageVC.m in Sources */,
-				67A5B6CC2089A82C0020515A /* NSObject+FBKVOController.m in Sources */,
-				67CAE883208F38BF00672BAF /* ItemBackgroundColorVC.m in Sources */,
-				67A6F481207F1AD00082A845 /* MainViewController.m in Sources */,
-				67A6F490207F2F430082A845 /* UIColor+Help.m in Sources */,
-				67CAE88F208F38FE00672BAF /* BarBackgroundColorVC.m in Sources */,
-				67A6F44C207EFD1B0082A845 /* main.m in Sources */,
-				67A6F43E207EFD1B0082A845 /* AppDelegate.m in Sources */,
+				67E93B3320A53F750083B38B /* MainSettingCell.swift in Sources */,
+				67E93B2F20A53F5B0083B38B /* MainSettingSegmentCell.swift in Sources */,
+				67E93B2B20A53F3A0083B38B /* MainHeaderCell.swift in Sources */,
+				676456CF20A94A2C00B74853 /* PickerController.swift in Sources */,
+				676456D220A94B4600B74853 /* PickerImageCell.swift in Sources */,
+				67E93B3720A53F8D0083B38B /* MainSettingImageCell.swift in Sources */,
+				67E93AE920A53C170083B38B /* ViewController.swift in Sources */,
+				67E93AE720A53C170083B38B /* AppDelegate.swift in Sources */,
+				67E93B3B20A53FA10083B38B /* MainSettingSwitcherCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67A6F44D207EFD1B0082A845 /* Sources */ = {
+		67E93AF320A53C190083B38B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67A6F456207EFD1B0082A845 /* NNNavigationBarDemoTests.m in Sources */,
+				67E93AFC20A53C190083B38B /* NNNavigationBarDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		67A6F458207EFD1B0082A845 /* Sources */ = {
+		67E93AFE20A53C190083B38B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67A6F461207EFD1B0082A845 /* NNNavigationBarDemoUITests.m in Sources */,
+				67E93B0720A53C190083B38B /* NNNavigationBarDemoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		67A6F453207EFD1B0082A845 /* PBXTargetDependency */ = {
+		67E93AF920A53C190083B38B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 67A6F438207EFD1B0082A845 /* NNNavigationBarDemo */;
-			targetProxy = 67A6F452207EFD1B0082A845 /* PBXContainerItemProxy */;
+			target = 67E93AE220A53C170083B38B /* NNNavigationBarDemo */;
+			targetProxy = 67E93AF820A53C190083B38B /* PBXContainerItemProxy */;
 		};
-		67A6F45E207EFD1B0082A845 /* PBXTargetDependency */ = {
+		67E93B0420A53C190083B38B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 67A6F438207EFD1B0082A845 /* NNNavigationBarDemo */;
-			targetProxy = 67A6F45D207EFD1B0082A845 /* PBXContainerItemProxy */;
+			target = 67E93AE220A53C170083B38B /* NNNavigationBarDemo */;
+			targetProxy = 67E93B0320A53C190083B38B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		67A6F442207EFD1B0082A845 /* Main.storyboard */ = {
+		67E93AEA20A53C170083B38B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				67A6F443207EFD1B0082A845 /* Base */,
+				67E93AEB20A53C170083B38B /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		67A6F447207EFD1B0082A845 /* LaunchScreen.storyboard */ = {
+		67E93AEF20A53C180083B38B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				67A6F448207EFD1B0082A845 /* Base */,
+				67E93AF020A53C180083B38B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -463,7 +395,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		67A6F463207EFD1B0082A845 /* Debug */ = {
+		67E93B0920A53C190083B38B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -473,6 +405,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -503,8 +436,6 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SOURCE_ROOT)/NNNavigationBarDemo/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -519,10 +450,12 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		67A6F464207EFD1B0082A845 /* Release */ = {
+		67E93B0A20A53C190083B38B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -532,6 +465,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
@@ -560,8 +494,6 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SOURCE_ROOT)/NNNavigationBarDemo/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -571,87 +503,128 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		67A6F466207EFD1B0082A845 /* Debug */ = {
+		67E93B0C20A53C190083B38B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TN94U5BZF3;
 				INFOPLIST_FILE = NNNavigationBarDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nn.NNNavigationBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NNNavigationBarDemo/NNNavigationBarDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		67A6F467207EFD1B0082A845 /* Release */ = {
+		67E93B0D20A53C190083B38B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TN94U5BZF3;
 				INFOPLIST_FILE = NNNavigationBarDemo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nn.NNNavigationBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NNNavigationBarDemo/NNNavigationBarDemo-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		67A6F469207EFD1B0082A845 /* Debug */ = {
+		67E93B0F20A53C190083B38B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NNNavigationBarDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nn.NNNavigationBarDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NNNavigationBarDemo.app/NNNavigationBarDemo";
 			};
 			name = Debug;
 		};
-		67A6F46A207EFD1B0082A845 /* Release */ = {
+		67E93B1020A53C190083B38B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NNNavigationBarDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nn.NNNavigationBarDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NNNavigationBarDemo.app/NNNavigationBarDemo";
 			};
 			name = Release;
 		};
-		67A6F46C207EFD1B0082A845 /* Debug */ = {
+		67E93B1220A53C190083B38B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NNNavigationBarDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nn.NNNavigationBarDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = NNNavigationBarDemo;
 			};
 			name = Debug;
 		};
-		67A6F46D207EFD1B0082A845 /* Release */ = {
+		67E93B1320A53C190083B38B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NNNavigationBarDemoUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nn.NNNavigationBarDemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = NNNavigationBarDemo;
 			};
@@ -660,43 +633,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		67A6F434207EFD1B0082A845 /* Build configuration list for PBXProject "NNNavigationBarDemo" */ = {
+		67E93ADE20A53C170083B38B /* Build configuration list for PBXProject "NNNavigationBarDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				67A6F463207EFD1B0082A845 /* Debug */,
-				67A6F464207EFD1B0082A845 /* Release */,
+				67E93B0920A53C190083B38B /* Debug */,
+				67E93B0A20A53C190083B38B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		67A6F465207EFD1B0082A845 /* Build configuration list for PBXNativeTarget "NNNavigationBarDemo" */ = {
+		67E93B0B20A53C190083B38B /* Build configuration list for PBXNativeTarget "NNNavigationBarDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				67A6F466207EFD1B0082A845 /* Debug */,
-				67A6F467207EFD1B0082A845 /* Release */,
+				67E93B0C20A53C190083B38B /* Debug */,
+				67E93B0D20A53C190083B38B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		67A6F468207EFD1B0082A845 /* Build configuration list for PBXNativeTarget "NNNavigationBarDemoTests" */ = {
+		67E93B0E20A53C190083B38B /* Build configuration list for PBXNativeTarget "NNNavigationBarDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				67A6F469207EFD1B0082A845 /* Debug */,
-				67A6F46A207EFD1B0082A845 /* Release */,
+				67E93B0F20A53C190083B38B /* Debug */,
+				67E93B1020A53C190083B38B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		67A6F46B207EFD1B0082A845 /* Build configuration list for PBXNativeTarget "NNNavigationBarDemoUITests" */ = {
+		67E93B1120A53C190083B38B /* Build configuration list for PBXNativeTarget "NNNavigationBarDemoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				67A6F46C207EFD1B0082A845 /* Debug */,
-				67A6F46D207EFD1B0082A845 /* Release */,
+				67E93B1220A53C190083B38B /* Debug */,
+				67E93B1320A53C190083B38B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 67A6F431207EFD1B0082A845 /* Project object */;
+	rootObject = 67E93ADB20A53C170083B38B /* Project object */;
 }

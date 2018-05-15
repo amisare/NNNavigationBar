@@ -14,8 +14,8 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="alJ-Ix-OFY"/>
-                        <viewControllerLayoutGuide type="bottom" id="2Iq-9v-KiM"/>
+                        <viewControllerLayoutGuide type="top" id="gZO-W1-qqt"/>
+                        <viewControllerLayoutGuide type="bottom" id="odR-Ol-aRe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
