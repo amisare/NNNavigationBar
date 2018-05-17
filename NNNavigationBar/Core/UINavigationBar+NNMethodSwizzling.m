@@ -170,9 +170,10 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
         self.nn_sbarPosition = position;
         for (id<NNTransition> transition in self.nn_transitions) {
             if ([transition respondsToSelector:@selector(nn_updateBarStyleTransitionWithParams:)]) {
-                [transition nn_updateBarStyleTransitionWithParams:@{@"barPosition" : @(position),
-                                                                    @"barMetrics" : @(self.nn_sbarMetrics)
-                                                                    }];
+                NSMutableDictionary *params = [NSMutableDictionary new];
+                [params addEntriesFromDictionary:nn_dictionary(@"barPosition", @(position))];
+                [params addEntriesFromDictionary:nn_dictionary(@"barMetrics", @(self.nn_sbarMetrics))];
+                [transition nn_updateBarStyleTransitionWithParams:params];
             }
         }
     }
@@ -206,9 +207,10 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
         self.nn_sbarMetrics = metrics;
         for (id<NNTransition> transition in self.nn_transitions) {
             if ([transition respondsToSelector:@selector(nn_updateBarStyleTransitionWithParams:)]) {
-                [transition nn_updateBarStyleTransitionWithParams:@{@"barPosition" : @(self.nn_sbarPosition),
-                                                                    @"barMetrics" : @(metrics)
-                                                                    }];
+                NSMutableDictionary *params = [NSMutableDictionary new];
+                [params addEntriesFromDictionary:nn_dictionary(@"barPosition", @(self.nn_sbarPosition))];
+                [params addEntriesFromDictionary:nn_dictionary(@"barMetrics", @(metrics))];
+                [transition nn_updateBarStyleTransitionWithParams:params];
             }
         }
     }
