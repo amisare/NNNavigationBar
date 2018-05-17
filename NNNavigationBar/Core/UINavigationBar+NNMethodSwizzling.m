@@ -19,6 +19,13 @@
 #define NNLogInfo(format, ...)
 #endif
 
+static NSDictionary* nn_dictionary(id<NSCopying> aKey, id value) {
+    if (aKey == nil || value == nil || value == [NSNull null]) {
+        return @{};
+    }
+    return @{aKey : value};
+}
+
 static inline Method class_findInstanceMethod(Class cls, ...) {
     
     Method ret = nil;
@@ -215,8 +222,11 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     NNLogInfo(@"item:%@ transition:%d",item, transition);
     
     item.nn_delegate = self;
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params addEntriesFromDictionary:nn_dictionary(@"item", self.topItem)];
+    [params addEntriesFromDictionary:nn_dictionary(@"transition", @(transition))];
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
-                                         withObject:@{@"item":self.topItem, @"transition":@(transition)}];
+                                         withObject:params];
 }
 
 - (void)_nn_scomplete_sPush_sOperation_sAnimated:(BOOL)animated _stransition_sAssistant:(id)assistant {
@@ -224,8 +234,10 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     [self _nn_scomplete_sPush_sOperation_sAnimated:animated _stransition_sAssistant:assistant];
     NNLogInfo(@"animated:%d assistant:%@",animated, assistant);
     
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params addEntriesFromDictionary:nn_dictionary(@"item", self.topItem)];
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endTransitionWithParams:)
-                                         withObject:@{@"item":self.topItem}];
+                                         withObject:params];
 }
 
 - (UINavigationItem *)_nn_spop_sNavigation_sItem_sWith_sTransition:(int)transition {
@@ -234,8 +246,11 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     NNLogInfo(@"transition:%d return:%@",transition, item);
     
     self.nn_latestPopItem = item;
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params addEntriesFromDictionary:nn_dictionary(@"item", self.topItem)];
+    [params addEntriesFromDictionary:nn_dictionary(@"transition", @(transition))];
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
-                                         withObject:@{@"item":self.topItem, @"transition":@(transition)}];
+                                         withObject:params];
     return item;
 }
 
@@ -244,8 +259,10 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     [self _nn_scomplete_sPop_sOperation_sAnimated:animated _stransition_sAssistant:assistant];
     NNLogInfo(@"animated:%d assistant:%@", animated, assistant);
     
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params addEntriesFromDictionary:nn_dictionary(@"item", self.topItem)];
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endTransitionWithParams:)
-                                         withObject:@{@"item":self.topItem}];
+                                         withObject:params];
 }
 
 - (void)_nn_supdate_sInteractive_sTransition:(CGFloat)percentComplete {
@@ -254,11 +271,9 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     NNLogInfo(@"percentComplete:%f", percentComplete);
     
     NSMutableDictionary *params = [NSMutableDictionary new];
-    [params addEntriesFromDictionary:@{@"itemWillPush" : self.topItem,
-                                       @"percentComplete" : @(percentComplete)}];
-    if (self.nn_latestPopItem) {
-        [params setObject:self.nn_latestPopItem forKey:@"itemWillPop"];
-    }
+    [params addEntriesFromDictionary:nn_dictionary(@"itemWillPush", self.topItem)];
+    [params addEntriesFromDictionary:nn_dictionary(@"itemWillPop", self.nn_latestPopItem)];
+    [params addEntriesFromDictionary:nn_dictionary(@"percentComplete", @(percentComplete))];
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_updateInteractiveTransitionWithParams:)
                                          withObject:params];
 }
@@ -269,11 +284,9 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
     NSMutableDictionary *params = [NSMutableDictionary new];
-    [params addEntriesFromDictionary:@{@"transition" : @(transition),
-                                       @"finished" : @(false)}];
-    if (self.nn_latestPopItem) {
-        [params setObject:self.nn_latestPopItem forKey:@"item"];
-    }
+    [params addEntriesFromDictionary:nn_dictionary(@"item", self.nn_latestPopItem)];
+    [params addEntriesFromDictionary:nn_dictionary(@"transition", @(transition))];
+    [params addEntriesFromDictionary:nn_dictionary(@"finished", @(false))];
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endInteractiveTransitionWithParams:)
                                          withObject:params];
 }
@@ -283,11 +296,12 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     [self _nn_sfinish_sInteractive_sTransition:transition _scompletion_sSpeed:speed _scompletion_sCurve:curve];
     NNLogInfo(@"transition:%f speed:%f curve:%fl", transition, speed, curve);
     
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params addEntriesFromDictionary:nn_dictionary(@"item", self.topItem)];
+    [params addEntriesFromDictionary:nn_dictionary(@"transition", @(transition))];
+    [params addEntriesFromDictionary:nn_dictionary(@"finished", @(true))];
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_endInteractiveTransitionWithParams:)
-                                         withObject:@{@"item" : self.topItem,
-                                                      @"transition" : @(transition),
-                                                      @"finished" : @(true)
-                                                      }];
+                                         withObject:params];
 }
 
 - (BOOL)_nn_sdid_sVisible_sItems_sChange_sWith_sNew_sItems:(NSArray<UINavigationItem *> *)newItems _sold_sItems:(NSArray<UINavigationItem *> *)oldItems {
@@ -296,11 +310,12 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     if (oldItems.count > newItems.count) {
         self.nn_latestPopItem = oldItems.lastObject;
     }
+    NSMutableDictionary *params = [NSMutableDictionary new];
+    [params addEntriesFromDictionary:nn_dictionary(@"item", newItems.lastObject)];
+    [params addEntriesFromDictionary:nn_dictionary(@"transition", @(3))];
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_startTransitionWithParams:)
-                                         withObject:@{@"item":newItems.lastObject, @"transition":@(3)}];
+                                         withObject:params];
     return ret;
 }
 
 @end
-
-
