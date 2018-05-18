@@ -55,9 +55,9 @@
 - (void)nn_updateInteractiveTransitionWithParams:(NSDictionary *)params {
     
     CGFloat percentComplete = [[params objectForKey:@"percentComplete"] floatValue];
-    UINavigationItem *itemWillPush = [params objectForKey:@"itemWillPush"];
+    UINavigationItem *itemWillAppear = [params objectForKey:@"itemWillAppear"];
     
-    UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:itemWillPush];
+    UIImage *backgroundImage = [self.bar nn_backgroundImageFromItem:itemWillAppear];
     self.bar.nn_backgroundImageView.nn_toImage = backgroundImage;
     self.bar.nn_backgroundImageView.nn_animationProcess = percentComplete;
 }

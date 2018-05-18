@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UINavigationBar+NNTransition.h"
+#import "UINavigationBar+NNCoreProperties.h"
 
 @interface NNBackgroundImageTransition : NSObject <NNTransition>
 

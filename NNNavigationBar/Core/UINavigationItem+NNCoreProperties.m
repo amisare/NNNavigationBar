@@ -1,17 +1,18 @@
 //
-//  UINavigationItem+NNDelegate.m
+//  UINavigationItem+NNCoreProperties.m
 //  NNNavigationBar
 //
-//  Created by GuHaijun on 2018/4/11.
+//  Created by GuHaijun on 2018/5/18.
 //  Copyright © 2018年 GuHaijun. All rights reserved.
 //
 
-#import "UINavigationItem+NNDelegate.h"
+#import "UINavigationItem+NNCoreProperties.h"
 #import <objc/runtime.h>
 
-static const void *kUINavigationItem_NNDelegate = &kUINavigationItem_NNDelegate;
 
 @implementation UINavigationItem (NNDelegate)
+
+static const void *kUINavigationItem_NNDelegate = &kUINavigationItem_NNDelegate;
 
 - (id)nn_delegate {
     NSMapTable *table = objc_getAssociatedObject(self, kUINavigationItem_NNDelegate);

@@ -55,11 +55,11 @@
 - (void)nn_updateInteractiveTransitionWithParams:(NSDictionary *)params {
     
     CGFloat percentComplete = [[params objectForKey:@"percentComplete"] floatValue];
-    UINavigationItem *itemWillPop = [params objectForKey:@"itemWillPop"];
-    UINavigationItem *itemWillPush = [params objectForKey:@"itemWillPush"];
+    UINavigationItem *itemWillAppear = [params objectForKey:@"itemWillAppear"];
+    UINavigationItem *itemWillDisappear = [params objectForKey:@"itemWillDisappear"];
     
-    CGFloat deltAlpha = itemWillPop.nn_backgroundAlpha - itemWillPush.nn_backgroundAlpha;
-    self.bar.nn_backgroundView.alpha =itemWillPush.nn_backgroundAlpha + deltAlpha * (1.0 - percentComplete);
+    CGFloat deltAlpha = itemWillDisappear.nn_backgroundAlpha - itemWillAppear.nn_backgroundAlpha;
+    self.bar.nn_backgroundView.alpha =itemWillAppear.nn_backgroundAlpha + deltAlpha * (1.0 - percentComplete);
 }
 
 - (void)nn_endInteractiveTransitionWithParams:(NSDictionary *)params {

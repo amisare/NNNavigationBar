@@ -7,27 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NNNavigationBarBackgroundView.h"
 
-@interface UINavigationBar (NNBackgroundView)
+@interface UINavigationBar (NNBackgroundView) <NNNavigationBarBackgroundView>
 
 @property (nonatomic, assign) BOOL nn_backgroundViewHidden;
 - (UIView *)nn_backgroundView;
-
-@property (nonatomic, assign) BOOL nn_backgroundTranslucentTransition;
-@property (nonatomic, strong) UIColor *nn_backgroundColor;
-@property (nonatomic, strong) UIImage *nn_backgroundImage;
-
-
-- (void)setNn_backgroundImage:(UIImage *)backgroundImage forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics;
-- (UIImage *)nn_backgroundImageForBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics;
-
-- (void)setNn_backgroundImage:(UIImage *)backgroundImage forBarMetrics:(UIBarMetrics)barMetrics;
-- (UIImage *)nn_backgroundImageForBarMetrics:(UIBarMetrics)barMetrics;
-
-- (void)setNn_backgroundColor:(UIColor *)backgroundColor forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics;
-- (UIColor *)nn_backgroundColorForBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics;
-
-- (void)setNn_backgroundColor:(UIColor *)backgroundColor forBarMetrics:(UIBarMetrics)barMetrics;
-- (UIColor *)nn_backgroundColorForBarPosition:(UIBarMetrics)barMetrics;
 
 @end

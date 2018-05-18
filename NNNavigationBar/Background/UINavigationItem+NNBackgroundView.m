@@ -9,7 +9,7 @@
 #import "UINavigationItem+NNBackgroundView.h"
 #import <objc/runtime.h>
 #import "UIImage+NNImageWithColor.h"
-#import "UINavigationItem+NNDelegate.h"
+#import "UINavigationItem+NNCoreProperties.h"
 #import "UINavigationItem+NNBackgroundDelegate.h"
 
 static const void *kUINavigationItem_NNBackgroundTranslucentTransition = &kUINavigationItem_NNBackgroundTranslucentTransition;

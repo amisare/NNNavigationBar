@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NNNavigationBarTintColor.h"
 
-@interface UINavigationItem (NNTintColor)
-
-@property (nonatomic, strong) UIColor *nn_tintColor;
+@interface UINavigationItem (NNTintColor) <NNNavigationBarTintColor>
 
 @end

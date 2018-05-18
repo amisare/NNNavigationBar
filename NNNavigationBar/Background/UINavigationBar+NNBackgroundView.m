@@ -10,8 +10,8 @@
 #import <objc/runtime.h>
 #import "UIImage+NNImageWithColor.h"
 #import "NSLayoutConstraint+NNVisualFormat.h"
-#import "UINavigationBar+NNDelegate.h"
-#import "UINavigationItem+NNDelegate.h"
+#import "UINavigationBar+NNCoreProperties.h"
+#import "UINavigationItem+NNCoreProperties.h"
 #import "UINavigationBar+NNBackgroundImageView.h"
 #import "UINavigationBar+NNBackgroundDelegateImp.h"
 

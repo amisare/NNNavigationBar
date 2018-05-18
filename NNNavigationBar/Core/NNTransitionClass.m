@@ -1,12 +1,12 @@
 //
-//  UINavigationBar+NNTransitionClass.c
+//  NNTransitionClass.m
 //  NNNavigationBar
 //
-//  Created by GuHaijun on 2018/4/24.
+//  Created by GuHaijun on 2018/5/18.
 //  Copyright © 2018年 GuHaijun. All rights reserved.
 //
 
-#include "UINavigationBar+NNTransitionClass.h"
+#import "NNTransitionClass.h"
 
 #define MAX_CLAZZ_COUNT                      256
 #define MAX_CLAZZ_LENGTH                     256

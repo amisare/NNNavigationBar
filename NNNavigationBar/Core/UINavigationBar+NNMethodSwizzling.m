@@ -8,10 +8,8 @@
 
 #import "UINavigationBar+NNMethodSwizzling.h"
 #import <objc/runtime.h>
-#import "UINavigationBar+NNTransition.h"
-#import "UINavigationBar+NNBarStyle.h"
-#import "UINavigationBar+NNLatestPopItem.h"
-#import "UINavigationItem+NNDelegate.h"
+#import "UINavigationBar+NNCoreProperties.h"
+#import "UINavigationItem+NNCoreProperties.h"
 
 #ifdef NNNavigationBarLoggingEnable
 #define NNLogInfo(format, ...)      {NSLog((@"[Line %04d] %s " format), __LINE__, __PRETTY_FUNCTION__, ##__VA_ARGS__);}
@@ -273,8 +271,8 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
     NNLogInfo(@"percentComplete:%f", percentComplete);
     
     NSMutableDictionary *params = [NSMutableDictionary new];
-    [params addEntriesFromDictionary:nn_dictionary(@"itemWillPush", self.topItem)];
-    [params addEntriesFromDictionary:nn_dictionary(@"itemWillPop", self.nn_latestPopItem)];
+    [params addEntriesFromDictionary:nn_dictionary(@"itemWillAppear", self.topItem)];
+    [params addEntriesFromDictionary:nn_dictionary(@"itemWillDisappear", self.nn_latestPopItem)];
     [params addEntriesFromDictionary:nn_dictionary(@"percentComplete", @(percentComplete))];
     [self.nn_transitions makeObjectsPerformSelector:@selector(nn_updateInteractiveTransitionWithParams:)
                                          withObject:params];

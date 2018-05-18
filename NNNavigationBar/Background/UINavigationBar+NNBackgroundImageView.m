@@ -9,11 +9,10 @@
 #import "UINavigationBar+NNBackgroundImageView.h"
 #import <objc/runtime.h>
 #import "UIImage+NNImageWithColor.h"
-#import "UINavigationBar+NNBarStyle.h"
+#import "NNNavigationBarBackgroundImage.h"
+#import "UINavigationBar+NNCoreProperties.h"
 #import "UINavigationBar+NNBackgroundView.h"
 #import "UINavigationItem+NNBackgroundView.h"
-#import "UINavigationBar+NNBackgroundImage.h"
-#import "UINavigationItem+NNBackgroundImage.h"
 
 static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NNBackgroundImageView;
 
@@ -39,10 +38,10 @@ static const void *kUINavigationBar_NNBackgroundImageView = &kUINavigationBar_NN
     
     UIImage *backgroundImage = nil;
     if (backgroundImage == nil) {
-        backgroundImage = [item nn_imageForBackgroundAtBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
+        backgroundImage = nn_imageForBackground(item, self.nn_sbarPosition, self.nn_sbarMetrics);
     }
     if (backgroundImage == nil) {
-        backgroundImage = [self nn_imageForBackgroundAtBarPosition:self.nn_sbarPosition barMetrics:self.nn_sbarMetrics];
+        backgroundImage = nn_imageForBackground(self, self.nn_sbarPosition, self.nn_sbarMetrics);
     }
     return backgroundImage;
 }
