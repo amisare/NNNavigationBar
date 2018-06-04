@@ -15,8 +15,10 @@
 
 - (void)nn_navigationBar:(UINavigationBar *)bar backgroundChangeForKey:(NSString *)key {
     
-    UIImage *backgroundImage = [self nn_backgroundImageFromItem:self.topItem];
-    self.nn_backgroundImageView.nn_image = backgroundImage;
+    if ([key isEqualToString:@"nn_backgroundColor"] || [key isEqualToString:@"nn_backgroundImage"]) {
+        UIImage *backgroundImage = [bar nn_backgroundImageFromItem:bar.topItem];
+        bar.nn_backgroundImageView.nn_image = backgroundImage;
+    }
 }
 
 - (void)nn_navigationItem:(UINavigationItem *)item backgroundChangeForKey:(NSString *)key {
