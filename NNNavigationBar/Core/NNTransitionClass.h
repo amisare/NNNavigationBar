@@ -23,10 +23,10 @@ int NNTransitionClassFetch(char *clazz, size_t index);
  @param params
  key: transition
  {
- 0: no anmiation
- 1: push
- 2: pop
- 3: pop multi-viewControllers include popToRootViewController
+    0: no anmiation
+    1: push
+    2: pop
+    3: pop multi-viewControllers include popToRootViewController
  }
  */
 - (void)nn_startTransitionWithParams:(NSDictionary *)params;

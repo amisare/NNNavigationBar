@@ -10,8 +10,11 @@
 
 @protocol NNNavigationBarBackgroundView <NSObject>
 
+//A Boolean value that indicates whether the transition has translucent effect.
 @property (nonatomic, assign) BOOL nn_backgroundTranslucentTransition;
+//the backgroundColor at UIBarPositionAny/UIBarMetricsDefault
 @property (nonatomic, strong) UIColor *nn_backgroundColor;
+//the backgroundImage at UIBarPositionAny/UIBarMetricsDefault
 @property (nonatomic, strong) UIImage *nn_backgroundImage;
 
 

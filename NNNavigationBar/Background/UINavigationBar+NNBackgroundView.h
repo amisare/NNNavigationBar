@@ -11,7 +11,7 @@
 
 @interface UINavigationBar (NNBackgroundView) <NNNavigationBarBackgroundView>
 
-@property (nonatomic, assign) BOOL nn_backgroundViewHidden;
-- (UIView *)nn_backgroundView;
+@property (nonatomic, assign) BOOL nn_backgroundViewHidden;  //default is false
+- (UIView *)nn_backgroundView; //background content view
 
 @end
