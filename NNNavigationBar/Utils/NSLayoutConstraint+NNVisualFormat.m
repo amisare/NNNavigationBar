@@ -19,6 +19,11 @@
         NSLayoutFormatOptions options = 0;
         NSDictionary<NSString *,id> * metrics = nil;
         
+        if (![_format isKindOfClass:[NSString class]] &&
+            ![_format isKindOfClass:[NSDictionary class]]) {
+            continue;
+        }
+        
         if ([_format isKindOfClass:[NSString class]]) {
             format = _format;
         }
