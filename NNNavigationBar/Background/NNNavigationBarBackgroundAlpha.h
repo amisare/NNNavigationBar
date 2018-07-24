@@ -10,6 +10,6 @@
 
 @protocol NNNavigationBarBackgroundAlpha <NSObject>
 
-@property (nonatomic, assign) CGFloat nn_backgroundAlpha;
+@property (nonatomic, assign) CGFloat nn_backgroundAlpha; //alpha value for nn_backgroundView
 
 @end
