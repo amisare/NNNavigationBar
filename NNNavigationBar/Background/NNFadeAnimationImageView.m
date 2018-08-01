@@ -28,12 +28,12 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self setupSubviews];
+        [self _nn_setupSubviews];
     }
     return self;
 }
 
-- (void)setupSubviews {
+- (void)_nn_setupSubviews {
     [self addSubview:self._nn_displayImageView];
     [self addSubview:self._nn_fadeImageView];
     NSArray<NSLayoutConstraint *> *constraints =
