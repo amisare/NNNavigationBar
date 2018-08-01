@@ -28,17 +28,21 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self addSubview:self._nn_displayImageView];
-        [self addSubview:self._nn_fadeImageView];
-        NSArray<NSLayoutConstraint *> *constraints =
-        [NSLayoutConstraint nn_constraintsWithVisualFormats:@[@"H:|[displayImageView]|", @"V:|[displayImageView]|",
-                                                              @"H:|[fadeImageView]|", @"V:|[fadeImageView]|"]
-                                                      views:@{@"displayImageView" : self._nn_displayImageView,
-                                                              @"fadeImageView" : self._nn_fadeImageView}
-         ];
-        [NSLayoutConstraint activateConstraints:constraints];
+        [self setupSubviews];
     }
     return self;
+}
+
+- (void)setupSubviews {
+    [self addSubview:self._nn_displayImageView];
+    [self addSubview:self._nn_fadeImageView];
+    NSArray<NSLayoutConstraint *> *constraints =
+    [NSLayoutConstraint nn_constraintsWithVisualFormats:@[@"H:|[displayImageView]|", @"V:|[displayImageView]|",
+                                                          @"H:|[fadeImageView]|", @"V:|[fadeImageView]|"]
+                                                  views:@{@"displayImageView" : self._nn_displayImageView,
+                                                          @"fadeImageView" : self._nn_fadeImageView}
+     ];
+    [NSLayoutConstraint activateConstraints:constraints];
 }
 
 - (void)setNn_animationState:(NNFadeAnimationState)nn_animationState {
