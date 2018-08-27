@@ -163,6 +163,10 @@ pod install --repo-update
 
 - iOS 8.0+
 
+## 鸣谢
+
+- Logo designed by [anharismail](https://github.com/anharismail)
+
 ## 许可证
 
 NNNavigationBar 是基于 MIT 许可证下发布的，详情参见 LICENSE。
