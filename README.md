@@ -1,5 +1,5 @@
 <p align="center" >
-  <img src="https://raw.githubusercontent.com/amisare/Logos/master/NNNavigationBar/Original/horizontal-color.png" alt="NNNavigationBar" title="NNNavigationBar">
+  <img src="https://raw.githubusercontent.com/amisare/Logos/master/NNNavigationBar/Original/horizontal-color.png" width="509" height="124" alt="NNNavigationBar" title="NNNavigationBar">
 </p>
 
 [![GitHub release](https://img.shields.io/github/release/amisare/NNNavigationBar.svg)](https://github.com/amisare/NNNavigationBar/releases)
