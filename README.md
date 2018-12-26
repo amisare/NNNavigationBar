@@ -9,6 +9,10 @@
 
 本库用于实现UINavigationBar背景渐变过渡动画。
 
+## 可能会遇到的问题
+
+1. [UINavigationBar 上的一个系统 bug （ An apple bug on the UINavigationBar）](https://github.com/amisare/NNNavigationBar/issues/8)
+
 ## 效果
 
 ![ColorTransition](https://raw.githubusercontent.com/amisare/Screenshots/master/NNNavigationBar/Screenshots_00.gif)
