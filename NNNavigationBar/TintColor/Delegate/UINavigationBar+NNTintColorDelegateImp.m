@@ -11,6 +11,8 @@
 
 @implementation UINavigationBar (NNTintColorDelegateImp)
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated"
 - (void)nn_navigationBar:(UINavigationBar *)bar tintColorChange:(NSDictionary *)colors {
     
     if (self.topItem.nn_tintColor) {
@@ -22,6 +24,7 @@
         self.tintColor = tintColor;
     }
 }
+#pragma clang diagnostic pop
 
 - (void)nn_navigationItem:(UINavigationItem *)item tintColorChange:(NSDictionary *)colors {
     

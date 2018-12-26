@@ -15,6 +15,8 @@ static const void *kUINavigationBar_NNTintColor = &kUINavigationBar_NNTintColor;
 
 @implementation UINavigationBar (NNTintColor)
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-implementations"
 - (UIColor *)nn_tintColor {
     id objc = objc_getAssociatedObject(self, kUINavigationBar_NNTintColor);
     return objc;
@@ -33,5 +35,6 @@ static const void *kUINavigationBar_NNTintColor = &kUINavigationBar_NNTintColor;
                                                           }];
     }
 }
+#pragma clang diagnostic pop
 
 @end
