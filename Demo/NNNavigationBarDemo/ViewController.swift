@@ -66,8 +66,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Next", style: .plain, target: self, action: #selector(pushNextViewController))
-        
         self.view.backgroundColor = UIColor.white
         self.navigationController?.navigationBar.setBackgroundImage(UIImage.init(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage.init()
@@ -80,6 +78,9 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Next", style: .plain, target: self, action: #selector(pushNextViewController))
+        
         self.updateBar()
         self.updatePrompt()
         self.tableView.reloadData()
@@ -200,6 +201,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, MainSettin
         return [
             "section" : "other",
             "data" : [
+                ["title" : "tintColor",
+                 "style" : MainSettingCellStyle.image,
+                 ],
                 
                 ["title" : "translucentAnimation",
                  "style" : MainSettingCellStyle.switcher,
@@ -310,6 +314,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, MainSettin
         tableCell?.isSelected = false
         
         guard let cell : MainSettingCellProtocol = tableCell as? MainSettingCellProtocol else { return }
+        if cell.titleLabel?.text == "tintColor" {
+            self.handleTintColor(cell: cell, activeSegment: self.activeSegment())
+        }
         if cell.titleLabel?.text?.contains("metrics") ?? false {
             self.handleBackground(cell: cell, activeSegment: self.activeSegment())
         }
@@ -388,6 +395,21 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, MainSettin
                 }
                 cell.preImageView?.image = nil
             }
+        }
+        if cell.titleLabel?.text == "tintColor" {
+            if activeSegment == .current {
+                cell.preImageView?.image = UIImage.nn_image(with: self.navigationItem.nn_tintColor)
+                return
+            }
+            if activeSegment == .next {
+                cell.preImageView?.image = UIImage.nn_image(with: self.nextViewController.navigationItem.nn_tintColor)
+                return
+            }
+            if activeSegment == .global {
+                cell.preImageView?.image = UIImage.nn_image(with: self.navigationController?.navigationBar.nn_tintColor)
+                return
+            }
+            cell.preImageView?.image = nil
         }
         if cell.titleLabel?.text == "translucentAnimation" {
             if activeSegment == .current {
@@ -487,6 +509,24 @@ extension ViewController {
                     self.navigationController?.navigationBar.setNn_backgroundColor(params["data"] as? UIColor, for: metrics)
                     return
                 }
+            }
+            self.tableView.reloadData()
+        }
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    func handleTintColor(cell: MainSettingCellProtocol, activeSegment: NNActiveSegement) {
+        let vc = PickerController.init(PickerControllerType.color)
+        vc.selected = {(params:[String : Any])->() in
+            guard let color: UIColor = params["data"] as? UIColor else { return }
+            if activeSegment == .current {
+                self.navigationItem.nn_tintColor = color
+            }
+            if activeSegment == .next {
+                self.nextViewController.navigationItem.nn_tintColor = color
+            }
+            if activeSegment == .global {
+                self.navigationController?.navigationBar.nn_tintColor = color
             }
             self.tableView.reloadData()
         }
