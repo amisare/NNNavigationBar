@@ -34,12 +34,18 @@
 
 - (void)nn_startTransitionWithParams:(NSDictionary *)params {
     UINavigationItem *item = [params objectForKey:@"item"];
-    self.bar.tintColor = [self nn_tintColorFromeBar:self.bar atItem:item];
+    UIColor *tintColor = [self nn_tintColorFromeBar:self.bar atItem:item];
+    if (tintColor) {
+        self.bar.tintColor = tintColor;
+    }
 }
 
 - (void)nn_endTransitionWithParams:(NSDictionary *)params {
     UINavigationItem *item = [params objectForKey:@"item"];
-    self.bar.tintColor = [self nn_tintColorFromeBar:self.bar atItem:item];
+    UIColor *tintColor = [self nn_tintColorFromeBar:self.bar atItem:item];
+    if (tintColor) {
+        self.bar.tintColor = tintColor;
+    }
 }
 
 - (void)nn_updateInteractiveTransitionWithParams:(NSDictionary *)params {
@@ -48,7 +54,10 @@
 
 - (void)nn_endInteractiveTransitionWithParams:(NSDictionary *)params {
     UINavigationItem *item = [params objectForKey:@"item"];
-    self.bar.tintColor = [self nn_tintColorFromeBar:self.bar atItem:item];
+    UIColor *tintColor = [self nn_tintColorFromeBar:self.bar atItem:item];
+    if (tintColor) {
+        self.bar.tintColor = tintColor;
+    }
 }
 
 #pragma clang diagnostic push
