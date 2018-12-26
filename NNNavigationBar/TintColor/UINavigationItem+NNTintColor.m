@@ -15,8 +15,6 @@ static const void *kUINavigationItem_NNTintColor = &kUINavigationItem_NNTintColo
 
 @implementation UINavigationItem (NNTintColor)
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-implementations"
 - (UIColor *)nn_tintColor {
     id objc = objc_getAssociatedObject(self, kUINavigationItem_NNTintColor);
     return objc;
@@ -35,6 +33,5 @@ static const void *kUINavigationItem_NNTintColor = &kUINavigationItem_NNTintColo
                                                            }];
     }
 }
-#pragma clang diagnostic pop
 
 @end

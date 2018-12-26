@@ -60,8 +60,6 @@
     }
 }
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated"
 - (UIColor *)nn_tintColorFromeBar:(UINavigationBar *)bar atItem:(UINavigationItem *)item {
     if (item.nn_tintColor) {
         return item.nn_tintColor;
@@ -71,6 +69,5 @@
     }
     return nil;
 }
-#pragma clang diagnostic pop
 
 @end

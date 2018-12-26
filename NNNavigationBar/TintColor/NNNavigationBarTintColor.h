@@ -10,6 +10,6 @@
 
 @protocol NNNavigationBarTintColor <NSObject>
 
-@property (nonatomic, strong) UIColor *nn_tintColor NS_DEPRECATED_IOS(1_0, 1_0, "Although the effect is achieved, but there is a bug that cannot be solved. You can try to use UINavigationItem at each viewController to achieve the demand, also see: https://github.com/amisare/NNNavigationBar/issues/5#issuecomment-439857192");
+@property (nonatomic, strong) UIColor *nn_tintColor;
 
 @end
