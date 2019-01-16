@@ -11,7 +11,70 @@
 
 ## 可能会遇到的问题
 
-1. [UINavigationBar 上的一个系统 bug （ An apple bug on the UINavigationBar）](https://github.com/amisare/NNNavigationBar/issues/8)
+<details>
+<summary><mark>UINavigationBar 上的一个系统 bug （ An apple bug on the UINavigationBar）</mark></summary>
+<p></p>
+
+<blockquote>
+
+bug 描述：导航右滑返回手势，概率性的导致返回以后页面的 rightBarButtonItem 的 tintColor 颜色变浅， bug 现象如下：
+
+![wx20181226-142113](https://user-images.githubusercontent.com/6335968/50435206-3f2a1400-091b-11e9-9ce7-7e9ba1f10acb.png)
+
+bug 代码：
+
+- 在 viewDidLoad 中设置 rightBarButtonItem 会导致 bug 产生。bug 是概率性发生的，不易复现。
+
+```
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // 在 viewDidLoad 中设置 rightBarButtonItem
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Next", style: .plain, target: self, action: #selector(pushNextViewController))
+        self.view.backgroundColor = UIColor.white
+        self.title = "Title" + " " + "\(self.page)"
+    }
+
+    @objc public func pushNextViewController() {
+        let vc = self.nextViewController;
+        vc.page = self.page + 1
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+```
+
+bug 解决：
+
+- 在 viewWillAppear 中设置 rightBarButtonItem 。
+
+```
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+       // 将 rightBarButtonItem 设置移至 viewWillAppear
+       // self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Next", style: .plain, target: self, action: #selector(pushNextViewController))
+        self.view.backgroundColor = UIColor.white
+        self.title = "Title" + " " + "\(self.page)"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+       // 在 viewWillAppear 中设置 rightBarButtonItem
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Next", style: .plain, target: self, action: #selector(pushNextViewController))
+    }
+    
+    @objc public func pushNextViewController() {
+        let vc = self.nextViewController;
+        vc.page = self.page + 1
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+```
+
+bug 工程源码：[UINavigationBarBug](https://github.com/amisare/UINavigationBarBug)
+
+</blockquote>
+</details>
+
 
 ## 效果
 
