@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		674FF4D920AAB1B80041C6ED /* NNNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E93B2120A53CBF0083B38B /* NNNavigationBar.framework */; };
-		674FF4DA20AAB1B80041C6ED /* NNNavigationBar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 67E93B2120A53CBF0083B38B /* NNNavigationBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3E56CB2F8012CF4DF2D1C2A5 /* Pods_NNNavigationBarDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F37189F243146F16A51DD6 /* Pods_NNNavigationBarDemo.framework */; };
 		676456CF20A94A2C00B74853 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456CE20A94A2C00B74853 /* PickerController.swift */; };
 		676456D220A94B4600B74853 /* PickerImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456D020A94B4600B74853 /* PickerImageCell.swift */; };
 		676456D320A94B4600B74853 /* PickerImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 676456D120A94B4600B74853 /* PickerImageCell.xib */; };
@@ -48,20 +47,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		674FF4DB20AAB1B80041C6ED /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				674FF4DA20AAB1B80041C6ED /* NNNavigationBar.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		676456CE20A94A2C00B74853 /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
 		676456D020A94B4600B74853 /* PickerImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerImageCell.swift; sourceTree = "<group>"; };
@@ -91,6 +76,9 @@
 		67E93B3620A53F8D0083B38B /* MainSettingImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingImageCell.xib; sourceTree = "<group>"; };
 		67E93B3920A53FA10083B38B /* MainSettingSwitcherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingSwitcherCell.swift; sourceTree = "<group>"; };
 		67E93B3A20A53FA10083B38B /* MainSettingSwitcherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingSwitcherCell.xib; sourceTree = "<group>"; };
+		68F4B6944E8B44841C8BA94D /* Pods-NNNavigationBarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNNavigationBarDemo.debug.xcconfig"; path = "Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		83F37189F243146F16A51DD6 /* Pods_NNNavigationBarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NNNavigationBarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D01731C136791B9B2686CD4E /* Pods-NNNavigationBarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNNavigationBarDemo.release.xcconfig"; path = "Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				674FF4D920AAB1B80041C6ED /* NNNavigationBar.framework in Frameworks */,
+				3E56CB2F8012CF4DF2D1C2A5 /* Pods_NNNavigationBarDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +107,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13E8D868A6F823A00A26AF54 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				68F4B6944E8B44841C8BA94D /* Pods-NNNavigationBarDemo.debug.xcconfig */,
+				D01731C136791B9B2686CD4E /* Pods-NNNavigationBarDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 		67E93ADA20A53C170083B38B = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +125,7 @@
 				67E93B0520A53C190083B38B /* NNNavigationBarDemoUITests */,
 				67E93AE420A53C170083B38B /* Products */,
 				67E93B2020A53CBF0083B38B /* Frameworks */,
+				13E8D868A6F823A00A26AF54 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -189,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				67E93B2120A53CBF0083B38B /* NNNavigationBar.framework */,
+				83F37189F243146F16A51DD6 /* Pods_NNNavigationBarDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -200,10 +200,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67E93B0B20A53C190083B38B /* Build configuration list for PBXNativeTarget "NNNavigationBarDemo" */;
 			buildPhases = (
+				A737DF86D8C131B13244E30F /* [CP] Check Pods Manifest.lock */,
 				67E93ADF20A53C170083B38B /* Sources */,
 				67E93AE020A53C170083B38B /* Frameworks */,
 				67E93AE120A53C170083B38B /* Resources */,
-				674FF4DB20AAB1B80041C6ED /* Embed Frameworks */,
+				1681436F284A805C6E590683 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -326,6 +327,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1681436F284A805C6E590683 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NNNavigationBar/NNNavigationBar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NNNavigationBar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A737DF86D8C131B13244E30F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NNNavigationBarDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		67E93ADF20A53C170083B38B /* Sources */ = {
@@ -511,6 +559,7 @@
 		};
 		67E93B0C20A53C190083B38B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68F4B6944E8B44841C8BA94D /* Pods-NNNavigationBarDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -534,6 +583,7 @@
 		};
 		67E93B0D20A53C190083B38B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D01731C136791B9B2686CD4E /* Pods-NNNavigationBarDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

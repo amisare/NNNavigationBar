@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:NNNavigationBar.xcodeproj">
+      location = "group:NNNavigationBar/NNNavigationBar.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Demo/NNNavigationBarDemo.xcodeproj">
+      location = "group:NNNavigationBarDemo/NNNavigationBarDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
