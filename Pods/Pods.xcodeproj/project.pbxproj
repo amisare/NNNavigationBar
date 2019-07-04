@@ -7,56 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		005B8B461B6F009A59E00906B3A7F1FA /* UINavigationBar+NNTintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D79A093E5EBEEED2C398F2A64C842D /* UINavigationBar+NNTintColor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		030F132C86E0E71B6B9C614769F2D7A2 /* UINavigationBar+NNBackgroundImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 727AC90EC447520E4A6BAD755FD1CF7F /* UINavigationBar+NNBackgroundImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		065716BD64B7950E357A2FEDEC063BFD /* UIImage+NNImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EA397D0573853CEA7A11A16B378069 /* UIImage+NNImageWithColor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		0FAFD6191D7C2EFC07B62D2077FD65BE /* UINavigationBar+NNTransitionForBackgroundImage.h in Headers */ = {isa = PBXBuildFile; fileRef = A0E7751EBCA37BC66ED876D35974581B /* UINavigationBar+NNTransitionForBackgroundImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C22BF05BA53D103D9461FA0AB4657BA /* UINavigationBar+NNCoreProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5ADCCE65B7D8C41165DBC87083D370 /* UINavigationBar+NNCoreProperties.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		21DB763838F340EF9BC5DDC82E43F89C /* UINavigationBar+NNTransitionForTintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E00CD08C5026F3DDF466E4E72DC055 /* UINavigationBar+NNTransitionForTintColor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		284EDB9E3BD9DC1D4C5E100DD4EF0F6C /* UINavigationItem+NNBackgroundDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 55DCC9F6F8ED88FBB9A77A29B6D8C4AC /* UINavigationItem+NNBackgroundDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		29CF7F38CFACA8779999574CD4A784FF /* UINavigationBar+NNTransitionForBackgroundAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = D9007C5D74332F6A072F008F0E0D7D56 /* UINavigationBar+NNTransitionForBackgroundAlpha.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		2F022D8FA87E476DE5ED5F848D2FBB59 /* UINavigationBar+NNMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5296CEED6DFB50A179F7ECB554065F /* UINavigationBar+NNMethodSwizzling.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		36B2DEF2D1B7EC3C9D7867BFD9A41582 /* NSLayoutConstraint+NNVisualFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = DB2A102006CBC9AD30F8549819EEC393 /* NSLayoutConstraint+NNVisualFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36C2CB2E0C91BB38F7978CE8439EFC12 /* Pods-NNNavigationBarDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 352DB3B671CBD720F06F0013A46A3BCF /* Pods-NNNavigationBarDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3988117FE1499C782D79E35932798F4B /* UINavigationBar+NNBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 879847C294DBB6541D1D08A2A1D14137 /* UINavigationBar+NNBackgroundView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		3F4C143A35338E7BDF9080C32F5EF8FF /* UINavigationBar+NNBackgroundDelegateImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A17DFB0792CF43A7CDC2B53B8BE325C /* UINavigationBar+NNBackgroundDelegateImp.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		462327DEEE2D4A3A289A7B3ECCE833E0 /* UIImage+NNImageWithColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 16CA48E4437F2AC472BE3AD9FEFDCE29 /* UIImage+NNImageWithColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4E1CD0BABC658BD76B3C7E2E1B695F2C /* NNNavigationBarBackgroundAlpha.h in Headers */ = {isa = PBXBuildFile; fileRef = 94FC46EE9CF538A3845BD2F421D1F059 /* NNNavigationBarBackgroundAlpha.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0374D7D684118A5CEDEF4371A1FAB3D8 /* UINavigationBar+NNTransitionForTintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D12568BF96D3C8310C8A126B08692518 /* UINavigationBar+NNTransitionForTintColor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		088AB0172926B1DB65D846096EED30B7 /* NNNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 4753B27E1EACB9E20A280AFB4027ED2C /* NNNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		109D0AE887FA3A6C8D9A61ACD8F9BF16 /* UINavigationBar+NNMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B788521BA9CE5E679D0571B7730185 /* UINavigationBar+NNMethodSwizzling.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		202B46EB4BF8AD911053E941C0BB770A /* NNFadeAnimationImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AAF37B67A116BEEFC414FBAED8DC492 /* NNFadeAnimationImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		22B2EC19E824404C3AE1B37242B8A59E /* UINavigationItem+NNTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 106A977AA168428E7EFCE076B11D018C /* UINavigationItem+NNTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28D27A942B442BC138800203C74AEA92 /* UINavigationBar+NNTintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CB56BC1062038B850857935E11F3756 /* UINavigationBar+NNTintColor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2B02037FFF66537A6825D4D22CFDBFA5 /* NNNavigationBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2912836449F5D4C59ACE6706F684D3E1 /* NNNavigationBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FD5A8D3256659F7DE796296783E0CEB /* NNTransitionClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AA94352F554854341DA1D8D248D3A29 /* NNTransitionClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30D2D3CFD40C721490B9951455A20C8C /* UINavigationBar+NNTransitionForBackgroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DD61B758267B8302C1637B492352D90E /* UINavigationBar+NNTransitionForBackgroundImage.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		31035FDC15146AA3476E74A295BBD4AD /* UINavigationBar+NNBackgroundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 14F82082E14C9600B3D941FC3979333F /* UINavigationBar+NNBackgroundImageView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		312B374E04A7793F269DE134AB531536 /* UINavigationItem+NNBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = DEF51B4C84CF03A5246D66A6053F75EF /* UINavigationItem+NNBackgroundView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		36C2CB2E0C91BB38F7978CE8439EFC12 /* Pods-NNNavigationBarDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1F8FA762365B8B8F944635BAD0602C /* Pods-NNNavigationBarDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D3A39D01E51A6BE75EB375241386540 /* UINavigationBar+NNCoreProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = FF0559DED2E9166829CAE2F77B753ECA /* UINavigationBar+NNCoreProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E0D6B9CD547A48EEE62817EB54F8B35 /* UINavigationBar+NNBackgroundDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F249580A81DD83872A9D82019B689EF /* UINavigationBar+NNBackgroundDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41A76EE6140F69C10E1ADE6319E12072 /* UINavigationItem+NNTintColorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 64F181877BF2EE658695EAC4AA72E2F2 /* UINavigationItem+NNTintColorDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48C3CDD3D6D699D5EF26A2E94BB8D36D /* UIImage+NNImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D703E6AF4BEF2779ECD19D5BA83C32EE /* UIImage+NNImageWithColor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		4AF35FD4F42D03F868E7A38D43B9C222 /* UINavigationBar+NNTransitionForBackgroundImage.h in Headers */ = {isa = PBXBuildFile; fileRef = FD735087E3D1D3E9FA823CA4CF29EE31 /* UINavigationBar+NNTransitionForBackgroundImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		512F0FC8DA3EE5BD1E6DA29568AB50B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		5519D5105231636E2AFD3FC53D542728 /* UINavigationBar+NNBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24EA775F73B64DF12BE447303F86CD77 /* UINavigationBar+NNBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A1B6331BA878BD17F158E904A2BE27C /* NNNavigationBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 898C35D09DCEE381498DBA9CC1235904 /* NNNavigationBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C610B567FC727B0856DD0E2F3558FAB /* UINavigationBar+NNBackgroundDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 923235FB595240B8ACC41025D8FCE279 /* UINavigationBar+NNBackgroundDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		661A2C02D9A1DFA39DE27DBAD4AF9E07 /* UINavigationBar+NNMethodSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FD18AB466B859A5F02A9141A567DC1A /* UINavigationBar+NNMethodSwizzling.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6740D16F8BDD092109D277F9C706932D /* UINavigationBar+NNTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = C41C833CF5BB3CE4688D64873224B31E /* UINavigationBar+NNTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C726786D0A6CC27226A538AA10B7AFB /* NNTransitionClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4CD57DCA74AAFBB4D30B0F9960EDA7 /* NNTransitionClass.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		73AA359A3EB144FAFB5604EAF5EA4828 /* NNNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 166C8B8A7BD95934B0609908E2675403 /* NNNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		752AEDB798A319A6D937817078330DF9 /* UINavigationBar+NNBackgroundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41BD1994A1826109F0203126230CF308 /* UINavigationBar+NNBackgroundImageView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		782E9C2867596C0293496B8B2B15F3CA /* UINavigationItem+NNTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = DE57C47649174ED67A5AE463FAEE29B9 /* UINavigationItem+NNTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7B118EA06E530E3A60BBA387FE21B78E /* UINavigationBar+NNTintColorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 03E646EBE6D3983182AEDAEAAF349C21 /* UINavigationBar+NNTintColorDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7D322437B28AD268D9B9973685DCE918 /* UINavigationItem+NNTintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 30883770E76FE906C0802CACF0D25FDC /* UINavigationItem+NNTintColor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		84412F9918C519A29CCC7F2CE5E831E0 /* UINavigationBar+NNBackgroundDelegateImp.h in Headers */ = {isa = PBXBuildFile; fileRef = B9CF682DCF28C63E6DEAB7AB2277F41A /* UINavigationBar+NNBackgroundDelegateImp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8B1824F63B33CC85A63ABADF28EB5A3D /* UINavigationItem+NNCoreProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = C3F832CA5986079BDB6392D1FC8E7C72 /* UINavigationItem+NNCoreProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8D8E740709A1FAE19F1581846DF92DCE /* NNNavigationBarBackgroundImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 04F65441A22C07E217EE1ACCD8E7B7D6 /* NNNavigationBarBackgroundImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		933E875139BA2438B5AA072E0898ED3B /* UINavigationItem+NNCoreProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E49DB487D9F396E8DC48CE70163CEC39 /* UINavigationItem+NNCoreProperties.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		9A427861525B208E2EB6FCC9EF4604E6 /* UINavigationBar+NNTransitionForBackgroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D83290FC237764A759026997D8E00 /* UINavigationBar+NNTransitionForBackgroundImage.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		AAAB21CE7DBC65FF599E235D82864E0F /* NNFadeAnimationImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = C25232570D300ED1E43936E39EF65C2B /* NNFadeAnimationImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AF48CBAB8935E22997276DA110B70042 /* NSLayoutConstraint+NNVisualFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA0E1D0CB598654E9614982D9A5E56C /* NSLayoutConstraint+NNVisualFormat.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		AF51CE56BA603554E2833FE24BE2488F /* NNNavigationBarTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B3841604786D2E62FF7F34030C96B2D4 /* NNNavigationBarTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B6B13C226BD9EADECC083CCA293E641E /* UINavigationBar+NNTransitionForBackgroundAlpha.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A507AA6FC02B6B29A3C3FBF4B04406 /* UINavigationBar+NNTransitionForBackgroundAlpha.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B822F6DDFD4C6B49D412B94C2138F489 /* UINavigationBar+NNTintColorDelegateImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3791B92EC6D78EF5AC401A60B3555699 /* UINavigationBar+NNTintColorDelegateImp.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		BC4F075F2F7786856FF9680440250672 /* NNNavigationBarBackgroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B6D2A96FD4FDFA5270108ABEC6BC8A03 /* NNNavigationBarBackgroundImage.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		C5C9CB5FBEF211976498748C94C491F8 /* NNNavigationBarBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 57E927B98B4018F83C19CEFFD380C0FD /* NNNavigationBarBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C5E29834537B581D0C66B8E3AF46E27A /* UINavigationItem+NNBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBB21552FC88F894E8CB9008CFC2390 /* UINavigationItem+NNBackgroundView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		C97774B443190962424D9AC3760D8D1D /* UINavigationBar+NNTransitionForTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F4A284FDE4612EE3EED0B5EE6DAB0EB /* UINavigationBar+NNTransitionForTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D1B227687E97976FBC2C0EDFC19C2A79 /* UINavigationBar+NNCoreProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = F158055CE84319300C0AF7FD0B477689 /* UINavigationBar+NNCoreProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D35222CEE2490F5E28B13060DA0FE47D /* NNNavigationBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AACD3592FEDAFFE466C347C2E5435F /* NNNavigationBar-dummy.m */; };
+		5AE14B1F754A1C4CC6ECC8926A8047D9 /* UINavigationBar+NNBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C85C034989EE053CF804B8949069E9B /* UINavigationBar+NNBackgroundView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		611C3C0895051292B63C63E34616F20B /* UINavigationItem+NNBackgroundDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B7E0A96A981B8676A58AD7E95F11E2D /* UINavigationItem+NNBackgroundDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		64BAD29C54DA01870FB86862429ED459 /* UINavigationItem+NNCoreProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C5655774ECD9845A41B5287E951BEFCB /* UINavigationItem+NNCoreProperties.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6591F9E037BD6DF8FD37014D6D70907A /* UIImage+NNImageWithColor.h in Headers */ = {isa = PBXBuildFile; fileRef = A0C1C7A162A340AD3AF92843BBDF504A /* UIImage+NNImageWithColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66ED0D86449FA88A8F3558CB34F6DC20 /* UINavigationBar+NNTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = A6A2A8BFEC5A9415429F5D5748B235D7 /* UINavigationBar+NNTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6CDF2C8EF0F0092E2A596B523D49E5A7 /* NNTransitionClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9829EF22CE10BEC77F39FFC79BCDA27C /* NNTransitionClass.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		6EDFE9C83CBE6CC03E01447A4F9915FF /* NNNavigationBarBackgroundAlpha.h in Headers */ = {isa = PBXBuildFile; fileRef = D4F274D275D6924D9D69318A44057DB2 /* NNNavigationBarBackgroundAlpha.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7038652D7A86D91B785ABEF7E9BD8AC0 /* UINavigationBar+NNTintColorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 331B08EEF1526BE5254F7A6A1405144B /* UINavigationBar+NNTintColorDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7AA907F6F82769B8BFA3F96C83B9B868 /* NSLayoutConstraint+NNVisualFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = A596E1770D0D012A6925A4172ED846A9 /* NSLayoutConstraint+NNVisualFormat.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7BB284CAC7B4D7C65079E7B58CBF5C61 /* UINavigationBar+NNTransitionForBackgroundAlpha.h in Headers */ = {isa = PBXBuildFile; fileRef = F6DD916CC47A3A33F04EAD32C4661097 /* UINavigationBar+NNTransitionForBackgroundAlpha.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C473EF43B20E4140700241E4C38331E /* NNNavigationBarBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 6034A4569DC82900232BC3CBAD48C585 /* NNNavigationBarBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7CDEBAB29BFDF91272CFABA6A08999B5 /* NNNavigationBarBackgroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 895D0FC01EA76E549428C4AAEB927183 /* NNNavigationBarBackgroundImage.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		7E1E1BA91C414D1C847E87A4CD1B8990 /* UINavigationBar+NNBackgroundDelegateImp.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D492482A7AE639346EA52770402A06 /* UINavigationBar+NNBackgroundDelegateImp.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		816A01B3BB0047E5D3DBC2FEB644A2A6 /* UINavigationBar+NNTintColorDelegateImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 029DCDDE3A1B9B0F2363863AACCBD126 /* UINavigationBar+NNTintColorDelegateImp.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		90052BF89C79AB4AEB5BD0C293B24750 /* UINavigationBar+NNMethodSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = DF6168CFD1A1976AE50100B17B9DE25E /* UINavigationBar+NNMethodSwizzling.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		924AA62097E6737316099EBC109DB5B7 /* UINavigationBar+NNTransitionForTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = A02B79A09A163116E27D0A6A52020DAF /* UINavigationBar+NNTransitionForTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9561744FFAAF9BA04CC506975B9F75C0 /* UINavigationBar+NNTransitionForBackgroundAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = A6434B65B1E6904F0455579B3E22D5C8 /* UINavigationBar+NNTransitionForBackgroundAlpha.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		996FA246B3F738263536E0FD2B0D92EA /* NNNavigationBarTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D34B00663D23254D1EC77BFA0FAA7F7 /* NNNavigationBarTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A275483C19949E6332381FDF2089F41A /* NNFadeAnimationImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD94D80151664C6FFAB1F646FF9856 /* NNFadeAnimationImageView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B6AC60EFB0B0BCCC29427DB374E8FBEE /* NNNavigationBarBackgroundImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 79A0C48D7BE22C270E5961823BC952AA /* NNNavigationBarBackgroundImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF453181F5127A233BAB408BD26458F1 /* UINavigationBar+NNTintColorDelegateImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DD258F2CFD8970B9B65C4CAFF642398 /* UINavigationBar+NNTintColorDelegateImp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3C236A963224AB44FCB8380791789C8 /* UINavigationItem+NNBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 792DBD719D7CBF60D8AEC3EBC561D659 /* UINavigationItem+NNBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4CFEF6E9F3F0524A4887D254D1014F7 /* UINavigationBar+NNBackgroundImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 42BB0B2370443699E1F41483CE215DFD /* UINavigationBar+NNBackgroundImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D623EB6C7449F7F52DC91D1352062F9A /* UINavigationItem+NNTintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB5238D5A7779877C09E3F05EA0FF45 /* UINavigationItem+NNTintColor.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		D6C6E996366CAF2DC174A8C4BF35D222 /* UINavigationItem+NNCoreProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 636BB3188C3DB39ADEF21BD6BF75AF13 /* UINavigationItem+NNCoreProperties.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA72F9F333C10C16215767019A8E61F6 /* UINavigationBar+NNBackgroundDelegateImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D03B1F719E917457A0220685382B93F /* UINavigationBar+NNBackgroundDelegateImp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB9897760A340D10C95887B53B8E4368 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
-		E91CAFF3BEC52282A2550AD500AD5ADB /* NNTransitionClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 52DD6712FCE05DD65640EF19C3D0BF84 /* NNTransitionClass.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E93AC106BCE3086513CFBC755CAE98E1 /* NNFadeAnimationImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B6091DD9023BE1F1F5F88BF52EF32813 /* NNFadeAnimationImageView.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		ECF76BA91D4D2C975FF5FD3C132DD5BD /* UINavigationItem+NNTintColorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = F74288CAFB5B8CE102EA3B11B655590C /* UINavigationItem+NNTintColorDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F63BC141DDA31C1FCDFCB4D97F09489D /* UINavigationBar+NNTintColorDelegateImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 03645B2CD2D4918FA1D5F4071D790D23 /* UINavigationBar+NNTintColorDelegateImp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FCCF255614916E5F1A31E294D7843BC0 /* Pods-NNNavigationBarDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D344204F3C4B2F86DCACF41AA46258CE /* Pods-NNNavigationBarDemo-dummy.m */; };
-		FD7A4E946712DAA5F97153CDBDE6B23C /* UINavigationItem+NNBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 22D881B86F5ABA9517BFCFE716607958 /* UINavigationItem+NNBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E6AB1CB25B05133D16E4B53450C0AEB4 /* NSLayoutConstraint+NNVisualFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = C92139574F427EC6E78FF29D7967BE6B /* NSLayoutConstraint+NNVisualFormat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2CDF87CDB70A07503EDCEE86580D62F /* UINavigationBar+NNBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 09F37F77F2C7E46FE8B02B0E8D12D671 /* UINavigationBar+NNBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6D2A8A0D1CD8F892ABD703B160BDF73 /* NNNavigationBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 957DCF43F09FE79FD9A45C066712CC83 /* NNNavigationBar-dummy.m */; };
+		FAFC5A128A955E4425832C271F762C14 /* UINavigationBar+NNCoreProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 710D461FA7A80AAB2FAE9A9FB649F2F4 /* UINavigationBar+NNCoreProperties.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FCCF255614916E5F1A31E294D7843BC0 /* Pods-NNNavigationBarDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF8AF03A7CB97DBF89721B79A47B0A6 /* Pods-NNNavigationBarDemo-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,78 +64,78 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 67F007DB74382FB4B7E93324198A4AED;
+			remoteGlobalIDString = 9276263426A71A1F137BD0E2C65479F4;
 			remoteInfo = NNNavigationBar;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		02511A2A6355199CF488F7F7D4F6981F /* NNNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NNNavigationBar.framework; path = NNNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		03645B2CD2D4918FA1D5F4071D790D23 /* UINavigationBar+NNTintColorDelegateImp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTintColorDelegateImp.h"; sourceTree = "<group>"; };
-		03E646EBE6D3983182AEDAEAAF349C21 /* UINavigationBar+NNTintColorDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTintColorDelegate.h"; sourceTree = "<group>"; };
-		04F65441A22C07E217EE1ACCD8E7B7D6 /* NNNavigationBarBackgroundImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNNavigationBarBackgroundImage.h; path = NNNavigationBar/NNNavigationBar/Background/NNNavigationBarBackgroundImage.h; sourceTree = "<group>"; };
-		0E96C365264B5497AA14070962A9B163 /* NNNavigationBar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = NNNavigationBar.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		10EA397D0573853CEA7A11A16B378069 /* UIImage+NNImageWithColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+NNImageWithColor.m"; path = "NNNavigationBar/NNNavigationBar/Utils/UIImage+NNImageWithColor.m"; sourceTree = "<group>"; };
-		166C8B8A7BD95934B0609908E2675403 /* NNNavigationBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNNavigationBar.h; path = NNNavigationBar/NNNavigationBar/NNNavigationBar.h; sourceTree = "<group>"; };
-		16CA48E4437F2AC472BE3AD9FEFDCE29 /* UIImage+NNImageWithColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+NNImageWithColor.h"; path = "NNNavigationBar/NNNavigationBar/Utils/UIImage+NNImageWithColor.h"; sourceTree = "<group>"; };
-		20E00CD08C5026F3DDF466E4E72DC055 /* UINavigationBar+NNTransitionForTintColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTransitionForTintColor.m"; sourceTree = "<group>"; };
-		22D881B86F5ABA9517BFCFE716607958 /* UINavigationItem+NNBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationItem+NNBackgroundView.h"; path = "NNNavigationBar/NNNavigationBar/Background/UINavigationItem+NNBackgroundView.h"; sourceTree = "<group>"; };
-		24EA775F73B64DF12BE447303F86CD77 /* UINavigationBar+NNBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+NNBackgroundView.h"; path = "NNNavigationBar/NNNavigationBar/Background/UINavigationBar+NNBackgroundView.h"; sourceTree = "<group>"; };
-		2A17DFB0792CF43A7CDC2B53B8BE325C /* UINavigationBar+NNBackgroundDelegateImp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundDelegateImp.m"; sourceTree = "<group>"; };
-		2FA0E1D0CB598654E9614982D9A5E56C /* NSLayoutConstraint+NNVisualFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+NNVisualFormat.m"; path = "NNNavigationBar/NNNavigationBar/Utils/NSLayoutConstraint+NNVisualFormat.m"; sourceTree = "<group>"; };
-		30883770E76FE906C0802CACF0D25FDC /* UINavigationItem+NNTintColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationItem+NNTintColor.m"; path = "NNNavigationBar/NNNavigationBar/TintColor/UINavigationItem+NNTintColor.m"; sourceTree = "<group>"; };
-		352DB3B671CBD720F06F0013A46A3BCF /* Pods-NNNavigationBarDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NNNavigationBarDemo-umbrella.h"; sourceTree = "<group>"; };
-		3791B92EC6D78EF5AC401A60B3555699 /* UINavigationBar+NNTintColorDelegateImp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTintColorDelegateImp.m"; sourceTree = "<group>"; };
-		3A4CD57DCA74AAFBB4D30B0F9960EDA7 /* NNTransitionClass.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNTransitionClass.m; path = NNNavigationBar/NNNavigationBar/Core/NNTransitionClass.m; sourceTree = "<group>"; };
-		3D5332640A5FEFA0D4567A7587C54E84 /* NNNavigationBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NNNavigationBar.modulemap; sourceTree = "<group>"; };
-		41BD1994A1826109F0203126230CF308 /* UINavigationBar+NNBackgroundImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+NNBackgroundImageView.m"; path = "NNNavigationBar/NNNavigationBar/Background/UINavigationBar+NNBackgroundImageView.m"; sourceTree = "<group>"; };
-		4FD18AB466B859A5F02A9141A567DC1A /* UINavigationBar+NNMethodSwizzling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+NNMethodSwizzling.h"; path = "NNNavigationBar/NNNavigationBar/Core/UINavigationBar+NNMethodSwizzling.h"; sourceTree = "<group>"; };
-		52DD6712FCE05DD65640EF19C3D0BF84 /* NNTransitionClass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNTransitionClass.h; path = NNNavigationBar/NNNavigationBar/Core/NNTransitionClass.h; sourceTree = "<group>"; };
-		55DCC9F6F8ED88FBB9A77A29B6D8C4AC /* UINavigationItem+NNBackgroundDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNBackgroundDelegate.h"; sourceTree = "<group>"; };
-		57E927B98B4018F83C19CEFFD380C0FD /* NNNavigationBarBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNNavigationBarBackgroundView.h; path = NNNavigationBar/NNNavigationBar/Background/NNNavigationBarBackgroundView.h; sourceTree = "<group>"; };
-		585F2AB6D738452946DDF221FEA66F45 /* Pods-NNNavigationBarDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NNNavigationBarDemo-frameworks.sh"; sourceTree = "<group>"; };
-		65AACD3592FEDAFFE466C347C2E5435F /* NNNavigationBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NNNavigationBar-dummy.m"; sourceTree = "<group>"; };
-		7068C3FF16C4ECC60C646F8BC9083FC6 /* Pods-NNNavigationBarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NNNavigationBarDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		71D79A093E5EBEEED2C398F2A64C842D /* UINavigationBar+NNTintColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+NNTintColor.m"; path = "NNNavigationBar/NNNavigationBar/TintColor/UINavigationBar+NNTintColor.m"; sourceTree = "<group>"; };
-		727AC90EC447520E4A6BAD755FD1CF7F /* UINavigationBar+NNBackgroundImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+NNBackgroundImageView.h"; path = "NNNavigationBar/NNNavigationBar/Background/UINavigationBar+NNBackgroundImageView.h"; sourceTree = "<group>"; };
-		7F4A284FDE4612EE3EED0B5EE6DAB0EB /* UINavigationBar+NNTransitionForTintColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransitionForTintColor.h"; sourceTree = "<group>"; };
-		85456A4F0737B8059B787BA924777EFA /* NNNavigationBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "NNNavigationBar-Info.plist"; sourceTree = "<group>"; };
-		879847C294DBB6541D1D08A2A1D14137 /* UINavigationBar+NNBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+NNBackgroundView.m"; path = "NNNavigationBar/NNNavigationBar/Background/UINavigationBar+NNBackgroundView.m"; sourceTree = "<group>"; };
-		87F1FB3478CB1851D80824D7586B9AD0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		898C35D09DCEE381498DBA9CC1235904 /* NNNavigationBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NNNavigationBar-umbrella.h"; sourceTree = "<group>"; };
-		8B4D83290FC237764A759026997D8E00 /* UINavigationBar+NNTransitionForBackgroundImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTransitionForBackgroundImage.m"; sourceTree = "<group>"; };
+		029DCDDE3A1B9B0F2363863AACCBD126 /* UINavigationBar+NNTintColorDelegateImp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTintColorDelegateImp.m"; sourceTree = "<group>"; };
+		09F37F77F2C7E46FE8B02B0E8D12D671 /* UINavigationBar+NNBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+NNBackgroundView.h"; path = "NNNavigationBar/NNNavigationBar/Background/UINavigationBar+NNBackgroundView.h"; sourceTree = "<group>"; };
+		0C2F394C852ECD6994AD4F598B726023 /* Pods-NNNavigationBarDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NNNavigationBarDemo-frameworks.sh"; sourceTree = "<group>"; };
+		106A977AA168428E7EFCE076B11D018C /* UINavigationItem+NNTintColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationItem+NNTintColor.h"; path = "NNNavigationBar/NNNavigationBar/TintColor/UINavigationItem+NNTintColor.h"; sourceTree = "<group>"; };
+		14F82082E14C9600B3D941FC3979333F /* UINavigationBar+NNBackgroundImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+NNBackgroundImageView.m"; path = "NNNavigationBar/NNNavigationBar/Background/UINavigationBar+NNBackgroundImageView.m"; sourceTree = "<group>"; };
+		173E4246A5947222C1A73523C1C4F366 /* NNNavigationBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NNNavigationBar-prefix.pch"; sourceTree = "<group>"; };
+		1A1F8FA762365B8B8F944635BAD0602C /* Pods-NNNavigationBarDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NNNavigationBarDemo-umbrella.h"; sourceTree = "<group>"; };
+		1AFC45FE8748EF6B9819DEA09426A6BA /* Pods-NNNavigationBarDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NNNavigationBarDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1CE219C8207BD107E143A9123651CD72 /* Pods-NNNavigationBarDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NNNavigationBarDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		1D34B00663D23254D1EC77BFA0FAA7F7 /* NNNavigationBarTintColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNNavigationBarTintColor.h; path = NNNavigationBar/NNNavigationBar/TintColor/NNNavigationBarTintColor.h; sourceTree = "<group>"; };
+		2912836449F5D4C59ACE6706F684D3E1 /* NNNavigationBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NNNavigationBar-umbrella.h"; sourceTree = "<group>"; };
+		2CB56BC1062038B850857935E11F3756 /* UINavigationBar+NNTintColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+NNTintColor.m"; path = "NNNavigationBar/NNNavigationBar/TintColor/UINavigationBar+NNTintColor.m"; sourceTree = "<group>"; };
+		331B08EEF1526BE5254F7A6A1405144B /* UINavigationBar+NNTintColorDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTintColorDelegate.h"; sourceTree = "<group>"; };
+		3D6F8D3BD4640AEF09B238A154E37082 /* NNNavigationBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "NNNavigationBar-Info.plist"; sourceTree = "<group>"; };
+		42BB0B2370443699E1F41483CE215DFD /* UINavigationBar+NNBackgroundImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+NNBackgroundImageView.h"; path = "NNNavigationBar/NNNavigationBar/Background/UINavigationBar+NNBackgroundImageView.h"; sourceTree = "<group>"; };
+		4753B27E1EACB9E20A280AFB4027ED2C /* NNNavigationBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNNavigationBar.h; path = NNNavigationBar/NNNavigationBar/NNNavigationBar.h; sourceTree = "<group>"; };
+		4AAF37B67A116BEEFC414FBAED8DC492 /* NNFadeAnimationImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNFadeAnimationImageView.h; path = NNNavigationBar/NNNavigationBar/Background/NNFadeAnimationImageView.h; sourceTree = "<group>"; };
+		4B7E0A96A981B8676A58AD7E95F11E2D /* UINavigationItem+NNBackgroundDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNBackgroundDelegate.h"; sourceTree = "<group>"; };
+		4D39AC0A2B6C21AAACD75E5DE36CC17E /* Pods-NNNavigationBarDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NNNavigationBarDemo.modulemap"; sourceTree = "<group>"; };
+		4EBD94D80151664C6FFAB1F646FF9856 /* NNFadeAnimationImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNFadeAnimationImageView.m; path = NNNavigationBar/NNNavigationBar/Background/NNFadeAnimationImageView.m; sourceTree = "<group>"; };
+		5BCB35D397D563CDABD8C7B66EBA14B9 /* NNNavigationBar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = NNNavigationBar.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5C85C034989EE053CF804B8949069E9B /* UINavigationBar+NNBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+NNBackgroundView.m"; path = "NNNavigationBar/NNNavigationBar/Background/UINavigationBar+NNBackgroundView.m"; sourceTree = "<group>"; };
+		6034A4569DC82900232BC3CBAD48C585 /* NNNavigationBarBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNNavigationBarBackgroundView.h; path = NNNavigationBar/NNNavigationBar/Background/NNNavigationBarBackgroundView.h; sourceTree = "<group>"; };
+		636BB3188C3DB39ADEF21BD6BF75AF13 /* UINavigationItem+NNCoreProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationItem+NNCoreProperties.h"; path = "NNNavigationBar/NNNavigationBar/Core/UINavigationItem+NNCoreProperties.h"; sourceTree = "<group>"; };
+		64F181877BF2EE658695EAC4AA72E2F2 /* UINavigationItem+NNTintColorDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNTintColorDelegate.h"; sourceTree = "<group>"; };
+		6D03B1F719E917457A0220685382B93F /* UINavigationBar+NNBackgroundDelegateImp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundDelegateImp.h"; sourceTree = "<group>"; };
+		710D461FA7A80AAB2FAE9A9FB649F2F4 /* UINavigationBar+NNCoreProperties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+NNCoreProperties.m"; path = "NNNavigationBar/NNNavigationBar/Core/UINavigationBar+NNCoreProperties.m"; sourceTree = "<group>"; };
+		712E114B8C469FDD6D670F2FB6CB5427 /* Pods-NNNavigationBarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NNNavigationBarDemo.release.xcconfig"; sourceTree = "<group>"; };
+		75B788521BA9CE5E679D0571B7730185 /* UINavigationBar+NNMethodSwizzling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+NNMethodSwizzling.m"; path = "NNNavigationBar/NNNavigationBar/Core/UINavigationBar+NNMethodSwizzling.m"; sourceTree = "<group>"; };
+		792DBD719D7CBF60D8AEC3EBC561D659 /* UINavigationItem+NNBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationItem+NNBackgroundView.h"; path = "NNNavigationBar/NNNavigationBar/Background/UINavigationItem+NNBackgroundView.h"; sourceTree = "<group>"; };
+		79A0C48D7BE22C270E5961823BC952AA /* NNNavigationBarBackgroundImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNNavigationBarBackgroundImage.h; path = NNNavigationBar/NNNavigationBar/Background/NNNavigationBarBackgroundImage.h; sourceTree = "<group>"; };
+		7A0A4696AFB1F90936F4DA14A5C762CD /* Pods-NNNavigationBarDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NNNavigationBarDemo-Info.plist"; sourceTree = "<group>"; };
+		7DD258F2CFD8970B9B65C4CAFF642398 /* UINavigationBar+NNTintColorDelegateImp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTintColorDelegateImp.h"; sourceTree = "<group>"; };
+		895D0FC01EA76E549428C4AAEB927183 /* NNNavigationBarBackgroundImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNNavigationBarBackgroundImage.m; path = NNNavigationBar/NNNavigationBar/Background/NNNavigationBarBackgroundImage.m; sourceTree = "<group>"; };
+		8AA94352F554854341DA1D8D248D3A29 /* NNTransitionClass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNTransitionClass.h; path = NNNavigationBar/NNNavigationBar/Core/NNTransitionClass.h; sourceTree = "<group>"; };
 		90246AB8CE6C3D9C79AE507CE6CDE7FA /* Pods_NNNavigationBarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NNNavigationBarDemo.framework; path = "Pods-NNNavigationBarDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		923235FB595240B8ACC41025D8FCE279 /* UINavigationBar+NNBackgroundDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundDelegate.h"; sourceTree = "<group>"; };
-		94FC46EE9CF538A3845BD2F421D1F059 /* NNNavigationBarBackgroundAlpha.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNNavigationBarBackgroundAlpha.h; path = NNNavigationBar/NNNavigationBar/Background/NNNavigationBarBackgroundAlpha.h; sourceTree = "<group>"; };
-		97541BA70CB239E1DED3B5F8AA473FB8 /* Pods-NNNavigationBarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NNNavigationBarDemo.release.xcconfig"; sourceTree = "<group>"; };
+		957DCF43F09FE79FD9A45C066712CC83 /* NNNavigationBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NNNavigationBar-dummy.m"; sourceTree = "<group>"; };
+		9829EF22CE10BEC77F39FFC79BCDA27C /* NNTransitionClass.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNTransitionClass.m; path = NNNavigationBar/NNNavigationBar/Core/NNTransitionClass.m; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A0E7751EBCA37BC66ED876D35974581B /* UINavigationBar+NNTransitionForBackgroundImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransitionForBackgroundImage.h"; sourceTree = "<group>"; };
-		A47DEB5B5CBAA297F92C438410A93F86 /* NNNavigationBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NNNavigationBar.xcconfig; sourceTree = "<group>"; };
-		A7424F5C3911093CF64955EC33073BA0 /* Pods-NNNavigationBarDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NNNavigationBarDemo-Info.plist"; sourceTree = "<group>"; };
-		A821CCC669653B874B82F1EF4A5F2800 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		AA6EBCE4F2F454055D36E88BC8D40C7C /* Pods-NNNavigationBarDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NNNavigationBarDemo.modulemap"; sourceTree = "<group>"; };
-		B2310D6432094BB9A434E9287594CE4D /* NNNavigationBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NNNavigationBar-prefix.pch"; sourceTree = "<group>"; };
-		B3841604786D2E62FF7F34030C96B2D4 /* NNNavigationBarTintColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNNavigationBarTintColor.h; path = NNNavigationBar/NNNavigationBar/TintColor/NNNavigationBarTintColor.h; sourceTree = "<group>"; };
-		B6091DD9023BE1F1F5F88BF52EF32813 /* NNFadeAnimationImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNFadeAnimationImageView.m; path = NNNavigationBar/NNNavigationBar/Background/NNFadeAnimationImageView.m; sourceTree = "<group>"; };
-		B6D2A96FD4FDFA5270108ABEC6BC8A03 /* NNNavigationBarBackgroundImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNNavigationBarBackgroundImage.m; path = NNNavigationBar/NNNavigationBar/Background/NNNavigationBarBackgroundImage.m; sourceTree = "<group>"; };
-		B9CF682DCF28C63E6DEAB7AB2277F41A /* UINavigationBar+NNBackgroundDelegateImp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundDelegateImp.h"; sourceTree = "<group>"; };
-		C25232570D300ED1E43936E39EF65C2B /* NNFadeAnimationImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNFadeAnimationImageView.h; path = NNNavigationBar/NNNavigationBar/Background/NNFadeAnimationImageView.h; sourceTree = "<group>"; };
-		C3F832CA5986079BDB6392D1FC8E7C72 /* UINavigationItem+NNCoreProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationItem+NNCoreProperties.h"; path = "NNNavigationBar/NNNavigationBar/Core/UINavigationItem+NNCoreProperties.h"; sourceTree = "<group>"; };
-		C41C833CF5BB3CE4688D64873224B31E /* UINavigationBar+NNTintColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+NNTintColor.h"; path = "NNNavigationBar/NNNavigationBar/TintColor/UINavigationBar+NNTintColor.h"; sourceTree = "<group>"; };
-		CA7B40C189C791D035DAA0EF50D67A4A /* Pods-NNNavigationBarDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NNNavigationBarDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		9F249580A81DD83872A9D82019B689EF /* UINavigationBar+NNBackgroundDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundDelegate.h"; sourceTree = "<group>"; };
+		A02B79A09A163116E27D0A6A52020DAF /* UINavigationBar+NNTransitionForTintColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransitionForTintColor.h"; sourceTree = "<group>"; };
+		A0C1C7A162A340AD3AF92843BBDF504A /* UIImage+NNImageWithColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+NNImageWithColor.h"; path = "NNNavigationBar/NNNavigationBar/Utils/UIImage+NNImageWithColor.h"; sourceTree = "<group>"; };
+		A130631C1BD59F41317881D46D1C006F /* NNNavigationBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NNNavigationBar.modulemap; sourceTree = "<group>"; };
+		A2DDE0CDFA05942D4A39E3DE7C7EFAF3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		A596E1770D0D012A6925A4172ED846A9 /* NSLayoutConstraint+NNVisualFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+NNVisualFormat.m"; path = "NNNavigationBar/NNNavigationBar/Utils/NSLayoutConstraint+NNVisualFormat.m"; sourceTree = "<group>"; };
+		A6434B65B1E6904F0455579B3E22D5C8 /* UINavigationBar+NNTransitionForBackgroundAlpha.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTransitionForBackgroundAlpha.m"; sourceTree = "<group>"; };
+		A6A2A8BFEC5A9415429F5D5748B235D7 /* UINavigationBar+NNTintColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+NNTintColor.h"; path = "NNNavigationBar/NNNavigationBar/TintColor/UINavigationBar+NNTintColor.h"; sourceTree = "<group>"; };
+		ABF8AF03A7CB97DBF89721B79A47B0A6 /* Pods-NNNavigationBarDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NNNavigationBarDemo-dummy.m"; sourceTree = "<group>"; };
+		B0C4C1AE2034945B81DC8ED544294BC4 /* NNNavigationBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NNNavigationBar.xcconfig; sourceTree = "<group>"; };
+		C5655774ECD9845A41B5287E951BEFCB /* UINavigationItem+NNCoreProperties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationItem+NNCoreProperties.m"; path = "NNNavigationBar/NNNavigationBar/Core/UINavigationItem+NNCoreProperties.m"; sourceTree = "<group>"; };
+		C92139574F427EC6E78FF29D7967BE6B /* NSLayoutConstraint+NNVisualFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+NNVisualFormat.h"; path = "NNNavigationBar/NNNavigationBar/Utils/NSLayoutConstraint+NNVisualFormat.h"; sourceTree = "<group>"; };
 		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D344204F3C4B2F86DCACF41AA46258CE /* Pods-NNNavigationBarDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NNNavigationBarDemo-dummy.m"; sourceTree = "<group>"; };
-		D9007C5D74332F6A072F008F0E0D7D56 /* UINavigationBar+NNTransitionForBackgroundAlpha.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTransitionForBackgroundAlpha.m"; sourceTree = "<group>"; };
-		DB2A102006CBC9AD30F8549819EEC393 /* NSLayoutConstraint+NNVisualFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+NNVisualFormat.h"; path = "NNNavigationBar/NNNavigationBar/Utils/NSLayoutConstraint+NNVisualFormat.h"; sourceTree = "<group>"; };
-		DD1DE11FAEE3417A802A744EF2C6DD23 /* Pods-NNNavigationBarDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NNNavigationBarDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DE57C47649174ED67A5AE463FAEE29B9 /* UINavigationItem+NNTintColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationItem+NNTintColor.h"; path = "NNNavigationBar/NNNavigationBar/TintColor/UINavigationItem+NNTintColor.h"; sourceTree = "<group>"; };
-		E49DB487D9F396E8DC48CE70163CEC39 /* UINavigationItem+NNCoreProperties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationItem+NNCoreProperties.m"; path = "NNNavigationBar/NNNavigationBar/Core/UINavigationItem+NNCoreProperties.m"; sourceTree = "<group>"; };
-		E7A507AA6FC02B6B29A3C3FBF4B04406 /* UINavigationBar+NNTransitionForBackgroundAlpha.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransitionForBackgroundAlpha.h"; sourceTree = "<group>"; };
-		F158055CE84319300C0AF7FD0B477689 /* UINavigationBar+NNCoreProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+NNCoreProperties.h"; path = "NNNavigationBar/NNNavigationBar/Core/UINavigationBar+NNCoreProperties.h"; sourceTree = "<group>"; };
-		F74288CAFB5B8CE102EA3B11B655590C /* UINavigationItem+NNTintColorDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNTintColorDelegate.h"; sourceTree = "<group>"; };
-		FA5ADCCE65B7D8C41165DBC87083D370 /* UINavigationBar+NNCoreProperties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+NNCoreProperties.m"; path = "NNNavigationBar/NNNavigationBar/Core/UINavigationBar+NNCoreProperties.m"; sourceTree = "<group>"; };
-		FD5296CEED6DFB50A179F7ECB554065F /* UINavigationBar+NNMethodSwizzling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+NNMethodSwizzling.m"; path = "NNNavigationBar/NNNavigationBar/Core/UINavigationBar+NNMethodSwizzling.m"; sourceTree = "<group>"; };
-		FDBB21552FC88F894E8CB9008CFC2390 /* UINavigationItem+NNBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationItem+NNBackgroundView.m"; path = "NNNavigationBar/NNNavigationBar/Background/UINavigationItem+NNBackgroundView.m"; sourceTree = "<group>"; };
+		CEB5238D5A7779877C09E3F05EA0FF45 /* UINavigationItem+NNTintColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationItem+NNTintColor.m"; path = "NNNavigationBar/NNNavigationBar/TintColor/UINavigationItem+NNTintColor.m"; sourceTree = "<group>"; };
+		D12568BF96D3C8310C8A126B08692518 /* UINavigationBar+NNTransitionForTintColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTransitionForTintColor.m"; sourceTree = "<group>"; };
+		D4F274D275D6924D9D69318A44057DB2 /* NNNavigationBarBackgroundAlpha.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNNavigationBarBackgroundAlpha.h; path = NNNavigationBar/NNNavigationBar/Background/NNNavigationBarBackgroundAlpha.h; sourceTree = "<group>"; };
+		D703E6AF4BEF2779ECD19D5BA83C32EE /* UIImage+NNImageWithColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+NNImageWithColor.m"; path = "NNNavigationBar/NNNavigationBar/Utils/UIImage+NNImageWithColor.m"; sourceTree = "<group>"; };
+		DD61B758267B8302C1637B492352D90E /* UINavigationBar+NNTransitionForBackgroundImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTransitionForBackgroundImage.m"; sourceTree = "<group>"; };
+		DEF51B4C84CF03A5246D66A6053F75EF /* UINavigationItem+NNBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationItem+NNBackgroundView.m"; path = "NNNavigationBar/NNNavigationBar/Background/UINavigationItem+NNBackgroundView.m"; sourceTree = "<group>"; };
+		DF6168CFD1A1976AE50100B17B9DE25E /* UINavigationBar+NNMethodSwizzling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+NNMethodSwizzling.h"; path = "NNNavigationBar/NNNavigationBar/Core/UINavigationBar+NNMethodSwizzling.h"; sourceTree = "<group>"; };
+		E045EDA792CE5AC672AEABC875CBD12C /* Pods-NNNavigationBarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NNNavigationBarDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E0D492482A7AE639346EA52770402A06 /* UINavigationBar+NNBackgroundDelegateImp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundDelegateImp.m"; sourceTree = "<group>"; };
+		F6DD916CC47A3A33F04EAD32C4661097 /* UINavigationBar+NNTransitionForBackgroundAlpha.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransitionForBackgroundAlpha.h"; sourceTree = "<group>"; };
+		F722C2B14C98ED7B991B7584A764866A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		FD735087E3D1D3E9FA823CA4CF29EE31 /* UINavigationBar+NNTransitionForBackgroundImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTransitionForBackgroundImage.h"; sourceTree = "<group>"; };
+		FF0559DED2E9166829CAE2F77B753ECA /* UINavigationBar+NNCoreProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+NNCoreProperties.h"; path = "NNNavigationBar/NNNavigationBar/Core/UINavigationBar+NNCoreProperties.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,96 +158,105 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		10608C9042A09007D36DD282F444972C /* Targets Support Files */ = {
+		082E43F455BE0BA091AAD64931D29C17 /* TintColor */ = {
 			isa = PBXGroup;
 			children = (
-				CC463CBABF0EA38751A9B5A06C315FA2 /* Pods-NNNavigationBarDemo */,
+				1D34B00663D23254D1EC77BFA0FAA7F7 /* NNNavigationBarTintColor.h */,
+				A6A2A8BFEC5A9415429F5D5748B235D7 /* UINavigationBar+NNTintColor.h */,
+				2CB56BC1062038B850857935E11F3756 /* UINavigationBar+NNTintColor.m */,
+				106A977AA168428E7EFCE076B11D018C /* UINavigationItem+NNTintColor.h */,
+				CEB5238D5A7779877C09E3F05EA0FF45 /* UINavigationItem+NNTintColor.m */,
+				B8D2DA41B5111CE6EE1FE9D03E4FD801 /* Delegate */,
+				E58131A1CDBF017709D5EFDC53DE2725 /* Transition */,
 			);
-			name = "Targets Support Files";
+			name = TintColor;
 			sourceTree = "<group>";
 		};
-		18B19990302FB073C9977A46790A87CC /* NNNavigationBar */ = {
+		09F700F95004CA06949494E30815D130 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
-				166C8B8A7BD95934B0609908E2675403 /* NNNavigationBar.h */,
-				FE93F04AC403C9AD6EF9B6CDAB18BA0B /* Background */,
-				6BBFF6EF76434E21CEEA02EDFD2D26FF /* Core */,
-				1A4629F8805E954A04250AE3949E221D /* Pod */,
-				F2DEC1910A7A70FCFD017410CF6D5F51 /* Support Files */,
-				8E73C46FE27F0C1F78DE7BAC1D948591 /* TintColor */,
-				E3E7F27A1C53E4B698B7E206E9068C1B /* Utils */,
-			);
-			name = NNNavigationBar;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		1A4629F8805E954A04250AE3949E221D /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				A821CCC669653B874B82F1EF4A5F2800 /* LICENSE */,
-				0E96C365264B5497AA14070962A9B163 /* NNNavigationBar.podspec */,
-				87F1FB3478CB1851D80824D7586B9AD0 /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		1B50200BDE85B93CEE74E495EF7A4111 /* Transition */ = {
-			isa = PBXGroup;
-			children = (
-				E7A507AA6FC02B6B29A3C3FBF4B04406 /* UINavigationBar+NNTransitionForBackgroundAlpha.h */,
-				D9007C5D74332F6A072F008F0E0D7D56 /* UINavigationBar+NNTransitionForBackgroundAlpha.m */,
-				A0E7751EBCA37BC66ED876D35974581B /* UINavigationBar+NNTransitionForBackgroundImage.h */,
-				8B4D83290FC237764A759026997D8E00 /* UINavigationBar+NNTransitionForBackgroundImage.m */,
+				F6DD916CC47A3A33F04EAD32C4661097 /* UINavigationBar+NNTransitionForBackgroundAlpha.h */,
+				A6434B65B1E6904F0455579B3E22D5C8 /* UINavigationBar+NNTransitionForBackgroundAlpha.m */,
+				FD735087E3D1D3E9FA823CA4CF29EE31 /* UINavigationBar+NNTransitionForBackgroundImage.h */,
+				DD61B758267B8302C1637B492352D90E /* UINavigationBar+NNTransitionForBackgroundImage.m */,
 			);
 			name = Transition;
 			path = NNNavigationBar/NNNavigationBar/Background/Transition;
 			sourceTree = "<group>";
 		};
+		0EFF39C370E31E43E2E39A451DD5B2F7 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				9F249580A81DD83872A9D82019B689EF /* UINavigationBar+NNBackgroundDelegate.h */,
+				6D03B1F719E917457A0220685382B93F /* UINavigationBar+NNBackgroundDelegateImp.h */,
+				E0D492482A7AE639346EA52770402A06 /* UINavigationBar+NNBackgroundDelegateImp.m */,
+				4B7E0A96A981B8676A58AD7E95F11E2D /* UINavigationItem+NNBackgroundDelegate.h */,
+			);
+			name = Delegate;
+			path = NNNavigationBar/NNNavigationBar/Background/Delegate;
+			sourceTree = "<group>";
+		};
+		10608C9042A09007D36DD282F444972C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABC57D46AADE7EB2B6C80ED8698FFFC3 /* Pods-NNNavigationBarDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2BBAF054679C575F1362CBC736C3B1EA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C92139574F427EC6E78FF29D7967BE6B /* NSLayoutConstraint+NNVisualFormat.h */,
+				A596E1770D0D012A6925A4172ED846A9 /* NSLayoutConstraint+NNVisualFormat.m */,
+				A0C1C7A162A340AD3AF92843BBDF504A /* UIImage+NNImageWithColor.h */,
+				D703E6AF4BEF2779ECD19D5BA83C32EE /* UIImage+NNImageWithColor.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		5FAE25F268A772BD439A6C56CF533C60 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				18B19990302FB073C9977A46790A87CC /* NNNavigationBar */,
+				A0B40C8EF419B660F0104BBD58257F38 /* NNNavigationBar */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		6BBFF6EF76434E21CEEA02EDFD2D26FF /* Core */ = {
+		66B57F83DC6585B01E264BDEF1B59EC1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				52DD6712FCE05DD65640EF19C3D0BF84 /* NNTransitionClass.h */,
-				3A4CD57DCA74AAFBB4D30B0F9960EDA7 /* NNTransitionClass.m */,
-				F158055CE84319300C0AF7FD0B477689 /* UINavigationBar+NNCoreProperties.h */,
-				FA5ADCCE65B7D8C41165DBC87083D370 /* UINavigationBar+NNCoreProperties.m */,
-				4FD18AB466B859A5F02A9141A567DC1A /* UINavigationBar+NNMethodSwizzling.h */,
-				FD5296CEED6DFB50A179F7ECB554065F /* UINavigationBar+NNMethodSwizzling.m */,
-				C3F832CA5986079BDB6392D1FC8E7C72 /* UINavigationItem+NNCoreProperties.h */,
-				E49DB487D9F396E8DC48CE70163CEC39 /* UINavigationItem+NNCoreProperties.m */,
+				8AA94352F554854341DA1D8D248D3A29 /* NNTransitionClass.h */,
+				9829EF22CE10BEC77F39FFC79BCDA27C /* NNTransitionClass.m */,
+				FF0559DED2E9166829CAE2F77B753ECA /* UINavigationBar+NNCoreProperties.h */,
+				710D461FA7A80AAB2FAE9A9FB649F2F4 /* UINavigationBar+NNCoreProperties.m */,
+				DF6168CFD1A1976AE50100B17B9DE25E /* UINavigationBar+NNMethodSwizzling.h */,
+				75B788521BA9CE5E679D0571B7730185 /* UINavigationBar+NNMethodSwizzling.m */,
+				636BB3188C3DB39ADEF21BD6BF75AF13 /* UINavigationItem+NNCoreProperties.h */,
+				C5655774ECD9845A41B5287E951BEFCB /* UINavigationItem+NNCoreProperties.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
 		};
-		6DC08ABC1020821E706B272C95CB2B2E /* Transition */ = {
+		7C5FDDCE5DEDEAEB421D37289C911C90 /* Background */ = {
 			isa = PBXGroup;
 			children = (
-				7F4A284FDE4612EE3EED0B5EE6DAB0EB /* UINavigationBar+NNTransitionForTintColor.h */,
-				20E00CD08C5026F3DDF466E4E72DC055 /* UINavigationBar+NNTransitionForTintColor.m */,
+				4AAF37B67A116BEEFC414FBAED8DC492 /* NNFadeAnimationImageView.h */,
+				4EBD94D80151664C6FFAB1F646FF9856 /* NNFadeAnimationImageView.m */,
+				D4F274D275D6924D9D69318A44057DB2 /* NNNavigationBarBackgroundAlpha.h */,
+				79A0C48D7BE22C270E5961823BC952AA /* NNNavigationBarBackgroundImage.h */,
+				895D0FC01EA76E549428C4AAEB927183 /* NNNavigationBarBackgroundImage.m */,
+				6034A4569DC82900232BC3CBAD48C585 /* NNNavigationBarBackgroundView.h */,
+				42BB0B2370443699E1F41483CE215DFD /* UINavigationBar+NNBackgroundImageView.h */,
+				14F82082E14C9600B3D941FC3979333F /* UINavigationBar+NNBackgroundImageView.m */,
+				09F37F77F2C7E46FE8B02B0E8D12D671 /* UINavigationBar+NNBackgroundView.h */,
+				5C85C034989EE053CF804B8949069E9B /* UINavigationBar+NNBackgroundView.m */,
+				792DBD719D7CBF60D8AEC3EBC561D659 /* UINavigationItem+NNBackgroundView.h */,
+				DEF51B4C84CF03A5246D66A6053F75EF /* UINavigationItem+NNBackgroundView.m */,
+				0EFF39C370E31E43E2E39A451DD5B2F7 /* Delegate */,
+				09F700F95004CA06949494E30815D130 /* Transition */,
 			);
-			name = Transition;
-			path = NNNavigationBar/NNNavigationBar/TintColor/Transition;
-			sourceTree = "<group>";
-		};
-		8E73C46FE27F0C1F78DE7BAC1D948591 /* TintColor */ = {
-			isa = PBXGroup;
-			children = (
-				B3841604786D2E62FF7F34030C96B2D4 /* NNNavigationBarTintColor.h */,
-				C41C833CF5BB3CE4688D64873224B31E /* UINavigationBar+NNTintColor.h */,
-				71D79A093E5EBEEED2C398F2A64C842D /* UINavigationBar+NNTintColor.m */,
-				DE57C47649174ED67A5AE463FAEE29B9 /* UINavigationItem+NNTintColor.h */,
-				30883770E76FE906C0802CACF0D25FDC /* UINavigationItem+NNTintColor.m */,
-				E053E205768BB99991953F66ECA51B6C /* Delegate */,
-				6DC08ABC1020821E706B272C95CB2B2E /* Transition */,
-			);
-			name = TintColor;
+			name = Background;
 			sourceTree = "<group>";
 		};
 		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
@@ -256,6 +265,50 @@
 				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		A0B40C8EF419B660F0104BBD58257F38 /* NNNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				4753B27E1EACB9E20A280AFB4027ED2C /* NNNavigationBar.h */,
+				7C5FDDCE5DEDEAEB421D37289C911C90 /* Background */,
+				66B57F83DC6585B01E264BDEF1B59EC1 /* Core */,
+				C7DC879A23DD51AF0DE42B40F0115908 /* Pod */,
+				C83FF17ED0E98EAD146FA2C03CBCE33E /* Support Files */,
+				082E43F455BE0BA091AAD64931D29C17 /* TintColor */,
+				2BBAF054679C575F1362CBC736C3B1EA /* Utils */,
+			);
+			name = NNNavigationBar;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		ABC57D46AADE7EB2B6C80ED8698FFFC3 /* Pods-NNNavigationBarDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4D39AC0A2B6C21AAACD75E5DE36CC17E /* Pods-NNNavigationBarDemo.modulemap */,
+				1AFC45FE8748EF6B9819DEA09426A6BA /* Pods-NNNavigationBarDemo-acknowledgements.markdown */,
+				1CE219C8207BD107E143A9123651CD72 /* Pods-NNNavigationBarDemo-acknowledgements.plist */,
+				ABF8AF03A7CB97DBF89721B79A47B0A6 /* Pods-NNNavigationBarDemo-dummy.m */,
+				0C2F394C852ECD6994AD4F598B726023 /* Pods-NNNavigationBarDemo-frameworks.sh */,
+				7A0A4696AFB1F90936F4DA14A5C762CD /* Pods-NNNavigationBarDemo-Info.plist */,
+				1A1F8FA762365B8B8F944635BAD0602C /* Pods-NNNavigationBarDemo-umbrella.h */,
+				E045EDA792CE5AC672AEABC875CBD12C /* Pods-NNNavigationBarDemo.debug.xcconfig */,
+				712E114B8C469FDD6D670F2FB6CB5427 /* Pods-NNNavigationBarDemo.release.xcconfig */,
+			);
+			name = "Pods-NNNavigationBarDemo";
+			path = "Target Support Files/Pods-NNNavigationBarDemo";
+			sourceTree = "<group>";
+		};
+		B8D2DA41B5111CE6EE1FE9D03E4FD801 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				331B08EEF1526BE5254F7A6A1405144B /* UINavigationBar+NNTintColorDelegate.h */,
+				7DD258F2CFD8970B9B65C4CAFF642398 /* UINavigationBar+NNTintColorDelegateImp.h */,
+				029DCDDE3A1B9B0F2363863AACCBD126 /* UINavigationBar+NNTintColorDelegateImp.m */,
+				64F181877BF2EE658695EAC4AA72E2F2 /* UINavigationItem+NNTintColorDelegate.h */,
+			);
+			name = Delegate;
+			path = NNNavigationBar/NNNavigationBar/TintColor/Delegate;
 			sourceTree = "<group>";
 		};
 		C01C6FA19CAF5193CE01A226F4A18820 /* Products */ = {
@@ -267,21 +320,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CC463CBABF0EA38751A9B5A06C315FA2 /* Pods-NNNavigationBarDemo */ = {
+		C7DC879A23DD51AF0DE42B40F0115908 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				AA6EBCE4F2F454055D36E88BC8D40C7C /* Pods-NNNavigationBarDemo.modulemap */,
-				DD1DE11FAEE3417A802A744EF2C6DD23 /* Pods-NNNavigationBarDemo-acknowledgements.markdown */,
-				CA7B40C189C791D035DAA0EF50D67A4A /* Pods-NNNavigationBarDemo-acknowledgements.plist */,
-				D344204F3C4B2F86DCACF41AA46258CE /* Pods-NNNavigationBarDemo-dummy.m */,
-				585F2AB6D738452946DDF221FEA66F45 /* Pods-NNNavigationBarDemo-frameworks.sh */,
-				A7424F5C3911093CF64955EC33073BA0 /* Pods-NNNavigationBarDemo-Info.plist */,
-				352DB3B671CBD720F06F0013A46A3BCF /* Pods-NNNavigationBarDemo-umbrella.h */,
-				7068C3FF16C4ECC60C646F8BC9083FC6 /* Pods-NNNavigationBarDemo.debug.xcconfig */,
-				97541BA70CB239E1DED3B5F8AA473FB8 /* Pods-NNNavigationBarDemo.release.xcconfig */,
+				F722C2B14C98ED7B991B7584A764866A /* LICENSE */,
+				5BCB35D397D563CDABD8C7B66EBA14B9 /* NNNavigationBar.podspec */,
+				A2DDE0CDFA05942D4A39E3DE7C7EFAF3 /* README.md */,
 			);
-			name = "Pods-NNNavigationBarDemo";
-			path = "Target Support Files/Pods-NNNavigationBarDemo";
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		C83FF17ED0E98EAD146FA2C03CBCE33E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A130631C1BD59F41317881D46D1C006F /* NNNavigationBar.modulemap */,
+				B0C4C1AE2034945B81DC8ED544294BC4 /* NNNavigationBar.xcconfig */,
+				957DCF43F09FE79FD9A45C066712CC83 /* NNNavigationBar-dummy.m */,
+				3D6F8D3BD4640AEF09B238A154E37082 /* NNNavigationBar-Info.plist */,
+				173E4246A5947222C1A73523C1C4F366 /* NNNavigationBar-prefix.pch */,
+				2912836449F5D4C59ACE6706F684D3E1 /* NNNavigationBar-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/NNNavigationBar";
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -303,74 +363,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E053E205768BB99991953F66ECA51B6C /* Delegate */ = {
+		E58131A1CDBF017709D5EFDC53DE2725 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
-				03E646EBE6D3983182AEDAEAAF349C21 /* UINavigationBar+NNTintColorDelegate.h */,
-				03645B2CD2D4918FA1D5F4071D790D23 /* UINavigationBar+NNTintColorDelegateImp.h */,
-				3791B92EC6D78EF5AC401A60B3555699 /* UINavigationBar+NNTintColorDelegateImp.m */,
-				F74288CAFB5B8CE102EA3B11B655590C /* UINavigationItem+NNTintColorDelegate.h */,
+				A02B79A09A163116E27D0A6A52020DAF /* UINavigationBar+NNTransitionForTintColor.h */,
+				D12568BF96D3C8310C8A126B08692518 /* UINavigationBar+NNTransitionForTintColor.m */,
 			);
-			name = Delegate;
-			path = NNNavigationBar/NNNavigationBar/TintColor/Delegate;
-			sourceTree = "<group>";
-		};
-		E3E7F27A1C53E4B698B7E206E9068C1B /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				DB2A102006CBC9AD30F8549819EEC393 /* NSLayoutConstraint+NNVisualFormat.h */,
-				2FA0E1D0CB598654E9614982D9A5E56C /* NSLayoutConstraint+NNVisualFormat.m */,
-				16CA48E4437F2AC472BE3AD9FEFDCE29 /* UIImage+NNImageWithColor.h */,
-				10EA397D0573853CEA7A11A16B378069 /* UIImage+NNImageWithColor.m */,
-			);
-			name = Utils;
-			sourceTree = "<group>";
-		};
-		E7E59532F0E7AD4FE9E92B5C52FE162D /* Delegate */ = {
-			isa = PBXGroup;
-			children = (
-				923235FB595240B8ACC41025D8FCE279 /* UINavigationBar+NNBackgroundDelegate.h */,
-				B9CF682DCF28C63E6DEAB7AB2277F41A /* UINavigationBar+NNBackgroundDelegateImp.h */,
-				2A17DFB0792CF43A7CDC2B53B8BE325C /* UINavigationBar+NNBackgroundDelegateImp.m */,
-				55DCC9F6F8ED88FBB9A77A29B6D8C4AC /* UINavigationItem+NNBackgroundDelegate.h */,
-			);
-			name = Delegate;
-			path = NNNavigationBar/NNNavigationBar/Background/Delegate;
-			sourceTree = "<group>";
-		};
-		F2DEC1910A7A70FCFD017410CF6D5F51 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3D5332640A5FEFA0D4567A7587C54E84 /* NNNavigationBar.modulemap */,
-				A47DEB5B5CBAA297F92C438410A93F86 /* NNNavigationBar.xcconfig */,
-				65AACD3592FEDAFFE466C347C2E5435F /* NNNavigationBar-dummy.m */,
-				85456A4F0737B8059B787BA924777EFA /* NNNavigationBar-Info.plist */,
-				B2310D6432094BB9A434E9287594CE4D /* NNNavigationBar-prefix.pch */,
-				898C35D09DCEE381498DBA9CC1235904 /* NNNavigationBar-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Pods/Target Support Files/NNNavigationBar";
-			sourceTree = "<group>";
-		};
-		FE93F04AC403C9AD6EF9B6CDAB18BA0B /* Background */ = {
-			isa = PBXGroup;
-			children = (
-				C25232570D300ED1E43936E39EF65C2B /* NNFadeAnimationImageView.h */,
-				B6091DD9023BE1F1F5F88BF52EF32813 /* NNFadeAnimationImageView.m */,
-				94FC46EE9CF538A3845BD2F421D1F059 /* NNNavigationBarBackgroundAlpha.h */,
-				04F65441A22C07E217EE1ACCD8E7B7D6 /* NNNavigationBarBackgroundImage.h */,
-				B6D2A96FD4FDFA5270108ABEC6BC8A03 /* NNNavigationBarBackgroundImage.m */,
-				57E927B98B4018F83C19CEFFD380C0FD /* NNNavigationBarBackgroundView.h */,
-				727AC90EC447520E4A6BAD755FD1CF7F /* UINavigationBar+NNBackgroundImageView.h */,
-				41BD1994A1826109F0203126230CF308 /* UINavigationBar+NNBackgroundImageView.m */,
-				24EA775F73B64DF12BE447303F86CD77 /* UINavigationBar+NNBackgroundView.h */,
-				879847C294DBB6541D1D08A2A1D14137 /* UINavigationBar+NNBackgroundView.m */,
-				22D881B86F5ABA9517BFCFE716607958 /* UINavigationItem+NNBackgroundView.h */,
-				FDBB21552FC88F894E8CB9008CFC2390 /* UINavigationItem+NNBackgroundView.m */,
-				E7E59532F0E7AD4FE9E92B5C52FE162D /* Delegate */,
-				1B50200BDE85B93CEE74E495EF7A4111 /* Transition */,
-			);
-			name = Background;
+			name = Transition;
+			path = NNNavigationBar/NNNavigationBar/TintColor/Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,44 +384,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F8BA532FBF4A3FC351E27C24C2F85513 /* Headers */ = {
+		C0A490435F4A70298B810686F398FC95 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAAB21CE7DBC65FF599E235D82864E0F /* NNFadeAnimationImageView.h in Headers */,
-				5A1B6331BA878BD17F158E904A2BE27C /* NNNavigationBar-umbrella.h in Headers */,
-				73AA359A3EB144FAFB5604EAF5EA4828 /* NNNavigationBar.h in Headers */,
-				4E1CD0BABC658BD76B3C7E2E1B695F2C /* NNNavigationBarBackgroundAlpha.h in Headers */,
-				8D8E740709A1FAE19F1581846DF92DCE /* NNNavigationBarBackgroundImage.h in Headers */,
-				C5C9CB5FBEF211976498748C94C491F8 /* NNNavigationBarBackgroundView.h in Headers */,
-				AF51CE56BA603554E2833FE24BE2488F /* NNNavigationBarTintColor.h in Headers */,
-				E91CAFF3BEC52282A2550AD500AD5ADB /* NNTransitionClass.h in Headers */,
-				36B2DEF2D1B7EC3C9D7867BFD9A41582 /* NSLayoutConstraint+NNVisualFormat.h in Headers */,
-				462327DEEE2D4A3A289A7B3ECCE833E0 /* UIImage+NNImageWithColor.h in Headers */,
-				5C610B567FC727B0856DD0E2F3558FAB /* UINavigationBar+NNBackgroundDelegate.h in Headers */,
-				84412F9918C519A29CCC7F2CE5E831E0 /* UINavigationBar+NNBackgroundDelegateImp.h in Headers */,
-				030F132C86E0E71B6B9C614769F2D7A2 /* UINavigationBar+NNBackgroundImageView.h in Headers */,
-				5519D5105231636E2AFD3FC53D542728 /* UINavigationBar+NNBackgroundView.h in Headers */,
-				D1B227687E97976FBC2C0EDFC19C2A79 /* UINavigationBar+NNCoreProperties.h in Headers */,
-				661A2C02D9A1DFA39DE27DBAD4AF9E07 /* UINavigationBar+NNMethodSwizzling.h in Headers */,
-				6740D16F8BDD092109D277F9C706932D /* UINavigationBar+NNTintColor.h in Headers */,
-				7B118EA06E530E3A60BBA387FE21B78E /* UINavigationBar+NNTintColorDelegate.h in Headers */,
-				F63BC141DDA31C1FCDFCB4D97F09489D /* UINavigationBar+NNTintColorDelegateImp.h in Headers */,
-				B6B13C226BD9EADECC083CCA293E641E /* UINavigationBar+NNTransitionForBackgroundAlpha.h in Headers */,
-				0FAFD6191D7C2EFC07B62D2077FD65BE /* UINavigationBar+NNTransitionForBackgroundImage.h in Headers */,
-				C97774B443190962424D9AC3760D8D1D /* UINavigationBar+NNTransitionForTintColor.h in Headers */,
-				284EDB9E3BD9DC1D4C5E100DD4EF0F6C /* UINavigationItem+NNBackgroundDelegate.h in Headers */,
-				FD7A4E946712DAA5F97153CDBDE6B23C /* UINavigationItem+NNBackgroundView.h in Headers */,
-				8B1824F63B33CC85A63ABADF28EB5A3D /* UINavigationItem+NNCoreProperties.h in Headers */,
-				782E9C2867596C0293496B8B2B15F3CA /* UINavigationItem+NNTintColor.h in Headers */,
-				ECF76BA91D4D2C975FF5FD3C132DD5BD /* UINavigationItem+NNTintColorDelegate.h in Headers */,
+				202B46EB4BF8AD911053E941C0BB770A /* NNFadeAnimationImageView.h in Headers */,
+				2B02037FFF66537A6825D4D22CFDBFA5 /* NNNavigationBar-umbrella.h in Headers */,
+				088AB0172926B1DB65D846096EED30B7 /* NNNavigationBar.h in Headers */,
+				6EDFE9C83CBE6CC03E01447A4F9915FF /* NNNavigationBarBackgroundAlpha.h in Headers */,
+				B6AC60EFB0B0BCCC29427DB374E8FBEE /* NNNavigationBarBackgroundImage.h in Headers */,
+				7C473EF43B20E4140700241E4C38331E /* NNNavigationBarBackgroundView.h in Headers */,
+				996FA246B3F738263536E0FD2B0D92EA /* NNNavigationBarTintColor.h in Headers */,
+				2FD5A8D3256659F7DE796296783E0CEB /* NNTransitionClass.h in Headers */,
+				E6AB1CB25B05133D16E4B53450C0AEB4 /* NSLayoutConstraint+NNVisualFormat.h in Headers */,
+				6591F9E037BD6DF8FD37014D6D70907A /* UIImage+NNImageWithColor.h in Headers */,
+				3E0D6B9CD547A48EEE62817EB54F8B35 /* UINavigationBar+NNBackgroundDelegate.h in Headers */,
+				DA72F9F333C10C16215767019A8E61F6 /* UINavigationBar+NNBackgroundDelegateImp.h in Headers */,
+				D4CFEF6E9F3F0524A4887D254D1014F7 /* UINavigationBar+NNBackgroundImageView.h in Headers */,
+				F2CDF87CDB70A07503EDCEE86580D62F /* UINavigationBar+NNBackgroundView.h in Headers */,
+				3D3A39D01E51A6BE75EB375241386540 /* UINavigationBar+NNCoreProperties.h in Headers */,
+				90052BF89C79AB4AEB5BD0C293B24750 /* UINavigationBar+NNMethodSwizzling.h in Headers */,
+				66ED0D86449FA88A8F3558CB34F6DC20 /* UINavigationBar+NNTintColor.h in Headers */,
+				7038652D7A86D91B785ABEF7E9BD8AC0 /* UINavigationBar+NNTintColorDelegate.h in Headers */,
+				CF453181F5127A233BAB408BD26458F1 /* UINavigationBar+NNTintColorDelegateImp.h in Headers */,
+				7BB284CAC7B4D7C65079E7B58CBF5C61 /* UINavigationBar+NNTransitionForBackgroundAlpha.h in Headers */,
+				4AF35FD4F42D03F868E7A38D43B9C222 /* UINavigationBar+NNTransitionForBackgroundImage.h in Headers */,
+				924AA62097E6737316099EBC109DB5B7 /* UINavigationBar+NNTransitionForTintColor.h in Headers */,
+				611C3C0895051292B63C63E34616F20B /* UINavigationItem+NNBackgroundDelegate.h in Headers */,
+				D3C236A963224AB44FCB8380791789C8 /* UINavigationItem+NNBackgroundView.h in Headers */,
+				D6C6E996366CAF2DC174A8C4BF35D222 /* UINavigationItem+NNCoreProperties.h in Headers */,
+				22B2EC19E824404C3AE1B37242B8A59E /* UINavigationItem+NNTintColor.h in Headers */,
+				41A76EE6140F69C10E1ADE6319E12072 /* UINavigationItem+NNTintColorDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5FD4743461F5C90CEBDB758129D8EFEE /* Pods-NNNavigationBarDemo */ = {
+		77600AE4FE044B7DE6A9427231A0FCE7 /* Pods-NNNavigationBarDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 341D364D0E11640F76A63E3CCBB635FE /* Build configuration list for PBXNativeTarget "Pods-NNNavigationBarDemo" */;
 			buildPhases = (
@@ -440,12 +440,12 @@
 			productReference = 90246AB8CE6C3D9C79AE507CE6CDE7FA /* Pods_NNNavigationBarDemo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		67F007DB74382FB4B7E93324198A4AED /* NNNavigationBar */ = {
+		9276263426A71A1F137BD0E2C65479F4 /* NNNavigationBar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1CBD3F683C25D5BA10B3936C8805B81F /* Build configuration list for PBXNativeTarget "NNNavigationBar" */;
 			buildPhases = (
-				F8BA532FBF4A3FC351E27C24C2F85513 /* Headers */,
-				8A1A84C58452345A40543DADA98561B9 /* Sources */,
+				C0A490435F4A70298B810686F398FC95 /* Headers */,
+				436D19404DFD32999122452523996D06 /* Sources */,
 				98F755EDA0811C88102D0C66951A4795 /* Frameworks */,
 				7AC9A1784DD03AB1E334DCBEE22D3066 /* Resources */,
 			);
@@ -479,8 +479,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				67F007DB74382FB4B7E93324198A4AED /* NNNavigationBar */,
-				5FD4743461F5C90CEBDB758129D8EFEE /* Pods-NNNavigationBarDemo */,
+				9276263426A71A1F137BD0E2C65479F4 /* NNNavigationBar */,
+				77600AE4FE044B7DE6A9427231A0FCE7 /* Pods-NNNavigationBarDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -503,37 +503,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		436D19404DFD32999122452523996D06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A275483C19949E6332381FDF2089F41A /* NNFadeAnimationImageView.m in Sources */,
+				F6D2A8A0D1CD8F892ABD703B160BDF73 /* NNNavigationBar-dummy.m in Sources */,
+				7CDEBAB29BFDF91272CFABA6A08999B5 /* NNNavigationBarBackgroundImage.m in Sources */,
+				6CDF2C8EF0F0092E2A596B523D49E5A7 /* NNTransitionClass.m in Sources */,
+				7AA907F6F82769B8BFA3F96C83B9B868 /* NSLayoutConstraint+NNVisualFormat.m in Sources */,
+				48C3CDD3D6D699D5EF26A2E94BB8D36D /* UIImage+NNImageWithColor.m in Sources */,
+				7E1E1BA91C414D1C847E87A4CD1B8990 /* UINavigationBar+NNBackgroundDelegateImp.m in Sources */,
+				31035FDC15146AA3476E74A295BBD4AD /* UINavigationBar+NNBackgroundImageView.m in Sources */,
+				5AE14B1F754A1C4CC6ECC8926A8047D9 /* UINavigationBar+NNBackgroundView.m in Sources */,
+				FAFC5A128A955E4425832C271F762C14 /* UINavigationBar+NNCoreProperties.m in Sources */,
+				109D0AE887FA3A6C8D9A61ACD8F9BF16 /* UINavigationBar+NNMethodSwizzling.m in Sources */,
+				28D27A942B442BC138800203C74AEA92 /* UINavigationBar+NNTintColor.m in Sources */,
+				816A01B3BB0047E5D3DBC2FEB644A2A6 /* UINavigationBar+NNTintColorDelegateImp.m in Sources */,
+				9561744FFAAF9BA04CC506975B9F75C0 /* UINavigationBar+NNTransitionForBackgroundAlpha.m in Sources */,
+				30D2D3CFD40C721490B9951455A20C8C /* UINavigationBar+NNTransitionForBackgroundImage.m in Sources */,
+				0374D7D684118A5CEDEF4371A1FAB3D8 /* UINavigationBar+NNTransitionForTintColor.m in Sources */,
+				312B374E04A7793F269DE134AB531536 /* UINavigationItem+NNBackgroundView.m in Sources */,
+				64BAD29C54DA01870FB86862429ED459 /* UINavigationItem+NNCoreProperties.m in Sources */,
+				D623EB6C7449F7F52DC91D1352062F9A /* UINavigationItem+NNTintColor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A47F9590582ED6AF291702AD388C825 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FCCF255614916E5F1A31E294D7843BC0 /* Pods-NNNavigationBarDemo-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8A1A84C58452345A40543DADA98561B9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E93AC106BCE3086513CFBC755CAE98E1 /* NNFadeAnimationImageView.m in Sources */,
-				D35222CEE2490F5E28B13060DA0FE47D /* NNNavigationBar-dummy.m in Sources */,
-				BC4F075F2F7786856FF9680440250672 /* NNNavigationBarBackgroundImage.m in Sources */,
-				6C726786D0A6CC27226A538AA10B7AFB /* NNTransitionClass.m in Sources */,
-				AF48CBAB8935E22997276DA110B70042 /* NSLayoutConstraint+NNVisualFormat.m in Sources */,
-				065716BD64B7950E357A2FEDEC063BFD /* UIImage+NNImageWithColor.m in Sources */,
-				3F4C143A35338E7BDF9080C32F5EF8FF /* UINavigationBar+NNBackgroundDelegateImp.m in Sources */,
-				752AEDB798A319A6D937817078330DF9 /* UINavigationBar+NNBackgroundImageView.m in Sources */,
-				3988117FE1499C782D79E35932798F4B /* UINavigationBar+NNBackgroundView.m in Sources */,
-				1C22BF05BA53D103D9461FA0AB4657BA /* UINavigationBar+NNCoreProperties.m in Sources */,
-				2F022D8FA87E476DE5ED5F848D2FBB59 /* UINavigationBar+NNMethodSwizzling.m in Sources */,
-				005B8B461B6F009A59E00906B3A7F1FA /* UINavigationBar+NNTintColor.m in Sources */,
-				B822F6DDFD4C6B49D412B94C2138F489 /* UINavigationBar+NNTintColorDelegateImp.m in Sources */,
-				29CF7F38CFACA8779999574CD4A784FF /* UINavigationBar+NNTransitionForBackgroundAlpha.m in Sources */,
-				9A427861525B208E2EB6FCC9EF4604E6 /* UINavigationBar+NNTransitionForBackgroundImage.m in Sources */,
-				21DB763838F340EF9BC5DDC82E43F89C /* UINavigationBar+NNTransitionForTintColor.m in Sources */,
-				C5E29834537B581D0C66B8E3AF46E27A /* UINavigationItem+NNBackgroundView.m in Sources */,
-				933E875139BA2438B5AA072E0898ED3B /* UINavigationItem+NNCoreProperties.m in Sources */,
-				7D322437B28AD268D9B9973685DCE918 /* UINavigationItem+NNTintColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,7 +543,7 @@
 		BC00640A24193792444AA5FDFD2BBF93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = NNNavigationBar;
-			target = 67F007DB74382FB4B7E93324198A4AED /* NNNavigationBar */;
+			target = 9276263426A71A1F137BD0E2C65479F4 /* NNNavigationBar */;
 			targetProxy = 32A73176AA75924198930AB3D47137C2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -609,9 +609,9 @@
 			};
 			name = Release;
 		};
-		356240FFACF6D54CB707C0B37DBB0717 /* Debug */ = {
+		2BDFA67BCE18EFE7EEA45D483B4E3C40 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A47DEB5B5CBAA297F92C438410A93F86 /* NNNavigationBar.xcconfig */;
+			baseConfigurationReference = B0C4C1AE2034945B81DC8ED544294BC4 /* NNNavigationBar.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -637,12 +637,13 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		421ECB1396280A8D83853C3DDBED1700 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -708,45 +709,9 @@
 			};
 			name = Debug;
 		};
-		46D06DBD369ACF2C3D8B4CE3A23BCBCF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A47DEB5B5CBAA297F92C438410A93F86 /* NNNavigationBar.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/NNNavigationBar/NNNavigationBar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/NNNavigationBar/NNNavigationBar-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/NNNavigationBar/NNNavigationBar.modulemap";
-				PRODUCT_MODULE_NAME = NNNavigationBar;
-				PRODUCT_NAME = NNNavigationBar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		56352BE27284DBC44CD8E48E9414776F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7068C3FF16C4ECC60C646F8BC9083FC6 /* Pods-NNNavigationBarDemo.debug.xcconfig */;
+			baseConfigurationReference = E045EDA792CE5AC672AEABC875CBD12C /* Pods-NNNavigationBarDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -781,9 +746,44 @@
 			};
 			name = Debug;
 		};
+		A56FA6C360D3C459FBE885CDD57F77BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0C4C1AE2034945B81DC8ED544294BC4 /* NNNavigationBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/NNNavigationBar/NNNavigationBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NNNavigationBar/NNNavigationBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/NNNavigationBar/NNNavigationBar.modulemap";
+				PRODUCT_MODULE_NAME = NNNavigationBar;
+				PRODUCT_NAME = NNNavigationBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		F38E79503D30C95FB877596B57799806 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97541BA70CB239E1DED3B5F8AA473FB8 /* Pods-NNNavigationBarDemo.release.xcconfig */;
+			baseConfigurationReference = 712E114B8C469FDD6D670F2FB6CB5427 /* Pods-NNNavigationBarDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -825,8 +825,8 @@
 		1CBD3F683C25D5BA10B3936C8805B81F /* Build configuration list for PBXNativeTarget "NNNavigationBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				356240FFACF6D54CB707C0B37DBB0717 /* Debug */,
-				46D06DBD369ACF2C3D8B4CE3A23BCBCF /* Release */,
+				A56FA6C360D3C459FBE885CDD57F77BF /* Debug */,
+				2BDFA67BCE18EFE7EEA45D483B4E3C40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

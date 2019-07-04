@@ -75,7 +75,7 @@ class PickerController: UITableViewController {
     
     var type = PickerControllerType.default
     
-    override init(style: UITableViewStyle) {
+    override init(style: UITableView.Style) {
         super.init(style: style)
         self.tableView.register(UINib.init(nibName: String.init(describing: PickerImageCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: PickerImageCell.self))
     }
