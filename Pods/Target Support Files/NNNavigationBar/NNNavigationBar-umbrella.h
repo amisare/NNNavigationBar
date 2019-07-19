@@ -23,6 +23,7 @@
 #import "UINavigationItem+NNBackgroundDelegate.h"
 #import "UINavigationBar+NNTransitionForBackgroundAlpha.h"
 #import "UINavigationBar+NNTransitionForBackgroundImage.h"
+#import "NNProxy.h"
 #import "NNTransitionClass.h"
 #import "UINavigationBar+NNCoreProperties.h"
 #import "UINavigationBar+NNMethodSwizzling.h"

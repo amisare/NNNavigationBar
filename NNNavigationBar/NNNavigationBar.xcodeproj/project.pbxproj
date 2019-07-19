@@ -18,6 +18,8 @@
 		676D498920AE907A0016ADBA /* NNNavigationBarBackgroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 676D498720AE907A0016ADBA /* NNNavigationBarBackgroundImage.m */; };
 		676D498C20AE92BB0016ADBA /* NNNavigationBarBackgroundAlpha.h in Headers */ = {isa = PBXBuildFile; fileRef = 676D498A20AE92BB0016ADBA /* NNNavigationBarBackgroundAlpha.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		676D499020AE93420016ADBA /* NNNavigationBarTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 676D498E20AE93420016ADBA /* NNNavigationBarTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		677CB32D22E1B52F001FA15C /* NNProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 677CB32B22E1B52F001FA15C /* NNProxy.h */; };
+		677CB32E22E1B52F001FA15C /* NNProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 677CB32C22E1B52F001FA15C /* NNProxy.m */; };
 		67E456A920A0073A00E58475 /* NNNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67E4569F20A0073A00E58475 /* NNNavigationBar.framework */; };
 		67E456AE20A0073A00E58475 /* NNNavigationBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456AD20A0073A00E58475 /* NNNavigationBarTests.m */; };
 		67E456F420A007C200E58475 /* UINavigationBar+NNBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67E456BB20A007C200E58475 /* UINavigationBar+NNBackgroundView.m */; };
@@ -77,6 +79,8 @@
 		676D498720AE907A0016ADBA /* NNNavigationBarBackgroundImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNNavigationBarBackgroundImage.m; sourceTree = "<group>"; };
 		676D498A20AE92BB0016ADBA /* NNNavigationBarBackgroundAlpha.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNNavigationBarBackgroundAlpha.h; sourceTree = "<group>"; };
 		676D498E20AE93420016ADBA /* NNNavigationBarTintColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNNavigationBarTintColor.h; sourceTree = "<group>"; };
+		677CB32B22E1B52F001FA15C /* NNProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NNProxy.h; sourceTree = "<group>"; };
+		677CB32C22E1B52F001FA15C /* NNProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNProxy.m; sourceTree = "<group>"; };
 		67E4569F20A0073A00E58475 /* NNNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NNNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E456A820A0073A00E58475 /* NNNavigationBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NNNavigationBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E456AD20A0073A00E58475 /* NNNavigationBarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NNNavigationBarTests.m; sourceTree = "<group>"; };
@@ -230,6 +234,8 @@
 				676D496F20AE84090016ADBA /* UINavigationBar+NNCoreProperties.m */,
 				676D497620AE87BF0016ADBA /* UINavigationItem+NNCoreProperties.h */,
 				676D497720AE87BF0016ADBA /* UINavigationItem+NNCoreProperties.m */,
+				677CB32B22E1B52F001FA15C /* NNProxy.h */,
+				677CB32C22E1B52F001FA15C /* NNProxy.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 				676D498C20AE92BB0016ADBA /* NNNavigationBarBackgroundAlpha.h in Headers */,
 				67E4570220A007C200E58475 /* UINavigationBar+NNBackgroundView.h in Headers */,
 				67E4570520A007C200E58475 /* UINavigationItem+NNBackgroundView.h in Headers */,
+				677CB32D22E1B52F001FA15C /* NNProxy.h in Headers */,
 				676D499020AE93420016ADBA /* NNNavigationBarTintColor.h in Headers */,
 				67E4572320A007C200E58475 /* UINavigationBar+NNTintColor.h in Headers */,
 				67E4572420A007C200E58475 /* UINavigationItem+NNTintColor.h in Headers */,
@@ -385,6 +392,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 67E4569520A0073900E58475;
 			productRefGroup = 67E456A020A0073A00E58475 /* Products */;
@@ -425,6 +433,7 @@
 				67E4571D20A007C200E58475 /* UINavigationBar+NNTintColor.m in Sources */,
 				676D497520AE85BC0016ADBA /* NNTransitionClass.m in Sources */,
 				676D497120AE84090016ADBA /* UINavigationBar+NNCoreProperties.m in Sources */,
+				677CB32E22E1B52F001FA15C /* NNProxy.m in Sources */,
 				67E4570A20A007C200E58475 /* UINavigationBar+NNMethodSwizzling.m in Sources */,
 				67E4571920A007C200E58475 /* UIImage+NNImageWithColor.m in Sources */,
 				67E456F520A007C200E58475 /* UINavigationBar+NNTransitionForBackgroundAlpha.m in Sources */,
