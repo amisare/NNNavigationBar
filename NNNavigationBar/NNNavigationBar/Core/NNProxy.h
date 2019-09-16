@@ -10,7 +10,7 @@
 
 @interface NNProxy : NSProxy
 
-@property (nonatomic, weak, readonly)id target;
+@property (nonatomic, weak, readonly) id target;
 + (instancetype)proxyWithTarget:(id)target;
 - (instancetype)initWithTarget:(id)target;
 

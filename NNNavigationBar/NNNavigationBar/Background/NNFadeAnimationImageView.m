@@ -110,7 +110,6 @@
 }
 
 - (void)setNn_animating:(BOOL)nn_animating {
-    
     if (nn_animating == true &&
         self._nn_displayLink == nil &&
         self.nn_animationDuration != 0 &&
@@ -141,7 +140,6 @@
 }
 
 - (void)_nn_handleLinkTick {
-    
     self._nn_frameTimeCount += self._nn_displayLink.duration;
     if (self._nn_frameTimeCount < self.nn_frameDuration) {
         return;
@@ -187,6 +185,11 @@
         __nn_displayImageView.translatesAutoresizingMaskIntoConstraints = false;
     }
     return __nn_displayImageView;
+}
+
+- (void)dealloc {
+    // fix：https://github.com/amisare/NNNavigationBar/issues/11
+    [self _nn_endLinkTick];
 }
 
 @end
