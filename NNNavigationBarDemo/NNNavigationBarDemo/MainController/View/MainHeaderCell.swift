@@ -8,7 +8,10 @@
 
 import UIKit
 
-class MainHeaderCell: UITableViewCell {
+class MainHeaderCell: UITableViewCell, MainSettingCellProtocol{
+    var actionDelegate: MainSettingCellDelegate?
+    
+    var bean: SettingBeanProtocol?
 
     open var cellHeight: CGFloat {
         get {

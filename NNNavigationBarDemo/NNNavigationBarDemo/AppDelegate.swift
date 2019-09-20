@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         let vc = ViewController()
+        vc.currentSettingData = SettingDataManager.shared.settingData
+        vc.globalSettingData = SettingDataManager.shared.globalSettingData
         let nav = UINavigationController.init(rootViewController: vc)
         self.window?.rootViewController = nav
         self.window?.makeKeyAndVisible()

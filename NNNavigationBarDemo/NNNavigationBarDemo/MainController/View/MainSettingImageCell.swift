@@ -10,35 +10,30 @@ import UIKit
 
 class MainSettingImageCell: UITableViewCell, MainSettingCellProtocol {
     
-    @IBOutlet weak var _titleLabel: UILabel!
-    @IBOutlet weak var _preImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var preImageView: UIImageView!
     
-    var _data: [String : Any]?
-    var data: [String : Any]? {
+    var actionDelegate: MainSettingCellDelegate?
+    
+    var _bean: SettingBeanProtocol?
+    var bean: SettingBeanProtocol? {
         get {
-            return _data
+            return _bean
         }
         set {
-            _data = newValue
-            updateCell()
-        }
-    }
-    
-    var titleLabel: UILabel? {
-        get {
-            return _titleLabel
-        }
-        set {
-            _titleLabel = newValue
-        }
-    }
-    
-    var preImageView: UIImageView? {
-        get {
-            return _preImageView
-        }
-        set {
-            _preImageView = newValue
+            guard let imageBean = newValue as? SettingImageBean else { return }
+            self.titleLabel.text = imageBean.title
+            if let color = imageBean.color {
+                let image = UIImage.nn_image(with: color)
+                self.preImageView?.image = image
+            }
+            else if let image = imageBean.image {
+                self.preImageView?.image = image
+            }
+            else {
+                self.preImageView?.image = nil
+            }
+            _bean = imageBean
         }
     }
     
@@ -53,10 +48,6 @@ class MainSettingImageCell: UITableViewCell, MainSettingCellProtocol {
         
     }
     
-    func updateCell() {
-        self.titleLabel?.text = self.data?["title"] as? String;
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

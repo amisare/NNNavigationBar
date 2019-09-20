@@ -9,40 +9,23 @@
 import UIKit
 
 class MainSettingSwitcherCell: UITableViewCell, MainSettingCellProtocol {
-    
-    
-    @IBOutlet weak var _titleLabel: UILabel!
-    @IBOutlet weak var _switcher: UISwitch!
-    
-    var _data: [String : Any]?
-    var data: [String : Any]? {
-        get {
-            return _data
-        }
-        set {
-            _data = newValue
-            updateCell()
-        }
-    }
-    public var titleLabel: UILabel? {
-        get {
-            return _titleLabel
-        }
-        set {
-            _titleLabel = newValue
-        }
-    }
-    
-    var switcher: UISwitch? {
-        get {
-            return _switcher
-        }
-        set {
-            _switcher = newValue
-        }
-    }
+   
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var switcher: UISwitch!
     
     var actionDelegate: MainSettingCellDelegate?
+    
+    var _bean: SettingBeanProtocol?
+    var bean: SettingBeanProtocol? {
+        get {
+            return _bean
+        }
+        set {
+            _bean = newValue
+            self.titleLabel.text = _bean?.title
+            self.switcher.isOn = (_bean as! SettingSwitcherBean).isOn
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,11 +33,8 @@ class MainSettingSwitcherCell: UITableViewCell, MainSettingCellProtocol {
         self.switcher?.addTarget(self, action: #selector(self.handleSwitcher(switcher:)), for: .valueChanged)
     }
     
-    func updateCell() {
-        self.titleLabel?.text = self.data?["title"] as? String;
-    }
-    
     @objc func handleSwitcher(switcher: UISwitch) {
+        (self.bean as! SettingSwitcherBean).isOn = self.switcher.isOn
         self.actionDelegate?.cell(self, actionObject: switcher, params: nil);
     }
 

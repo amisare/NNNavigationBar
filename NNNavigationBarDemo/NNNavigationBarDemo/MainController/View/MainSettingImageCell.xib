@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14111" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -26,7 +25,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y9i-re-r2w">
-                        <rect key="frame" x="283" y="17" width="30" height="30"/>
+                        <rect key="frame" x="283" y="16.5" width="30" height="30"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="c36-Uq-Mka"/>
@@ -42,8 +41,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="_preImageView" destination="Y9i-re-r2w" id="uE1-Mc-2Qi"/>
-                <outlet property="_titleLabel" destination="a93-kV-ugv" id="bjb-13-hi9"/>
+                <outlet property="preImageView" destination="Y9i-re-r2w" id="h3h-FE-3jC"/>
+                <outlet property="titleLabel" destination="a93-kV-ugv" id="XHI-hS-kZt"/>
             </connections>
             <point key="canvasLocation" x="38.5" y="63.5"/>
         </tableViewCell>
