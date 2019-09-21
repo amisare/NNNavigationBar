@@ -50,7 +50,6 @@ class ViewController: UIViewController {
         tableView.estimatedSectionHeaderHeight = 0.0
         tableView.estimatedSectionFooterHeight = 0.0
         tableView.sectionFooterHeight = 0.01
-        tableView .register(UINib.init(nibName: String.init(describing: MainHeaderCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: MainHeaderCell.self))
         return tableView
     }()
     
@@ -213,7 +212,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, MainSettin
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 && indexPath.row == 0 {
-            return MainHeaderCell.init().cellHeight
+            return MainSettingHeaderCell.init().cellHeight
         }
         return 44;
     }
@@ -227,8 +226,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, MainSettin
         else {
             cell?.bean = settingBean
         }
-        cell?.actionDelegate = self
-        return cell as! UITableViewCell
+        cell?.delegate = self
+        return cell! as UITableViewCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -17,22 +17,7 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SLL-oF-Rs9" id="Stw-7z-zXl">
                 <rect key="frame" x="0.0" y="0.0" width="329" height="62.5"/>
                 <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLN-dj-ljV">
-                        <rect key="frame" x="16" y="21" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="pLN-dj-ljV" firstAttribute="centerY" secondItem="Stw-7z-zXl" secondAttribute="centerY" id="kgG-2Z-tJe"/>
-                    <constraint firstItem="pLN-dj-ljV" firstAttribute="leading" secondItem="Stw-7z-zXl" secondAttribute="leadingMargin" id="reZ-fT-o74"/>
-                </constraints>
             </tableViewCellContentView>
-            <connections>
-                <outlet property="titleLabel" destination="pLN-dj-ljV" id="FtS-df-O3K"/>
-            </connections>
             <point key="canvasLocation" x="-225" y="-50"/>
         </tableViewCell>
     </objects>

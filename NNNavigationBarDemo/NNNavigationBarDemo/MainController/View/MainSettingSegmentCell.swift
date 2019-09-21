@@ -8,14 +8,11 @@
 
 import UIKit
 
-class MainSettingSegmentCell: UITableViewCell, MainSettingCellProtocol {
+class MainSettingSegmentCell: MainSettingCell {
     
     @IBOutlet weak var segment: UISegmentedControl!
     
-    var actionDelegate: MainSettingCellDelegate?
-    
-    var _bean: SettingBeanProtocol?
-    var bean: SettingBeanProtocol? {
+    override var bean: SettingBeanProtocol? {
         get {
             return _bean
         }
@@ -33,6 +30,6 @@ class MainSettingSegmentCell: UITableViewCell, MainSettingCellProtocol {
     
     @objc func handleSegment(segment: UISegmentedControl) {
         (self.bean as! SettingSegmentBean).selectedIndex = SettingSegmentIndexBean.init(rawValue: segment.selectedSegmentIndex) ?? .current
-        self.actionDelegate?.cell(self, actionObject: segment, params: nil);
+        self.delegate?.cell(self, actionObject: segment, params: nil);
     }
 }

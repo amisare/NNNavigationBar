@@ -10,13 +10,13 @@ import UIKit
 
 class MainSettingCellFactory: NSObject {
 
-    class func cell(tableView: UITableView, settingBean: SettingBeanProtocol) -> MainSettingCellProtocol? {
+    class func cell(tableView: UITableView, settingBean: SettingBeanProtocol) -> MainSettingCell? {
         
         var clazz: NSObject.Type = MainSettingCell.self
         
         switch settingBean.type {
         case .header:
-            clazz = MainHeaderCell.self
+            clazz = MainSettingHeaderCell.self
         case .switcher:
             clazz = MainSettingSwitcherCell.self
         case .image:
@@ -27,12 +27,8 @@ class MainSettingCellFactory: NSObject {
             clazz = MainSettingCell.self
         }
         
-        if let cell: MainSettingCellProtocol = tableView.dequeueReusableCell(withIdentifier: String.init(describing: clazz)) as? MainSettingCellProtocol {
-            cell.bean = settingBean
-            return cell
-        }
-        let cell = (Bundle.main.loadNibNamed(String.init(describing: clazz), owner: nil, options: nil) as? [MainSettingCellProtocol])?[0]
-        
+        let cell = (Bundle.main.loadNibNamed(String.init(describing: clazz), owner: nil, options: nil) as? [MainSettingCell])?[0]
         return cell
     }
 }
+

@@ -8,21 +8,17 @@
 
 import UIKit
 
-class MainSettingImageCell: UITableViewCell, MainSettingCellProtocol {
+class MainSettingImageCell: MainSettingCell {
     
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var preImageView: UIImageView!
     
-    var actionDelegate: MainSettingCellDelegate?
-    
-    var _bean: SettingBeanProtocol?
-    var bean: SettingBeanProtocol? {
+    override var bean: SettingBeanProtocol? {
         get {
             return _bean
         }
         set {
             guard let imageBean = newValue as? SettingImageBean else { return }
-            self.titleLabel.text = imageBean.title
+            self.textLabel?.text = imageBean.title
             if let color = imageBean.color {
                 let image = UIImage.nn_image(with: color)
                 self.preImageView?.image = image

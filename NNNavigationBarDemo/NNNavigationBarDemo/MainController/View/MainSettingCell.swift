@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 enum MainSettingCellStyle : Int {
     case `default`
     case switcher
@@ -26,15 +25,12 @@ extension MainSettingCellDelegate {
 }
 
 protocol MainSettingCellProtocol : NSObjectProtocol {
-    var actionDelegate : MainSettingCellDelegate? {get set}
     var bean: SettingBeanProtocol? {get set}
 }
 
 class MainSettingCell: UITableViewCell, MainSettingCellProtocol{
     
-    @IBOutlet weak var titleLabel: UILabel!
-    
-    var actionDelegate: MainSettingCellDelegate?
+    weak var delegate : MainSettingCellDelegate?
     
     var _bean: SettingBeanProtocol?
     var bean: SettingBeanProtocol? {
@@ -43,7 +39,7 @@ class MainSettingCell: UITableViewCell, MainSettingCellProtocol{
         }
         set {
             _bean = newValue
-            self.titleLabel.text = _bean?.title
+            self.textLabel?.text = _bean?.title
         }
     }
     

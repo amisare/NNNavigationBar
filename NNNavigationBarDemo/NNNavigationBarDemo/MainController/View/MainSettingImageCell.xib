@@ -18,12 +18,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="329" height="62.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a93-kV-ugv">
-                        <rect key="frame" x="16" y="21" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y9i-re-r2w">
                         <rect key="frame" x="283" y="16.5" width="30" height="30"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -36,13 +30,10 @@
                 <constraints>
                     <constraint firstItem="Y9i-re-r2w" firstAttribute="trailing" secondItem="yp6-Zi-Q4J" secondAttribute="trailingMargin" id="bYn-Vm-HTB"/>
                     <constraint firstItem="Y9i-re-r2w" firstAttribute="centerY" secondItem="yp6-Zi-Q4J" secondAttribute="centerY" id="fL4-aQ-Mxy"/>
-                    <constraint firstItem="a93-kV-ugv" firstAttribute="centerY" secondItem="yp6-Zi-Q4J" secondAttribute="centerY" id="l3I-Qu-m2X"/>
-                    <constraint firstItem="a93-kV-ugv" firstAttribute="leading" secondItem="yp6-Zi-Q4J" secondAttribute="leadingMargin" id="lOM-xn-fsw"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="preImageView" destination="Y9i-re-r2w" id="h3h-FE-3jC"/>
-                <outlet property="titleLabel" destination="a93-kV-ugv" id="XHI-hS-kZt"/>
             </connections>
             <point key="canvasLocation" x="38.5" y="63.5"/>
         </tableViewCell>

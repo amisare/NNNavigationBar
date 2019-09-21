@@ -11,6 +11,7 @@
 		676456CF20A94A2C00B74853 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456CE20A94A2C00B74853 /* PickerController.swift */; };
 		676456D220A94B4600B74853 /* PickerImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456D020A94B4600B74853 /* PickerImageCell.swift */; };
 		676456D320A94B4600B74853 /* PickerImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 676456D120A94B4600B74853 /* PickerImageCell.xib */; };
+		679CB1B5233631D500C2F8F4 /* MainSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 679CB1B4233631D500C2F8F4 /* MainSettingCell.xib */; };
 		67E93AE720A53C170083B38B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AE620A53C170083B38B /* AppDelegate.swift */; };
 		67E93AE920A53C170083B38B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AE820A53C170083B38B /* ViewController.swift */; };
 		67E93AEC20A53C170083B38B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E93AEA20A53C170083B38B /* Main.storyboard */; };
@@ -18,12 +19,11 @@
 		67E93AF120A53C180083B38B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E93AEF20A53C180083B38B /* LaunchScreen.storyboard */; };
 		67E93AFC20A53C190083B38B /* NNNavigationBarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AFB20A53C190083B38B /* NNNavigationBarDemoTests.swift */; };
 		67E93B0720A53C190083B38B /* NNNavigationBarDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B0620A53C190083B38B /* NNNavigationBarDemoUITests.swift */; };
-		67E93B2B20A53F3A0083B38B /* MainHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B2920A53F3A0083B38B /* MainHeaderCell.swift */; };
-		67E93B2C20A53F3A0083B38B /* MainHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E93B2A20A53F3A0083B38B /* MainHeaderCell.xib */; };
+		67E93B2B20A53F3A0083B38B /* MainSettingHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B2920A53F3A0083B38B /* MainSettingHeaderCell.swift */; };
+		67E93B2C20A53F3A0083B38B /* MainSettingHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E93B2A20A53F3A0083B38B /* MainSettingHeaderCell.xib */; };
 		67E93B2F20A53F5B0083B38B /* MainSettingSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B2D20A53F5B0083B38B /* MainSettingSegmentCell.swift */; };
 		67E93B3020A53F5B0083B38B /* MainSettingSegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E93B2E20A53F5B0083B38B /* MainSettingSegmentCell.xib */; };
 		67E93B3320A53F750083B38B /* MainSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B3120A53F750083B38B /* MainSettingCell.swift */; };
-		67E93B3420A53F750083B38B /* MainSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E93B3220A53F750083B38B /* MainSettingCell.xib */; };
 		67E93B3720A53F8D0083B38B /* MainSettingImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B3520A53F8D0083B38B /* MainSettingImageCell.swift */; };
 		67E93B3820A53F8D0083B38B /* MainSettingImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E93B3620A53F8D0083B38B /* MainSettingImageCell.xib */; };
 		67E93B3B20A53FA10083B38B /* MainSettingSwitcherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B3920A53FA10083B38B /* MainSettingSwitcherCell.swift */; };
@@ -65,6 +65,7 @@
 		676456CE20A94A2C00B74853 /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
 		676456D020A94B4600B74853 /* PickerImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerImageCell.swift; sourceTree = "<group>"; };
 		676456D120A94B4600B74853 /* PickerImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerImageCell.xib; sourceTree = "<group>"; };
+		679CB1B4233631D500C2F8F4 /* MainSettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainSettingCell.xib; sourceTree = "<group>"; };
 		67E93AE320A53C170083B38B /* NNNavigationBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NNNavigationBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E93AE620A53C170083B38B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67E93AE820A53C170083B38B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,12 +81,11 @@
 		67E93B0820A53C190083B38B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67E93B2120A53CBF0083B38B /* NNNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NNNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E93B2320A53CD10083B38B /* NNNavigationBarDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NNNavigationBarDemo-Bridging-Header.h"; sourceTree = "<group>"; };
-		67E93B2920A53F3A0083B38B /* MainHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderCell.swift; sourceTree = "<group>"; };
-		67E93B2A20A53F3A0083B38B /* MainHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainHeaderCell.xib; sourceTree = "<group>"; };
+		67E93B2920A53F3A0083B38B /* MainSettingHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingHeaderCell.swift; sourceTree = "<group>"; };
+		67E93B2A20A53F3A0083B38B /* MainSettingHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingHeaderCell.xib; sourceTree = "<group>"; };
 		67E93B2D20A53F5B0083B38B /* MainSettingSegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingSegmentCell.swift; sourceTree = "<group>"; };
 		67E93B2E20A53F5B0083B38B /* MainSettingSegmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingSegmentCell.xib; sourceTree = "<group>"; };
 		67E93B3120A53F750083B38B /* MainSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingCell.swift; sourceTree = "<group>"; };
-		67E93B3220A53F750083B38B /* MainSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingCell.xib; sourceTree = "<group>"; };
 		67E93B3520A53F8D0083B38B /* MainSettingImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingImageCell.swift; sourceTree = "<group>"; };
 		67E93B3620A53F8D0083B38B /* MainSettingImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingImageCell.xib; sourceTree = "<group>"; };
 		67E93B3920A53FA10083B38B /* MainSettingSwitcherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingSwitcherCell.swift; sourceTree = "<group>"; };
@@ -274,10 +274,10 @@
 		7A8DDED623346451001017B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				67E93B2920A53F3A0083B38B /* MainHeaderCell.swift */,
-				67E93B2A20A53F3A0083B38B /* MainHeaderCell.xib */,
 				67E93B3120A53F750083B38B /* MainSettingCell.swift */,
-				67E93B3220A53F750083B38B /* MainSettingCell.xib */,
+				679CB1B4233631D500C2F8F4 /* MainSettingCell.xib */,
+				67E93B2920A53F3A0083B38B /* MainSettingHeaderCell.swift */,
+				67E93B2A20A53F3A0083B38B /* MainSettingHeaderCell.xib */,
 				67E93B3520A53F8D0083B38B /* MainSettingImageCell.swift */,
 				67E93B3620A53F8D0083B38B /* MainSettingImageCell.xib */,
 				67E93B2D20A53F5B0083B38B /* MainSettingSegmentCell.swift */,
@@ -419,10 +419,10 @@
 				67E93B3C20A53FA10083B38B /* MainSettingSwitcherCell.xib in Resources */,
 				67E93B3020A53F5B0083B38B /* MainSettingSegmentCell.xib in Resources */,
 				67E93AF120A53C180083B38B /* LaunchScreen.storyboard in Resources */,
-				67E93B2C20A53F3A0083B38B /* MainHeaderCell.xib in Resources */,
-				67E93B3420A53F750083B38B /* MainSettingCell.xib in Resources */,
+				67E93B2C20A53F3A0083B38B /* MainSettingHeaderCell.xib in Resources */,
 				67E93AEE20A53C180083B38B /* Assets.xcassets in Resources */,
 				67E93B3820A53F8D0083B38B /* MainSettingImageCell.xib in Resources */,
+				679CB1B5233631D500C2F8F4 /* MainSettingCell.xib in Resources */,
 				67E93AEC20A53C170083B38B /* Main.storyboard in Resources */,
 				676456D320A94B4600B74853 /* PickerImageCell.xib in Resources */,
 			);
@@ -453,9 +453,16 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NNNavigationBar/NNNavigationBar.framework",
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NNNavigationBar.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -495,7 +502,7 @@
 				7A2EAB86233516F500103909 /* PickerBeanProtocol.swift in Sources */,
 				67E93B3320A53F750083B38B /* MainSettingCell.swift in Sources */,
 				67E93B2F20A53F5B0083B38B /* MainSettingSegmentCell.swift in Sources */,
-				67E93B2B20A53F3A0083B38B /* MainHeaderCell.swift in Sources */,
+				67E93B2B20A53F3A0083B38B /* MainSettingHeaderCell.swift in Sources */,
 				7A2EAB782334871D00103909 /* SettingData.swift in Sources */,
 				676456CF20A94A2C00B74853 /* PickerController.swift in Sources */,
 				676456D220A94B4600B74853 /* PickerImageCell.swift in Sources */,

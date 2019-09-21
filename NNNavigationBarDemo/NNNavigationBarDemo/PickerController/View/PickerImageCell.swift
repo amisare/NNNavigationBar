@@ -10,7 +10,6 @@ import UIKit
 
 class PickerImageCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var preImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -24,14 +23,13 @@ class PickerImageCell: UITableViewCell {
     }
     
     var _bean: PickerBeanProtocol?
-    
     var bean: PickerBeanProtocol? {
         get {
             return _bean
         }
         set {
             _bean = newValue
-            self.titleLabel.text = _bean?.title
+            self.textLabel?.text = _bean?.title
             self.preImageView.image = _bean?.image
         }
     }

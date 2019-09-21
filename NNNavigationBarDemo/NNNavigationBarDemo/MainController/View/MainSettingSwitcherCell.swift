@@ -8,21 +8,17 @@
 
 import UIKit
 
-class MainSettingSwitcherCell: UITableViewCell, MainSettingCellProtocol {
+class MainSettingSwitcherCell: MainSettingCell {
    
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var switcher: UISwitch!
     
-    var actionDelegate: MainSettingCellDelegate?
-    
-    var _bean: SettingBeanProtocol?
-    var bean: SettingBeanProtocol? {
+    override var bean: SettingBeanProtocol? {
         get {
             return _bean
         }
         set {
             _bean = newValue
-            self.titleLabel.text = _bean?.title
+            self.textLabel?.text = _bean?.title
             self.switcher.isOn = (_bean as! SettingSwitcherBean).isOn
         }
     }
@@ -35,7 +31,7 @@ class MainSettingSwitcherCell: UITableViewCell, MainSettingCellProtocol {
     
     @objc func handleSwitcher(switcher: UISwitch) {
         (self.bean as! SettingSwitcherBean).isOn = self.switcher.isOn
-        self.actionDelegate?.cell(self, actionObject: switcher, params: nil);
+        self.delegate?.cell(self, actionObject: switcher, params: nil);
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -1,5 +1,5 @@
 //
-//  MainHeaderCell.swift
+//  MainSettingHeaderCell.swift
 //  NNNavigationBarDemo
 //
 //  Created by GuHaijun on 2018/5/11.
@@ -8,14 +8,24 @@
 
 import UIKit
 
-class MainHeaderCell: UITableViewCell, MainSettingCellProtocol{
-    var actionDelegate: MainSettingCellDelegate?
+class MainSettingHeaderCell: MainSettingCell{
     
-    var bean: SettingBeanProtocol?
+    @IBOutlet weak var headerImageView: UIImageView!
 
-    open var cellHeight: CGFloat {
+    var cellHeight: CGFloat {
         get {
             return 110
+        }
+    }
+    
+    override var bean: SettingBeanProtocol? {
+        get {
+            return _bean
+        }
+        set {
+            guard let imageBean = newValue as? SettingImageBean else { return }
+            self.headerImageView.image = imageBean.image
+            _bean = imageBean
         }
     }
     

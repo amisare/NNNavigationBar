@@ -18,26 +18,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="329" height="62.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ie4-QB-35h">
-                        <rect key="frame" x="16" y="21" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s3J-td-slp">
                         <rect key="frame" x="264" y="16" width="51" height="31"/>
                     </switch>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ie4-QB-35h" firstAttribute="leading" secondItem="45c-zq-pLB" secondAttribute="leadingMargin" id="0rd-bo-TJj"/>
-                    <constraint firstItem="ie4-QB-35h" firstAttribute="centerY" secondItem="45c-zq-pLB" secondAttribute="centerY" id="XAn-Ay-iiQ"/>
                     <constraint firstItem="s3J-td-slp" firstAttribute="trailing" secondItem="45c-zq-pLB" secondAttribute="trailingMargin" id="gde-Z9-XVA"/>
                     <constraint firstItem="s3J-td-slp" firstAttribute="centerY" secondItem="45c-zq-pLB" secondAttribute="centerY" id="mmU-Ag-FJu"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="switcher" destination="s3J-td-slp" id="hi8-Pz-p4g"/>
-                <outlet property="titleLabel" destination="ie4-QB-35h" id="0V1-tU-Vra"/>
             </connections>
             <point key="canvasLocation" x="38.5" y="63.5"/>
         </tableViewCell>
