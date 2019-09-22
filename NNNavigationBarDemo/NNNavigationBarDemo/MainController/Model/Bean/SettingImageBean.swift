@@ -9,7 +9,6 @@
 import UIKit
 
 class SettingImageBean: SettingBeanProtocol {
-    var type: SettingType = SettingType.image
     var title: String = ""
     
     private var _image: UIImage?

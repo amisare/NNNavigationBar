@@ -8,26 +8,20 @@
 
 import UIKit
 
-enum PickerControllerType {
-    case `default`
-    case color
-}
-
-
-class PickerController: UITableViewController {
+class ColorfulPickerController: UITableViewController {
     
-    var pickerData = PickerData.init();
+    var pickerData = ColorfulData.init();
 
-    var selected: ((PickerBeanProtocol?)->())? = nil
+    var selected: ((ColorfulBeanProtocol?)->())? = nil
     
-    var type = PickerDataType.default
+    var type = ColorfulDataType.default
     
     override init(style: UITableView.Style) {
         super.init(style: style)
-        self.tableView.register(UINib.init(nibName: String.init(describing: PickerImageCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: PickerImageCell.self))
+        self.tableView.register(UINib.init(nibName: String.init(describing: ColorfulPickerCell.self), bundle: nil), forCellReuseIdentifier: String.init(describing: ColorfulPickerCell.self))
     }
     
-    convenience init(_ type : PickerDataType) {
+    convenience init(_ type : ColorfulDataType) {
         self.init(style: .grouped)
         self.type = type
     }
@@ -54,7 +48,7 @@ class PickerController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String.init(describing: PickerImageCell.self)) as? PickerImageCell else { return UITableViewCell.init() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String.init(describing: ColorfulPickerCell.self)) as? ColorfulPickerCell else { return UITableViewCell.init() }
         
         let bean = self.pickerData.groupBeans(type: self.type)[indexPath.section].pickerBeans[indexPath.row]
         cell.bean = bean
@@ -62,7 +56,7 @@ class PickerController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell: PickerImageCell? = tableView.cellForRow(at: indexPath) as? PickerImageCell
+        let cell: ColorfulPickerCell? = tableView.cellForRow(at: indexPath) as? ColorfulPickerCell
         cell?.isSelected = false
         
         if let selected = selected {

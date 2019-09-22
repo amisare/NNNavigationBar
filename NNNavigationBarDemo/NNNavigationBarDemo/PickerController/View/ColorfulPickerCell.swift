@@ -1,5 +1,5 @@
 //
-//  PickerImageCell.swift
+//  ColorfulPickerCell.swift
 //  NNNavigationBarDemo
 //
 //  Created by GuHaijun on 2018/5/14.
@@ -8,22 +8,22 @@
 
 import UIKit
 
-class PickerImageCell: UITableViewCell {
+class ColorfulPickerCell: UITableViewCell {
 
     @IBOutlet weak var preImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.preImageView?.backgroundColor = UIColor.clear
-        self.preImageView?.layer.borderColor = UIColor.gray.cgColor
-        self.preImageView?.layer.cornerRadius = 3
-        self.preImageView?.layer.borderWidth = 0.5
-        self.preImageView?.layer.masksToBounds = true
+        self.preImageView.backgroundColor = UIColor.clear
+        self.preImageView.layer.borderColor = UIColor.gray.cgColor
+        self.preImageView.layer.cornerRadius = 3
+        self.preImageView.layer.borderWidth = 0.5
+        self.preImageView.layer.masksToBounds = true
     }
     
-    var _bean: PickerBeanProtocol?
-    var bean: PickerBeanProtocol? {
+    var _bean: ColorfulBeanProtocol?
+    var bean: ColorfulBeanProtocol? {
         get {
             return _bean
         }

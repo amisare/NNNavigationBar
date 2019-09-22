@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainSettingController.swift
 //  NNNavigationBarDemo
 //
 //  Created by GuHaijun on 2018/5/11.
@@ -14,7 +14,7 @@ enum NNActiveSegement {
     case global
 }
 
-class ViewController: UIViewController {
+class MainSettingController: UIViewController {
     
     var page = 0
     
@@ -81,26 +81,25 @@ class ViewController: UIViewController {
     
     @objc public func pushNextViewController() {
         self.currentSettingData.segment.selectedIndex = .current
-        let vc = ViewController.init();
+        let vc = MainSettingController.init();
         vc.currentSettingData = self.nextSettingData
         vc.globalSettingData = self.globalSettingData
         vc.page = self.page + 1
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func pickImageOrColor(type: PickerDataType, indexPath: IndexPath) {
-        let settingBean = self.settingData.groupBeans[indexPath.section].settingBeans[indexPath.row]
-        guard let imageBean = settingBean as? SettingImageBean else { return }
-        let vc = PickerController.init(type)
-        vc.selected = {(bean: PickerBeanProtocol?)->() in
+    func colorfulPick(type: ColorfulDataType, indexPath: IndexPath) {
+        guard let settingBean = self.settingData.groupBeans[indexPath.section].settingBeans[indexPath.row] as? SettingImageBean else { return }
+        let vc = ColorfulPickerController.init(type)
+        vc.selected = {(bean: ColorfulBeanProtocol?)->() in
             guard let bean = bean else { return }
-            imageBean.image = nil
-            imageBean.color = nil
-            switch bean.type {
-            case .image:
-                imageBean.image = (bean as? PickerImageBean)?.image
-            case .color:
-                imageBean.color = (bean as? PickerColorBean)?.color
+            settingBean.image = nil
+            settingBean.color = nil
+            if bean is ColorfulImageBean {
+                settingBean.image = (bean as? ColorfulImageBean)?.image
+            }
+            if bean is ColorfulColorBean {
+                settingBean.color = (bean as? ColorfulColorBean)?.color
             }
             self.updateState()
         }
@@ -108,7 +107,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController {
+extension MainSettingController {
     
     func setupDate() {
         self.setupNavigationItemBackground()
@@ -184,7 +183,7 @@ extension ViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate, MainSettingCellDelegate {
+extension MainSettingController: UITableViewDataSource, UITableViewDelegate, MainSettingCellDelegate {
     
     //MARK: UITableViewDataSource, UITableViewDelegate
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -219,8 +218,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, MainSettin
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let settingBean = self.settingData.groupBeans[indexPath.section].settingBeans[indexPath.row];
-        let cell = MainSettingCellFactory.cell(tableView: tableView, settingBean: settingBean)
-        if settingBean.type == .segment {
+        let cell = MainSettingCellFactory.cell(settingBean: settingBean)
+        if settingBean is SettingSegmentBean {
             cell?.bean = self.currentSettingData.segment
         }
         else {
@@ -238,10 +237,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, MainSettin
         guard let cell: MainSettingCellProtocol = tableCell as? MainSettingCellProtocol else { return }
         if cell.bean is SettingImageBean {
             if cell.bean?.title == "tintColor" {
-                self.pickImageOrColor(type: PickerDataType.color, indexPath: indexPath)
+                self.colorfulPick(type: ColorfulDataType.color, indexPath: indexPath)
             }
             else {
-                self.pickImageOrColor(type: PickerDataType.default, indexPath: indexPath)
+                self.colorfulPick(type: ColorfulDataType.default, indexPath: indexPath)
             }
         }
         if cell.bean?.title == "push" {

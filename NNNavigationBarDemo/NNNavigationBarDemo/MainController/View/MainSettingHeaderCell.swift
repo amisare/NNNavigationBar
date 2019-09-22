@@ -23,7 +23,7 @@ class MainSettingHeaderCell: MainSettingCell{
             return _bean
         }
         set {
-            guard let imageBean = newValue as? SettingImageBean else { return }
+            guard let imageBean = newValue as? SettingHeaderBean else { return }
             self.headerImageView.image = imageBean.image
             _bean = imageBean
         }

@@ -15,7 +15,6 @@ enum SettingSegmentIndexBean: Int {
 }
 
 class SettingSegmentBean: SettingBeanProtocol {
-    var type: SettingType = SettingType.segment
     var title: String = ""
     var selectedIndex: SettingSegmentIndexBean = .current
 }

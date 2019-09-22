@@ -9,6 +9,5 @@
 import UIKit
 
 class SettingBean: SettingBeanProtocol {
-    var type: SettingType = SettingType.default
     var title: String = ""
 }

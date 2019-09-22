@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3E56CB2F8012CF4DF2D1C2A5 /* Pods_NNNavigationBarDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F37189F243146F16A51DD6 /* Pods_NNNavigationBarDemo.framework */; };
-		676456CF20A94A2C00B74853 /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456CE20A94A2C00B74853 /* PickerController.swift */; };
-		676456D220A94B4600B74853 /* PickerImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456D020A94B4600B74853 /* PickerImageCell.swift */; };
-		676456D320A94B4600B74853 /* PickerImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 676456D120A94B4600B74853 /* PickerImageCell.xib */; };
+		672F1222233734C100ACD2F3 /* ColorfulBeanProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672F1221233734C000ACD2F3 /* ColorfulBeanProtocol.swift */; };
+		672F122423373AC500ACD2F3 /* SettingHeaderBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672F122323373AC500ACD2F3 /* SettingHeaderBean.swift */; };
+		676456CF20A94A2C00B74853 /* ColorfulPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456CE20A94A2C00B74853 /* ColorfulPickerController.swift */; };
+		676456D220A94B4600B74853 /* ColorfulPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456D020A94B4600B74853 /* ColorfulPickerCell.swift */; };
+		676456D320A94B4600B74853 /* ColorfulPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 676456D120A94B4600B74853 /* ColorfulPickerCell.xib */; };
 		679CB1B5233631D500C2F8F4 /* MainSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 679CB1B4233631D500C2F8F4 /* MainSettingCell.xib */; };
 		67E93AE720A53C170083B38B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AE620A53C170083B38B /* AppDelegate.swift */; };
-		67E93AE920A53C170083B38B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AE820A53C170083B38B /* ViewController.swift */; };
-		67E93AEC20A53C170083B38B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E93AEA20A53C170083B38B /* Main.storyboard */; };
+		67E93AE920A53C170083B38B /* MainSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AE820A53C170083B38B /* MainSettingController.swift */; };
 		67E93AEE20A53C180083B38B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67E93AED20A53C180083B38B /* Assets.xcassets */; };
 		67E93AF120A53C180083B38B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E93AEF20A53C180083B38B /* LaunchScreen.storyboard */; };
 		67E93AFC20A53C190083B38B /* NNNavigationBarDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AFB20A53C190083B38B /* NNNavigationBarDemoTests.swift */; };
@@ -37,11 +38,10 @@
 		7A2EAB7B2334AF0500103909 /* SettingBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB7A2334AF0500103909 /* SettingBean.swift */; };
 		7A2EAB7F2334CE8300103909 /* SettingGroupBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB7E2334CE8300103909 /* SettingGroupBean.swift */; };
 		7A2EAB812335145900103909 /* MainSettingCellFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB802335145800103909 /* MainSettingCellFactory.swift */; };
-		7A2EAB842335165100103909 /* PickerImageBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB832335165100103909 /* PickerImageBean.swift */; };
-		7A2EAB86233516F500103909 /* PickerBeanProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB85233516F500103909 /* PickerBeanProtocol.swift */; };
-		7A2EAB882335174E00103909 /* PickerColorBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB872335174E00103909 /* PickerColorBean.swift */; };
-		7A2EAB8A2335198200103909 /* PickerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB892335198200103909 /* PickerData.swift */; };
-		7A2EAB8C23351A5800103909 /* PickerGroupBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB8B23351A5800103909 /* PickerGroupBean.swift */; };
+		7A2EAB842335165100103909 /* ColorfulImageBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB832335165100103909 /* ColorfulImageBean.swift */; };
+		7A2EAB882335174E00103909 /* ColorfulColorBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB872335174E00103909 /* ColorfulColorBean.swift */; };
+		7A2EAB8A2335198200103909 /* ColorfulData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB892335198200103909 /* ColorfulData.swift */; };
+		7A2EAB8C23351A5800103909 /* ColorfulGroupBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB8B23351A5800103909 /* ColorfulGroupBean.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,14 +62,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		676456CE20A94A2C00B74853 /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
-		676456D020A94B4600B74853 /* PickerImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerImageCell.swift; sourceTree = "<group>"; };
-		676456D120A94B4600B74853 /* PickerImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerImageCell.xib; sourceTree = "<group>"; };
+		672F1221233734C000ACD2F3 /* ColorfulBeanProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorfulBeanProtocol.swift; sourceTree = "<group>"; };
+		672F122323373AC500ACD2F3 /* SettingHeaderBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingHeaderBean.swift; sourceTree = "<group>"; };
+		676456CE20A94A2C00B74853 /* ColorfulPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulPickerController.swift; sourceTree = "<group>"; };
+		676456D020A94B4600B74853 /* ColorfulPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulPickerCell.swift; sourceTree = "<group>"; };
+		676456D120A94B4600B74853 /* ColorfulPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorfulPickerCell.xib; sourceTree = "<group>"; };
 		679CB1B4233631D500C2F8F4 /* MainSettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainSettingCell.xib; sourceTree = "<group>"; };
 		67E93AE320A53C170083B38B /* NNNavigationBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NNNavigationBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E93AE620A53C170083B38B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		67E93AE820A53C170083B38B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		67E93AEB20A53C170083B38B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		67E93AE820A53C170083B38B /* MainSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingController.swift; sourceTree = "<group>"; };
 		67E93AED20A53C180083B38B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67E93AF020A53C180083B38B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		67E93AF220A53C180083B38B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,11 +101,10 @@
 		7A2EAB7A2334AF0500103909 /* SettingBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBean.swift; sourceTree = "<group>"; };
 		7A2EAB7E2334CE8300103909 /* SettingGroupBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGroupBean.swift; sourceTree = "<group>"; };
 		7A2EAB802335145800103909 /* MainSettingCellFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingCellFactory.swift; sourceTree = "<group>"; };
-		7A2EAB832335165100103909 /* PickerImageBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerImageBean.swift; sourceTree = "<group>"; };
-		7A2EAB85233516F500103909 /* PickerBeanProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerBeanProtocol.swift; sourceTree = "<group>"; };
-		7A2EAB872335174E00103909 /* PickerColorBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerColorBean.swift; sourceTree = "<group>"; };
-		7A2EAB892335198200103909 /* PickerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerData.swift; sourceTree = "<group>"; };
-		7A2EAB8B23351A5800103909 /* PickerGroupBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerGroupBean.swift; sourceTree = "<group>"; };
+		7A2EAB832335165100103909 /* ColorfulImageBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulImageBean.swift; sourceTree = "<group>"; };
+		7A2EAB872335174E00103909 /* ColorfulColorBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulColorBean.swift; sourceTree = "<group>"; };
+		7A2EAB892335198200103909 /* ColorfulData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulData.swift; sourceTree = "<group>"; };
+		7A2EAB8B23351A5800103909 /* ColorfulGroupBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulGroupBean.swift; sourceTree = "<group>"; };
 		83F37189F243146F16A51DD6 /* Pods_NNNavigationBarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NNNavigationBarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01731C136791B9B2686CD4E /* Pods-NNNavigationBarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNNavigationBarDemo.release.xcconfig"; path = "Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,7 +173,6 @@
 				7A8DDED82334679F001017B8 /* MainController */,
 				7A2EAB6123346D3600103909 /* PickerController */,
 				67E93AE620A53C170083B38B /* AppDelegate.swift */,
-				67E93AEA20A53C170083B38B /* Main.storyboard */,
 				67E93AED20A53C180083B38B /* Assets.xcassets */,
 				67E93AEF20A53C180083B38B /* LaunchScreen.storyboard */,
 				67E93AF220A53C180083B38B /* Info.plist */,
@@ -222,7 +221,7 @@
 		7A2EAB6223346D3B00103909 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				676456CE20A94A2C00B74853 /* PickerController.swift */,
+				676456CE20A94A2C00B74853 /* ColorfulPickerController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -230,11 +229,11 @@
 		7A2EAB6323346D4100103909 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7A2EAB85233516F500103909 /* PickerBeanProtocol.swift */,
-				7A2EAB832335165100103909 /* PickerImageBean.swift */,
-				7A2EAB872335174E00103909 /* PickerColorBean.swift */,
-				7A2EAB8B23351A5800103909 /* PickerGroupBean.swift */,
-				7A2EAB892335198200103909 /* PickerData.swift */,
+				672F1221233734C000ACD2F3 /* ColorfulBeanProtocol.swift */,
+				7A2EAB832335165100103909 /* ColorfulImageBean.swift */,
+				7A2EAB872335174E00103909 /* ColorfulColorBean.swift */,
+				7A2EAB8B23351A5800103909 /* ColorfulGroupBean.swift */,
+				7A2EAB892335198200103909 /* ColorfulData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,8 +241,8 @@
 		7A2EAB6423346D4500103909 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				676456D020A94B4600B74853 /* PickerImageCell.swift */,
-				676456D120A94B4600B74853 /* PickerImageCell.xib */,
+				676456D020A94B4600B74853 /* ColorfulPickerCell.swift */,
+				676456D120A94B4600B74853 /* ColorfulPickerCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +252,7 @@
 			children = (
 				7A2EAB6923347D0900103909 /* SettingBeanProtocol.swift */,
 				7A2EAB7A2334AF0500103909 /* SettingBean.swift */,
+				672F122323373AC500ACD2F3 /* SettingHeaderBean.swift */,
 				7A2EAB6C233480B800103909 /* SettingImageBean.swift */,
 				7A2EAB70233480E300103909 /* SettingSwitcherBean.swift */,
 				7A2EAB72233480F000103909 /* SettingSegmentBean.swift */,
@@ -292,7 +292,7 @@
 		7A8DDED723346455001017B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				67E93AE820A53C170083B38B /* ViewController.swift */,
+				67E93AE820A53C170083B38B /* MainSettingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -423,8 +423,7 @@
 				67E93AEE20A53C180083B38B /* Assets.xcassets in Resources */,
 				67E93B3820A53F8D0083B38B /* MainSettingImageCell.xib in Resources */,
 				679CB1B5233631D500C2F8F4 /* MainSettingCell.xib in Resources */,
-				67E93AEC20A53C170083B38B /* Main.storyboard in Resources */,
-				676456D320A94B4600B74853 /* PickerImageCell.xib in Resources */,
+				676456D320A94B4600B74853 /* ColorfulPickerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,28 +498,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A2EAB6D233480B800103909 /* SettingImageBean.swift in Sources */,
-				7A2EAB86233516F500103909 /* PickerBeanProtocol.swift in Sources */,
 				67E93B3320A53F750083B38B /* MainSettingCell.swift in Sources */,
 				67E93B2F20A53F5B0083B38B /* MainSettingSegmentCell.swift in Sources */,
 				67E93B2B20A53F3A0083B38B /* MainSettingHeaderCell.swift in Sources */,
 				7A2EAB782334871D00103909 /* SettingData.swift in Sources */,
-				676456CF20A94A2C00B74853 /* PickerController.swift in Sources */,
-				676456D220A94B4600B74853 /* PickerImageCell.swift in Sources */,
+				676456CF20A94A2C00B74853 /* ColorfulPickerController.swift in Sources */,
+				676456D220A94B4600B74853 /* ColorfulPickerCell.swift in Sources */,
+				672F1222233734C100ACD2F3 /* ColorfulBeanProtocol.swift in Sources */,
 				7A2EAB6A23347D0900103909 /* SettingBeanProtocol.swift in Sources */,
-				7A2EAB8A2335198200103909 /* PickerData.swift in Sources */,
+				7A2EAB8A2335198200103909 /* ColorfulData.swift in Sources */,
 				67E93B3720A53F8D0083B38B /* MainSettingImageCell.swift in Sources */,
 				7A2EAB7B2334AF0500103909 /* SettingBean.swift in Sources */,
 				7A2EAB73233480F000103909 /* SettingSegmentBean.swift in Sources */,
-				7A2EAB8C23351A5800103909 /* PickerGroupBean.swift in Sources */,
+				7A2EAB8C23351A5800103909 /* ColorfulGroupBean.swift in Sources */,
 				7A2EAB7F2334CE8300103909 /* SettingGroupBean.swift in Sources */,
-				7A2EAB882335174E00103909 /* PickerColorBean.swift in Sources */,
-				67E93AE920A53C170083B38B /* ViewController.swift in Sources */,
+				7A2EAB882335174E00103909 /* ColorfulColorBean.swift in Sources */,
+				67E93AE920A53C170083B38B /* MainSettingController.swift in Sources */,
 				7A2EAB75233486C400103909 /* SettingDataManager.swift in Sources */,
 				7A2EAB812335145900103909 /* MainSettingCellFactory.swift in Sources */,
 				67E93AE720A53C170083B38B /* AppDelegate.swift in Sources */,
 				67E93B3B20A53FA10083B38B /* MainSettingSwitcherCell.swift in Sources */,
-				7A2EAB842335165100103909 /* PickerImageBean.swift in Sources */,
+				7A2EAB842335165100103909 /* ColorfulImageBean.swift in Sources */,
 				7A2EAB71233480E300103909 /* SettingSwitcherBean.swift in Sources */,
+				672F122423373AC500ACD2F3 /* SettingHeaderBean.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,14 +556,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		67E93AEA20A53C170083B38B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				67E93AEB20A53C170083B38B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		67E93AEF20A53C180083B38B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

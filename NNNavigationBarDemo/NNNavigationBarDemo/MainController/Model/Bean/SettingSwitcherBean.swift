@@ -9,7 +9,6 @@
 import UIKit
 
 class SettingSwitcherBean: SettingBeanProtocol {
-    var type: SettingType = SettingType.switcher
     var title: String = ""
     var isOn: Bool = false
 }

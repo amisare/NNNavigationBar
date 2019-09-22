@@ -10,20 +10,23 @@ import UIKit
 
 class MainSettingCellFactory: NSObject {
 
-    class func cell(tableView: UITableView, settingBean: SettingBeanProtocol) -> MainSettingCell? {
+    class func cell(settingBean: SettingBeanProtocol) -> MainSettingCell? {
         
         var clazz: NSObject.Type = MainSettingCell.self
         
-        switch settingBean.type {
-        case .header:
+        if settingBean is SettingHeaderBean {
             clazz = MainSettingHeaderCell.self
-        case .switcher:
+        }
+        else if settingBean is SettingSwitcherBean {
             clazz = MainSettingSwitcherCell.self
-        case .image:
+        }
+        else if settingBean is SettingImageBean {
             clazz = MainSettingImageCell.self
-        case .segment:
+        }
+        else if settingBean is SettingSegmentBean {
             clazz = MainSettingSegmentCell.self
-        case .default:
+        }
+        else if settingBean is SettingBean {
             clazz = MainSettingCell.self
         }
         

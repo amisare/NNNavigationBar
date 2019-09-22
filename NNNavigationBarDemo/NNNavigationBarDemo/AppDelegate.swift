@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
-        let vc = ViewController()
+        let vc = MainSettingController.init()
         vc.currentSettingData = SettingDataManager.shared.settingData
         vc.globalSettingData = SettingDataManager.shared.globalSettingData
         let nav = UINavigationController.init(rootViewController: vc)

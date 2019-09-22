@@ -1,5 +1,5 @@
 //
-//  PickerGroupBean.swift
+//  ColorfulGroupBean.swift
 //  NNNavigationBarDemo
 //
 //  Created by 顾海军 on 2019/9/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct PickerGroupBean {
+struct ColorfulGroupBean {
     var title: String
-    var pickerBeans: [PickerBeanProtocol]
+    var pickerBeans: [ColorfulBeanProtocol]
 }

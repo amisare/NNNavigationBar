@@ -12,9 +12,8 @@ class SettingData: NSObject {
     
     var next: SettingData?
     
-    lazy var header: SettingImageBean = {
-        var bean = SettingImageBean.init()
-        bean.type = SettingType.header
+    lazy var header: SettingHeaderBean = {
+        var bean = SettingHeaderBean.init()
         bean.title = ""
         bean.image = #imageLiteral(resourceName: "horizontal-color")
         return bean;

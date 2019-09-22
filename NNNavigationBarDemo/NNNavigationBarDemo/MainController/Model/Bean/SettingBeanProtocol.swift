@@ -8,15 +8,6 @@
 
 import UIKit
 
-enum SettingType {
-    case `default`
-    case header
-    case switcher
-    case image
-    case segment
-}
-
 protocol SettingBeanProtocol {
-    var type: SettingType { get }
     var title: String { get set }
 }
