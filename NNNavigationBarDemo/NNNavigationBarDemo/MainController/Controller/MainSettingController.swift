@@ -79,8 +79,12 @@ class MainSettingController: UIViewController {
         self.tableView.reloadData()
     }
     
-    @objc public func pushNextViewController() {
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         self.currentSettingData.segment.selectedIndex = .current
+    }
+    
+    @objc public func pushNextViewController() {
         let vc = MainSettingController.init();
         vc.currentSettingData = self.nextSettingData
         vc.globalSettingData = self.globalSettingData
