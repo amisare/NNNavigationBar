@@ -8,16 +8,13 @@
 
 import UIKit
 
-class MainSettingImageCell: MainSettingCell {
+class MainSettingImageCell: MainSettingCell, MainSettingCellProtocol {
     
     @IBOutlet weak var preImageView: UIImageView!
     
-    override var bean: SettingBeanProtocol? {
-        get {
-            return _bean
-        }
-        set {
-            guard let imageBean = newValue as? SettingImageBean else { return }
+    var bean: SettingBeanProtocol? {
+        didSet {
+            guard let imageBean = self.bean as? SettingImageBean else { return }
             self.textLabel?.text = imageBean.title
             if let color = imageBean.color {
                 let image = UIImage.nn_image(with: color)
@@ -29,7 +26,6 @@ class MainSettingImageCell: MainSettingCell {
             else {
                 self.preImageView?.image = nil
             }
-            _bean = imageBean
         }
     }
     

@@ -13,7 +13,6 @@
 		676456CF20A94A2C00B74853 /* ColorfulPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456CE20A94A2C00B74853 /* ColorfulPickerController.swift */; };
 		676456D220A94B4600B74853 /* ColorfulPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456D020A94B4600B74853 /* ColorfulPickerCell.swift */; };
 		676456D320A94B4600B74853 /* ColorfulPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 676456D120A94B4600B74853 /* ColorfulPickerCell.xib */; };
-		679CB1B5233631D500C2F8F4 /* MainSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 679CB1B4233631D500C2F8F4 /* MainSettingCell.xib */; };
 		67E93AE720A53C170083B38B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AE620A53C170083B38B /* AppDelegate.swift */; };
 		67E93AE920A53C170083B38B /* MainSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AE820A53C170083B38B /* MainSettingController.swift */; };
 		67E93AEE20A53C180083B38B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67E93AED20A53C180083B38B /* Assets.xcassets */; };
@@ -42,6 +41,8 @@
 		7A2EAB882335174E00103909 /* ColorfulColorBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB872335174E00103909 /* ColorfulColorBean.swift */; };
 		7A2EAB8A2335198200103909 /* ColorfulData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB892335198200103909 /* ColorfulData.swift */; };
 		7A2EAB8C23351A5800103909 /* ColorfulGroupBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB8B23351A5800103909 /* ColorfulGroupBean.swift */; };
+		7ADB6033233A5F3F00C2E8CA /* MainSettingTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB6031233A5F3F00C2E8CA /* MainSettingTitleCell.swift */; };
+		7ADB6034233A5F3F00C2E8CA /* MainSettingTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ADB6032233A5F3F00C2E8CA /* MainSettingTitleCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,6 @@
 		676456CE20A94A2C00B74853 /* ColorfulPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulPickerController.swift; sourceTree = "<group>"; };
 		676456D020A94B4600B74853 /* ColorfulPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulPickerCell.swift; sourceTree = "<group>"; };
 		676456D120A94B4600B74853 /* ColorfulPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorfulPickerCell.xib; sourceTree = "<group>"; };
-		679CB1B4233631D500C2F8F4 /* MainSettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainSettingCell.xib; sourceTree = "<group>"; };
 		67E93AE320A53C170083B38B /* NNNavigationBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NNNavigationBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E93AE620A53C170083B38B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67E93AE820A53C170083B38B /* MainSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingController.swift; sourceTree = "<group>"; };
@@ -105,6 +105,8 @@
 		7A2EAB872335174E00103909 /* ColorfulColorBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulColorBean.swift; sourceTree = "<group>"; };
 		7A2EAB892335198200103909 /* ColorfulData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulData.swift; sourceTree = "<group>"; };
 		7A2EAB8B23351A5800103909 /* ColorfulGroupBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulGroupBean.swift; sourceTree = "<group>"; };
+		7ADB6031233A5F3F00C2E8CA /* MainSettingTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingTitleCell.swift; sourceTree = "<group>"; };
+		7ADB6032233A5F3F00C2E8CA /* MainSettingTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingTitleCell.xib; sourceTree = "<group>"; };
 		83F37189F243146F16A51DD6 /* Pods_NNNavigationBarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NNNavigationBarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01731C136791B9B2686CD4E /* Pods-NNNavigationBarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNNavigationBarDemo.release.xcconfig"; path = "Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -275,7 +277,8 @@
 			isa = PBXGroup;
 			children = (
 				67E93B3120A53F750083B38B /* MainSettingCell.swift */,
-				679CB1B4233631D500C2F8F4 /* MainSettingCell.xib */,
+				7ADB6031233A5F3F00C2E8CA /* MainSettingTitleCell.swift */,
+				7ADB6032233A5F3F00C2E8CA /* MainSettingTitleCell.xib */,
 				67E93B2920A53F3A0083B38B /* MainSettingHeaderCell.swift */,
 				67E93B2A20A53F3A0083B38B /* MainSettingHeaderCell.xib */,
 				67E93B3520A53F8D0083B38B /* MainSettingImageCell.swift */,
@@ -372,7 +375,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = GuHaijun;
 				TargetAttributes = {
 					67E93AE220A53C170083B38B = {
@@ -421,8 +424,8 @@
 				67E93AF120A53C180083B38B /* LaunchScreen.storyboard in Resources */,
 				67E93B2C20A53F3A0083B38B /* MainSettingHeaderCell.xib in Resources */,
 				67E93AEE20A53C180083B38B /* Assets.xcassets in Resources */,
+				7ADB6034233A5F3F00C2E8CA /* MainSettingTitleCell.xib in Resources */,
 				67E93B3820A53F8D0083B38B /* MainSettingImageCell.xib in Resources */,
-				679CB1B5233631D500C2F8F4 /* MainSettingCell.xib in Resources */,
 				676456D320A94B4600B74853 /* ColorfulPickerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,6 +496,7 @@
 				7A2EAB6D233480B800103909 /* SettingImageBean.swift in Sources */,
 				67E93B3320A53F750083B38B /* MainSettingCell.swift in Sources */,
 				67E93B2F20A53F5B0083B38B /* MainSettingSegmentCell.swift in Sources */,
+				7ADB6033233A5F3F00C2E8CA /* MainSettingTitleCell.swift in Sources */,
 				67E93B2B20A53F3A0083B38B /* MainSettingHeaderCell.swift in Sources */,
 				7A2EAB782334871D00103909 /* SettingData.swift in Sources */,
 				676456CF20A94A2C00B74853 /* ColorfulPickerController.swift in Sources */,
@@ -681,7 +685,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TN94U5BZF3;
+				DEVELOPMENT_TEAM = S48639VEAB;
 				INFOPLIST_FILE = NNNavigationBarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -704,7 +708,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TN94U5BZF3;
+				DEVELOPMENT_TEAM = S48639VEAB;
 				INFOPLIST_FILE = NNNavigationBarDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (

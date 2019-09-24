@@ -24,24 +24,25 @@ extension MainSettingCellDelegate {
     }
 }
 
-protocol MainSettingCellProtocol : NSObjectProtocol {
+protocol MainSettingCellProtocol {
     var bean: SettingBeanProtocol? {get set}
+    var delegate : MainSettingCellDelegate? {get set}
 }
 
-class MainSettingCell: UITableViewCell, MainSettingCellProtocol{
-    
-    weak var delegate : MainSettingCellDelegate?
-    
-    var _bean: SettingBeanProtocol?
-    var bean: SettingBeanProtocol? {
-        get {
-            return _bean
+extension MainSettingCellProtocol where Self : MainSettingCell {
+    var delegate : MainSettingCellDelegate? {
+        get{
+            return _delegate
         }
-        set {
-            _bean = newValue
-            self.textLabel?.text = _bean?.title
+        set{
+            _delegate = newValue
         }
     }
+}
+
+class MainSettingCell: UITableViewCell {
+    
+    weak var _delegate : MainSettingCellDelegate?
     
     override open func awakeFromNib() {
         super.awakeFromNib()

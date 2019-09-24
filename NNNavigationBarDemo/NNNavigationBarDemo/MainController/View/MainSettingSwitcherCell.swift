@@ -8,18 +8,14 @@
 
 import UIKit
 
-class MainSettingSwitcherCell: MainSettingCell {
+class MainSettingSwitcherCell: MainSettingCell, MainSettingCellProtocol {
    
     @IBOutlet weak var switcher: UISwitch!
     
-    override var bean: SettingBeanProtocol? {
-        get {
-            return _bean
-        }
-        set {
-            _bean = newValue
-            self.textLabel?.text = _bean?.title
-            self.switcher.isOn = (_bean as! SettingSwitcherBean).isOn
+    var bean: SettingBeanProtocol? {
+        didSet {
+            self.textLabel?.text = self.bean?.title
+            self.switcher.isOn = (self.bean as! SettingSwitcherBean).isOn
         }
     }
     

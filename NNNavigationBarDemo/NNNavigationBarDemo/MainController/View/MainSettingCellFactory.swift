@@ -10,9 +10,9 @@ import UIKit
 
 class MainSettingCellFactory: NSObject {
 
-    class func cell(settingBean: SettingBeanProtocol) -> MainSettingCell? {
+    class func cell(settingBean: SettingBeanProtocol) -> MainSettingCellProtocol? {
         
-        var clazz: NSObject.Type = MainSettingCell.self
+        var clazz: NSObject.Type = MainSettingTitleCell.self
         
         if settingBean is SettingHeaderBean {
             clazz = MainSettingHeaderCell.self
@@ -27,11 +27,11 @@ class MainSettingCellFactory: NSObject {
             clazz = MainSettingSegmentCell.self
         }
         else if settingBean is SettingBean {
-            clazz = MainSettingCell.self
+            clazz = MainSettingTitleCell.self
         }
         
         let cell = (Bundle.main.loadNibNamed(String.init(describing: clazz), owner: nil, options: nil) as? [MainSettingCell])?[0]
-        return cell
+        return cell as? MainSettingCellProtocol
     }
 }
 

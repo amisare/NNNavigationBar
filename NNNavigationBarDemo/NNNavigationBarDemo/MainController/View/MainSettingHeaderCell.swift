@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainSettingHeaderCell: MainSettingCell{
+class MainSettingHeaderCell: MainSettingCell, MainSettingCellProtocol {
     
     @IBOutlet weak var headerImageView: UIImageView!
 
@@ -18,14 +18,10 @@ class MainSettingHeaderCell: MainSettingCell{
         }
     }
     
-    override var bean: SettingBeanProtocol? {
-        get {
-            return _bean
-        }
-        set {
-            guard let imageBean = newValue as? SettingHeaderBean else { return }
+    var bean: SettingBeanProtocol? {
+        didSet {
+            guard let imageBean = self.bean as? SettingHeaderBean else { return }
             self.headerImageView.image = imageBean.image
-            _bean = imageBean
         }
     }
     

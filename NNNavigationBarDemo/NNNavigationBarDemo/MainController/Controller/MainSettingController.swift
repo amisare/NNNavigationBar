@@ -222,7 +222,7 @@ extension MainSettingController: UITableViewDataSource, UITableViewDelegate, Mai
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let settingBean = self.settingData.groupBeans[indexPath.section].settingBeans[indexPath.row];
-        let cell = MainSettingCellFactory.cell(settingBean: settingBean)
+        var cell = MainSettingCellFactory.cell(settingBean: settingBean)
         if settingBean is SettingSegmentBean {
             cell?.bean = self.currentSettingData.segment
         }
@@ -230,7 +230,7 @@ extension MainSettingController: UITableViewDataSource, UITableViewDelegate, Mai
             cell?.bean = settingBean
         }
         cell?.delegate = self
-        return cell! as UITableViewCell
+        return cell! as! UITableViewCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

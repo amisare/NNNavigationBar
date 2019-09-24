@@ -8,17 +8,13 @@
 
 import UIKit
 
-class MainSettingSegmentCell: MainSettingCell {
+class MainSettingSegmentCell: MainSettingCell, MainSettingCellProtocol {
     
     @IBOutlet weak var segment: UISegmentedControl!
     
-    override var bean: SettingBeanProtocol? {
-        get {
-            return _bean
-        }
-        set {
-            _bean = newValue
-            self.segment.selectedSegmentIndex = (_bean as! SettingSegmentBean).selectedIndex.rawValue
+    var bean: SettingBeanProtocol? {
+        didSet {
+            self.segment.selectedSegmentIndex = (self.bean as! SettingSegmentBean).selectedIndex.rawValue
         }
     }
     
