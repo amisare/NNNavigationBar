@@ -44,7 +44,7 @@ bug 代码：
 
 bug 解决：
 
-- 在 viewWillAppear 中设置 rightBarButtonItem 。
+- 方式2：在 viewWillAppear 中设置 rightBarButtonItem 。
 
 ```
     override func viewDidLoad() {
@@ -69,6 +69,8 @@ bug 解决：
         self.navigationController?.pushViewController(vc, animated: true)
     }
 ```
+
+- 方法2：[issues12](https://github.com/amisare/NNNavigationBar/issues/12)
 
 bug 工程源码：[UINavigationBarBug](https://github.com/amisare/UINavigationBarBug)
 
