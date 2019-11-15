@@ -7,75 +7,50 @@
 //
 
 #import "NNTransitionClass.h"
+#import <os/lock.h>
+#import <pthread.h>
+#import <mach-o/getsect.h>
+#import <mach-o/dyld.h>
 
-#define MAX_CLAZZ_COUNT                      256
-#define MAX_CLAZZ_LENGTH                     256
+typedef struct
+#ifdef __LP64__
+mach_header_64
+#else
+mach_header
+#endif
+nn_pop_mach_header;
 
-static char clazzs[MAX_CLAZZ_COUNT][MAX_CLAZZ_LENGTH] = {0};
+unsigned int nn_transitionClazzCount = 0;
+nn_transition_clazz_t *nn_transitionClazzes = nil;
 
-int NNTransitionClassRegister(const char *clazz, size_t length) {
+static pthread_mutex_t nn_pop_injectLock = PTHREAD_MUTEX_INITIALIZER;
+
+/// Loads protocol extensions info from image segment
+/// @param mhp A mach header appears at the very beginning of the object file
+void nn_pop_loadSection(const struct mach_header* mhp, intptr_t vmaddr_slide) {
     
-    assert(length < MAX_CLAZZ_LENGTH);
-    for (int i = 0; i < MAX_CLAZZ_COUNT; i++) {
-        char *t_clazz = clazzs[i];
-        size_t t_length = strlen(t_clazz);
-        if (t_length != 0) {
-            if (0 == strcmp(t_clazz, clazz)) {
-                // Has been registered
-                return 0;
-            }
-            else {
-                continue;
-            }
-        }
-        strcpy(t_clazz, clazz);
-        return 0;
+    if (pthread_mutex_lock(&nn_pop_injectLock) != 0) {
+        fprintf(stderr, "ERROR: Could not synchronize on special protocol data\n");
     }
     
-    return -1;
+    unsigned long size = 0;
+    uintptr_t *sectionData = (uintptr_t*)getsectiondata((nn_pop_mach_header *)mhp, nn_segment_name, nn_section_name, &size);
+    if (size == 0) {
+        pthread_mutex_unlock(&nn_pop_injectLock);
+        return;
+    }
+    nn_transitionClazzes = (nn_transition_clazz_t *)malloc(size);
+    if (nn_transitionClazzes == nil) {
+        pthread_mutex_unlock(&nn_pop_injectLock);
+        return;
+    }
+    memset(nn_transitionClazzes, 0, size);
+    memcpy(nn_transitionClazzes, sectionData, size);
+    nn_transitionClazzCount = (unsigned int)(size / sizeof(nn_transition_clazz_t));
+    
+    pthread_mutex_unlock(&nn_pop_injectLock);
 }
 
-size_t NNTransitionClassCount(void) {
-    
-    for (int i = 0; i < MAX_CLAZZ_COUNT; i++) {
-        if (strlen(clazzs[i]) == 0) {
-            return ++i;
-        }
-    }
-    return 0;
-}
-
-int NNTransitionClassFetch(char *clazz, size_t index) {
-    
-    assert(index < MAX_CLAZZ_COUNT);
-    if (index > MAX_CLAZZ_COUNT) {
-        return -1;
-    }
-    strcpy(clazz, clazzs[index]);
-    return 0;
-}
-
-int NNTransitionClassUnregister(const char *clazz, size_t length) {
-    
-    assert(length < MAX_CLAZZ_LENGTH);
-    for (int i = 0; i < MAX_CLAZZ_COUNT; i++) {
-        char *t_clazz = clazzs[i];
-        if (0 == strcmp(t_clazz, clazz)) {
-            memset(t_clazz, 0, MAX_CLAZZ_LENGTH);
-            return 0;
-        }
-    }
-    return -1;
-}
-
-int NNTransitionClassIndex(char *clazz, size_t length) {
-    
-    assert(length < MAX_CLAZZ_LENGTH);
-    for (int i = 0; i < MAX_CLAZZ_COUNT; i++) {
-        char *t_clazz = clazzs[i];
-        if (0 == strcmp(t_clazz, clazz)) {
-            return i;
-        }
-    }
-    return -1;
+__attribute__((constructor)) void nn_pop_prophet(void) {
+    _dyld_register_func_for_add_image(nn_pop_loadSection);
 }

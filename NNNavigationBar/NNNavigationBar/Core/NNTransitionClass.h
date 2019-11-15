@@ -8,10 +8,28 @@
 
 #import <UIKit/UIKit.h>
 
-int NNTransitionClassRegister(const char *clazz, size_t length);
-size_t NNTransitionClassCount(void);
-int NNTransitionClassFetch(char *clazz, size_t index);
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
 
+typedef struct {
+    const char *clazz;
+}nn_transition_clazz_t;
+
+extern unsigned int nn_transitionClazzCount;
+extern nn_transition_clazz_t *nn_transitionClazzes;
+
+#define nn_segment_name             "__DATA"
+#define nn_section_name             "__nn_nav_bar__"
+#define nn_section(section_name)    __attribute__((used, section(nn_segment_name "," section_name )))
+#define nn_transition(clazz) \
+        \
+        class NSObject; \
+        \
+        const nn_transition_clazz_t k_nn_transition_##clazz nn_section(nn_section_name) = { \
+            #clazz\
+        };
+        
 
 @protocol NNTransition <NSObject>
 
@@ -38,3 +56,6 @@ int NNTransitionClassFetch(char *clazz, size_t index);
 
 @end
 
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */

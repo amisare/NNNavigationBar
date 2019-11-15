@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E56CB2F8012CF4DF2D1C2A5 /* Pods_NNNavigationBarDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83F37189F243146F16A51DD6 /* Pods_NNNavigationBarDemo.framework */; };
 		672F1222233734C100ACD2F3 /* ColorfulBeanProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672F1221233734C000ACD2F3 /* ColorfulBeanProtocol.swift */; };
 		672F122423373AC500ACD2F3 /* SettingHeaderBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672F122323373AC500ACD2F3 /* SettingHeaderBean.swift */; };
 		676456CF20A94A2C00B74853 /* ColorfulPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456CE20A94A2C00B74853 /* ColorfulPickerController.swift */; };
 		676456D220A94B4600B74853 /* ColorfulPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676456D020A94B4600B74853 /* ColorfulPickerCell.swift */; };
 		676456D320A94B4600B74853 /* ColorfulPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 676456D120A94B4600B74853 /* ColorfulPickerCell.xib */; };
+		67911DF9237F107B009B6A8F /* NSLayoutConstraint+NNVisualFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 67911DF7237F107A009B6A8F /* NSLayoutConstraint+NNVisualFormat.m */; };
+		67911DFA237F107B009B6A8F /* UIImage+NNImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 67911DF8237F107A009B6A8F /* UIImage+NNImageWithColor.m */; };
 		67E93AE720A53C170083B38B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AE620A53C170083B38B /* AppDelegate.swift */; };
 		67E93AE920A53C170083B38B /* MainSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93AE820A53C170083B38B /* MainSettingController.swift */; };
 		67E93AEE20A53C180083B38B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67E93AED20A53C180083B38B /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		7A2EAB8C23351A5800103909 /* ColorfulGroupBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB8B23351A5800103909 /* ColorfulGroupBean.swift */; };
 		7ADB6033233A5F3F00C2E8CA /* MainSettingTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB6031233A5F3F00C2E8CA /* MainSettingTitleCell.swift */; };
 		7ADB6034233A5F3F00C2E8CA /* MainSettingTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ADB6032233A5F3F00C2E8CA /* MainSettingTitleCell.xib */; };
+		C0773BC689E1FF174FD73482 /* Pods_NNNavigationBarDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F8E0ECBA0148093FCB125F /* Pods_NNNavigationBarDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,10 @@
 		676456CE20A94A2C00B74853 /* ColorfulPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulPickerController.swift; sourceTree = "<group>"; };
 		676456D020A94B4600B74853 /* ColorfulPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulPickerCell.swift; sourceTree = "<group>"; };
 		676456D120A94B4600B74853 /* ColorfulPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorfulPickerCell.xib; sourceTree = "<group>"; };
+		67911DF5237F107A009B6A8F /* UIImage+NNImageWithColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+NNImageWithColor.h"; sourceTree = "<group>"; };
+		67911DF6237F107A009B6A8F /* NSLayoutConstraint+NNVisualFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+NNVisualFormat.h"; sourceTree = "<group>"; };
+		67911DF7237F107A009B6A8F /* NSLayoutConstraint+NNVisualFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+NNVisualFormat.m"; sourceTree = "<group>"; };
+		67911DF8237F107A009B6A8F /* UIImage+NNImageWithColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+NNImageWithColor.m"; sourceTree = "<group>"; };
 		67E93AE320A53C170083B38B /* NNNavigationBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NNNavigationBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67E93AE620A53C170083B38B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67E93AE820A53C170083B38B /* MainSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingController.swift; sourceTree = "<group>"; };
@@ -107,8 +113,8 @@
 		7A2EAB8B23351A5800103909 /* ColorfulGroupBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulGroupBean.swift; sourceTree = "<group>"; };
 		7ADB6031233A5F3F00C2E8CA /* MainSettingTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingTitleCell.swift; sourceTree = "<group>"; };
 		7ADB6032233A5F3F00C2E8CA /* MainSettingTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingTitleCell.xib; sourceTree = "<group>"; };
-		83F37189F243146F16A51DD6 /* Pods_NNNavigationBarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NNNavigationBarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01731C136791B9B2686CD4E /* Pods-NNNavigationBarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNNavigationBarDemo.release.xcconfig"; path = "Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo.release.xcconfig"; sourceTree = "<group>"; };
+		F6F8E0ECBA0148093FCB125F /* Pods_NNNavigationBarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NNNavigationBarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E56CB2F8012CF4DF2D1C2A5 /* Pods_NNNavigationBarDemo.framework in Frameworks */,
+				C0773BC689E1FF174FD73482 /* Pods_NNNavigationBarDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +153,17 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		67911DF4237F107A009B6A8F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				67911DF6237F107A009B6A8F /* NSLayoutConstraint+NNVisualFormat.h */,
+				67911DF7237F107A009B6A8F /* NSLayoutConstraint+NNVisualFormat.m */,
+				67911DF5237F107A009B6A8F /* UIImage+NNImageWithColor.h */,
+				67911DF8237F107A009B6A8F /* UIImage+NNImageWithColor.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		67E93ADA20A53C170083B38B = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +191,7 @@
 			children = (
 				7A8DDED82334679F001017B8 /* MainController */,
 				7A2EAB6123346D3600103909 /* PickerController */,
+				67911DF4237F107A009B6A8F /* Utils */,
 				67E93AE620A53C170083B38B /* AppDelegate.swift */,
 				67E93AED20A53C180083B38B /* Assets.xcassets */,
 				67E93AEF20A53C180083B38B /* LaunchScreen.storyboard */,
@@ -205,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				67E93B2120A53CBF0083B38B /* NNNavigationBar.framework */,
-				83F37189F243146F16A51DD6 /* Pods_NNNavigationBarDemo.framework */,
+				F6F8E0ECBA0148093FCB125F /* Pods_NNNavigationBarDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -321,7 +339,7 @@
 				67E93ADF20A53C170083B38B /* Sources */,
 				67E93AE020A53C170083B38B /* Frameworks */,
 				67E93AE120A53C170083B38B /* Resources */,
-				1681436F284A805C6E590683 /* [CP] Embed Pods Frameworks */,
+				91CDAF2511BE7C95979C1400 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -447,7 +465,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1681436F284A805C6E590683 /* [CP] Embed Pods Frameworks */ = {
+		91CDAF2511BE7C95979C1400 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -511,6 +529,8 @@
 				7A2EAB7F2334CE8300103909 /* SettingGroupBean.swift in Sources */,
 				7A2EAB882335174E00103909 /* ColorfulColorBean.swift in Sources */,
 				67E93AE920A53C170083B38B /* MainSettingController.swift in Sources */,
+				67911DFA237F107B009B6A8F /* UIImage+NNImageWithColor.m in Sources */,
+				67911DF9237F107B009B6A8F /* NSLayoutConstraint+NNVisualFormat.m in Sources */,
 				7A2EAB75233486C400103909 /* SettingDataManager.swift in Sources */,
 				7A2EAB812335145900103909 /* MainSettingCellFactory.swift in Sources */,
 				67E93AE720A53C170083B38B /* AppDelegate.swift in Sources */,

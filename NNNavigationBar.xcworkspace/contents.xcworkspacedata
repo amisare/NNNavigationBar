@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:NNNavigationBar/NNNavigationBar.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:NNNavigationBarDemo/NNNavigationBarDemo.xcodeproj">
    </FileRef>
    <FileRef

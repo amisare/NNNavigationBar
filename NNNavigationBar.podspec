@@ -21,23 +21,27 @@ Pod::Spec.new do |s|
   s.public_header_files = 'NNNavigationBar/NNNavigationBar/NNNavigationBar.h'
   
   s.subspec 'Core' do |ss|
-    ss.source_files    = 'NNNavigationBar/NNNavigationBar/Core/*.{h,m,c}'
+    ss.source_files    = 'NNNavigationBar/NNNavigationBar/Core/*.{h,m,mm}'
+    ss.private_header_files    = 'NNNavigationBar/NNNavigationBar/Core/*.{h}'
   end
 
   s.subspec 'Utils' do |ss|
     ss.source_files    = 'NNNavigationBar/NNNavigationBar/Utils/*.{h,m}'
+    ss.private_header_files    = 'NNNavigationBar/NNNavigationBar/Utils/*.{h}'
   end
 
   s.subspec 'Background' do |ss|
     ss.dependency        'NNNavigationBar/Core'
     ss.dependency        'NNNavigationBar/Utils'
-    ss.source_files    = 'NNNavigationBar/NNNavigationBar/Background/*.{h,m}', 'NNNavigationBar/NNNavigationBar/Background/**/*.{h,m}'
+    ss.source_files    = 'NNNavigationBar/NNNavigationBar/Background/**/*.{h,m}'
+    ss.private_header_files    = 'NNNavigationBar/NNNavigationBar/Background/Source/*.{h}', 'NNNavigationBar/NNNavigationBar/Background/Delegate/*.{h}', 'NNNavigationBar/NNNavigationBar/Background/Transition/*.{h}'
   end
 
   s.subspec 'TintColor' do |ss|
     ss.dependency        'NNNavigationBar/Core'
     ss.dependency        'NNNavigationBar/Utils'
-    ss.source_files    = 'NNNavigationBar/NNNavigationBar/TintColor/*.{h,m}', 'NNNavigationBar/NNNavigationBar/TintColor/**/*.{h,m}'
+    ss.source_files    = 'NNNavigationBar/NNNavigationBar/TintColor/**/*.{h,m}'
+    ss.private_header_files    = 'NNNavigationBar/NNNavigationBar/TintColor/Delegate/*.{h}', 'NNNavigationBar/NNNavigationBar/TintColor/Transition/*.{h}'
   end
 
 end

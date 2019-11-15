@@ -72,12 +72,8 @@ static const void *kUINavigationBar_NNTransitions = &kUINavigationBar_NNTransiti
 - (NSArray<id<NNTransition>> *)nn_registedTransitions {
     
     NSMutableArray *transitions = [NSMutableArray new];
-    size_t clazzCount = NNTransitionClassCount();
-    for (size_t i = 0; i < clazzCount; i++) {
-        char cClazzName[256] = {0};
-        NNTransitionClassFetch(cClazzName, i);
-        NSString *sClazzName = [NSString stringWithUTF8String:cClazzName];
-        Class clazz = NSClassFromString(sClazzName);
+    for (size_t i = 0; i < nn_transitionClazzCount; i++) {
+        Class clazz = objc_getClass(nn_transitionClazzes[i].clazz);
         if (clazz) {
             [transitions addObject:[[clazz alloc] initWithNavigationBar:self]];
         }

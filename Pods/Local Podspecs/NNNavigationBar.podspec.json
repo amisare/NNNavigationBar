@@ -25,11 +25,13 @@
   "subspecs": [
     {
       "name": "Core",
-      "source_files": "NNNavigationBar/NNNavigationBar/Core/*.{h,m,c}"
+      "source_files": "NNNavigationBar/NNNavigationBar/Core/*.{h,m,mm}",
+      "private_header_files": "NNNavigationBar/NNNavigationBar/Core/*.{h}"
     },
     {
       "name": "Utils",
-      "source_files": "NNNavigationBar/NNNavigationBar/Utils/*.{h,m}"
+      "source_files": "NNNavigationBar/NNNavigationBar/Utils/*.{h,m}",
+      "private_header_files": "NNNavigationBar/NNNavigationBar/Utils/*.{h}"
     },
     {
       "name": "Background",
@@ -41,9 +43,11 @@
 
         ]
       },
-      "source_files": [
-        "NNNavigationBar/NNNavigationBar/Background/*.{h,m}",
-        "NNNavigationBar/NNNavigationBar/Background/**/*.{h,m}"
+      "source_files": "NNNavigationBar/NNNavigationBar/Background/**/*.{h,m}",
+      "private_header_files": [
+        "NNNavigationBar/NNNavigationBar/Background/Source/*.{h}",
+        "NNNavigationBar/NNNavigationBar/Background/Delegate/*.{h}",
+        "NNNavigationBar/NNNavigationBar/Background/Transition/*.{h}"
       ]
     },
     {
@@ -56,9 +60,10 @@
 
         ]
       },
-      "source_files": [
-        "NNNavigationBar/NNNavigationBar/TintColor/*.{h,m}",
-        "NNNavigationBar/NNNavigationBar/TintColor/**/*.{h,m}"
+      "source_files": "NNNavigationBar/NNNavigationBar/TintColor/**/*.{h,m}",
+      "private_header_files": [
+        "NNNavigationBar/NNNavigationBar/TintColor/Delegate/*.{h}",
+        "NNNavigationBar/NNNavigationBar/TintColor/Transition/*.{h}"
       ]
     }
   ]

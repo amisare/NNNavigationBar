@@ -10,6 +10,7 @@
 #import "UINavigationBar+NNTintColor.h"
 #import "UINavigationItem+NNTintColor.h"
 
+@nn_transition(NNTintColorTransition)
 @interface NNTintColorTransition()
 
 @property (nonatomic, weak) UINavigationBar *bar;
@@ -17,12 +18,6 @@
 @end
 
 @implementation NNTintColorTransition
-
-+ (void)load {
-    [super load];
-    const char *clazz = [NSStringFromClass(self) UTF8String];
-    NNTransitionClassRegister(clazz, (int)strlen(clazz));
-}
 
 - (instancetype)initWithNavigationBar:(UINavigationBar *)bar {
     self = [super init];

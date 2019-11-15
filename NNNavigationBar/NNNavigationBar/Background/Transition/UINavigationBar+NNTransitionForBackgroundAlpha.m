@@ -10,6 +10,7 @@
 #import "UINavigationBar+NNBackgroundView.h"
 #import "UINavigationItem+NNBackgroundView.h"
 
+@nn_transition(NNBackgroundAlphaTransition)
 @interface NNBackgroundAlphaTransition()
 
 @property (nonatomic, weak) UINavigationBar *bar;
@@ -17,12 +18,6 @@
 @end
 
 @implementation NNBackgroundAlphaTransition
-
-+ (void)load {
-    [super load];
-    const char *clazz = [NSStringFromClass(self) UTF8String];
-    NNTransitionClassRegister(clazz, strlen(clazz));
-}
 
 - (instancetype)initWithNavigationBar:(UINavigationBar *)bar {
     self = [super init];

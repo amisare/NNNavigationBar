@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "NNNavigationBarBackgroundView.h"
-#import "NNNavigationBarBackgroundAlpha.h"
 
-@interface UINavigationItem (NNBackgroundView) <NNNavigationBarBackgroundView, NNNavigationBarBackgroundAlpha>
+@interface UINavigationItem (NNBackgroundView) <NNNavigationBarBackgroundView>
 
 @end
