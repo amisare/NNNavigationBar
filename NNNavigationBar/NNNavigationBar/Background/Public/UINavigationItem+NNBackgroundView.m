@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 #import "UIImage+NNImageWithColor.h"
 #import "UINavigationItem+NNCoreProperties.h"
-#import "UINavigationItem+NNBackgroundDelegate.h"
+#import "NNBackgroundDelegate.h"
 
 static const void *kUINavigationItem_NNBackgroundTranslucentTransition = &kUINavigationItem_NNBackgroundTranslucentTransition;
 static const void *kUINavigationItem_NNBackgroundColors = &kUINavigationItem_NNBackgroundColors;

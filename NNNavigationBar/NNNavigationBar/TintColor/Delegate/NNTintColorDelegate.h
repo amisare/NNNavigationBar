@@ -1,5 +1,5 @@
 //
-//  UINavigationItem+NNTintColorDelegate.h
+//  UINavigationBar+NNTintColorDelegate.h
 //  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/4/24.
@@ -17,5 +17,17 @@
  @param colors  @"tintColorOld"/@"tintColorNew"
  */
 - (void)nn_navigationItem:(UINavigationItem *)item tintColorChange:(NSDictionary *)colors;
+
+@end
+
+@protocol NNTintColorBarDelegate <NSObject>
+
+/**
+ UINavigationBar tintColor更新代理
+ 
+ @param bar UINavigationBar
+ @param colors  @"tintColorOld"/@"tintColorNew"
+ */
+- (void) nn_navigationBar:(UINavigationBar *)bar tintColorChange:(NSDictionary *)colors;
 
 @end

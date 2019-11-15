@@ -9,7 +9,7 @@
 #import "UINavigationItem+NNTintColor.h"
 #import <objc/runtime.h>
 #import "UINavigationItem+NNCoreProperties.h"
-#import "UINavigationItem+NNTintColorDelegate.h"
+#import "NNTintColorDelegate.h"
 
 static const void *kUINavigationItem_NNTintColor = &kUINavigationItem_NNTintColor;
 

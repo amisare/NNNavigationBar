@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UINavigationBar+NNTintColorDelegate.h"
-#import "UINavigationItem+NNTintColorDelegate.h"
+#import "NNTintColorDelegate.h"
 
 @interface UINavigationBar (NNTintColorDelegateImp) <NNTintColorBarDelegate, NNTintColorItemDelegate>
 
