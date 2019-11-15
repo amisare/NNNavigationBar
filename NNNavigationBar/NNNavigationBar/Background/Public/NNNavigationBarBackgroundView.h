@@ -10,8 +10,6 @@
 
 @protocol NNNavigationBarBackgroundView <NSObject>
 
-//A float value for nn_backgroundView Alpha
-@property (nonatomic, assign) CGFloat nn_backgroundAlpha;
 //A Boolean value that indicates whether the transition has translucent effect.
 @property (nonatomic, assign) BOOL nn_backgroundTranslucentTransition;
 //the backgroundColor at UIBarPositionAny/UIBarMetricsDefault
