@@ -1,12 +1,12 @@
 //
-//  UINavigationBar+NNTransitionForTintColor.m
+//  NNTintColorTransition.m
 //  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/4/20.
 //  Copyright © 2018年 GuHaijun. All rights reserved.
 //
 
-#import "UINavigationBar+NNTransitionForTintColor.h"
+#import "NNTintColorTransition.h"
 #import "UINavigationBar+NNTintColor.h"
 #import "UINavigationItem+NNTintColor.h"
 
