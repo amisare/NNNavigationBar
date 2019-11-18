@@ -51,6 +51,6 @@ void nn_pop_loadSection(const struct mach_header* mhp, intptr_t vmaddr_slide) {
     pthread_mutex_unlock(&nn_pop_injectLock);
 }
 
-__attribute__((constructor)) void nn_pop_prophet(void) {
+__attribute__((constructor)) void nn_nav_initializer(void) {
     _dyld_register_func_for_add_image(nn_pop_loadSection);
 }
