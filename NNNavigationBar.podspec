@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "NNNavigationBar"
-  s.version       = "2.0.0"
+  s.version       = "2.7.0"
   s.summary       = "NNNavigationBar: make UINavigationBar background transition smoothly."
 
   s.description   = <<-DESC
@@ -11,9 +11,9 @@ Pod::Spec.new do |s|
   s.homepage      = "https://github.com/amisare/NNNavigationBar"
   s.license       = { :type => "MIT", :file => "LICENSE" }
   s.author        = { "Haijun Gu" => "243297288@qq.com" }
-  s.social_media_url        = "http://www.jianshu.com/users/9df9f28ff266/latest_articles"
+  s.social_media_url        = "https://www.jianshu.com/u/9df9f28ff266"
 
-  s.source        = { :git => "https://github.com/amisare/NNNavigationBar.git", :tag => s.version }
+  s.source        = { :git => "https://github.com/amisare/NNNavigationBar.git", :tag => s.version.to_s }
   s.ios.deployment_target   = '8.0'
   s.requires_arc  = true
 
