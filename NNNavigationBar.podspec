@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "NNNavigationBar"
-  s.version       = "2.7.0"
+  s.version       = "2.7.1"
   s.summary       = "NNNavigationBar: make UINavigationBar background transition smoothly."
 
   s.description   = <<-DESC
