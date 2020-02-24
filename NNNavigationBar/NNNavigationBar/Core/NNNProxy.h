@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NNProxy : NSProxy
+@interface NNNProxy : NSProxy
 
 @property (nonatomic, weak, readonly) id target;
 + (instancetype)proxyWithTarget:(id)target;

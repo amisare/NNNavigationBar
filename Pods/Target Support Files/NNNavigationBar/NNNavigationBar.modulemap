@@ -1,6 +1,0 @@
-framework module NNNavigationBar {
-  umbrella header "NNNavigationBar-umbrella.h"
-
-  export *
-  module * { export * }
-}

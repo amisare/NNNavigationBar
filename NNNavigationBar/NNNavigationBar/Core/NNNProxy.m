@@ -6,9 +6,9 @@
 //  Copyright © 2019 GuHaijun. All rights reserved.
 //
 
-#import "NNProxy.h"
+#import "NNNProxy.h"
 
-@implementation NNProxy
+@implementation NNNProxy
 
 + (instancetype)proxyWithTarget:(id)target{
     return [[self alloc] initWithTarget:target];

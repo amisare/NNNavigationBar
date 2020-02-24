@@ -8,7 +8,7 @@
 
 #import "NNFadeAnimationImageView.h"
 #import "NSLayoutConstraint+NNVisualFormat.h"
-#import "NNProxy.h"
+#import "NNNProxy.h"
 
 @interface _NNAnimatedDisplayImageView : UIImageView @end
 @implementation _NNAnimatedDisplayImageView @end
@@ -129,7 +129,7 @@
 }
 
 - (void)_nn_startLinkTick {
-    self._nn_displayLink = [CADisplayLink displayLinkWithTarget:[NNProxy proxyWithTarget:self] selector:@selector(_nn_handleLinkTick)];
+    self._nn_displayLink = [CADisplayLink displayLinkWithTarget:[NNNProxy proxyWithTarget:self] selector:@selector(_nn_handleLinkTick)];
     [self._nn_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 

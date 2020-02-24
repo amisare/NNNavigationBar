@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,8 @@
 		67E93B3820A53F8D0083B38B /* MainSettingImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E93B3620A53F8D0083B38B /* MainSettingImageCell.xib */; };
 		67E93B3B20A53FA10083B38B /* MainSettingSwitcherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E93B3920A53FA10083B38B /* MainSettingSwitcherCell.swift */; };
 		67E93B3C20A53FA10083B38B /* MainSettingSwitcherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67E93B3A20A53FA10083B38B /* MainSettingSwitcherCell.xib */; };
+		7A1ECA652403D47600AAFAD5 /* NNNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1ECA642403D47600AAFAD5 /* NNNavigationBar.framework */; };
+		7A1ECA662403D47600AAFAD5 /* NNNavigationBar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A1ECA642403D47600AAFAD5 /* NNNavigationBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A2EAB6A23347D0900103909 /* SettingBeanProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB6923347D0900103909 /* SettingBeanProtocol.swift */; };
 		7A2EAB6D233480B800103909 /* SettingImageBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB6C233480B800103909 /* SettingImageBean.swift */; };
 		7A2EAB71233480E300103909 /* SettingSwitcherBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB70233480E300103909 /* SettingSwitcherBean.swift */; };
@@ -44,7 +46,6 @@
 		7A2EAB8C23351A5800103909 /* ColorfulGroupBean.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2EAB8B23351A5800103909 /* ColorfulGroupBean.swift */; };
 		7ADB6033233A5F3F00C2E8CA /* MainSettingTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADB6031233A5F3F00C2E8CA /* MainSettingTitleCell.swift */; };
 		7ADB6034233A5F3F00C2E8CA /* MainSettingTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ADB6032233A5F3F00C2E8CA /* MainSettingTitleCell.xib */; };
-		C0773BC689E1FF174FD73482 /* Pods_NNNavigationBarDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6F8E0ECBA0148093FCB125F /* Pods_NNNavigationBarDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,20 @@
 			remoteInfo = NNNavigationBarDemo;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7A1ECA672403D47600AAFAD5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7A1ECA662403D47600AAFAD5 /* NNNavigationBar.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		672F1221233734C000ACD2F3 /* ColorfulBeanProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorfulBeanProtocol.swift; sourceTree = "<group>"; };
@@ -97,7 +112,7 @@
 		67E93B3620A53F8D0083B38B /* MainSettingImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingImageCell.xib; sourceTree = "<group>"; };
 		67E93B3920A53FA10083B38B /* MainSettingSwitcherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingSwitcherCell.swift; sourceTree = "<group>"; };
 		67E93B3A20A53FA10083B38B /* MainSettingSwitcherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingSwitcherCell.xib; sourceTree = "<group>"; };
-		68F4B6944E8B44841C8BA94D /* Pods-NNNavigationBarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNNavigationBarDemo.debug.xcconfig"; path = "Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		7A1ECA642403D47600AAFAD5 /* NNNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NNNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A2EAB6923347D0900103909 /* SettingBeanProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBeanProtocol.swift; sourceTree = "<group>"; };
 		7A2EAB6C233480B800103909 /* SettingImageBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingImageBean.swift; sourceTree = "<group>"; };
 		7A2EAB70233480E300103909 /* SettingSwitcherBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSwitcherBean.swift; sourceTree = "<group>"; };
@@ -113,8 +128,6 @@
 		7A2EAB8B23351A5800103909 /* ColorfulGroupBean.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulGroupBean.swift; sourceTree = "<group>"; };
 		7ADB6031233A5F3F00C2E8CA /* MainSettingTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingTitleCell.swift; sourceTree = "<group>"; };
 		7ADB6032233A5F3F00C2E8CA /* MainSettingTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainSettingTitleCell.xib; sourceTree = "<group>"; };
-		D01731C136791B9B2686CD4E /* Pods-NNNavigationBarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NNNavigationBarDemo.release.xcconfig"; path = "Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo.release.xcconfig"; sourceTree = "<group>"; };
-		F6F8E0ECBA0148093FCB125F /* Pods_NNNavigationBarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NNNavigationBarDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0773BC689E1FF174FD73482 /* Pods_NNNavigationBarDemo.framework in Frameworks */,
+				7A1ECA652403D47600AAFAD5 /* NNNavigationBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,16 +156,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13E8D868A6F823A00A26AF54 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				68F4B6944E8B44841C8BA94D /* Pods-NNNavigationBarDemo.debug.xcconfig */,
-				D01731C136791B9B2686CD4E /* Pods-NNNavigationBarDemo.release.xcconfig */,
-			);
-			name = Pods;
-			path = ../Pods;
-			sourceTree = "<group>";
-		};
 		67911DF4237F107A009B6A8F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +175,6 @@
 				67E93B0520A53C190083B38B /* NNNavigationBarDemoUITests */,
 				67E93AE420A53C170083B38B /* Products */,
 				67E93B2020A53CBF0083B38B /* Frameworks */,
-				13E8D868A6F823A00A26AF54 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,8 +224,8 @@
 		67E93B2020A53CBF0083B38B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7A1ECA642403D47600AAFAD5 /* NNNavigationBar.framework */,
 				67E93B2120A53CBF0083B38B /* NNNavigationBar.framework */,
-				F6F8E0ECBA0148093FCB125F /* Pods_NNNavigationBarDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -335,11 +337,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 67E93B0B20A53C190083B38B /* Build configuration list for PBXNativeTarget "NNNavigationBarDemo" */;
 			buildPhases = (
-				A737DF86D8C131B13244E30F /* [CP] Check Pods Manifest.lock */,
 				67E93ADF20A53C170083B38B /* Sources */,
 				67E93AE020A53C170083B38B /* Frameworks */,
 				67E93AE120A53C170083B38B /* Resources */,
-				91CDAF2511BE7C95979C1400 /* [CP] Embed Pods Frameworks */,
+				7A1ECA672403D47600AAFAD5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -463,48 +464,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		91CDAF2511BE7C95979C1400 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A737DF86D8C131B13244E30F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NNNavigationBarDemo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		67E93ADF20A53C170083B38B /* Sources */ = {
@@ -700,7 +659,6 @@
 		};
 		67E93B0C20A53C190083B38B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 68F4B6944E8B44841C8BA94D /* Pods-NNNavigationBarDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -723,7 +681,6 @@
 		};
 		67E93B0D20A53C190083B38B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D01731C136791B9B2686CD4E /* Pods-NNNavigationBarDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
