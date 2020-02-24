@@ -16,16 +16,17 @@ enum MainSettingCellStyle : Int {
 }
 
 protocol MainSettingCellDelegate : NSObjectProtocol {
-    func cell(_ cell: MainSettingCellProtocol, actionObject : Any, params: Dictionary<String, Any>?)
+    func cell(_ cell: MainSettingCellProtocol)
 }
 
 extension MainSettingCellDelegate {
-    func cell(_ cell: MainSettingCellProtocol, actionObject: Any, params: Dictionary<String, Any>?) {
+    func cell(_ cell: MainSettingCellProtocol) {
     }
 }
 
 protocol MainSettingCellProtocol {
     var bean: SettingBeanProtocol? {get set}
+    var indexPath: IndexPath? {get set}
     var delegate : MainSettingCellDelegate? {get set}
 }
 
@@ -38,11 +39,20 @@ extension MainSettingCellProtocol where Self : MainSettingCell {
             _delegate = newValue
         }
     }
+    var indexPath : IndexPath? {
+        get{
+            return _indexPath
+        }
+        set{
+            _indexPath = newValue
+        }
+    }
 }
 
 class MainSettingCell: UITableViewCell {
     
-    weak var _delegate : MainSettingCellDelegate?
+    fileprivate weak var _delegate : MainSettingCellDelegate?
+    fileprivate var _indexPath: IndexPath?
     
     override open func awakeFromNib() {
         super.awakeFromNib()

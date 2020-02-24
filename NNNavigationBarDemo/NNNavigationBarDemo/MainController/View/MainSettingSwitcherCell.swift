@@ -26,8 +26,7 @@ class MainSettingSwitcherCell: MainSettingCell, MainSettingCellProtocol {
     }
     
     @objc func handleSwitcher(switcher: UISwitch) {
-        (self.bean as! SettingSwitcherBean).isOn = self.switcher.isOn
-        self.delegate?.cell(self, actionObject: switcher, params: nil);
+        self.delegate?.cell(self);
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

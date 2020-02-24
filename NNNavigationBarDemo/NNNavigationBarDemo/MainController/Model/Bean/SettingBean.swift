@@ -10,4 +10,7 @@ import UIKit
 
 class SettingBean: SettingBeanProtocol {
     var title: String = ""
+    init(title: String) {
+        self.title = title;
+    }
 }

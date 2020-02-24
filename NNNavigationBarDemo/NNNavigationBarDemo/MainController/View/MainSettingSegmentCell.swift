@@ -25,7 +25,6 @@ class MainSettingSegmentCell: MainSettingCell, MainSettingCellProtocol {
     }
     
     @objc func handleSegment(segment: UISegmentedControl) {
-        (self.bean as! SettingSegmentBean).selectedIndex = SettingSegmentIndexBean.init(rawValue: segment.selectedSegmentIndex) ?? .current
-        self.delegate?.cell(self, actionObject: segment, params: nil);
+        self.delegate?.cell(self);
     }
 }

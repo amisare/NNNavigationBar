@@ -18,8 +18,26 @@ class MainSettingController: UIViewController {
     
     var page = 0
     
-    var currentSettingData: SettingData!
+    var headerBean: SettingHeaderBean = SettingHeaderBean.init(title: "", image: #imageLiteral(resourceName: "horizontal-color"))
+    var segmentBean: SettingSegmentBean = SettingSegmentBean.init(title: "", selectedIndex: .current)
+    var actionBeans: [SettingBean] = [
+        SettingBean.init(title: "push"),
+        SettingBean.init(title: "pop"),
+        SettingBean.init(title: "popToRoot"),
+    ]
+    var headGroupBeans: [SettingGroupBean] {
+        return [
+            SettingGroupBean.init( title: "header", settingBeans: [headerBean]),
+            SettingGroupBean.init( title: "segment", settingBeans: [segmentBean])
+        ]
+    }
+    var tailGroupBeans: [SettingGroupBean] {
+        return [
+            SettingGroupBean.init( title: "header", settingBeans: actionBeans)
+        ]
+    }
     
+    var currentSettingData: SettingData!
     var nextSettingData: SettingData {
         let settingData = self.currentSettingData.next
         if settingData == nil {
@@ -27,21 +45,20 @@ class MainSettingController: UIViewController {
         }
         return self.currentSettingData.next!
     }
-    
     var globalSettingData: SettingData!
     
-    var settingData: SettingData {
-        switch self.currentSettingData.segment.selectedIndex {
+    var settingGroupBeans: [SettingGroupBean] {
+        switch self.segmentBean.selectedIndex {
         case .current:
-            return self.currentSettingData
+            return headGroupBeans + self.currentSettingData.groupBeans + tailGroupBeans
         case .next:
-            return self.nextSettingData
+            return headGroupBeans + self.nextSettingData.groupBeans + tailGroupBeans
         case .global:
-            return self.globalSettingData
+            return headGroupBeans + self.globalSettingData.groupBeans + tailGroupBeans
         }
     }
     
-    lazy var tableView: UITableView = {
+    lazy var optionTableView: UITableView = {
         let tableView = UITableView.init(frame: CGRect.zero, style: .grouped)
         tableView.delegate = self;
         tableView.dataSource = self;
@@ -64,24 +81,24 @@ class MainSettingController: UIViewController {
         
         self.title = "Title" + " " + "\(self.page)"
         
-        view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(optionTableView)
+        optionTableView.translatesAutoresizingMaskIntoConstraints = false
         let constraints: Array<NSLayoutConstraint> =
             NSLayoutConstraint.nn_constraints(withVisualFormats: ["H:|[tableView]|",
                                                                   "V:|[tableView]|"],
-                                              views: ["tableView" : tableView]);
+                                              views: ["tableView" : optionTableView]);
         NSLayoutConstraint.activate(constraints)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setupDate()
-        self.tableView.reloadData()
+        self.optionTableView.reloadData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        self.currentSettingData.segment.selectedIndex = .current
+        self.segmentBean.selectedIndex = .current
     }
     
     @objc public func pushNextViewController() {
@@ -91,44 +108,16 @@ class MainSettingController: UIViewController {
         vc.page = self.page + 1
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    func colorfulPick(type: ColorfulDataType, indexPath: IndexPath) {
-        guard let settingBean = self.settingData.groupBeans[indexPath.section].settingBeans[indexPath.row] as? SettingImageBean else { return }
-        let vc = ColorfulPickerController.init(type)
-        vc.selected = {(bean: ColorfulBeanProtocol?)->() in
-            guard let bean = bean else { return }
-            settingBean.image = nil
-            settingBean.color = nil
-            if bean is ColorfulImageBean {
-                settingBean.image = (bean as? ColorfulImageBean)?.image
-            }
-            if bean is ColorfulColorBean {
-                settingBean.color = (bean as? ColorfulColorBean)?.color
-            }
-            self.updateState()
-        }
-        self.present(vc, animated: true, completion: nil)
-    }
 }
 
 extension MainSettingController {
     
     func setupDate() {
-        self.setupNavigationItemBackground()
-        self.setupNavigationItemTintColor()
-        self.setupNavigationBarTintColor()
-        self.setupNavigationBarHiddenState()
         self.setupNavigationItemPrompt()
+        updateState()
     }
     
     func updateState() {
-        self.setupNavigationItemBackground()
-        self.setupNavigationBarTintColor()
-        self.setupNavigationBarHiddenState()
-        self.tableView.reloadData()
-    }
-    
-    func setupNavigationItemBackground() {
         self.navigationItem.setNn_backgroundImage(nil, for: UIBarMetrics.default)
         self.navigationItem.setNn_backgroundColor(nil, for: UIBarMetrics.default)
         if let image = self.currentSettingData.metricsDefault.image {
@@ -164,26 +153,29 @@ extension MainSettingController {
         if let color = self.currentSettingData.metricsCompactPrompt.color {
             self.navigationItem.setNn_backgroundColor(color, for: UIBarMetrics.compactPrompt)
         }
-    }
-    
-    func setupNavigationItemTintColor() {
+        
+        // ItemTintColor
         if let color = self.currentSettingData.tintColor.color {
             self.navigationItem.nn_tintColor = color
         }
-    }
-    
-    func setupNavigationBarTintColor() {
+        
+        // BackgroundTranslucentTransition
+        self.navigationController?.navigationBar.nn_backgroundTranslucentTransition = self.currentSettingData.translucentAnimation.isOn
+        
+        // NavigationBarTintColor
         if let color = self.globalSettingData.tintColor.color {
             self.navigationController?.navigationBar.nn_tintColor = color
         }
+        
+        // NavigationBarHidden
+        self.navigationController?.setNavigationBarHidden(self.currentSettingData.hidden.isOn, animated: true)
+        
+        // OptionTableView reload
+        self.optionTableView.reloadData()
     }
     
     func setupNavigationItemPrompt() {
         self.navigationItem.prompt = self.currentSettingData.prompt.isOn ? "Navigation Bar Prompt" : nil
-    }
-    
-    func setupNavigationBarHiddenState() {
-        self.navigationController?.setNavigationBarHidden(self.currentSettingData.hidden.isOn, animated: true)
     }
 }
 
@@ -191,12 +183,11 @@ extension MainSettingController: UITableViewDataSource, UITableViewDelegate, Mai
     
     //MARK: UITableViewDataSource, UITableViewDelegate
     func numberOfSections(in tableView: UITableView) -> Int {
-        let data = self.settingData.groupBeans
-        return data.count
+        return self.settingGroupBeans.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.settingData.groupBeans[section].settingBeans.count
+        return self.settingGroupBeans[section].settingBeans.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -210,60 +201,75 @@ extension MainSettingController: UITableViewDataSource, UITableViewDelegate, Mai
         if section == 0 {
             return nil
         }
-        return self.settingData.groupBeans[section].title
+        return self.settingGroupBeans[section].title
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 && indexPath.row == 0 {
-            return MainSettingHeaderCell.init().cellHeight
+            return MainSettingHeaderCell.cellHeight
         }
         return 44;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let settingBean = self.settingData.groupBeans[indexPath.section].settingBeans[indexPath.row];
-        var cell = MainSettingCellFactory.cell(settingBean: settingBean)
-        if settingBean is SettingSegmentBean {
-            cell?.bean = self.currentSettingData.segment
-        }
-        else {
-            cell?.bean = settingBean
-        }
+        let settingBean = self.settingGroupBeans[indexPath.section].settingBeans[indexPath.row]
+        var cell = MainSettingCellFactory.cell(settingBean: settingBean, indexPath: indexPath)
         cell?.delegate = self
         return cell! as! UITableViewCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         let tableCell = tableView.cellForRow(at: indexPath)
         tableCell?.isSelected = false
+        
+        let settingBean = self.settingGroupBeans[indexPath.section].settingBeans[indexPath.row]
 
-        guard let cell: MainSettingCellProtocol = tableCell as? MainSettingCellProtocol else { return }
-        if cell.bean is SettingImageBean {
-            if cell.bean?.title == "tintColor" {
-                self.colorfulPick(type: ColorfulDataType.color, indexPath: indexPath)
+        // 选择图片或颜色
+        if let settingBean = settingBean as? SettingImageBean {
+            let type: ColorfulDataType = settingBean.title == "tintColor" ? .color : .default;
+            let vc = ColorfulPickerController.init(type)
+            vc.selected = {(bean: ColorfulBeanProtocol?)->() in
+                guard let bean = bean else { return }
+                settingBean.image = nil
+                settingBean.color = nil
+                if bean is ColorfulImageBean {
+                    settingBean.image = (bean as? ColorfulImageBean)?.image
+                }
+                if bean is ColorfulColorBean {
+                    settingBean.color = (bean as? ColorfulColorBean)?.color
+                }
+                self.updateState()
             }
-            else {
-                self.colorfulPick(type: ColorfulDataType.default, indexPath: indexPath)
-            }
+            self.present(vc, animated: true, completion: nil)
         }
-        if cell.bean?.title == "push" {
+        
+        // controller 操作
+        if settingBean.title == "push" {
             self.pushNextViewController()
         }
-        if cell.bean?.title == "pop" {
+        if settingBean.title == "pop" {
             self.navigationController?.popViewController(animated: true)
         }
-        if cell.bean?.title == "popToRoot" {
+        if settingBean.title == "popToRoot" {
             self.navigationController?.popToRootViewController(animated: true)
         }
     }
 
     //MARK: MainSettingCellDelegate
-    func cell(_ cell: MainSettingCellProtocol, actionObject: Any, params: Dictionary<String, Any>?) {
-        if cell.bean is SettingSwitcherBean {
+    func cell(_ cell: MainSettingCellProtocol) {
+        guard let indexPath = cell.indexPath else { return }
+        let settingBean = self.settingGroupBeans[indexPath.section].settingBeans[indexPath.row]
+        
+        // switch 切换
+        if let settingBean = settingBean as? SettingSwitcherBean {
+            settingBean.isOn = (cell as! MainSettingSwitcherCell).switcher.isOn
             self.updateState()
         }
-        if cell.bean is SettingSegmentBean {
+        
+        // segment 切换，不需要更新状态
+        if let settingBean = settingBean as? SettingSegmentBean {
+            let segmentIndex = (cell as! MainSettingSegmentCell).segment.selectedSegmentIndex
+            settingBean.selectedIndex = SettingSegmentIndexBean.init(rawValue: segmentIndex) ?? .current
             self.updateState()
         }
     }

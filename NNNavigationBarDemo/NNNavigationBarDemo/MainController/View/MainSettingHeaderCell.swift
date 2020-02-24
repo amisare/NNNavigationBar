@@ -9,10 +9,11 @@
 import UIKit
 
 class MainSettingHeaderCell: MainSettingCell, MainSettingCellProtocol {
+    var indexPath: IndexPath?
     
     @IBOutlet weak var headerImageView: UIImageView!
 
-    var cellHeight: CGFloat {
+    class var cellHeight: CGFloat {
         get {
             return 110
         }

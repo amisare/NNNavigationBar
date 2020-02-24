@@ -10,7 +10,7 @@ import UIKit
 
 class MainSettingCellFactory: NSObject {
 
-    class func cell(settingBean: SettingBeanProtocol) -> MainSettingCellProtocol? {
+    class func cell(settingBean: SettingBeanProtocol, indexPath: IndexPath) -> MainSettingCellProtocol? {
         
         var clazz: NSObject.Type = MainSettingTitleCell.self
         
@@ -30,8 +30,12 @@ class MainSettingCellFactory: NSObject {
             clazz = MainSettingTitleCell.self
         }
         
-        let cell = (Bundle.main.loadNibNamed(String.init(describing: clazz), owner: nil, options: nil) as? [MainSettingCell])?[0]
-        return cell as? MainSettingCellProtocol
+        var cell = (Bundle.main.loadNibNamed(String.init(describing: clazz), owner: nil, options: nil) as? [MainSettingCell])?[0] as? MainSettingCellProtocol
+        
+        cell?.bean = settingBean;
+        cell?.indexPath = indexPath;
+        
+        return cell
     }
 }
 

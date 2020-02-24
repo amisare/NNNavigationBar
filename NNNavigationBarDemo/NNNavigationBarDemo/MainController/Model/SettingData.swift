@@ -12,19 +12,6 @@ class SettingData: NSObject {
     
     var next: SettingData?
     
-    lazy var header: SettingHeaderBean = {
-        var bean = SettingHeaderBean.init()
-        bean.title = ""
-        bean.image = #imageLiteral(resourceName: "horizontal-color")
-        return bean;
-    }()
-    
-    lazy var segment: SettingSegmentBean = {
-        var bean = SettingSegmentBean.init()
-        bean.title = ""
-        return bean;
-    }()
-    
     lazy var metricsDefault: SettingImageBean = {
         var bean = SettingImageBean.init()
         bean.title = "metricsDefault"
@@ -58,6 +45,7 @@ class SettingData: NSObject {
     lazy var translucentAnimation: SettingSwitcherBean = {
         var bean = SettingSwitcherBean.init()
         bean.title = "translucentAnimation"
+        bean.isOn = true;
         return bean;
     }()
     
@@ -73,43 +61,9 @@ class SettingData: NSObject {
         return bean;
     }()
     
-    lazy var push: SettingBean = {
-        var bean = SettingBean.init()
-        bean.title = "push"
-        return bean;
-    }()
-    
-    lazy var pop: SettingBean = {
-        var bean = SettingBean.init()
-        bean.title = "pop"
-        return bean;
-    }()
-    
-    lazy var popToRoot: SettingBean = {
-        var bean = SettingBean.init()
-        bean.title = "popToRoot"
-        return bean;
-    }()
-    
     var groupBeans: [SettingGroupBean] {
         get {
             var groupBeans = [SettingGroupBean].init()
-            groupBeans.append(
-                SettingGroupBean.init(
-                    title: "header",
-                    settingBeans: [
-                        header,
-                    ]
-                )
-            )
-            groupBeans.append(
-                SettingGroupBean.init(
-                    title: "segment",
-                    settingBeans: [
-                        segment,
-                    ]
-                )
-            )
             groupBeans.append(
                 SettingGroupBean.init(
                     title: "background",
@@ -136,16 +90,6 @@ class SettingData: NSObject {
                         tintColor,
                         translucentAnimation,
                         hidden,
-                    ]
-                )
-            )
-            groupBeans.append(
-                SettingGroupBean.init(
-                    title: "other",
-                    settingBeans: [
-                        push,
-                        pop,
-                        popToRoot,
                     ]
                 )
             )
