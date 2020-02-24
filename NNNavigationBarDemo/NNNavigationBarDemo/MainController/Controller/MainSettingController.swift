@@ -93,7 +93,6 @@ class MainSettingController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setupDate()
-        self.optionTableView.reloadData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
