@@ -670,7 +670,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jd.mrd.wangmaster;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nn.NNNavigationBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "NNNavigationBarDemo/NNNavigationBarDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -693,7 +693,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jd.mrd.wangmaster;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nn.NNNavigationBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NNNavigationBarDemo/NNNavigationBarDemo-Bridging-Header.h";
