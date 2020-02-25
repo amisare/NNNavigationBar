@@ -1,5 +1,5 @@
 //
-//  NNTransitionClass.h
+//  NNNTransition.h
 //  NNNavigationBar
 //
 //  Created by GuHaijun on 2018/5/18.
@@ -7,10 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <os/lock.h>
+#import <pthread.h>
+#import <mach-o/getsect.h>
+#import <mach-o/dyld.h>
+#import <objc/runtime.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
+
+
+typedef struct
+#ifdef __LP64__
+mach_header_64
+#else
+mach_header
+#endif
+nn_nav_mach_header;
 
 typedef struct {
     const char *clazz;
@@ -29,9 +43,29 @@ extern nn_transition_clazz_t *nn_transitionClazzes;
         const nn_transition_clazz_t k_nn_transition_##clazz nn_section(nn_section_name) = { \
             #clazz\
         };
+
+
+NS_INLINE NSArray* NNNTransitionLoader() {
+    NSMutableArray *transitionClazzes = [NSMutableArray new];
+    uint32_t c = _dyld_image_count();
+    for (uint32_t i = 0; i < c; i++) {
+        nn_nav_mach_header *mhp = (nn_nav_mach_header *)_dyld_get_image_header(i);
+        unsigned long size = 0;
+        uintptr_t *sectionData = (uintptr_t*)getsectiondata(mhp, nn_segment_name, nn_section_name, &size);
+        if (size == 0) {
+            continue;
+        }
+        unsigned int sectionItemCount = (int)size / sizeof(nn_transition_clazz_t);
+        nn_transition_clazz_t *sectionItems = (nn_transition_clazz_t *)sectionData;
+        for (int i = 0; i < sectionItemCount; i++) {
+            [transitionClazzes addObject:objc_getClass(sectionItems[i].clazz)];
+        }
+    }
+    return transitionClazzes;
+}
         
 
-@protocol NNTransition <NSObject>
+@protocol NNNTransition <NSObject>
 
 @required
 - (instancetype)initWithNavigationBar:(UINavigationBar *)bar;

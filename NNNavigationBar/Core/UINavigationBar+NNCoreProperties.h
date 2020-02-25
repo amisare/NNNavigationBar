@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NNTransitionClass.h"
+#import "NNNTransition.h"
 
 @interface UINavigationBar (NNBarStyle)
 @property (nonatomic, assign) UIBarPosition nn_sbarPosition;
@@ -19,7 +19,7 @@
 @end
 
 @interface UINavigationBar (NNTransition)
-- (NSArray<id<NNTransition>> *)nn_transitions;
+- (NSArray<id<NNNTransition>> *)nn_transitions;
 @end
 
 @interface UINavigationBar (NNLatestPopItem)

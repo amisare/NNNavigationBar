@@ -166,7 +166,7 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
         NNLogInfo(@"position:%ld", (long)position);
         
         self.nn_sbarPosition = position;
-        for (id<NNTransition> transition in self.nn_transitions) {
+        for (id<NNNTransition> transition in self.nn_transitions) {
             if ([transition respondsToSelector:@selector(nn_updateBarStyleTransitionWithParams:)]) {
                 NSMutableDictionary *params = [NSMutableDictionary new];
                 [params addEntriesFromDictionary:nn_dictionary(@"barPosition", @(position))];
@@ -203,7 +203,7 @@ static inline void nn_swizzleMethod(Method originalMethod, Method swizzledMethod
         NNLogInfo(@"metrics:%ld", (long)metrics);
         
         self.nn_sbarMetrics = metrics;
-        for (id<NNTransition> transition in self.nn_transitions) {
+        for (id<NNNTransition> transition in self.nn_transitions) {
             if ([transition respondsToSelector:@selector(nn_updateBarStyleTransitionWithParams:)]) {
                 NSMutableDictionary *params = [NSMutableDictionary new];
                 [params addEntriesFromDictionary:nn_dictionary(@"barPosition", @(self.nn_sbarPosition))];

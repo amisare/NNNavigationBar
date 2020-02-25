@@ -42,12 +42,11 @@
 		7A1ECAA62403D4E200AAFAD5 /* UINavigationItem+NNBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1ECA942403D4E200AAFAD5 /* UINavigationItem+NNBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A1ECAA72403D4E200AAFAD5 /* UINavigationBar+NNBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1ECA952403D4E200AAFAD5 /* UINavigationBar+NNBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A1ECAA82403D4E200AAFAD5 /* NNNavigationBarBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1ECA962403D4E200AAFAD5 /* NNNavigationBarBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7A1ECAB42403D4FF00AAFAD5 /* NNTransitionClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ECAAA2403D4FF00AAFAD5 /* NNTransitionClass.m */; };
 		7A1ECAB52403D4FF00AAFAD5 /* UINavigationBar+NNMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ECAAB2403D4FF00AAFAD5 /* UINavigationBar+NNMethodSwizzling.m */; };
 		7A1ECAB62403D4FF00AAFAD5 /* UINavigationItem+NNCoreProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1ECAAC2403D4FF00AAFAD5 /* UINavigationItem+NNCoreProperties.h */; };
 		7A1ECAB72403D4FF00AAFAD5 /* UINavigationBar+NNCoreProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1ECAAD2403D4FF00AAFAD5 /* UINavigationBar+NNCoreProperties.h */; };
 		7A1ECAB82403D4FF00AAFAD5 /* NNNProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ECAAE2403D4FF00AAFAD5 /* NNNProxy.m */; };
-		7A1ECAB92403D4FF00AAFAD5 /* NNTransitionClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1ECAAF2403D4FF00AAFAD5 /* NNTransitionClass.h */; };
+		7A1ECAB92403D4FF00AAFAD5 /* NNNTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1ECAAF2403D4FF00AAFAD5 /* NNNTransition.h */; };
 		7A1ECABA2403D4FF00AAFAD5 /* UINavigationBar+NNMethodSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A1ECAB02403D4FF00AAFAD5 /* UINavigationBar+NNMethodSwizzling.h */; };
 		7A1ECABB2403D4FF00AAFAD5 /* UINavigationBar+NNCoreProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ECAB12403D4FF00AAFAD5 /* UINavigationBar+NNCoreProperties.m */; };
 		7A1ECABC2403D4FF00AAFAD5 /* UINavigationItem+NNCoreProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A1ECAB22403D4FF00AAFAD5 /* UINavigationItem+NNCoreProperties.m */; };
@@ -103,12 +102,11 @@
 		7A1ECA942403D4E200AAFAD5 /* UINavigationItem+NNBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNBackgroundView.h"; sourceTree = "<group>"; };
 		7A1ECA952403D4E200AAFAD5 /* UINavigationBar+NNBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundView.h"; sourceTree = "<group>"; };
 		7A1ECA962403D4E200AAFAD5 /* NNNavigationBarBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNavigationBarBackgroundView.h; sourceTree = "<group>"; };
-		7A1ECAAA2403D4FF00AAFAD5 /* NNTransitionClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNTransitionClass.m; sourceTree = "<group>"; };
 		7A1ECAAB2403D4FF00AAFAD5 /* UINavigationBar+NNMethodSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNMethodSwizzling.m"; sourceTree = "<group>"; };
 		7A1ECAAC2403D4FF00AAFAD5 /* UINavigationItem+NNCoreProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNCoreProperties.h"; sourceTree = "<group>"; };
 		7A1ECAAD2403D4FF00AAFAD5 /* UINavigationBar+NNCoreProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNCoreProperties.h"; sourceTree = "<group>"; };
 		7A1ECAAE2403D4FF00AAFAD5 /* NNNProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNNProxy.m; sourceTree = "<group>"; };
-		7A1ECAAF2403D4FF00AAFAD5 /* NNTransitionClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNTransitionClass.h; sourceTree = "<group>"; };
+		7A1ECAAF2403D4FF00AAFAD5 /* NNNTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNNTransition.h; sourceTree = "<group>"; };
 		7A1ECAB02403D4FF00AAFAD5 /* UINavigationBar+NNMethodSwizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNMethodSwizzling.h"; sourceTree = "<group>"; };
 		7A1ECAB12403D4FF00AAFAD5 /* UINavigationBar+NNCoreProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNCoreProperties.m"; sourceTree = "<group>"; };
 		7A1ECAB22403D4FF00AAFAD5 /* UINavigationItem+NNCoreProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+NNCoreProperties.m"; sourceTree = "<group>"; };
@@ -296,8 +294,7 @@
 			children = (
 				7A1ECAB32403D4FF00AAFAD5 /* NNNProxy.h */,
 				7A1ECAAE2403D4FF00AAFAD5 /* NNNProxy.m */,
-				7A1ECAAF2403D4FF00AAFAD5 /* NNTransitionClass.h */,
-				7A1ECAAA2403D4FF00AAFAD5 /* NNTransitionClass.m */,
+				7A1ECAAF2403D4FF00AAFAD5 /* NNNTransition.h */,
 				7A1ECAAD2403D4FF00AAFAD5 /* UINavigationBar+NNCoreProperties.h */,
 				7A1ECAB12403D4FF00AAFAD5 /* UINavigationBar+NNCoreProperties.m */,
 				7A1ECAB02403D4FF00AAFAD5 /* UINavigationBar+NNMethodSwizzling.h */,
@@ -321,7 +318,7 @@
 				7A1ECAA62403D4E200AAFAD5 /* UINavigationItem+NNBackgroundView.h in Headers */,
 				7A1ECAA72403D4E200AAFAD5 /* UINavigationBar+NNBackgroundView.h in Headers */,
 				7A1ECAA82403D4E200AAFAD5 /* NNNavigationBarBackgroundView.h in Headers */,
-				7A1ECAB92403D4FF00AAFAD5 /* NNTransitionClass.h in Headers */,
+				7A1ECAB92403D4FF00AAFAD5 /* NNNTransition.h in Headers */,
 				7A1ECA9A2403D4E200AAFAD5 /* NNBackgroundAlphaTransition.h in Headers */,
 				67E4571620A007C200E58475 /* UIImage+NNImageWithColor.h in Headers */,
 				7A1ECABA2403D4FF00AAFAD5 /* UINavigationBar+NNMethodSwizzling.h in Headers */,
@@ -455,7 +452,6 @@
 				7A1ECABC2403D4FF00AAFAD5 /* UINavigationItem+NNCoreProperties.m in Sources */,
 				67E4571920A007C200E58475 /* UIImage+NNImageWithColor.m in Sources */,
 				67E4571820A007C200E58475 /* NSLayoutConstraint+NNVisualFormat.m in Sources */,
-				7A1ECAB42403D4FF00AAFAD5 /* NNTransitionClass.m in Sources */,
 				7A1ECA9E2403D4E200AAFAD5 /* NNNavigationBarBackgroundImage.m in Sources */,
 				7A1ECA7A2403D4B100AAFAD5 /* UINavigationBar+NNTintColorDelegateImp.m in Sources */,
 			);

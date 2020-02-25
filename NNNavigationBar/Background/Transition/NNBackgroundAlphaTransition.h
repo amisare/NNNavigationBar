@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UINavigationBar+NNCoreProperties.h"
 
-@interface NNBackgroundAlphaTransition : NSObject <NNTransition>
+@interface NNBackgroundAlphaTransition : NSObject <NNNTransition>
 
 - (instancetype)initWithNavigationBar:(UINavigationBar *)bar;
 - (void)nn_startTransitionWithParams:(NSDictionary *)params;

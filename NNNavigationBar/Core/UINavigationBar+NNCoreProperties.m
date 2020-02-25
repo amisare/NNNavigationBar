@@ -59,24 +59,21 @@ static const void *kUINavigationBar_NNDelegate = &kUINavigationBar_NNDelegate;
 
 static const void *kUINavigationBar_NNTransitions = &kUINavigationBar_NNTransitions;
 
-- (NSArray<id<NNTransition>> *)nn_transitions {
-    
+- (NSArray<id<NNNTransition>> *)nn_transitions {
     NSArray *nn_transitions = objc_getAssociatedObject(self, kUINavigationBar_NNTransitions);
     if (!nn_transitions) {
-        nn_transitions = [NSArray arrayWithArray:[self nn_registedTransitions]];
+        nn_transitions =
+        [NSArray arrayWithArray:[self nn_registedTransitions]];
         objc_setAssociatedObject(self, kUINavigationBar_NNTransitions, nn_transitions, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
     return nn_transitions;
 }
 
-- (NSArray<id<NNTransition>> *)nn_registedTransitions {
-    
+- (NSArray<id<NNNTransition>> *)nn_registedTransitions {
     NSMutableArray *transitions = [NSMutableArray new];
-    for (size_t i = 0; i < nn_transitionClazzCount; i++) {
-        Class clazz = objc_getClass(nn_transitionClazzes[i].clazz);
-        if (clazz) {
-            [transitions addObject:[[clazz alloc] initWithNavigationBar:self]];
-        }
+    NSArray *transitionClazzes = NNNTransitionLoader();
+    for (Class transitionClazz in transitionClazzes) {
+        [transitions addObject:[[transitionClazz alloc] initWithNavigationBar:self]];
     }
     return transitions;
 }
