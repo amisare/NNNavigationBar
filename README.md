@@ -196,7 +196,7 @@ NNNavigationBar是实现导航条背景渐变过渡动画的轻量级代码库�
 
 ## 安装
 
-### CocoaPods
+### 通过 CocoaPods 集成
 
 安装最新版的 CocoaPods：
 
@@ -207,7 +207,7 @@ $ gem install cocoapods
 在 `podfile` 中添加：
 
 ```ruby
-pod 'NNNavigationBar', '~> 2.7.0'
+pod 'NNNavigationBar', '~> 2.7.3'
 ```
 
 然后在终端执行：
@@ -227,6 +227,25 @@ $ pod install
 ```bash
 pod install --repo-update
 ```
+
+### 通过 Carthage 集成
+
+[Carthage](https://github.com/Carthage/Carthage) 是一个去中心化的依赖管理器，用于构建依赖和提供二进制 Framework 。
+
+可以通过以下 [Homebrew](http://brew.sh/) 命令安装 Carthage ：
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+通过 Carthage 将 NNNavigationBar 集成到 Xcode 项目中，需要在 `Cartfile` 中添加：
+
+```ogdl
+github "amisare/NNNavigationBar" ~> 2.7.3
+```
+
+执行 `carthage` 构建 Framework ，并将 `NNNavigationBar.framework` 添加到 Xcode 项目中。
 
 ## 系统要求
 
