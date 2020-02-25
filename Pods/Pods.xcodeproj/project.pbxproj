@@ -1,0 +1,875 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02CABC6695C94FF7ABCA5C73095F4964 /* UINavigationBar+NNBackgroundImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 461EE54694C02D817EC481FA121A3010 /* UINavigationBar+NNBackgroundImageView.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		03A045BD318DBDCF07F8E6E5E49C6F3C /* UINavigationBar+NNTintColorDelegateImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 4433FF4FBFE6F04183E75087EC1E401F /* UINavigationBar+NNTintColorDelegateImp.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		0A2D8ACA60380A8A2CE84B6236DE92D7 /* Pods-NNNavigationBarDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1F8FA762365B8B8F944635BAD0602C /* Pods-NNNavigationBarDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FC7676EABB7810F6FF98B5DC8CC8A1E /* NNNavigationBarBackgroundImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FF90B2D6FD1BE45B86773FC2D45B71A6 /* NNNavigationBarBackgroundImage.m */; };
+		12FC7A053250FECB9CDDEE511F982285 /* NNBackgroundAlphaTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A57693F946413B08EA6307196F9B4B4 /* NNBackgroundAlphaTransition.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		1F267B3B5340D6A78292CE4322C6728E /* NNNavigationBarBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DF4D577F266584595D7504AA9BEE208 /* NNNavigationBarBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F32E0F3DA20FBC89A772B0FD0A4DE53 /* UINavigationItem+NNTintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906B8A3CBFC85AE0CC8292A0004F282 /* UINavigationItem+NNTintColor.m */; };
+		21294726F1FE9E7A23DE4BC6194D8474 /* NNFadeAnimationImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = BACB5709D841BF06C7DDE2B7FAFA26D3 /* NNFadeAnimationImageView.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		239F80809AA0ABED6C0B223FCEC4A8DC /* UINavigationBar+NNBackgroundDelegateImp.m in Sources */ = {isa = PBXBuildFile; fileRef = CC85B70802864A61115E314B022BF8B8 /* UINavigationBar+NNBackgroundDelegateImp.m */; };
+		2B033A114F0320AB7CC64CC2DC7F8885 /* UINavigationItem+NNCoreProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E9802305BD9EF6201CBC716C412C943A /* UINavigationItem+NNCoreProperties.m */; };
+		3FD41D20B2C213DDABF0A24D4A65FE86 /* NNNProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 046B3FF44E365A00BED28445B53D8CA8 /* NNNProxy.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		4A3761C6FFDB6B3A13BAA85CB612091F /* NNBackgroundAlphaTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 10A4079F09C2C722132994A38CA4320A /* NNBackgroundAlphaTransition.m */; };
+		4AFD54E9196DD40AF81565D4A03E42F1 /* NNNavigationBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 04A0BE01D548721DB775E89E66F3166C /* NNNavigationBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5207BAC5C90365596EBF8093E747B426 /* UINavigationBar+NNBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 66180785F4D9B9BCD67F88A0D1C5B79B /* UINavigationBar+NNBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5EBFD8D7C160BC52D271A5E419EFAD9D /* UINavigationBar+NNBackgroundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = AF197B8949A0524D6A7601D30F4349A1 /* UINavigationBar+NNBackgroundImageView.m */; };
+		5EE03D80E8F4D46978BD2EFA026B4C0D /* UINavigationBar+NNCoreProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = FFB0B7DD24702BE2E548A2EE0C63532B /* UINavigationBar+NNCoreProperties.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		5F500D0BA7DEA19B7C35DBC97C5204C7 /* NNTintColorDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = F3CDA36A3D6E7C3EB5E0CAE5B52D1D33 /* NNTintColorDelegate.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		670466176CE9112C094B817F22EDB060 /* UINavigationBar+NNTintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC09A937370A276F25D923856ACC6D5 /* UINavigationBar+NNTintColor.m */; };
+		6AF0A96E65451E09A13CCEF8AA2DDD71 /* UINavigationBar+NNCoreProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 728492855DA5CD5AEB66605158C7727B /* UINavigationBar+NNCoreProperties.m */; };
+		6B56CBC99DE85B0D1F590CC338444D85 /* UIImage+NNImageWithColor.h in Headers */ = {isa = PBXBuildFile; fileRef = EC42ECDBC845F1C4E68AA87C72686768 /* UIImage+NNImageWithColor.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		714C991CC106E9522E339B5CB7FCCE4F /* NNTintColorTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 14882D8075686BD70C215009A8677FBB /* NNTintColorTransition.m */; };
+		720AF2C3843F8B0B74C9C38A7750F6E1 /* NNNTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F8FDB6F2E20856F9D63ADC291551A69 /* NNNTransition.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		72F9AF4663E620BC8A3B9EADAFECF374 /* NNNProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB354B1FCD91A32C66E70AC2DE91EFBB /* NNNProxy.m */; };
+		739A8534E0FA8A2CC08871DD3EA4F1C7 /* UINavigationBar+NNTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B3CBEDBBB44850CC8BF03239BE1D790E /* UINavigationBar+NNTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74C77CD581846743E14CDC916C0D0BB4 /* UINavigationBar+NNBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7270EA56A9FDA3E84480A71116EE2E7 /* UINavigationBar+NNBackgroundView.m */; };
+		787C611BC9C14AC47564A5E22584DD7E /* UINavigationBar+NNMethodSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CADD126388C062A6C73E78F0F6928EB /* UINavigationBar+NNMethodSwizzling.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		7996AF993724C8D5EA188CAE38456CE0 /* UINavigationItem+NNTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 29828D03809FDAAFB9F1F0154E86E5E9 /* UINavigationItem+NNTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7F19A8CEB021C6D3E5590C09D83D9DF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		80BD90314B197463EA4CEC292953B03B /* NNNavigationBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D4A065E357F7F233A7CAFDE47FCBEBBB /* NNNavigationBar-dummy.m */; };
+		82E0CA81442FB81DB50E7BAED1CCDE54 /* NNNavigationBarBackgroundImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A06D180F6645C84E0D2F0F57FA95C63 /* NNNavigationBarBackgroundImage.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		8454B0996143F6812F5CDFE6A0401A17 /* NNBackgroundImageTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 95A2D98F7E0AC1B5181D5BBD74B6ACB6 /* NNBackgroundImageTransition.m */; };
+		84C47E3401F0962869D89B858CB857F6 /* UINavigationBar+NNBackgroundDelegateImp.h in Headers */ = {isa = PBXBuildFile; fileRef = 80FA706BBA8244A654D9088882E1A54D /* UINavigationBar+NNBackgroundDelegateImp.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		8A677870A5734CBFD7D614A61E25E75E /* NSLayoutConstraint+NNVisualFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 96882A5FA9D37735CF5BA9B4F88EA459 /* NSLayoutConstraint+NNVisualFormat.m */; };
+		8E0620C5F677E4112EFFD78A3B713B26 /* Pods-NNNavigationBarDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ABF8AF03A7CB97DBF89721B79A47B0A6 /* Pods-NNNavigationBarDemo-dummy.m */; };
+		9634A83CA37F8B31CE421AC6A8DBA95C /* NNFadeAnimationImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C768173624AA5B511C2AC0FBEFB083EA /* NNFadeAnimationImageView.m */; };
+		9C95586B10BBAFF080BD94FE61710FC5 /* NNBackgroundImageTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 91B16753E63489A483AFAB416B984438 /* NNBackgroundImageTransition.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A06FCEFBBFCF160CD8D24759FB78893B /* NNNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = B5C6A860F94ECE6F7D69883598590E41 /* NNNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9B9F525263AA80B890C0F32C2CF88B5 /* NNNavigationBarTintColor.h in Headers */ = {isa = PBXBuildFile; fileRef = BC63FA396B22157E2298416E61042D78 /* NNNavigationBarTintColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACEEE7B732368F1A8B2ACE67310C33C2 /* UIImage+NNImageWithColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 72BA60EE1086C8AA630F0B7472987234 /* UIImage+NNImageWithColor.m */; };
+		AFC5F825A202A589E546A01D598A19B6 /* NNTintColorTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = BEBE29E5EFE450D92D4BD1F8881CDB02 /* NNTintColorTransition.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		B3D61AD1A2B11C237368A0849F3CFAA3 /* UINavigationBar+NNTintColorDelegateImp.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FEECE567222A7AB25CCF6B5C735CB0 /* UINavigationBar+NNTintColorDelegateImp.m */; };
+		BB55D601D920DB81B61EC5AD2BC5A1F2 /* UINavigationBar+NNMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = D876CDFF247294AEA225E40F0DE74E57 /* UINavigationBar+NNMethodSwizzling.m */; };
+		CC149D0703778641A41FA47E6F7E5F04 /* NSLayoutConstraint+NNVisualFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = A6BD6385CC8EA74285CFA440FA671171 /* NSLayoutConstraint+NNVisualFormat.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		E286B1B2B8BE7E26FE16234A1143CAFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		EC1EF4B68D8B3682F12132AAF132307F /* UINavigationItem+NNBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = C60DC0FDEA06609467A5A8DBF391F31B /* UINavigationItem+NNBackgroundView.m */; };
+		F65C91386BA2EC9495C947255FF58F19 /* UINavigationItem+NNCoreProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = 621C50021CBC3DA6BA34CF007E4935A7 /* UINavigationItem+NNCoreProperties.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		FA7B097EF393D29220240C71F632741B /* UINavigationItem+NNBackgroundView.h in Headers */ = {isa = PBXBuildFile; fileRef = 795DF2A0F5315FE0AF23FCABC7B0F215 /* UINavigationItem+NNBackgroundView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB8B88860FA8D1844BB98643A7B5100A /* NNBackgroundDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 65C117657C9E60F5B675CA7657C56F08 /* NNBackgroundDelegate.h */; settings = {ATTRIBUTES = (Private, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		401F05884932019E76AD481A93A55D67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9276263426A71A1F137BD0E2C65479F4;
+			remoteInfo = NNNavigationBar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		046B3FF44E365A00BED28445B53D8CA8 /* NNNProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNNProxy.h; path = NNNavigationBar/Core/NNNProxy.h; sourceTree = "<group>"; };
+		04A0BE01D548721DB775E89E66F3166C /* NNNavigationBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NNNavigationBar-umbrella.h"; sourceTree = "<group>"; };
+		05E08FFF7216D97B57D7882F548CD06C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		0C2F394C852ECD6994AD4F598B726023 /* Pods-NNNavigationBarDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NNNavigationBarDemo-frameworks.sh"; sourceTree = "<group>"; };
+		10A4079F09C2C722132994A38CA4320A /* NNBackgroundAlphaTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NNBackgroundAlphaTransition.m; sourceTree = "<group>"; };
+		14882D8075686BD70C215009A8677FBB /* NNTintColorTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NNTintColorTransition.m; sourceTree = "<group>"; };
+		1A1F8FA762365B8B8F944635BAD0602C /* Pods-NNNavigationBarDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NNNavigationBarDemo-umbrella.h"; sourceTree = "<group>"; };
+		1AFC45FE8748EF6B9819DEA09426A6BA /* Pods-NNNavigationBarDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NNNavigationBarDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1CE219C8207BD107E143A9123651CD72 /* Pods-NNNavigationBarDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NNNavigationBarDemo-acknowledgements.plist"; sourceTree = "<group>"; };
+		24E67DD7DA8858E37863851AF9CE5981 /* Pods_NNNavigationBarDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NNNavigationBarDemo.framework; path = "Pods-NNNavigationBarDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2906B8A3CBFC85AE0CC8292A0004F282 /* UINavigationItem+NNTintColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+NNTintColor.m"; sourceTree = "<group>"; };
+		29828D03809FDAAFB9F1F0154E86E5E9 /* UINavigationItem+NNTintColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNTintColor.h"; sourceTree = "<group>"; };
+		2A06D180F6645C84E0D2F0F57FA95C63 /* NNNavigationBarBackgroundImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NNNavigationBarBackgroundImage.h; sourceTree = "<group>"; };
+		2B0286D5DFBD5528CACEBB5335245C8C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3A758B01C71DB792F9C9CB5794558E7E /* NNNavigationBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NNNavigationBar-prefix.pch"; sourceTree = "<group>"; };
+		3ED7507F4F0E566DE29E31B8900C9E82 /* NNNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = NNNavigationBar.framework; path = NNNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4433FF4FBFE6F04183E75087EC1E401F /* UINavigationBar+NNTintColorDelegateImp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTintColorDelegateImp.h"; sourceTree = "<group>"; };
+		461EE54694C02D817EC481FA121A3010 /* UINavigationBar+NNBackgroundImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundImageView.h"; sourceTree = "<group>"; };
+		4D39AC0A2B6C21AAACD75E5DE36CC17E /* Pods-NNNavigationBarDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NNNavigationBarDemo.modulemap"; sourceTree = "<group>"; };
+		58FEECE567222A7AB25CCF6B5C735CB0 /* UINavigationBar+NNTintColorDelegateImp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTintColorDelegateImp.m"; sourceTree = "<group>"; };
+		5DF4D577F266584595D7504AA9BEE208 /* NNNavigationBarBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NNNavigationBarBackgroundView.h; sourceTree = "<group>"; };
+		5F8FDB6F2E20856F9D63ADC291551A69 /* NNNTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNNTransition.h; path = NNNavigationBar/Core/NNNTransition.h; sourceTree = "<group>"; };
+		5FC09A937370A276F25D923856ACC6D5 /* UINavigationBar+NNTintColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNTintColor.m"; sourceTree = "<group>"; };
+		621C50021CBC3DA6BA34CF007E4935A7 /* UINavigationItem+NNCoreProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationItem+NNCoreProperties.h"; path = "NNNavigationBar/Core/UINavigationItem+NNCoreProperties.h"; sourceTree = "<group>"; };
+		65C117657C9E60F5B675CA7657C56F08 /* NNBackgroundDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NNBackgroundDelegate.h; sourceTree = "<group>"; };
+		66180785F4D9B9BCD67F88A0D1C5B79B /* UINavigationBar+NNBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundView.h"; sourceTree = "<group>"; };
+		712E114B8C469FDD6D670F2FB6CB5427 /* Pods-NNNavigationBarDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NNNavigationBarDemo.release.xcconfig"; sourceTree = "<group>"; };
+		728492855DA5CD5AEB66605158C7727B /* UINavigationBar+NNCoreProperties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+NNCoreProperties.m"; path = "NNNavigationBar/Core/UINavigationBar+NNCoreProperties.m"; sourceTree = "<group>"; };
+		72BA60EE1086C8AA630F0B7472987234 /* UIImage+NNImageWithColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+NNImageWithColor.m"; path = "NNNavigationBar/Utils/UIImage+NNImageWithColor.m"; sourceTree = "<group>"; };
+		795DF2A0F5315FE0AF23FCABC7B0F215 /* UINavigationItem+NNBackgroundView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+NNBackgroundView.h"; sourceTree = "<group>"; };
+		7A0A4696AFB1F90936F4DA14A5C762CD /* Pods-NNNavigationBarDemo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NNNavigationBarDemo-Info.plist"; sourceTree = "<group>"; };
+		80FA706BBA8244A654D9088882E1A54D /* UINavigationBar+NNBackgroundDelegateImp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNBackgroundDelegateImp.h"; sourceTree = "<group>"; };
+		8A57693F946413B08EA6307196F9B4B4 /* NNBackgroundAlphaTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NNBackgroundAlphaTransition.h; sourceTree = "<group>"; };
+		8CADD126388C062A6C73E78F0F6928EB /* UINavigationBar+NNMethodSwizzling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+NNMethodSwizzling.h"; path = "NNNavigationBar/Core/UINavigationBar+NNMethodSwizzling.h"; sourceTree = "<group>"; };
+		91B16753E63489A483AFAB416B984438 /* NNBackgroundImageTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NNBackgroundImageTransition.h; sourceTree = "<group>"; };
+		95A2D98F7E0AC1B5181D5BBD74B6ACB6 /* NNBackgroundImageTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NNBackgroundImageTransition.m; sourceTree = "<group>"; };
+		96882A5FA9D37735CF5BA9B4F88EA459 /* NSLayoutConstraint+NNVisualFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+NNVisualFormat.m"; path = "NNNavigationBar/Utils/NSLayoutConstraint+NNVisualFormat.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A6BD6385CC8EA74285CFA440FA671171 /* NSLayoutConstraint+NNVisualFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+NNVisualFormat.h"; path = "NNNavigationBar/Utils/NSLayoutConstraint+NNVisualFormat.h"; sourceTree = "<group>"; };
+		ABF8AF03A7CB97DBF89721B79A47B0A6 /* Pods-NNNavigationBarDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NNNavigationBarDemo-dummy.m"; sourceTree = "<group>"; };
+		AC5F33FD8F7FD540F36C096783DD0D12 /* NNNavigationBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "NNNavigationBar-Info.plist"; sourceTree = "<group>"; };
+		AF197B8949A0524D6A7601D30F4349A1 /* UINavigationBar+NNBackgroundImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundImageView.m"; sourceTree = "<group>"; };
+		B3CBEDBBB44850CC8BF03239BE1D790E /* UINavigationBar+NNTintColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+NNTintColor.h"; sourceTree = "<group>"; };
+		B4D6E2329F77A9622B3C6531F428CFD5 /* NNNavigationBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NNNavigationBar.xcconfig; sourceTree = "<group>"; };
+		B5C6A860F94ECE6F7D69883598590E41 /* NNNavigationBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NNNavigationBar.h; path = NNNavigationBar/NNNavigationBar.h; sourceTree = "<group>"; };
+		B7270EA56A9FDA3E84480A71116EE2E7 /* UINavigationBar+NNBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundView.m"; sourceTree = "<group>"; };
+		BACB5709D841BF06C7DDE2B7FAFA26D3 /* NNFadeAnimationImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NNFadeAnimationImageView.h; sourceTree = "<group>"; };
+		BB354B1FCD91A32C66E70AC2DE91EFBB /* NNNProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NNNProxy.m; path = NNNavigationBar/Core/NNNProxy.m; sourceTree = "<group>"; };
+		BC63FA396B22157E2298416E61042D78 /* NNNavigationBarTintColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NNNavigationBarTintColor.h; sourceTree = "<group>"; };
+		BEBE29E5EFE450D92D4BD1F8881CDB02 /* NNTintColorTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NNTintColorTransition.h; sourceTree = "<group>"; };
+		C60DC0FDEA06609467A5A8DBF391F31B /* UINavigationItem+NNBackgroundView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+NNBackgroundView.m"; sourceTree = "<group>"; };
+		C768173624AA5B511C2AC0FBEFB083EA /* NNFadeAnimationImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NNFadeAnimationImageView.m; sourceTree = "<group>"; };
+		C97F0AC3B50721E5A68D5DADD71E7969 /* NNNavigationBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NNNavigationBar.modulemap; sourceTree = "<group>"; };
+		CC85B70802864A61115E314B022BF8B8 /* UINavigationBar+NNBackgroundDelegateImp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+NNBackgroundDelegateImp.m"; sourceTree = "<group>"; };
+		D4A065E357F7F233A7CAFDE47FCBEBBB /* NNNavigationBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NNNavigationBar-dummy.m"; sourceTree = "<group>"; };
+		D876CDFF247294AEA225E40F0DE74E57 /* UINavigationBar+NNMethodSwizzling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+NNMethodSwizzling.m"; path = "NNNavigationBar/Core/UINavigationBar+NNMethodSwizzling.m"; sourceTree = "<group>"; };
+		E045EDA792CE5AC672AEABC875CBD12C /* Pods-NNNavigationBarDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NNNavigationBarDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E9802305BD9EF6201CBC716C412C943A /* UINavigationItem+NNCoreProperties.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationItem+NNCoreProperties.m"; path = "NNNavigationBar/Core/UINavigationItem+NNCoreProperties.m"; sourceTree = "<group>"; };
+		EC42ECDBC845F1C4E68AA87C72686768 /* UIImage+NNImageWithColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+NNImageWithColor.h"; path = "NNNavigationBar/Utils/UIImage+NNImageWithColor.h"; sourceTree = "<group>"; };
+		EF3215805D012CF979BA550BB25B1525 /* NNNavigationBar.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = NNNavigationBar.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F3CDA36A3D6E7C3EB5E0CAE5B52D1D33 /* NNTintColorDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NNTintColorDelegate.h; sourceTree = "<group>"; };
+		FF90B2D6FD1BE45B86773FC2D45B71A6 /* NNNavigationBarBackgroundImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NNNavigationBarBackgroundImage.m; sourceTree = "<group>"; };
+		FFB0B7DD24702BE2E548A2EE0C63532B /* UINavigationBar+NNCoreProperties.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+NNCoreProperties.h"; path = "NNNavigationBar/Core/UINavigationBar+NNCoreProperties.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		029538D38F83F53818E400E83A47DAA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F19A8CEB021C6D3E5590C09D83D9DF3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADEE5106DBB15072208DC2EDFD37C957 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E286B1B2B8BE7E26FE16234A1143CAFB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10608C9042A09007D36DD282F444972C /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABC57D46AADE7EB2B6C80ED8698FFFC3 /* Pods-NNNavigationBarDemo */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		34FC4CD62704CE800387A48231A9526E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C97F0AC3B50721E5A68D5DADD71E7969 /* NNNavigationBar.modulemap */,
+				B4D6E2329F77A9622B3C6531F428CFD5 /* NNNavigationBar.xcconfig */,
+				D4A065E357F7F233A7CAFDE47FCBEBBB /* NNNavigationBar-dummy.m */,
+				AC5F33FD8F7FD540F36C096783DD0D12 /* NNNavigationBar-Info.plist */,
+				3A758B01C71DB792F9C9CB5794558E7E /* NNNavigationBar-prefix.pch */,
+				04A0BE01D548721DB775E89E66F3166C /* NNNavigationBar-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/NNNavigationBar";
+			sourceTree = "<group>";
+		};
+		3DA710113D2CF4049F55D28AA0096897 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				BACB5709D841BF06C7DDE2B7FAFA26D3 /* NNFadeAnimationImageView.h */,
+				C768173624AA5B511C2AC0FBEFB083EA /* NNFadeAnimationImageView.m */,
+				2A06D180F6645C84E0D2F0F57FA95C63 /* NNNavigationBarBackgroundImage.h */,
+				FF90B2D6FD1BE45B86773FC2D45B71A6 /* NNNavigationBarBackgroundImage.m */,
+				461EE54694C02D817EC481FA121A3010 /* UINavigationBar+NNBackgroundImageView.h */,
+				AF197B8949A0524D6A7601D30F4349A1 /* UINavigationBar+NNBackgroundImageView.m */,
+			);
+			name = Source;
+			path = NNNavigationBar/Background/Source;
+			sourceTree = "<group>";
+		};
+		44713A1A77AD0F3FF9573DF062EAB567 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				2B0286D5DFBD5528CACEBB5335245C8C /* LICENSE */,
+				EF3215805D012CF979BA550BB25B1525 /* NNNavigationBar.podspec */,
+				05E08FFF7216D97B57D7882F548CD06C /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		48338875FF9C444EFD90A7D4CF73340F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				046B3FF44E365A00BED28445B53D8CA8 /* NNNProxy.h */,
+				BB354B1FCD91A32C66E70AC2DE91EFBB /* NNNProxy.m */,
+				5F8FDB6F2E20856F9D63ADC291551A69 /* NNNTransition.h */,
+				FFB0B7DD24702BE2E548A2EE0C63532B /* UINavigationBar+NNCoreProperties.h */,
+				728492855DA5CD5AEB66605158C7727B /* UINavigationBar+NNCoreProperties.m */,
+				8CADD126388C062A6C73E78F0F6928EB /* UINavigationBar+NNMethodSwizzling.h */,
+				D876CDFF247294AEA225E40F0DE74E57 /* UINavigationBar+NNMethodSwizzling.m */,
+				621C50021CBC3DA6BA34CF007E4935A7 /* UINavigationItem+NNCoreProperties.h */,
+				E9802305BD9EF6201CBC716C412C943A /* UINavigationItem+NNCoreProperties.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		4BD1FF15A7F021E89142A5755C3AADB0 /* NNNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				B5C6A860F94ECE6F7D69883598590E41 /* NNNavigationBar.h */,
+				703B5120BEB0EC10279E0F3F0320A1E3 /* Background */,
+				48338875FF9C444EFD90A7D4CF73340F /* Core */,
+				44713A1A77AD0F3FF9573DF062EAB567 /* Pod */,
+				34FC4CD62704CE800387A48231A9526E /* Support Files */,
+				96212D85C42478DB263B17F8968E64FD /* TintColor */,
+				779E5DF77E02585E5F813F929131F431 /* Utils */,
+			);
+			name = NNNavigationBar;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		5FAE25F268A772BD439A6C56CF533C60 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4BD1FF15A7F021E89142A5755C3AADB0 /* NNNavigationBar */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		703B5120BEB0EC10279E0F3F0320A1E3 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				CF4CFFB092814DA389BC427C8645B146 /* Delegate */,
+				936A456DAFB0E543F3F47C739C50A323 /* Public */,
+				3DA710113D2CF4049F55D28AA0096897 /* Source */,
+				850F2E01251EA161E6A0C81107F643BE /* Transition */,
+			);
+			name = Background;
+			sourceTree = "<group>";
+		};
+		779E5DF77E02585E5F813F929131F431 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A6BD6385CC8EA74285CFA440FA671171 /* NSLayoutConstraint+NNVisualFormat.h */,
+				96882A5FA9D37735CF5BA9B4F88EA459 /* NSLayoutConstraint+NNVisualFormat.m */,
+				EC42ECDBC845F1C4E68AA87C72686768 /* UIImage+NNImageWithColor.h */,
+				72BA60EE1086C8AA630F0B7472987234 /* UIImage+NNImageWithColor.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		850F2E01251EA161E6A0C81107F643BE /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				8A57693F946413B08EA6307196F9B4B4 /* NNBackgroundAlphaTransition.h */,
+				10A4079F09C2C722132994A38CA4320A /* NNBackgroundAlphaTransition.m */,
+				91B16753E63489A483AFAB416B984438 /* NNBackgroundImageTransition.h */,
+				95A2D98F7E0AC1B5181D5BBD74B6ACB6 /* NNBackgroundImageTransition.m */,
+			);
+			name = Transition;
+			path = NNNavigationBar/Background/Transition;
+			sourceTree = "<group>";
+		};
+		936A456DAFB0E543F3F47C739C50A323 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				5DF4D577F266584595D7504AA9BEE208 /* NNNavigationBarBackgroundView.h */,
+				66180785F4D9B9BCD67F88A0D1C5B79B /* UINavigationBar+NNBackgroundView.h */,
+				B7270EA56A9FDA3E84480A71116EE2E7 /* UINavigationBar+NNBackgroundView.m */,
+				795DF2A0F5315FE0AF23FCABC7B0F215 /* UINavigationItem+NNBackgroundView.h */,
+				C60DC0FDEA06609467A5A8DBF391F31B /* UINavigationItem+NNBackgroundView.m */,
+			);
+			name = Public;
+			path = NNNavigationBar/Background/Public;
+			sourceTree = "<group>";
+		};
+		96212D85C42478DB263B17F8968E64FD /* TintColor */ = {
+			isa = PBXGroup;
+			children = (
+				E82891F6C0C7C479A8EFA6EE4E68C102 /* Delegate */,
+				F40CB71937267AE64E79AABCF058D394 /* Public */,
+				CE31A9FC859E897A82C8F83F566E1A13 /* Transition */,
+			);
+			name = TintColor;
+			sourceTree = "<group>";
+		};
+		ABC57D46AADE7EB2B6C80ED8698FFFC3 /* Pods-NNNavigationBarDemo */ = {
+			isa = PBXGroup;
+			children = (
+				4D39AC0A2B6C21AAACD75E5DE36CC17E /* Pods-NNNavigationBarDemo.modulemap */,
+				1AFC45FE8748EF6B9819DEA09426A6BA /* Pods-NNNavigationBarDemo-acknowledgements.markdown */,
+				1CE219C8207BD107E143A9123651CD72 /* Pods-NNNavigationBarDemo-acknowledgements.plist */,
+				ABF8AF03A7CB97DBF89721B79A47B0A6 /* Pods-NNNavigationBarDemo-dummy.m */,
+				0C2F394C852ECD6994AD4F598B726023 /* Pods-NNNavigationBarDemo-frameworks.sh */,
+				7A0A4696AFB1F90936F4DA14A5C762CD /* Pods-NNNavigationBarDemo-Info.plist */,
+				1A1F8FA762365B8B8F944635BAD0602C /* Pods-NNNavigationBarDemo-umbrella.h */,
+				E045EDA792CE5AC672AEABC875CBD12C /* Pods-NNNavigationBarDemo.debug.xcconfig */,
+				712E114B8C469FDD6D670F2FB6CB5427 /* Pods-NNNavigationBarDemo.release.xcconfig */,
+			);
+			name = "Pods-NNNavigationBarDemo";
+			path = "Target Support Files/Pods-NNNavigationBarDemo";
+			sourceTree = "<group>";
+		};
+		C01C6FA19CAF5193CE01A226F4A18820 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3ED7507F4F0E566DE29E31B8900C9E82 /* NNNavigationBar.framework */,
+				24E67DD7DA8858E37863851AF9CE5981 /* Pods_NNNavigationBarDemo.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CE31A9FC859E897A82C8F83F566E1A13 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				BEBE29E5EFE450D92D4BD1F8881CDB02 /* NNTintColorTransition.h */,
+				14882D8075686BD70C215009A8677FBB /* NNTintColorTransition.m */,
+			);
+			name = Transition;
+			path = NNNavigationBar/TintColor/Transition;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				5FAE25F268A772BD439A6C56CF533C60 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				C01C6FA19CAF5193CE01A226F4A18820 /* Products */,
+				10608C9042A09007D36DD282F444972C /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		CF4CFFB092814DA389BC427C8645B146 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				65C117657C9E60F5B675CA7657C56F08 /* NNBackgroundDelegate.h */,
+				80FA706BBA8244A654D9088882E1A54D /* UINavigationBar+NNBackgroundDelegateImp.h */,
+				CC85B70802864A61115E314B022BF8B8 /* UINavigationBar+NNBackgroundDelegateImp.m */,
+			);
+			name = Delegate;
+			path = NNNavigationBar/Background/Delegate;
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E82891F6C0C7C479A8EFA6EE4E68C102 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				F3CDA36A3D6E7C3EB5E0CAE5B52D1D33 /* NNTintColorDelegate.h */,
+				4433FF4FBFE6F04183E75087EC1E401F /* UINavigationBar+NNTintColorDelegateImp.h */,
+				58FEECE567222A7AB25CCF6B5C735CB0 /* UINavigationBar+NNTintColorDelegateImp.m */,
+			);
+			name = Delegate;
+			path = NNNavigationBar/TintColor/Delegate;
+			sourceTree = "<group>";
+		};
+		F40CB71937267AE64E79AABCF058D394 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				BC63FA396B22157E2298416E61042D78 /* NNNavigationBarTintColor.h */,
+				B3CBEDBBB44850CC8BF03239BE1D790E /* UINavigationBar+NNTintColor.h */,
+				5FC09A937370A276F25D923856ACC6D5 /* UINavigationBar+NNTintColor.m */,
+				29828D03809FDAAFB9F1F0154E86E5E9 /* UINavigationItem+NNTintColor.h */,
+				2906B8A3CBFC85AE0CC8292A0004F282 /* UINavigationItem+NNTintColor.m */,
+			);
+			name = Public;
+			path = NNNavigationBar/TintColor/Public;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BDE3795DEC00D057637865F4C09B6E39 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12FC7A053250FECB9CDDEE511F982285 /* NNBackgroundAlphaTransition.h in Headers */,
+				FB8B88860FA8D1844BB98643A7B5100A /* NNBackgroundDelegate.h in Headers */,
+				9C95586B10BBAFF080BD94FE61710FC5 /* NNBackgroundImageTransition.h in Headers */,
+				21294726F1FE9E7A23DE4BC6194D8474 /* NNFadeAnimationImageView.h in Headers */,
+				4AFD54E9196DD40AF81565D4A03E42F1 /* NNNavigationBar-umbrella.h in Headers */,
+				A06FCEFBBFCF160CD8D24759FB78893B /* NNNavigationBar.h in Headers */,
+				82E0CA81442FB81DB50E7BAED1CCDE54 /* NNNavigationBarBackgroundImage.h in Headers */,
+				1F267B3B5340D6A78292CE4322C6728E /* NNNavigationBarBackgroundView.h in Headers */,
+				A9B9F525263AA80B890C0F32C2CF88B5 /* NNNavigationBarTintColor.h in Headers */,
+				3FD41D20B2C213DDABF0A24D4A65FE86 /* NNNProxy.h in Headers */,
+				720AF2C3843F8B0B74C9C38A7750F6E1 /* NNNTransition.h in Headers */,
+				5F500D0BA7DEA19B7C35DBC97C5204C7 /* NNTintColorDelegate.h in Headers */,
+				AFC5F825A202A589E546A01D598A19B6 /* NNTintColorTransition.h in Headers */,
+				CC149D0703778641A41FA47E6F7E5F04 /* NSLayoutConstraint+NNVisualFormat.h in Headers */,
+				6B56CBC99DE85B0D1F590CC338444D85 /* UIImage+NNImageWithColor.h in Headers */,
+				84C47E3401F0962869D89B858CB857F6 /* UINavigationBar+NNBackgroundDelegateImp.h in Headers */,
+				02CABC6695C94FF7ABCA5C73095F4964 /* UINavigationBar+NNBackgroundImageView.h in Headers */,
+				5207BAC5C90365596EBF8093E747B426 /* UINavigationBar+NNBackgroundView.h in Headers */,
+				5EE03D80E8F4D46978BD2EFA026B4C0D /* UINavigationBar+NNCoreProperties.h in Headers */,
+				787C611BC9C14AC47564A5E22584DD7E /* UINavigationBar+NNMethodSwizzling.h in Headers */,
+				739A8534E0FA8A2CC08871DD3EA4F1C7 /* UINavigationBar+NNTintColor.h in Headers */,
+				03A045BD318DBDCF07F8E6E5E49C6F3C /* UINavigationBar+NNTintColorDelegateImp.h in Headers */,
+				FA7B097EF393D29220240C71F632741B /* UINavigationItem+NNBackgroundView.h in Headers */,
+				F65C91386BA2EC9495C947255FF58F19 /* UINavigationItem+NNCoreProperties.h in Headers */,
+				7996AF993724C8D5EA188CAE38456CE0 /* UINavigationItem+NNTintColor.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9F3E75924E660D15EFBB9BFFD6BB261 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2D8ACA60380A8A2CE84B6236DE92D7 /* Pods-NNNavigationBarDemo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		77600AE4FE044B7DE6A9427231A0FCE7 /* Pods-NNNavigationBarDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F80141C81E30C955BA06D08CC9808744 /* Build configuration list for PBXNativeTarget "Pods-NNNavigationBarDemo" */;
+			buildPhases = (
+				E9F3E75924E660D15EFBB9BFFD6BB261 /* Headers */,
+				335FA552FFA9CCF0ECF7E14B9A601B91 /* Sources */,
+				ADEE5106DBB15072208DC2EDFD37C957 /* Frameworks */,
+				F6EA6F759A19B1D20626E88CF90AFED6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A694645182798CA2732DCDA01F36B4E1 /* PBXTargetDependency */,
+			);
+			name = "Pods-NNNavigationBarDemo";
+			productName = "Pods-NNNavigationBarDemo";
+			productReference = 24E67DD7DA8858E37863851AF9CE5981 /* Pods_NNNavigationBarDemo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9276263426A71A1F137BD0E2C65479F4 /* NNNavigationBar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD50608BF9386E824B492736A3E964CD /* Build configuration list for PBXNativeTarget "NNNavigationBar" */;
+			buildPhases = (
+				BDE3795DEC00D057637865F4C09B6E39 /* Headers */,
+				C490AA04BFB4A9DFE0F0FC065DE5E8F7 /* Sources */,
+				029538D38F83F53818E400E83A47DAA8 /* Frameworks */,
+				418C1FEC07D7F1179D533B2849124E9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NNNavigationBar;
+			productName = NNNavigationBar;
+			productReference = 3ED7507F4F0E566DE29E31B8900C9E82 /* NNNavigationBar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = C01C6FA19CAF5193CE01A226F4A18820 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9276263426A71A1F137BD0E2C65479F4 /* NNNavigationBar */,
+				77600AE4FE044B7DE6A9427231A0FCE7 /* Pods-NNNavigationBarDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		418C1FEC07D7F1179D533B2849124E9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6EA6F759A19B1D20626E88CF90AFED6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		335FA552FFA9CCF0ECF7E14B9A601B91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E0620C5F677E4112EFFD78A3B713B26 /* Pods-NNNavigationBarDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C490AA04BFB4A9DFE0F0FC065DE5E8F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A3761C6FFDB6B3A13BAA85CB612091F /* NNBackgroundAlphaTransition.m in Sources */,
+				8454B0996143F6812F5CDFE6A0401A17 /* NNBackgroundImageTransition.m in Sources */,
+				9634A83CA37F8B31CE421AC6A8DBA95C /* NNFadeAnimationImageView.m in Sources */,
+				80BD90314B197463EA4CEC292953B03B /* NNNavigationBar-dummy.m in Sources */,
+				0FC7676EABB7810F6FF98B5DC8CC8A1E /* NNNavigationBarBackgroundImage.m in Sources */,
+				72F9AF4663E620BC8A3B9EADAFECF374 /* NNNProxy.m in Sources */,
+				714C991CC106E9522E339B5CB7FCCE4F /* NNTintColorTransition.m in Sources */,
+				8A677870A5734CBFD7D614A61E25E75E /* NSLayoutConstraint+NNVisualFormat.m in Sources */,
+				ACEEE7B732368F1A8B2ACE67310C33C2 /* UIImage+NNImageWithColor.m in Sources */,
+				239F80809AA0ABED6C0B223FCEC4A8DC /* UINavigationBar+NNBackgroundDelegateImp.m in Sources */,
+				5EBFD8D7C160BC52D271A5E419EFAD9D /* UINavigationBar+NNBackgroundImageView.m in Sources */,
+				74C77CD581846743E14CDC916C0D0BB4 /* UINavigationBar+NNBackgroundView.m in Sources */,
+				6AF0A96E65451E09A13CCEF8AA2DDD71 /* UINavigationBar+NNCoreProperties.m in Sources */,
+				BB55D601D920DB81B61EC5AD2BC5A1F2 /* UINavigationBar+NNMethodSwizzling.m in Sources */,
+				670466176CE9112C094B817F22EDB060 /* UINavigationBar+NNTintColor.m in Sources */,
+				B3D61AD1A2B11C237368A0849F3CFAA3 /* UINavigationBar+NNTintColorDelegateImp.m in Sources */,
+				EC1EF4B68D8B3682F12132AAF132307F /* UINavigationItem+NNBackgroundView.m in Sources */,
+				2B033A114F0320AB7CC64CC2DC7F8885 /* UINavigationItem+NNCoreProperties.m in Sources */,
+				1F32E0F3DA20FBC89A772B0FD0A4DE53 /* UINavigationItem+NNTintColor.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A694645182798CA2732DCDA01F36B4E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NNNavigationBar;
+			target = 9276263426A71A1F137BD0E2C65479F4 /* NNNavigationBar */;
+			targetProxy = 401F05884932019E76AD481A93A55D67 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		4BE66A09A74FD25164AAB3C2645B9B93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		7EF7227D9B20A1D549000096ACCB23D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		8981B95D85213A26381287CC12C8E192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4D6E2329F77A9622B3C6531F428CFD5 /* NNNavigationBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/NNNavigationBar/NNNavigationBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NNNavigationBar/NNNavigationBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/NNNavigationBar/NNNavigationBar.modulemap";
+				PRODUCT_MODULE_NAME = NNNavigationBar;
+				PRODUCT_NAME = NNNavigationBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		89EC23EE79AEBAB6DBB511527FB92790 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E045EDA792CE5AC672AEABC875CBD12C /* Pods-NNNavigationBarDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A6903A13DDD137B64328FFC7C9FA9D82 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4D6E2329F77A9622B3C6531F428CFD5 /* NNNavigationBar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/NNNavigationBar/NNNavigationBar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NNNavigationBar/NNNavigationBar-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/NNNavigationBar/NNNavigationBar.modulemap";
+				PRODUCT_MODULE_NAME = NNNavigationBar;
+				PRODUCT_NAME = NNNavigationBar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DDF0FD7E3EC1B3918B19D00D83AB7355 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 712E114B8C469FDD6D670F2FB6CB5427 /* Pods-NNNavigationBarDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NNNavigationBarDemo/Pods-NNNavigationBarDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EF7227D9B20A1D549000096ACCB23D7 /* Debug */,
+				4BE66A09A74FD25164AAB3C2645B9B93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD50608BF9386E824B492736A3E964CD /* Build configuration list for PBXNativeTarget "NNNavigationBar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8981B95D85213A26381287CC12C8E192 /* Debug */,
+				A6903A13DDD137B64328FFC7C9FA9D82 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F80141C81E30C955BA06D08CC9808744 /* Build configuration list for PBXNativeTarget "Pods-NNNavigationBarDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89EC23EE79AEBAB6DBB511527FB92790 /* Debug */,
+				DDF0FD7E3EC1B3918B19D00D83AB7355 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

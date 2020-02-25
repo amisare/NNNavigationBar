@@ -1,0 +1,28 @@
+PODS:
+  - NNNavigationBar (2.7.3):
+    - NNNavigationBar/Background (= 2.7.3)
+    - NNNavigationBar/Core (= 2.7.3)
+    - NNNavigationBar/TintColor (= 2.7.3)
+    - NNNavigationBar/Utils (= 2.7.3)
+  - NNNavigationBar/Background (2.7.3):
+    - NNNavigationBar/Core
+    - NNNavigationBar/Utils
+  - NNNavigationBar/Core (2.7.3)
+  - NNNavigationBar/TintColor (2.7.3):
+    - NNNavigationBar/Core
+    - NNNavigationBar/Utils
+  - NNNavigationBar/Utils (2.7.3)
+
+DEPENDENCIES:
+  - NNNavigationBar (from `NNNavigationBar.podspec`)
+
+EXTERNAL SOURCES:
+  NNNavigationBar:
+    :path: NNNavigationBar.podspec
+
+SPEC CHECKSUMS:
+  NNNavigationBar: 648aa86b563b786291ce3516e09e8f9d6afd9226
+
+PODFILE CHECKSUM: 15e3a19f5766b51b7f20eb9425c94d8c7d0cbd9e
+
+COCOAPODS: 1.8.4

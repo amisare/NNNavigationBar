@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "NNNavigationBar"
-  s.version       = "2.7.2"
+  s.version       = "2.7.3"
   s.summary       = "NNNavigationBar: make UINavigationBar background transition smoothly."
 
   s.description   = <<-DESC
@@ -17,31 +17,31 @@ Pod::Spec.new do |s|
   s.ios.deployment_target   = '8.0'
   s.requires_arc  = true
 
-  s.source_files        = 'NNNavigationBar/NNNavigationBar/*.{h,m}'
-  s.public_header_files = 'NNNavigationBar/NNNavigationBar/NNNavigationBar.h'
+  s.source_files        = 'NNNavigationBar/*.{h,m}'
+  s.public_header_files = 'NNNavigationBar/NNNavigationBar.h'
   
   s.subspec 'Core' do |ss|
-    ss.source_files    = 'NNNavigationBar/NNNavigationBar/Core/*.{h,m,mm}'
-    ss.private_header_files    = 'NNNavigationBar/NNNavigationBar/Core/*.{h}'
+    ss.source_files    = 'NNNavigationBar/Core/*.{h,m,mm}'
+    ss.private_header_files    = 'NNNavigationBar/Core/*.{h}'
   end
 
   s.subspec 'Utils' do |ss|
-    ss.source_files    = 'NNNavigationBar/NNNavigationBar/Utils/*.{h,m}'
-    ss.private_header_files    = 'NNNavigationBar/NNNavigationBar/Utils/*.{h}'
+    ss.source_files    = 'NNNavigationBar/Utils/*.{h,m}'
+    ss.private_header_files    = 'NNNavigationBar/Utils/*.{h}'
   end
 
   s.subspec 'Background' do |ss|
     ss.dependency        'NNNavigationBar/Core'
     ss.dependency        'NNNavigationBar/Utils'
-    ss.source_files    = 'NNNavigationBar/NNNavigationBar/Background/**/*.{h,m}'
-    ss.private_header_files    = 'NNNavigationBar/NNNavigationBar/Background/Source/*.{h}', 'NNNavigationBar/NNNavigationBar/Background/Delegate/*.{h}', 'NNNavigationBar/NNNavigationBar/Background/Transition/*.{h}'
+    ss.source_files    = 'NNNavigationBar/Background/**/*.{h,m}'
+    ss.private_header_files    = 'NNNavigationBar/Background/Source/*.{h}', 'NNNavigationBar/Background/Delegate/*.{h}', 'NNNavigationBar/Background/Transition/*.{h}'
   end
 
   s.subspec 'TintColor' do |ss|
     ss.dependency        'NNNavigationBar/Core'
     ss.dependency        'NNNavigationBar/Utils'
-    ss.source_files    = 'NNNavigationBar/NNNavigationBar/TintColor/**/*.{h,m}'
-    ss.private_header_files    = 'NNNavigationBar/NNNavigationBar/TintColor/Delegate/*.{h}', 'NNNavigationBar/NNNavigationBar/TintColor/Transition/*.{h}'
+    ss.source_files    = 'NNNavigationBar/TintColor/**/*.{h,m}'
+    ss.private_header_files    = 'NNNavigationBar/TintColor/Delegate/*.{h}', 'NNNavigationBar/TintColor/Transition/*.{h}'
   end
 
 end

@@ -5,6 +5,6 @@
       location = "group:Example/NNNavigationBarDemo.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:NNNavigationBar.xcodeproj">
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
