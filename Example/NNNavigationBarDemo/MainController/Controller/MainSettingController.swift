@@ -95,12 +95,8 @@ class MainSettingController: UIViewController {
         self.setupDate()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        self.segmentBean.selectedIndex = .current
-    }
-    
     @objc public func pushNextViewController() {
+        self.segmentBean.selectedIndex = .current
         let vc = MainSettingController.init();
         vc.currentSettingData = self.nextSettingData
         vc.globalSettingData = self.globalSettingData
